@@ -1,8 +1,25 @@
--- The main function is the first function called from Iguana.
--- The Data argument will contain the message to be processed.
-local test = require 'test'
+require 'regressions'
+
+
+server = require 'server.simplewebserver'
 
 function main(Data)
    iguana.stopOnError(false)
-   test.serveRequest(Data)
+   
+   if iguana.isTest() then
+      server.serveRequest(Data)
+      
+   else
+      -- When running, push full stack error out to browser.
+      -- In the case of an internal error, log it.
+      local Stack = nil
+      local Success, ErrMsg = xpcall(
+         function()
+            server.serveRequest(Data)
+         end,
+         function()
+            Stack = debug.traceback()
+            server.serveError("Internal error", 500, Stack, Data)
+         end)      
+   end
 end

@@ -1,9 +1,14 @@
 {
    "Name": "Unit test example (From HTTP)",
    "LuaDependencies": [
-      "mockqueue",
-      "test",
-      "testui",
+      "regressions",
+      "regressions.config",
+      "regressions.core",
+      "regressions.mockqueue",
+      "regressions.presentation",
+      "server.simplewebserver",
+      "server.utils",
+      "stringutil",
       "zip"
    ],
    "OtherDependencies": [

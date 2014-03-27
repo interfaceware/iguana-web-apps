@@ -12,7 +12,7 @@
       guid="43331FFEEAB8625334BCCE803218331D"
       use_most_recent_milestone="true"
       milestone=""
-      mapper_url_path="unit"
+      mapper_url_path="regression_tests"
       instance_count="1"/>
    <message_filter
       filter_after_logging="false"
