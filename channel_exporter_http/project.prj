@@ -3,6 +3,7 @@
    "LuaDependencies": [
       "channelmanager",
       "channelmanager.backend",
+      "channelmanager.backend.addChannel",
       "channelmanager.backend.export",
       "channelmanager.backend.import",
       "channelmanager.backend.replaceChannel",
