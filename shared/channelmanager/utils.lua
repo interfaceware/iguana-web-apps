@@ -116,23 +116,11 @@ function lm.isNullGuid(Guid)
 end
 
 function lm.cleanChannelName(Name)
-   local Str = ""
-   if type(Name) == 'string' then
-      Str = Name:gsub(" ", "_"):lower()
-   else -- it's a node
-      Name:nodeValue():gsub(" ", "_"):lower()
-   end
-   return Str
+   return tostring(Name):gsub(" ", "_"):lower()
 end
 
 function lm.undoCleanChannelName(Name)
-   local Str = ""
-   if type(Name) == 'string' then
-      Str = Name:gsub("_", " "):lower()
-   else -- it's a node
-      Name:nodeValue():gsub("_", " "):lower()
-   end
-   return Str   
+   return tostring(Name):gsub("_", " "):lower()
 end
 
 function string.split(s, d)

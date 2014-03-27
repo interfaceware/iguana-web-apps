@@ -80,7 +80,7 @@ channelmanager.presentation = {
       H += '<div id="channels_list">'
       H += '<div id="message"></div>'
       H += '<table id="channels_list_table" cellpadding="0" cellspacing="0" border="0"></table>'
-      H += '</div>' + APPfooter();
+      H += "</div><p><a href='#Page=addChannel'>Add Channel</a>" + APPfooter();
       $('body').html(H);
    
       $.ajax({
@@ -153,6 +153,40 @@ channelmanager.presentation = {
       $('body').html(APPheader() + APPbreadCrumb('Replaced Channel') + "Replaced " + Params.Name + " successfully with " + Params.With + ".<p><a href='#'>Return to dashboard</a>" + APPfooter())   
    }
    
+   APP.addChannel = function(Params) {
+        $.ajax({
+        url: "/channelmanager/importList",
+        success: function (Data) {
+           console.log(Data);
+           var H =APPheader() + APPbreadCrumb('Add Channel') + "Add Channel from:<ol>" ;  
+           for (var i = 0; i < Data.length; i++){
+              H += "<li><a href='#Page=confirmAddChannel&With=" + Data[i] + "&Name=" + Params.Name +"'>" + Data[i] + "</a></li>";
+           }
+           H += "</ol>" + APPfooter();
+           $('body').html(H);        
+        }
+       });
+   }
+   
+   APP.confirmAddChannel = function(Params) {
+      var H = APPheader() + APPbreadCrumb('Confirm Add Channel') + "Add Channel " + Params.With + " with definition from " + Params.With + "?";
+      H += "<p><a href='#Page=executeAddChannel&Name=" + Params.With + "&With=" + Params.With + "'>Do it!</a>"; 
+      H += APPfooter();
+      $('body').html(H);     
+   }
+   
+   APP.executeAddChannel = function(Params) {
+      $.ajax({
+         url: "/channelmanager/addChannel?name=" + Params.Name + "&with=" + Params.With,
+         success: function (Data) {
+            document.location.hash = "#Page=addChannelComplete&Name=" + Params.Name + "&With=" + Params.With;
+         }
+     });   
+   }
+   
+   APP.addChannelComplete = function(Params) {
+      $('body').html(APPheader() + APPbreadCrumb('Added Channel') + "Added " + Params.Name + " successfully with definition from " + Params.With + ".<p><a href='#'>Return to dashboard</a>" + APPfooter())   
+   }
     
    ]==];
    

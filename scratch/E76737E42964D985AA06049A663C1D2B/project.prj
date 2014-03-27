@@ -1,15 +1,9 @@
 {
    "Name": "Global dashboard (From HTTP)",
    "LuaDependencies": [
-      "channelmanager",
       "channelmanager.backend",
-      "channelmanager.backend.addChannel",
-      "channelmanager.backend.export",
-      "channelmanager.backend.import",
-      "channelmanager.backend.replaceChannel",
       "channelmanager.config",
       "channelmanager.presentation",
-      "channelmanager.utils",
       "iguanaServer",
       "node",
       "server.simplewebserver",

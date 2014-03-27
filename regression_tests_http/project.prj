@@ -1,0 +1,17 @@
+{
+   "Name": "Unit test example (From HTTP)",
+   "LuaDependencies": [
+      "regressions",
+      "regressions.config",
+      "regressions.core",
+      "regressions.mockqueue",
+      "regressions.presentation",
+      "server.simplewebserver",
+      "server.utils",
+      "stringutil",
+      "zip"
+   ],
+   "OtherDependencies": [
+      "example/demo.vmd"
+   ]
+}

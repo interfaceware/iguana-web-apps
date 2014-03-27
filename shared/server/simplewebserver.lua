@@ -15,6 +15,10 @@ function ws.doJsonAction(R)
    trace(Func)
    if (Func) then
       local Result = Func(R)
+      if Result.error then 
+         ws.serveError(Result.error, Result.code)
+         return false
+      end
       Result = json.serialize{data=Result}
       net.http.respond{body=Result, entity_type='text/json'}   
       return true
@@ -50,6 +54,22 @@ function ws.serveRequest(Data)
    net.http.respond{body=ws.default(R)}
 end
 
+function ws.serveError(ErrMessage, Code, Stack, Data)
+   local Body = {error = ErrMessage}
+   if Stack then 
+      Body.stack = Stack
+   end
+   if Data then 
+      Body.data = Data 
+   end
+   net.http.respond{code = Code, body = json.serialize{data = Body}, entity_type = 'text/json'}
+   -- Only log internal errors
+   if Code > 499 then
+      local ErrId = queue.push{data = Data}
+      iguana.logError(Stack .. '\n' .. Data, ErrId)
+   end
+end
+
 function ws.template(Name, Content)
    local NameOnDisk = Name:gsub("/", "_")
    if iguana.isTest() and app.presentation[Name] then
@@ -81,47 +101,3 @@ function ws.entity(Location)
 end
 
 return ws
-
---[[
-
--- This template writes all resources in the map each time.
--- The one above only writes the one in the current request.
-function ui.template(Name, Content)
-   Name = Name:gsub("/", "_")
-   if iguana.isTest() then
-      for Key, Val in pairs(ui.ResourceTable) do
-         Key = Key:gsub("/", "_")
-         local File = io.open(Key, 'w+')
-         File:write(Val);
-         File:close()   
-      end
-   else
-      local File = io.open(Name, 'r')
-      if (File) then
-         Content = File:read('*a');
-         File:close()
-      end
-   end
-   return Content
-end
-
-function ws.mapRequest(T, R)
-   T.server_guid = R.guid
-   T.ts = os.ts.time()
-   T.summary = R.summary
-   T.status = R.retcode
-   T.name = R.name
-   return T
-end
-
-ws.threshold = 1000
-
-function ws.connection()
-   return db.connect{api=db.SQLITE, name='status'}
-end
-
-function ws.css(R)
-   return presentation.css(R)
-end
-
-]]

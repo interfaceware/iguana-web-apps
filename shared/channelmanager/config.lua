@@ -13,7 +13,8 @@ config.actionTable = {
    ['list-channels'] = channelmanager.backend.listChannels,
    ['export_channel'] = channelmanager.backend.export ,
    ['importList'] = channelmanager.backend.importList,
-   ['replaceChannel']= channelmanager.backend.replaceChannel 
+   ['replaceChannel']= channelmanager.backend.replaceChannel, 
+   ['addChannel']= channelmanager.backend.addChannel 
 }
 
 
