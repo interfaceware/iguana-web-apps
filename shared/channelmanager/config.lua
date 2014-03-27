@@ -5,7 +5,7 @@ local config = channelmanager.config
 -- TODO we should make the sure code is robust with respect to passing in trailing / characters
 
 config.approot = '/channelmanager'
-config.channelExportPath = os.fs.abspath("~") .. '/build/lua_apps'
+config.channelExportPath = os.fs.abspath("~") .. '/community/iguana-web-apps'
 config.scratchDir = os.fs.abspath("~")..'/temp'
 
 config.actionTable = {
@@ -13,7 +13,8 @@ config.actionTable = {
    ['list-channels'] = channelmanager.backend.listChannels,
    ['export_channel'] = channelmanager.backend.export ,
    ['importList'] = channelmanager.backend.importList,
-   ['replaceChannel']= channelmanager.backend.replaceChannel 
+   ['replaceChannel']= channelmanager.backend.replaceChannel, 
+   ['addChannel']= channelmanager.backend.addChannel 
 }
 
 
