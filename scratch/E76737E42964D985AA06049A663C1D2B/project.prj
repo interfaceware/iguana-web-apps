@@ -1,0 +1,23 @@
+{
+   "Name": "Global dashboard (From HTTP)",
+   "LuaDependencies": [
+      "channelmanager.backend",
+      "channelmanager.config",
+      "channelmanager.presentation",
+      "iguanaServer",
+      "node",
+      "server.simplewebserver",
+      "server.utils"
+   ],
+   "OtherDependencies": [
+      "arrow.gif",
+      "icon_DB.gif",
+      "icon_FILE.gif",
+      "icon_HTTPS.gif",
+      "icon_LLP.gif",
+      "icon_PLG-N.gif",
+      "icon_QUE.gif",
+      "icon_TRANS.gif",
+      "status.vmd"
+   ]
+}

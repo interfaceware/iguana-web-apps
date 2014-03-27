@@ -1,0 +1,12 @@
+{
+   "Name": "Unit test example (From HTTP)",
+   "LuaDependencies": [
+      "mockqueue",
+      "test",
+      "testui",
+      "zip"
+   ],
+   "OtherDependencies": [
+      "example/demo.vmd"
+   ]
+}
