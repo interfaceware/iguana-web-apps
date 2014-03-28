@@ -1,0 +1,9 @@
+{
+   "Name": "Example 02 - HL7 to HL7 Translation",
+   "LuaDependencies": [
+      
+   ],
+   "OtherDependencies": [
+      "example/demo.vmd"
+   ]
+}

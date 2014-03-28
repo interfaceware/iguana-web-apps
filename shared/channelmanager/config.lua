@@ -5,8 +5,17 @@ local config = channelmanager.config
 -- TODO we should make the sure code is robust with respect to passing in trailing / characters
 
 config.approot = '/channelmanager'
-config.channelExportPath = os.fs.abspath("~") .. '/community/iguana-web-apps'
-config.scratchDir = os.fs.abspath("~")..'/temp'
+
+if os.isWindows() then
+   config.channelExportPath = 'D:\\community\\iguana-web-apps'
+   config.scratchDir = 'C:\\temp\\channelmanager\\'
+end
+   
+   
+config.username = 'admin'
+config.password = 'password'
+
+
 
 config.actionTable = {
    ['config_info'] = channelmanager.backend.info,

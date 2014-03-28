@@ -44,14 +44,14 @@ end
 local function exportSummaryBtn(Channel)
    local Html = string.format(
       '<a href=\"%s#Page=exportSummary&Name=%s\">Export</a>',
-      app.config.approot, Channel.Name:nodeValue():gsub(" ","_"))
+      app.config.approot, Channel.Name:nodeValue())
    return Html
 end
 
 local function replaceSummaryBtn(Channel)
    local Html = string.format(
       '<a href=\"%s#Page=replaceChannel&Name=%s\">Replace</a>',
-      app.config.approot, Channel.Name:nodeValue():gsub(" ","_"))
+      app.config.approot, Channel.Name:nodeValue())
    return Html
 end
 
@@ -81,8 +81,7 @@ function channelmanager.backend.listChannels(Request)
       {['sTitle'] = 'Type',   ['sType'] = 'string'},
       {['sTitle'] = 'Msgs Queued', ['sType'] = 'string'},
       {['sTitle'] = 'Total Errs',  ['sType'] = 'string'},
-      {['sTitle'] = 'Export',  ['sType'] = 'html'},
-      {['sTitle'] = 'Import',  ['sType'] = 'html'}}
+      {['sTitle'] = 'Export',  ['sType'] = 'html'}}
    
    local StatusHtml, Statuses = statuses()
    ComponentsHtml, Components = components()
@@ -102,8 +101,7 @@ function channelmanager.backend.listChannels(Request)
             Components[Ch.Destination:nodeValue()]),
          Ch.MessagesQueued:nodeValue(),
          Ch.TotalErrors:nodeValue(),
-         exportSummaryBtn(Ch),
-         replaceSummaryBtn(Ch)}
+         exportSummaryBtn(Ch)}
    end
    
    return Results

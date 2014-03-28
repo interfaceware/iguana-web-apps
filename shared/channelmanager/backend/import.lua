@@ -15,46 +15,6 @@ function lm.action(R)
    lm.doImport(cm.config.scratchDir, ChannelDef, ChannelName)
 end
 
-function lm.importFromHttpTrans(ChanDef)
-   if (ChanDef.channel.from_http 
-         and ChanDef.channel.from_http.type:nodeValue() == 'mapper' 
-         and not cm.utils.isNullGuid(ChanDef.channel.from_http.guid)) then
-      -- We have a HTTP component
-      local Guid = ChanDef.channel.from_http.guid:nodeValue()
-      local Name = cm.utils.cleanChannelName(ChanDef.channel.name)
-      -- TODO change channelExportPath --> channelExportDir
-      local MainDir = cm.config.channelExportPath..'/'..Name..'_http'
-      lm.buildTranZip(MainDir, Guid, ChanDef)
-   end
-end
-
-function lm.projectFile(MainDir)
-   local ProjectName = MainDir.."/project.prj"
-   local D = channelmanager.utils.readFile(ProjectName)
-   return json.parse{data=D}
-end
-
-function lm.buildTranZip(MainDir, Guid, ChanDef)
-   local FileList = {}
-   for K,V in os.fs.glob(MainDir..'/*') do
-      FileList[#FileList+1] = {from=K, to=channelmanager.config.scratchDir..'/'..Guid..K:sub(#MainDir+1)}
-   end
-   local P = lm.projectFile(MainDir)
-   for i = 1, #P.OtherDependencies do 
-      FileList[#FileList+1] = {from=channelmanager.config.channelExportPath..'/other/'..P.OtherDependencies[i]}
-      FileList[#FileList].to = channelmanager.config.scratchDir..'/other/'..P.OtherDependencies[i]
-      
-   end
-   for i = 1, #P.LuaDependencies do 
-      FileList[#FileList+1] = {from=channelmanager.config.channelExportPath..'/shared/'..P.LuaDependencies[i]:gsub("%.", "/")..'.lua'}
-      FileList[#FileList].to = channelmanager.config.scratchDir..'/shared/'..P.LuaDependencies[i]:gsub("%.", "/")..'.lua'
-   end
-   trace(FileList)
-   lm.copyFileList(FileList)
-   lm.zipFileList(cm.config.scratchDir)
-   --lm.cleanFileList(FileList)
-end
-
 function lm.doImport(ScratchDir, ChanDef, ChannelName)
    local Web = iguana.webInfo()
    local ChAPI = iguanaServer.connect{
