@@ -1,0 +1,9 @@
+{
+   "Name": "Self monitor (From Translator)",
+   "LuaDependencies": [
+      "selfmon"
+   ],
+   "OtherDependencies": [
+      
+   ]
+}
