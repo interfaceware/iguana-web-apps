@@ -73,7 +73,21 @@ channelmanager.presentation = {
    function APPbreadCrumb(T){
       return "<hr><a href='#'>Dashboard</a> &gt; "+ T +"<hr>";
    }
-
+   
+   function APPsafeCall(Url, SuccessFunc){
+      $.ajax({
+          url : Url,
+          success : function (Data) {
+             if (Data.error){
+                APPisError(Data.error);
+                return;
+             } else {
+               SuccessFunc(Data);
+             }
+          }
+      });
+   }
+   
    APP.listChannels = function() {
       var H = APPheader();
       H += "<hr>Dashboard</hr>";
@@ -83,35 +97,34 @@ channelmanager.presentation = {
       H += "</div><p><a href='#Page=addChannel'>Add Channel</a>" + APPfooter();
       $('body').html(H);
    
-      $.ajax({
-         url: "/channelmanager/list-channels",
-         success: function(Data) {
+      APPsafeCall(
+         "/channelmanager/list-channels",
+         function(Data) {
            Results = Data;
            $("#channels_list_table").dataTable(Results);
          }
-      });
+      );
     }
     APP.default = APP.listChannels;
    
     // I purposely build up the HTML directly to keep local control
     APP.exportSummary = function(Params) {
-       $.ajax({
-        url: "/channelmanager/config_info",
-        success: function (Data) {
+       APPsafeCall(
+          "/channelmanager/config_info",
+          function (Data) {
            console.log(Data);
            var H =APPheader() + APPbreadCrumb('Export Channel') + "Do you want to export Channel <b>" + Params.Name + "</b> into <i>" + Data.ExportPath + "</i>?<br><a href='#Page=executeExportChannel&Name=" + Params.Name + "'>Yes!</a>" + APPfooter();  
            $('body').html(H);        
         }
-       });
+       );
      }
    
      APP.executeExportChannel = function(Params){
-        $.ajax({
-           url: "/channelmanager/export_channel?name=" + Params.Name,
-           success: function (Data) {
+        APPsafeCall("/channelmanager/export_channel?name=" + Params.Name,
+           function (Data) {
               document.location.hash = "#Page=exportChannelComplete&Name=" + Params.Name;
            }
-        });
+        );
      }
    
      APP.exportChannelComplete = function(Params){
@@ -119,9 +132,8 @@ channelmanager.presentation = {
      }
    
     APP.replaceChannel = function(Params) {
-        $.ajax({
-        url: "/channelmanager/importList",
-        success: function (Data) {
+        APPsafeCall("/channelmanager/importList",
+          function (Data) {
            console.log(Data);
            var H =APPheader() + APPbreadCrumb('Replace Channel') + "Replace Channel " + Params.Name + " with:<ol>" ;  
            for (var i = 0; i < Data.length; i++){
@@ -130,7 +142,7 @@ channelmanager.presentation = {
            H += "</ol>" + APPfooter();
            $('body').html(H);        
         }
-       });
+       );
      }
    
    APP.confirmReplaceChannel = function(Params) {
@@ -140,13 +152,15 @@ channelmanager.presentation = {
       $('body').html(H);
    }
    
+   function APPisError(Msg){
+      $('body').html(APPheader() + "<font color='red'>" + Msg + '</font> <p><a href="#">Back to dashboard</a>' + APPfooter());
+   }
+   
    APP.executeReplaceChannel = function(Params) {
-      $.ajax({
-         url: "/channelmanager/replaceChannel?name=" + Params.Name + "&with=" + Params.With,
-         success: function (Data) {
+      APPsafeCall("/channelmanager/replaceChannel?name=" + Params.Name + "&with=" + Params.With,
+           function (Data) {
             document.location.hash = "#Page=replaceChannelComplete&Name=" + Params.Name + "&With=" + Params.With;
-         }
-     }); 
+         });
    }
    
    APP.replaceChannelComplete = function(Params) {
@@ -154,9 +168,8 @@ channelmanager.presentation = {
    }
    
    APP.addChannel = function(Params) {
-        $.ajax({
-        url: "/channelmanager/importList",
-        success: function (Data) {
+        APPsafeCall("/channelmanager/importList",
+          function (Data) {
            console.log(Data);
            var H =APPheader() + APPbreadCrumb('Add Channel') + "Add Channel from:<ol>" ;  
            for (var i = 0; i < Data.length; i++){
@@ -165,7 +178,7 @@ channelmanager.presentation = {
            H += "</ol>" + APPfooter();
            $('body').html(H);        
         }
-       });
+       );
    }
    
    APP.confirmAddChannel = function(Params) {
@@ -176,12 +189,11 @@ channelmanager.presentation = {
    }
    
    APP.executeAddChannel = function(Params) {
-      $.ajax({
-         url: "/channelmanager/addChannel?name=" + Params.Name + "&with=" + Params.With,
-         success: function (Data) {
+      APPsafeCall("/channelmanager/addChannel?name=" + Params.Name + "&with=" + Params.With,
+                function (Data) {
             document.location.hash = "#Page=addChannelComplete&Name=" + Params.Name + "&With=" + Params.With;
          }
-     });   
+     );   
    }
    
    APP.addChannelComplete = function(Params) {

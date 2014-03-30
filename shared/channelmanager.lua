@@ -1,4 +1,7 @@
 channelmanager = {}
+require 'node'
+require 'file'
+
 require "channelmanager.backend"
 require "channelmanager.backend.import"
 require "channelmanager.backend.export"

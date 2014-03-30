@@ -2,41 +2,26 @@ channelmanager.utils = {}
 
 local lm = channelmanager.utils
 
-function lm.channelInfo(Ch)
+function lm.translatorGuids(ChannelConfig)
    local Info = {}   
-   Info.name = Ch.name:nodeValue()
-   Info.config = Ch
-   Info.trans_guids = {}
-   
-   if Ch.to_mapper then
-      Info.trans_guids.to = Ch.to_mapper.guid:nodeValue()
+   local C = ChannelConfig.channel;
+   if C.to_mapper then
+      Info.to = Ch.to_mapper.guid:nodeValue()
    end
-
-   if Ch.from_mapper then
-      Info.trans_guids.from = Ch.from_mapper.guid:nodeValue()
+   if C.from_mapper then
+      Info.from = C.from_mapper.guid:nodeValue()
    end
-
-   if Ch.message_filter 
-      and Ch.message_filter.translator_guid 
-      and not lm.isNullGuid(Ch.message_filter.translator_guid)
-      then
-      Info.trans_guids.filter = Ch.message_filter.translator_guid:nodeValue()
+   if C.use_message_filter:S() == 'yes' and C.message_filter and
+      C.message_filter.use_translator_filter and
+      C.message_filter.translator_guid then
+      Info.filter = C.message_filter.translator_guid:nodeValue()
    end
-   
-   -- TODO: confirm this one works
-   if Ch.from_llp_listener 
-      and Ch.from_llp_listener.ack_script 
-      then
-      Info.trans_guids.ack = Ch.from_llp_listener.ack_script:nodeValue()
+   if C.from_llp_listener and C.from_llp_listener.ack_script then
+      Info.ack = C.from_llp_listener.ack_script:nodeValue()
    end
-
-   -- TODO: confirm this one works
-   if Ch.from_http 
-      and Ch.from_http.guid 
-      then
-      Info.trans_guids.http = Ch.from_http.guid:nodeValue()
-   end
-   
+   if C.from_http and C.from_http.guid then
+      Info.http = C.from_http.guid:nodeValue()
+   end   
    return Info
 end
 
@@ -56,12 +41,12 @@ function lm.readFile(FileName)
 end
 
 function lm.writeFile(FileName, Content)
-   local Parts = FileName:split("/")
+   local Parts = FileName:split(os.fs.dirSep())
    local Dir = ''
    for i = 1, #Parts-1 do
-      Dir = Dir..Parts[i]..'/'
+      Dir = Dir..os.fs.addDir(Parts[i])
       trace(Dir)
-      if not os.fs.stat(Dir) then
+      if not os.fs.dirExists(Dir) then
          os.fs.mkdir(Dir)
       end
    end
@@ -80,26 +65,28 @@ function lm.deleteDir(DTree, Parent)
    local Parent = Parent or ''
    for K,V in pairs(DTree) do
       trace(K,V)
-      lm.deleteDir(V, Parent..K..'/')
+      lm.deleteDir(V, Parent..K:addDir())
    end
    lm.removeDir(Parent)
 end
 
+-- TODO THIS ROUTINE NEEDS CHECKING UNDER POSIX
 function lm.cleanDirList(FileList, Root)
    local DTree = {}
    for i=1, #FileList do
-      local Parts = FileList[i]:sub(#Root+1):split("/")
+      local Parts = FileList[i]:sub(#Root+1):split(os.fs.dirSep())
       local Dir = ''
       Tree = DTree
-      for j=2, #Parts-1 do
-         Dir = Dir..Parts[j]..'/'
+      for j=1, #Parts-1 do
+         Dir = Dir..Parts[j]:addDir()
          trace(Dir)
          if not Tree[Parts[j]] then
             Tree[Parts[j]] = {}
          end
         
          Tree = Tree[Parts[j]]
-         if (#Dir > #channelmanager.config.scratchDir and Dir:sub(1, #channelmanager.config.scratchDir) == channelmanager.config.scratchDir) then
+         if (#Dir > #channelmanager.config.scratchDir and Dir:sub(1, 
+                  #channelmanager.config.scratchDir) == channelmanager.config.scratchDir) then
              DirList[Dir] = ''
          end
         
@@ -107,7 +94,18 @@ function lm.cleanDirList(FileList, Root)
       trace(DTree)
    end
    trace(DTree)
-   lm.deleteDir(DTree, Root..'/')
+   lm.deleteDir(DTree, Root:addDir())
+end
+
+function lm.doesChannelExist(Name)
+   local X = xml.parse{data=iguana.status()}
+   for i = 1, X.IguanaStatus:childCount("Channel") do
+      local C = X.IguanaStatus:child("Channel", i)
+      if tostring(C.Name) == Name then
+         return true;
+      end
+   end
+   return false
 end
 
 function lm.isNullGuid(Guid)
@@ -121,6 +119,13 @@ end
 
 function lm.undoCleanChannelName(Name)
    return tostring(Name):gsub("_", " "):lower()
+end
+
+function lm.channelApi()
+   local Web = iguana.webInfo()
+   return iguanaServer.connect{url='http://localhost:'..Web.web_config.port, 
+      username=channelmanager.config.username, 
+      password=channelmanager.config.password}
 end
 
 function string.split(s, d)

@@ -1,0 +1,1140 @@
+{
+   "Samples": [
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20110213144932||ADT^A03|9B38584D9903051F0D2B52CC0148965775D2D23FE4C51BE060B33B6ED27DA820|P|2.6|\rEVN||20110213144532||||20110213145902|\rPID|||4525285^^^ADT1||Smith^Tracy||19980210|F||Martian|86 Yonge St.^^ST. LOUIS^MO^51460|||||||10-346-6|284-517-569|\rNK1|1|Smith^Gary|Second Cousin|\rPV1||E||||||5101^Garland^Mary^F^^DR|||||||||||1318095^^^ADT1|||||||||||||||||||||||||20110213144956|\rOBX|||WT^WEIGHT||102|pounds|\rOBX|||HT^HEIGHT||32|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|E\\T\\R|Main HIS|St. Micheals|20110213145021||ADT^A06|9B38584DA303F7ED07273FE10576A472B249E504F5954D8769AF13C14F650175|P|2.6|\rEVN||20110213144500||||20110213150105|\rPID|||5488754^^^ADT1||Smith^Fred||20041012|M||Martian|20 Delphi Cres.^^Chicago^IL^55037|||||||59-693-654|558-171-617|\rNK1|1|Smith^Gary|Second Cousin|\rNK1|2|Muir^Sabrina|Sibling|\rPV1||E||||||5101^Muir^Sabrina^F^^DR|||||||||||9997558^^^ADT1|||||||||||||||||||||||||20110213145237|\rOBX|||WT^WEIGHT||59|pounds|\rOBX|||HT^HEIGHT||45|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20110213150118||ADT^A08|9B38584DA303DF33647A484391DBB88EF81C297217D5FFD937D52A404A797184|P|2.6|\rEVN||20110213144526||||20110213145620|\rPID|||9639271^^^ADT1||WHITE^Tracy||19860510|F||Martian|567 Miller Lane^^Chicago^IL^68230|||||||48-57-466|571-349-734|\rNK1|1|Smith^Tracy|Grandchild|\rNK1|2|Smith^Fred|Second Cousin|\rNK1|3|Fitzgerald^Gary|Sibling|\rPV1||E||||||5101^WHITE^Tracy^F^^DR|||||||||||5611438^^^ADT1|||||||||||||||||||||||||20110213144706|\rOBX|||WT^WEIGHT||80|pounds|\rOBX|||HT^HEIGHT||77|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20110213144631||ADT^A06|9B38584DA303E1BFC835DAF99C35E4159E68D5DA5D4660A7DEBC1FFC563F790E|P|2.6|\rEVN||20110213144530||||20110213145241|\rPID|||2668844^^^ADT1||Fitzgerald^Gary||19800204|M||Mixed|16 Miller Lane^^LA^CA^49770|||||||38-322-557|957-321-126|\rNK1|1|Meade^Tracy|Grandchild|\rNK1|2|Garland^Fred|Parent|\rNK1|3|Muir^Fred|Sibling|\rNK1|4|Meade^Jim|Grandchild|\rPV1||E||||||5101^Meade^Tracy^F^^DR|||||||||||7958006^^^ADT1|||||||||||||||||||||||||20110213144638|\rOBX|||WT^WEIGHT||86|pounds|\rOBX|||HT^HEIGHT||97|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|Lab|Main HIS|St. Micheals|20110213145719||ADT^A08|9B38584DA3039AB797D5F679CB5E6C52CAE1D02603C4FCB4C26F7B93B843DAF1|P|2.6|\rEVN||20110213145429||||20110213145543|\rPID|||9229102^^^ADT1||Fitzgerald^Tracy||19940715|F||Mixed|6 Yonge St.^^ST. LOUIS^MO^85360|||||||89-124-504|223-15-522|\rNK1|1|Muir^Fred|Second Cousin|\rPV1||E||||||5101^Smith^Mary^F^^DR|||||||||||5798822^^^ADT1|||||||||||||||||||||||||20110213145855|\rOBX|||WT^WEIGHT||105|pounds|\rOBX|||HT^HEIGHT||26|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|Lab|Main HIS|St. Micheals|20110213144459||ADT^A07|9B38584DAD033DA7FD4ADFA6B96E77E81975F3FC5E1612353570D627D20EC6DB|P|2.6|\rEVN||20110213144453||||20110213145937|\rPID|||4101077^^^ADT1||Adams^Jim||20030421|M||AI|325 Miller Lane^^Chicago^IL^44197|||||||28-273-981|128-474-184|\rNK1|1|Garland^Sabrina|Parent|\rNK1|2|Adams^Gary|Parent|\rNK1|3|Fitzgerald^Fred|Grandchild|\rNK1|4|Meade^Fred|Second Cousin|\rNK1|5|Muir^Mary|Parent|\rNK1|6|Meade^Sabrina|Second Cousin|\rPV1||E||||||5101^Adams^John^F^^DR|||||||||||9827265^^^ADT1|||||||||||||||||||||||||20110213145723|\rOBX|||WT^WEIGHT||43|pounds|\rOBX|||HT^HEIGHT||43|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|E\\T\\R|Main HIS|St. Micheals|20110213145949||ADT^A04|9B38584DAD03F1CAC02579FD931649D970E61A9FF57DFFA35DC62FD3BCF40974|P|2.6|\rEVN||20110213144625||||20110213145826|\rPID|||4636372^^^ADT1||Adams^Jim||20000115|M||EU|691 Delphi Cres.^^Toronto^ON^16035|||||||65-504-259|222-886-83|\rNK1|1|Smith^Fred|Parent|\rNK1|2|Adams^Mary|Grandchild|\rNK1|3|Garland^Fred|Grandchild|\rNK1|4|Fitzgerald^Tracy|Parent|\rPV1||E||||||5101^Meade^Tracy^F^^DR|||||||||||4781640^^^ADT1|||||||||||||||||||||||||20110213145553|\rOBX|||WT^WEIGHT||105|pounds|\rOBX|||HT^HEIGHT||48|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20110213145836||ADT^A06|9B38584DAD03C252FEE4AC8D354CE5F8AD711726C9898DD56AFFB8DFA36B0911|P|2.6|\rEVN||20110213145206||||20110213145952|\rPID|||2664571^^^ADT1||Muir^Fred||19880730|M||EU|611 Delphi Cres.^^Chicago^IL^63277|||||||35-627-365|430-554-818|\rNK1|1|Fitzgerald^Jim|Parent|\rNK1|2|Garland^Tracy|Parent|\rNK1|3|Smith^Mary|Sibling|\rNK1|4|WHITE^Sabrina|Second Cousin|\rNK1|5|Meade^Sabrina|Grandchild|\rNK1|6|Adams^Sabrina|Parent|\rPV1||E||||||5101^Adams^Fred^F^^DR|||||||||||8765831^^^ADT1|||||||||||||||||||||||||20110213144944|\rOBX|||WT^WEIGHT||129|pounds|\rOBX|||HT^HEIGHT||25|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|E\\T\\R|Main HIS|St. Micheals|20110213145412||ADT^A08|9B38584DB703F8D36F9EAA83755412BC99EBE168A3EB65AC7513EBD8B64023C1|P|2.6|\rEVN||20110213145629||||20110213150021|\rPID|||3801691^^^ADT1||Garland^John||20091029|M||Unknown|859 Delphi Cres.^^Chicago^IL^29469|||||||13-878-288|734-743-523|\rNK1|1|Garland^John|Grandchild|\rNK1|2|Meade^Fred|Grandchild|\rNK1|3|Smith^Gary|Grandchild|\rNK1|4|WHITE^Tracy|Grandchild|\rNK1|5|WHITE^Tracy|Sibling|\rNK1|6|WHITE^Fred|Grandchild|\rPV1||E||||||5101^Meade^John^F^^DR|||||||||||7474898^^^ADT1|||||||||||||||||||||||||20110213150127|\rOBX|||WT^WEIGHT||38|pounds|\rOBX|||HT^HEIGHT||89|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|E\\T\\R|Main HIS|St. Micheals|20110213150034||ADT^A03|9B38584DB703ED4885722A4E6A238EB623EB6FB9B3B51C53C3C99B9578D19B4D|P|2.6|\rEVN||20110213145501||||20110213144945|\rPID|||3769952^^^ADT1||Fitzgerald^Sabrina||19870225|F||Martian|342 Delphi Cres.^^ST. LOUIS^MO^85610|||||||58-632-358|215-397-681|\rNK1|1|Smith^Sabrina|Sibling|\rPV1||E||||||5101^Meade^Mary^F^^DR|||||||||||8904385^^^ADT1|||||||||||||||||||||||||20110213145810|\rOBX|||WT^WEIGHT||105|pounds|\rOBX|||HT^HEIGHT||64|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20110213150035||ADT^A07|9B38584DC10307B1591191C946C6EBED9D412B30110B96E4A15758263259FBA3|P|2.6|\rEVN||20110213144620||||20110213145447|\rPID|||3609119^^^ADT1||Garland^Jim||19980704|M||Unknown|204 Miller Lane^^Chicago^IL^22822|||||||54-646-284|317-481-445|\rNK1|1|Meade^Gary|Sibling|\rNK1|2|Fitzgerald^Sabrina|Parent|\rNK1|3|Muir^Mary|Second Cousin|\rNK1|4|Smith^Sabrina|Sibling|\rPV1||E||||||5101^Fitzgerald^Gary^F^^DR|||||||||||6527909^^^ADT1|||||||||||||||||||||||||20110213150043|\rOBX|||WT^WEIGHT||122|pounds|\rOBX|||HT^HEIGHT||24|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|E\\T\\R|Main HIS|St. Micheals|20110213145551||ADT^A05|9B38584DC10324E0523E35234557DDB96AD25CB533D8414160FC19C6FF0934C7|P|2.6|\rEVN||20110213145620||||20110213144643|\rPID|||9710684^^^ADT1||Muir^Tracy||19920414|F||EU|739 Delphi Cres.^^LA^CA^18272|||||||84-154-102|415-104-144|\rNK1|1|Fitzgerald^Gary|Second Cousin|\rNK1|2|Adams^Tracy|Grandchild|\rPV1||E||||||5101^WHITE^Fred^F^^DR|||||||||||4447157^^^ADT1|||||||||||||||||||||||||20110213150102|\rOBX|||WT^WEIGHT||71|pounds|\rOBX|||HT^HEIGHT||79|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20110213144537||ADT^A07|9B38584DC103EF70A86D7628F7EF0E59D95BB8A854F3810A2436BD59DB9715B1|P|2.6|\rEVN||20110213150054||||20110213145540|\rPID|||8018738^^^ADT1||Adams^Fred||19880701|M||EU|822 Delphi Cres.^^LA^CA^87878|||||||94-691-189|98-875-930|\rNK1|1|Meade^John|Parent|\rNK1|2|Fitzgerald^John|Sibling|\rNK1|3|Meade^Fred|Second Cousin|\rNK1|4|WHITE^Fred|Parent|\rNK1|5|WHITE^John|Sibling|\rPV1||E||||||5101^Meade^Jim^F^^DR|||||||||||7545396^^^ADT1|||||||||||||||||||||||||20110213144625|\rOBX|||WT^WEIGHT||44|pounds|\rOBX|||HT^HEIGHT||79|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20110213145912||ADT^A05|9B38584DC10304F38ED1254C28E1E809F4DC3C02A63BEBBE1F3AA87E3E66104F|P|2.6|\rEVN||20110213144659||||20110213145254|\rPID|||4000366^^^ADT1||Garland^Sabrina||19881205|F||EU|862 Yonge St.^^Chicago^IL^5619|||||||17-561-886|246-535-81|\rNK1|1|Garland^Jim|Grandchild|\rNK1|2|Muir^Tracy|Grandchild|\rNK1|3|Fitzgerald^Gary|Grandchild|\rNK1|4|Muir^Jim|Parent|\rPV1||E||||||5101^Garland^Tracy^F^^DR|||||||||||9700308^^^ADT1|||||||||||||||||||||||||20110213150032|\rOBX|||WT^WEIGHT||37|pounds|\rOBX|||HT^HEIGHT||83|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|E\\T\\R|Main HIS|St. Micheals|20110213145956||ADT^A07|9B38584DCB03B0577D55CF66983BA79B39022ABD61F9E0188DD9BD03B2C99446|P|2.6|\rEVN||20110213144818||||20110213144552|\rPID|||2495499^^^ADT1||Meade^Sabrina||20001005|F||Martian|207 Miller Lane^^Toronto^ON^16200|||||||7-264-942|365-5-488|\rNK1|1|Garland^Sabrina|Second Cousin|\rNK1|2|Smith^Fred|Grandchild|\rNK1|3|WHITE^Tracy|Grandchild|\rNK1|4|Fitzgerald^John|Grandchild|\rNK1|5|Adams^Mary|Parent|\rPV1||E||||||5101^WHITE^Tracy^F^^DR|||||||||||602131^^^ADT1|||||||||||||||||||||||||20110213150128|\rOBX|||WT^WEIGHT||82|pounds|\rOBX|||HT^HEIGHT||103|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|E\\T\\R|Main HIS|St. Micheals|20110213144821||ADT^A07|9B38584DCB037377C47014FD7158FD51967D37E356CF7BE1CFF75BDBB3D9379E|P|2.6|\rEVN||20110213145348||||20110213145206|\rPID|||9714041^^^ADT1||Smith^Fred||20091023|M||Mixed|754 Miller Lane^^LA^CA^75347|||||||79-525-164|192-517-281|\rNK1|1|WHITE^Sabrina|Grandchild|\rNK1|2|Smith^Sabrina|Parent|\rNK1|3|Meade^Sabrina|Sibling|\rNK1|4|Meade^Mary|Parent|\rNK1|5|Adams^Tracy|Parent|\rPV1||E||||||5101^Meade^Tracy^F^^DR|||||||||||677206^^^ADT1|||||||||||||||||||||||||20110213144616|\rOBX|||WT^WEIGHT||114|pounds|\rOBX|||HT^HEIGHT||112|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20110213145406||ADT^A05|9B38584DCB03C977830A58B059F585297798842043C5497B9F90DAA085B666B0|P|2.6|\rEVN||20110213145747||||20110213145039|\rPID|||2593158^^^ADT1||WHITE^Sabrina||19801004|F||Unknown|46 Miller Lane^^Chicago^IL^44932|||||||2-545-716|889-434-261|\rNK1|1|Meade^Tracy|Parent|\rNK1|2|Fitzgerald^Jim|Second Cousin|\rNK1|3|WHITE^Jim|Sibling|\rNK1|4|Adams^Fred|Parent|\rPV1||E||||||5101^Smith^Mary^F^^DR|||||||||||1701102^^^ADT1|||||||||||||||||||||||||20110213144741|\rOBX|||WT^WEIGHT||99|pounds|\rOBX|||HT^HEIGHT||79|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20110213145406||ADT^A03|9B38584DD503F6C04FCBF6FB8E156BBB53FF6AB228E34ABDF5EABFB92ADA3B39|P|2.6|\rEVN||20110213144629||||20110213144729|\rPID|||5280618^^^ADT1||Fitzgerald^Tracy||19941123|F||Martian|757 Yonge St.^^Chicago^IL^20374|||||||3-4-885|773-626-1|\rNK1|1|Meade^Tracy|Parent|\rNK1|2|Adams^Sabrina|Second Cousin|\rNK1|3|Muir^Sabrina|Parent|\rNK1|4|Fitzgerald^Gary|Second Cousin|\rNK1|5|Adams^Jim|Sibling|\rPV1||E||||||5101^Garland^John^F^^DR|||||||||||9457686^^^ADT1|||||||||||||||||||||||||20110213145053|\rOBX|||WT^WEIGHT||69|pounds|\rOBX|||HT^HEIGHT||44|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20110213145000||ADT^A04|9B38584DD503F8A5CBEEBC5FD9E0D5C394AD56E4FBF217C99033F95ED4D6DB44|P|2.6|\rEVN||20110213145235||||20110213145627|\rPID|||920744^^^ADT1||Muir^John||20020402|M||EU|7 Yonge St.^^Toronto^ON^99224|||||||35-853-887|985-733-84|\rNK1|1|Meade^Tracy|Parent|\rNK1|2|Smith^Tracy|Parent|\rNK1|3|WHITE^Jim|Second Cousin|\rNK1|4|Garland^Jim|Parent|\rPV1||E||||||5101^Smith^Jim^F^^DR|||||||||||9736930^^^ADT1|||||||||||||||||||||||||20110213145635|\rOBX|||WT^WEIGHT||110|pounds|\rOBX|||HT^HEIGHT||42|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20110213145127||ADT^A01|9B38584DD503EB146A54470BF74D6B5E5494E10490BE4EC895B246326914EFF9|P|2.6|\rEVN||20110213145815||||20110213150011|\rPID|||6293527^^^ADT1||Adams^Tracy||19971118|F||Mixed|166 Miller Lane^^ST. LOUIS^MO^55818|||||||11-999-790|161-103-266|\rNK1|1|WHITE^Fred|Second Cousin|\rNK1|2|Muir^Fred|Sibling|\rNK1|3|Meade^Mary|Sibling|\rNK1|4|Muir^Fred|Second Cousin|\rNK1|5|Muir^Sabrina|Parent|\rPV1||E||||||5101^Fitzgerald^Sabrina^F^^DR|||||||||||7991882^^^ADT1|||||||||||||||||||||||||20110213145502|\rOBX|||WT^WEIGHT||118|pounds|\rOBX|||HT^HEIGHT||32|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|E\\T\\R|Main HIS|St. Micheals|20110213144952||ADT^A06|9B38584DDF0399DB1ED94B716C7D10C5E520DDDD8D5E79A3226C1E0A403D3240|P|2.6|\rEVN||20110213145638||||20110213144929|\rPID|||3121739^^^ADT1||WHITE^Mary||19990916|F||Unknown|307 Miller Lane^^Toronto^ON^57118|||||||73-182-502|186-647-288|\rNK1|1|Adams^Gary|Sibling|\rNK1|2|Adams^Gary|Second Cousin|\rNK1|3|Fitzgerald^Fred|Parent|\rNK1|4|Smith^Gary|Grandchild|\rNK1|5|Meade^John|Grandchild|\rNK1|6|WHITE^John|Parent|\rPV1||E||||||5101^Smith^Gary^F^^DR|||||||||||7773064^^^ADT1|||||||||||||||||||||||||20110213145739|\rOBX|||WT^WEIGHT||80|pounds|\rOBX|||HT^HEIGHT||83|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20110213145751||ADT^A04|9B38584DDF03A90F8A312B8D1E338E4F6198DF2D658D5BD9E33D1AFDA3731919|P|2.6|\rEVN||20110213144941||||20110213145633|\rPID|||2733543^^^ADT1||Garland^John||19891108|M||AI|105 Miller Lane^^Toronto^ON^29197|||||||59-886-817|698-991-819|\rNK1|1|Smith^Mary|Grandchild|\rNK1|2|Meade^Sabrina|Sibling|\rNK1|3|Adams^Mary|Grandchild|\rPV1||E||||||5101^Adams^John^F^^DR|||||||||||7921079^^^ADT1|||||||||||||||||||||||||20110213145650|\rOBX|||WT^WEIGHT||63|pounds|\rOBX|||HT^HEIGHT||44|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|Lab|Main HIS|St. Micheals|20110213145148||ADT^A01|9B38584DDF03F3F45893B1F5449FD64C28122F1A7399FDD87C1CA52BAC7B2642|P|2.6|\rEVN||20110213150051||||20110213150103|\rPID|||3129673^^^ADT1||Smith^Jim||20090424|M||Unknown|413 Delphi Cres.^^Chicago^IL^28068|||||||40-608-73|187-829-666|\rNK1|1|Garland^John|Parent|\rNK1|2|WHITE^Mary|Grandchild|\rPV1||E||||||5101^WHITE^Tracy^F^^DR|||||||||||6334727^^^ADT1|||||||||||||||||||||||||20110213145740|\rOBX|||WT^WEIGHT||59|pounds|\rOBX|||HT^HEIGHT||113|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20110213145334||ADT^A01|9C38584D010046B8C3658DFA2A0EB0F2110164A96062AE31BD1BF48D63ED15D8|P|2.6|\rEVN||20110213144924||||20110213144530|\rPID|||6096377^^^ADT1||Meade^Tracy||20040309|F||Martian|393 Yonge St.^^LA^CA^63307|||||||41-261-984|255-883-465|\rNK1|1|Smith^Gary|Second Cousin|\rNK1|2|Smith^Sabrina|Sibling|\rNK1|3|Fitzgerald^John|Parent|\rNK1|4|Adams^Fred|Second Cousin|\rNK1|5|Smith^Tracy|Parent|\rPV1||E||||||5101^Adams^Mary^F^^DR|||||||||||7969298^^^ADT1|||||||||||||||||||||||||20110213145313|\rOBX|||WT^WEIGHT||126|pounds|\rOBX|||HT^HEIGHT||74|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|E\\T\\R|Main HIS|St. Micheals|20110213150045||ADT^A04|9C38584D01000E903C0D4B882BE373B067A974F0B68C12D383B4F1D619D61D7F|P|2.6|\rEVN||20110213145711||||20110213145017|\rPID|||6652730^^^ADT1||Adams^Mary||19830902|F||Martian|880 Yonge St.^^LA^CA^85900|||||||97-369-394|133-204-246|\rNK1|1|Meade^Jim|Sibling|\rNK1|2|Adams^Jim|Sibling|\rNK1|3|Fitzgerald^Tracy|Parent|\rPV1||E||||||5101^Muir^Sabrina^F^^DR|||||||||||3226417^^^ADT1|||||||||||||||||||||||||20110213145111|\rOBX|||WT^WEIGHT||71|pounds|\rOBX|||HT^HEIGHT||35|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20110213144720||ADT^A01|9C38584D01007B664A2D7B66700F5F2C45D8871E0D7F9C01A59522E7D0F2A84D|P|2.6|\rEVN||20110213144941||||20110213150006|\rPID|||281991^^^ADT1||Smith^Fred||19840207|M||Mixed|571 Yonge St.^^ST. LOUIS^MO^36928|||||||19-965-458|663-681-541|\rNK1|1|Smith^Jim|Parent|\rNK1|2|Smith^Gary|Second Cousin|\rNK1|3|Fitzgerald^John|Parent|\rNK1|4|Smith^Mary|Sibling|\rNK1|5|Meade^Fred|Parent|\rPV1||E||||||5101^Smith^Mary^F^^DR|||||||||||8488113^^^ADT1|||||||||||||||||||||||||20110213144734|\rOBX|||WT^WEIGHT||59|pounds|\rOBX|||HT^HEIGHT||32|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20110213145658||ADT^A04|9C38584D0B00FC8735F885B34288F7905D31A2691353E0193A5DD7242D80FA37|P|2.6|\rEVN||20110213144820||||20110213144929|\rPID|||8426465^^^ADT1||Adams^Jim||19871018|M||EU|927 Main Rd.^^Toronto^ON^95529|||||||52-445-477|108-729-768|\rNK1|1|Smith^Mary|Second Cousin|\rNK1|2|WHITE^John|Grandchild|\rNK1|3|Smith^John|Second Cousin|\rNK1|4|Smith^Tracy|Sibling|\rNK1|5|Garland^Gary|Grandchild|\rPV1||E||||||5101^Fitzgerald^Gary^F^^DR|||||||||||2346568^^^ADT1|||||||||||||||||||||||||20110213145041|\rOBX|||WT^WEIGHT||86|pounds|\rOBX|||HT^HEIGHT||62|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|Lab|Main HIS|St. Micheals|20110213144500||ADT^A06|9C38584D0B00943D14F70A5BC9DE100ECC16E6061AAD4B5A24B6D8773BDF9F7B|P|2.6|\rEVN||20110213144934||||20110213145647|\rPID|||1077914^^^ADT1||WHITE^Tracy||19861103|F||EU|59 Main Rd.^^Chicago^IL^45766|||||||28-575-636|151-224-577|\rNK1|1|Fitzgerald^Sabrina|Second Cousin|\rNK1|2|Muir^Sabrina|Grandchild|\rNK1|3|Adams^Mary|Parent|\rNK1|4|Smith^Sabrina|Sibling|\rNK1|5|Garland^Tracy|Grandchild|\rPV1||E||||||5101^WHITE^John^F^^DR|||||||||||6457716^^^ADT1|||||||||||||||||||||||||20110213145352|\rOBX|||WT^WEIGHT||99|pounds|\rOBX|||HT^HEIGHT||83|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|E\\T\\R|Main HIS|St. Micheals|20110213145855||ADT^A01|9C38584D0B0026291718A06E5320E41E38367EB7D2E34B86E12192096B8A7060|P|2.6|\rEVN||20110213144556||||20110213150018|\rPID|||2824793^^^ADT1||Meade^Tracy||19870510|F||AI|63 Yonge St.^^LA^CA^59334|||||||49-917-526|379-78-750|\rNK1|1|Adams^Jim|Second Cousin|\rNK1|2|Fitzgerald^Gary|Parent|\rNK1|3|Meade^Mary|Parent|\rNK1|4|Adams^Sabrina|Second Cousin|\rNK1|5|Muir^John|Second Cousin|\rPV1||E||||||5101^Smith^Sabrina^F^^DR|||||||||||1993469^^^ADT1|||||||||||||||||||||||||20110213144523|\rOBX|||WT^WEIGHT||90|pounds|\rOBX|||HT^HEIGHT||24|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20110213144826||ADT^A03|9C38584D1500CCCCBD1EB2542C3CACC2BAB87039E232BF7D4E134A58D7B51C6A|P|2.6|\rEVN||20110213144859||||20110213145140|\rPID|||4264962^^^ADT1||WHITE^Mary||19850228|F||Mixed|560 Main Rd.^^ST. LOUIS^MO^54619|||||||3-501-100|127-619-382|\rNK1|1|Muir^Jim|Parent|\rPV1||E||||||5101^Fitzgerald^John^F^^DR|||||||||||4251228^^^ADT1|||||||||||||||||||||||||20110213144940|\rOBX|||WT^WEIGHT||106|pounds|\rOBX|||HT^HEIGHT||93|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20110213150020||ADT^A05|9C38584D1500A1690623150F197BBA048D81B81142DAF0DF433B1EE3FB3C95B1|P|2.6|\rEVN||20110213145536||||20110213145135|\rPID|||2441786^^^ADT1||WHITE^Sabrina||20040225|F||AI|8 Main Rd.^^LA^CA^46709|||||||41-408-738|393-761-521|\rNK1|1|Muir^Sabrina|Grandchild|\rNK1|2|Smith^Tracy|Second Cousin|\rPV1||E||||||5101^Adams^John^F^^DR|||||||||||5814081^^^ADT1|||||||||||||||||||||||||20110213144945|\rOBX|||WT^WEIGHT||109|pounds|\rOBX|||HT^HEIGHT||102|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|E\\T\\R|Main HIS|St. Micheals|20110213145657||ADT^A07|9C38584D15002C7D0F2D407CD6B3C8A130257EA2C6ABAD1BF04818620AB26441|P|2.6|\rEVN||20110213145903||||20110213144522|\rPID|||4864650^^^ADT1||Smith^John||19950705|M||Mixed|685 Main Rd.^^ST. LOUIS^MO^76305|||||||10-530-803|859-529-286|\rNK1|1|Muir^Tracy|Grandchild|\rNK1|2|Garland^Tracy|Grandchild|\rNK1|3|Adams^Tracy|Parent|\rPV1||E||||||5101^Smith^Tracy^F^^DR|||||||||||6388134^^^ADT1|||||||||||||||||||||||||20110213144537|\rOBX|||WT^WEIGHT||105|pounds|\rOBX|||HT^HEIGHT||69|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20110213145610||ADT^A03|9C38584D1F00E87DB40967CE3B719C314284D9E23E4B0F226B034B215B9DECDD|P|2.6|\rEVN||20110213144728||||20110213144745|\rPID|||3749504^^^ADT1||Meade^Fred||19850328|M||Martian|48 Miller Lane^^ST. LOUIS^MO^75738|||||||42-369-108|559-465-7|\rNK1|1|Adams^Gary|Sibling|\rNK1|2|Fitzgerald^Jim|Sibling|\rNK1|3|Garland^Gary|Grandchild|\rNK1|4|Meade^Fred|Parent|\rNK1|5|Muir^Jim|Parent|\rPV1||E||||||5101^Meade^Tracy^F^^DR|||||||||||1657155^^^ADT1|||||||||||||||||||||||||20110213144747|\rOBX|||WT^WEIGHT||83|pounds|\rOBX|||HT^HEIGHT||41|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20110213150101||ADT^A05|9C38584D1F005FC5274798AD434B171E6259A041B9355BC93195E18208AA2215|P|2.6|\rEVN||20110213145228||||20110213145521|\rPID|||5645619^^^ADT1||Muir^John||20060915|M||Martian|773 Delphi Cres.^^Toronto^ON^16096|||||||35-263-880|800-893-826|\rNK1|1|Fitzgerald^Sabrina|Parent|\rNK1|2|WHITE^Gary|Second Cousin|\rNK1|3|Muir^Jim|Grandchild|\rNK1|4|Adams^Sabrina|Sibling|\rNK1|5|WHITE^Mary|Parent|\rPV1||E||||||5101^Muir^John^F^^DR|||||||||||9465926^^^ADT1|||||||||||||||||||||||||20110213145425|\rOBX|||WT^WEIGHT||67|pounds|\rOBX|||HT^HEIGHT||60|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|Lab|Main HIS|St. Micheals|20110213145632||ADT^A07|9C38584D1F002B611F67F62B9CFAB2C6F4401C8C1A6A305C4517D901CFB2F9EE|P|2.6|\rEVN||20110213145720||||20110213144703|\rPID|||1079745^^^ADT1||Garland^Mary||20051018|F||Unknown|678 Main Rd.^^LA^CA^30326|||||||45-731-119|908-615-537|\rNK1|1|Adams^Tracy|Grandchild|\rNK1|2|WHITE^John|Parent|\rNK1|3|Adams^John|Second Cousin|\rNK1|4|Meade^Sabrina|Second Cousin|\rNK1|5|Smith^Mary|Second Cousin|\rPV1||E||||||5101^Adams^Mary^F^^DR|||||||||||3561205^^^ADT1|||||||||||||||||||||||||20110213144925|\rOBX|||WT^WEIGHT||56|pounds|\rOBX|||HT^HEIGHT||24|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|E\\T\\R|Main HIS|St. Micheals|20110213144750||ADT^A07|9C38584D29002370DF219AAFD6F6F1AAD9FB4673F9A5CD716FD9B648647E5C65|P|2.6|\rEVN||20110213145327||||20110213144602|\rPID|||5374615^^^ADT1||Fitzgerald^Tracy||19920711|F||Unknown|566 Miller Lane^^LA^CA^95779|||||||84-41-909|82-571-755|\rNK1|1|Muir^Gary|Second Cousin|\rNK1|2|Smith^Tracy|Parent|\rPV1||E||||||5101^WHITE^John^F^^DR|||||||||||3045747^^^ADT1|||||||||||||||||||||||||20110213145618|\rOBX|||WT^WEIGHT||105|pounds|\rOBX|||HT^HEIGHT||35|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|E\\T\\R|Main HIS|St. Micheals|20110213145159||ADT^A07|9C38584D2900DD6C9715DCA1A4839E03BE24C5BD38373179E5958D8D83D44A3D|P|2.6|\rEVN||20110213144659||||20110213145504|\rPID|||1397748^^^ADT1||WHITE^Gary||20060626|M||AI|921 Delphi Cres.^^LA^CA^77337|||||||64-774-739|497-339-732|\rNK1|1|Smith^Sabrina|Second Cousin|\rPV1||E||||||5101^Smith^Sabrina^F^^DR|||||||||||9528489^^^ADT1|||||||||||||||||||||||||20110213145046|\rOBX|||WT^WEIGHT||65|pounds|\rOBX|||HT^HEIGHT||21|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20110213145231||ADT^A06|9C38584D2900EEB5FB3091333C2BBB5AA49CCC4D9F03817B0E049A91213E9CF2|P|2.6|\rEVN||20110213144731||||20110213145657|\rPID|||7677236^^^ADT1||Adams^Sabrina||19970222|F||Mixed|527 Delphi Cres.^^Toronto^ON^59847|||||||53-911-618|636-999-278|\rNK1|1|Meade^Gary|Grandchild|\rPV1||E||||||5101^Meade^Fred^F^^DR|||||||||||4212775^^^ADT1|||||||||||||||||||||||||20110213145636|\rOBX|||WT^WEIGHT||38|pounds|\rOBX|||HT^HEIGHT||24|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20110213145341||ADT^A01|9C38584D2900F4096009BB72AF4388531709D2D4B08313BCD92D661BEA761299|P|2.6|\rEVN||20110213145324||||20110213144651|\rPID|||3848689^^^ADT1||Smith^John||19970311|M||EU|171 Miller Lane^^Chicago^IL^91903|||||||46-535-878|473-693-33|\rNK1|1|WHITE^Gary|Sibling|\rNK1|2|WHITE^John|Second Cousin|\rNK1|3|Fitzgerald^Tracy|Second Cousin|\rPV1||E||||||5101^Garland^Mary^F^^DR|||||||||||9624012^^^ADT1|||||||||||||||||||||||||20110213145659|\rOBX|||WT^WEIGHT||129|pounds|\rOBX|||HT^HEIGHT||61|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|E\\T\\R|Main HIS|St. Micheals|20110213144511||ADT^A05|9C38584D3300CECCECE840304F018B48A09F359EDB0AEF7FA9CE82B2D0EA2A02|P|2.6|\rEVN||20110213144858||||20110213145549|\rPID|||6823328^^^ADT1||Muir^Jim||20041027|M||Martian|542 Main Rd.^^Toronto^ON^4850|||||||20-636-212|862-925-218|\rNK1|1|Smith^Jim|Parent|\rNK1|2|Meade^Sabrina|Sibling|\rPV1||E||||||5101^Muir^Gary^F^^DR|||||||||||2427748^^^ADT1|||||||||||||||||||||||||20110213150058|\rOBX|||WT^WEIGHT||118|pounds|\rOBX|||HT^HEIGHT||66|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|Lab|Main HIS|St. Micheals|20110213145554||ADT^A05|9C38584D330021B94FF4BAEB7435D30382AB8B1D9709BDE86397099772340054|P|2.6|\rEVN||20110213145216||||20110213145208|\rPID|||906095^^^ADT1||Muir^Tracy||19791121|F||Martian|545 Miller Lane^^Toronto^ON^31468|||||||70-986-660|867-636-520|\rNK1|1|Smith^John|Grandchild|\rNK1|2|Fitzgerald^Gary|Second Cousin|\rNK1|3|Fitzgerald^Mary|Second Cousin|\rNK1|4|WHITE^Gary|Sibling|\rPV1||E||||||5101^Muir^Gary^F^^DR|||||||||||4092837^^^ADT1|||||||||||||||||||||||||20110213150038|\rOBX|||WT^WEIGHT||62|pounds|\rOBX|||HT^HEIGHT||112|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|E\\T\\R|Main HIS|St. Micheals|20110213144928||ADT^A05|9C38584D3300A2B649EB53C75FA249435A6277A48B20A295D08945FF8CA63FB9|P|2.6|\rEVN||20110213150046||||20110213144513|\rPID|||4055605^^^ADT1||Garland^Gary||19940630|M||Unknown|22 Miller Lane^^Chicago^IL^96417|||||||63-988-460|668-154-827|\rNK1|1|Garland^John|Parent|\rNK1|2|Adams^Sabrina|Sibling|\rPV1||E||||||5101^Meade^Fred^F^^DR|||||||||||6430250^^^ADT1|||||||||||||||||||||||||20110213144526|\rOBX|||WT^WEIGHT||76|pounds|\rOBX|||HT^HEIGHT||36|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20110213145746||ADT^A07|9C38584D3D00E651B505F788DBC8347B52F24AFFF4F977DD618C0A55F5BCC869|P|2.6|\rEVN||20110213144753||||20110213144912|\rPID|||9398175^^^ADT1||Fitzgerald^John||19861027|M||Mixed|572 Yonge St.^^LA^CA^47343|||||||27-545-7|327-156-800|\rNK1|1|Smith^Sabrina|Sibling|\rNK1|2|Smith^Mary|Parent|\rNK1|3|Meade^John|Parent|\rNK1|4|Muir^Sabrina|Parent|\rNK1|5|Garland^Fred|Parent|\rPV1||E||||||5101^Muir^John^F^^DR|||||||||||3335978^^^ADT1|||||||||||||||||||||||||20110213144610|\rOBX|||WT^WEIGHT||56|pounds|\rOBX|||HT^HEIGHT||85|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|E\\T\\R|Main HIS|St. Micheals|20110213145210||ADT^A08|9C38584D3D004D281781D9436AEBFD290ABA0762E4174334BCFBBBC1C57073CD|P|2.6|\rEVN||20110213144529||||20110213150030|\rPID|||8497268^^^ADT1||Smith^Jim||20070904|M||Unknown|26 Delphi Cres.^^LA^CA^21256|||||||51-877-284|95-952-883|\rNK1|1|Garland^Tracy|Parent|\rNK1|2|Muir^Jim|Grandchild|\rNK1|3|Smith^Gary|Sibling|\rNK1|4|WHITE^Mary|Parent|\rNK1|5|Adams^Gary|Grandchild|\rPV1||E||||||5101^Muir^Jim^F^^DR|||||||||||9264198^^^ADT1|||||||||||||||||||||||||20110213150100|\rOBX|||WT^WEIGHT||94|pounds|\rOBX|||HT^HEIGHT||57|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|Lab|Main HIS|St. Micheals|20110213144858||ADT^A05|9C38584D3D00E4DA0A878799096F4F294B73C93352ECC0D17CDB9B7DA4B1318C|P|2.6|\rEVN||20110213144518||||20110213144641|\rPID|||2034669^^^ADT1||Smith^Mary||19921002|F||AI|276 Miller Lane^^ST. LOUIS^MO^31755|||||||6-270-915|122-785-477|\rNK1|1|Smith^Mary|Sibling|\rNK1|2|WHITE^Sabrina|Second Cousin|\rPV1||E||||||5101^Garland^John^F^^DR|||||||||||6267586^^^ADT1|||||||||||||||||||||||||20110213150024|\rOBX|||WT^WEIGHT||102|pounds|\rOBX|||HT^HEIGHT||93|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20110213144939||ADT^A08|9C38584D47007C1773805ED20FE2B90995CAC68200C81BC3E2FEA62C59751CB6|P|2.6|\rEVN||20110213150047||||20110213145612|\rPID|||3959472^^^ADT1||WHITE^Jim||19881119|M||Unknown|68 Yonge St.^^Chicago^IL^7850|||||||5-127-673|259-374-679|\rNK1|1|Fitzgerald^John|Second Cousin|\rNK1|2|Garland^John|Grandchild|\rNK1|3|Meade^Mary|Sibling|\rPV1||E||||||5101^Muir^Tracy^F^^DR|||||||||||3358867^^^ADT1|||||||||||||||||||||||||20110213145513|\rOBX|||WT^WEIGHT||95|pounds|\rOBX|||HT^HEIGHT||74|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|E\\T\\R|Main HIS|St. Micheals|20110213144919||ADT^A07|9C38584D47003AF9ABCA0C95F48FE040B1D4BC35010C52F3CEBEEF38EBB2CACF|P|2.6|\rEVN||20110213145818||||20110213145640|\rPID|||4882046^^^ADT1||Garland^Gary||20031223|M||AI|161 Miller Lane^^LA^CA^93270|||||||60-96-3|881-839-259|\rNK1|1|Muir^Tracy|Grandchild|\rNK1|2|Smith^Mary|Second Cousin|\rNK1|3|WHITE^Gary|Sibling|\rNK1|4|Fitzgerald^Mary|Second Cousin|\rNK1|5|WHITE^Gary|Parent|\rPV1||E||||||5101^Garland^Sabrina^F^^DR|||||||||||9496139^^^ADT1|||||||||||||||||||||||||20110213145236|\rOBX|||WT^WEIGHT||88|pounds|\rOBX|||HT^HEIGHT||56|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20110213145503||ADT^A08|9C38584D5100E0812218E050E08C6E0C60EB64BD1CEEDA847EAB3217D0C48363|P|2.6|\rEVN||20110213145939||||20110213145600|\rPID|||3194678^^^ADT1||Fitzgerald^Sabrina||19860904|F||AI|677 Delphi Cres.^^ST. LOUIS^MO^6122|||||||22-628-376|771-786-595|\rNK1|1|Fitzgerald^Sabrina|Parent|\rNK1|2|Adams^Fred|Grandchild|\rNK1|3|WHITE^Sabrina|Grandchild|\rNK1|4|Muir^John|Sibling|\rPV1||E||||||5101^WHITE^Sabrina^F^^DR|||||||||||3378399^^^ADT1|||||||||||||||||||||||||20110213144926|\rOBX|||WT^WEIGHT||86|pounds|\rOBX|||HT^HEIGHT||80|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|Lab|Main HIS|St. Micheals|20110213145704||ADT^A07|9C38584D5100340264A92E991C02E91357A6882F09968647745F5E3B541EE377|P|2.6|\rEVN||20110213145025||||20110213145745|\rPID|||9105197^^^ADT1||Fitzgerald^Jim||20071103|M||Martian|750 Miller Lane^^Toronto^ON^83166|||||||56-236-329|408-306-956|\rNK1|1|Meade^Tracy|Sibling|\rNK1|2|Garland^Gary|Parent|\rPV1||E||||||5101^Adams^Sabrina^F^^DR|||||||||||1661428^^^ADT1|||||||||||||||||||||||||20110213145712|\rOBX|||WT^WEIGHT||42|pounds|\rOBX|||HT^HEIGHT||47|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20110213145611||ADT^A07|9C38584D510063CF45D75FA6F86206DF9E80210063EF6C0091D7CCFEBE10D3E6|P|2.6|\rEVN||20110213145751||||20110213144531|\rPID|||4781335^^^ADT1||Smith^Sabrina||20040723|F||AI|463 Yonge St.^^Toronto^ON^7096|||||||92-825-780|181-565-235|\rNK1|1|Smith^Tracy|Sibling|\rNK1|2|Garland^Sabrina|Grandchild|\rNK1|3|WHITE^Fred|Sibling|\rNK1|4|Smith^Mary|Second Cousin|\rNK1|5|WHITE^Mary|Grandchild|\rPV1||E||||||5101^Muir^Tracy^F^^DR|||||||||||4751427^^^ADT1|||||||||||||||||||||||||20110213145601|\rOBX|||WT^WEIGHT||51|pounds|\rOBX|||HT^HEIGHT||87|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|E\\T\\R|Main HIS|St. Micheals|20110213145651||ADT^A08|9C38584D5B00099E1D75287EBA06ADB486455C81FB8C21197D484558F76EA0FE|P|2.6|\rEVN||20110213145003||||20110213145550|\rPID|||9416791^^^ADT1||Fitzgerald^Jim||20100725|M||EU|815 Yonge St.^^ST. LOUIS^MO^88714|||||||24-639-620|93-218-103|\rNK1|1|Garland^Mary|Grandchild|\rNK1|2|Fitzgerald^Fred|Sibling|\rPV1||E||||||5101^Muir^Gary^F^^DR|||||||||||6145207^^^ADT1|||||||||||||||||||||||||20110213144957|\rOBX|||WT^WEIGHT||105|pounds|\rOBX|||HT^HEIGHT||47|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20110213145851||ADT^A01|9C38584D5B002F8AC7F3B40D81EB5DBBCE14140EFCC7CBAF620853EA43A9ECE8|P|2.6|\rEVN||20110213150130||||20110213145412|\rPID|||2869656^^^ADT1||Garland^John||19810316|M||EU|946 Delphi Cres.^^Toronto^ON^74520|||||||44-707-504|31-171-132|\rNK1|1|WHITE^Fred|Parent|\rNK1|2|Fitzgerald^Tracy|Parent|\rNK1|3|Meade^Mary|Grandchild|\rPV1||E||||||5101^Meade^Tracy^F^^DR|||||||||||5057222^^^ADT1|||||||||||||||||||||||||20110213145349|\rOBX|||WT^WEIGHT||84|pounds|\rOBX|||HT^HEIGHT||38|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|E\\T\\R|Main HIS|St. Micheals|20110213145712||ADT^A05|9C38584D5B00B954C1D6FEE7F50B2A39377E2E89A268D4294329E0DFC5F1685F|P|2.6|\rEVN||20110213144807||||20110213145156|\rPID|||4040651^^^ADT1||Fitzgerald^Mary||19940208|F||Unknown|438 Miller Lane^^Chicago^IL^22132|||||||31-757-455|347-381-30|\rNK1|1|Smith^Jim|Grandchild|\rPV1||E||||||5101^Adams^John^F^^DR|||||||||||7610095^^^ADT1|||||||||||||||||||||||||20110213150013|\rOBX|||WT^WEIGHT||99|pounds|\rOBX|||HT^HEIGHT||31|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20110213145316||ADT^A06|9C38584D65005F2A720566FB15871C6BF86EE6BC06D965D696F120F792F002A0|P|2.6|\rEVN||20110213144728||||20110213145313|\rPID|||6886501^^^ADT1||Muir^Jim||19951021|M||AI|961 Yonge St.^^Chicago^IL^8790|||||||1-45-166|136-102-191|\rNK1|1|Garland^Tracy|Grandchild|\rNK1|2|Adams^Gary|Parent|\rNK1|3|Fitzgerald^Mary|Parent|\rNK1|4|WHITE^Mary|Grandchild|\rNK1|5|Adams^Gary|Sibling|\rNK1|6|Garland^Tracy|Parent|\rPV1||E||||||5101^Smith^Jim^F^^DR|||||||||||2450026^^^ADT1|||||||||||||||||||||||||20110213145254|\rOBX|||WT^WEIGHT||52|pounds|\rOBX|||HT^HEIGHT||59|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20110213145305||ADT^A05|9C38584D6500D1935F0A6B87E5B517FF7BBEE286D2B710A8C562B288530EC637|P|2.6|\rEVN||20110213144610||||20110213145732|\rPID|||6632893^^^ADT1||WHITE^John||20061125|M||EU|782 Miller Lane^^Chicago^IL^39189|||||||81-420-42|408-430-838|\rNK1|1|Meade^John|Sibling|\rPV1||E||||||5101^Muir^John^F^^DR|||||||||||1130711^^^ADT1|||||||||||||||||||||||||20110213145616|\rOBX|||WT^WEIGHT||34|pounds|\rOBX|||HT^HEIGHT||25|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|E\\T\\R|Main HIS|St. Micheals|20110213145650||ADT^A01|9C38584D6F008712428B2B386F832167FF7410675434D6B6638D6BEE4FCF71C8|P|2.6|\rEVN||20110213145220||||20110213144713|\rPID|||3013703^^^ADT1||Smith^Mary||19960202|F||Mixed|364 Main Rd.^^Toronto^ON^58049|||||||5-711-765|64-177-761|\rNK1|1|Muir^Fred|Second Cousin|\rNK1|2|Fitzgerald^Fred|Grandchild|\rNK1|3|Fitzgerald^Fred|Parent|\rNK1|4|Garland^Sabrina|Second Cousin|\rPV1||E||||||5101^WHITE^Sabrina^F^^DR|||||||||||7138279^^^ADT1|||||||||||||||||||||||||20110213144532|\rOBX|||WT^WEIGHT||64|pounds|\rOBX|||HT^HEIGHT||80|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20110213144533||ADT^A08|9C38584D6F00199FEF4D3BEB5A9CEF5F07FD1A7AD6B12FF57A44C0B6F4AA4220|P|2.6|\rEVN||20110213144548||||20110213145016|\rPID|||127568^^^ADT1||Meade^Mary||19930803|F||Martian|952 Yonge St.^^ST. LOUIS^MO^19743|||||||71-873-712|663-359-405|\rNK1|1|Fitzgerald^Jim|Parent|\rNK1|2|WHITE^Mary|Grandchild|\rNK1|3|Adams^Mary|Sibling|\rPV1||E||||||5101^Muir^Tracy^F^^DR|||||||||||4772485^^^ADT1|||||||||||||||||||||||||20110213145916|\rOBX|||WT^WEIGHT||119|pounds|\rOBX|||HT^HEIGHT||31|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|E\\T\\R|Main HIS|St. Micheals|20110213145515||ADT^A08|9C38584D6F001847746920C51B78373F8537C7C4201332245D20021248777A22|P|2.6|\rEVN||20110213144929||||20110213145318|\rPID|||7123630^^^ADT1||Muir^Mary||19800723|F||Unknown|952 Miller Lane^^LA^CA^96459|||||||61-951-847|541-232-627|\rNK1|1|WHITE^Tracy|Grandchild|\rNK1|2|Smith^Mary|Sibling|\rNK1|3|Fitzgerald^Tracy|Sibling|\rNK1|4|Muir^Jim|Second Cousin|\rNK1|5|WHITE^Tracy|Grandchild|\rPV1||E||||||5101^Fitzgerald^Mary^F^^DR|||||||||||4375134^^^ADT1|||||||||||||||||||||||||20110213144543|\rOBX|||WT^WEIGHT||83|pounds|\rOBX|||HT^HEIGHT||100|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|E\\T\\R|Main HIS|St. Micheals|20110213145552||ADT^A07|9C38584D7900BD51A826837466ACC41852627B692E38AB0300AFAAD188978748|P|2.6|\rEVN||20110213145601||||20110213144812|\rPID|||3243507^^^ADT1||Smith^Gary||19870429|M||AI|536 Yonge St.^^Chicago^IL^69442|||||||45-345-923|703-871-338|\rNK1|1|Garland^Gary|Sibling|\rNK1|2|Adams^Tracy|Grandchild|\rNK1|3|Muir^John|Sibling|\rPV1||E||||||5101^Fitzgerald^Sabrina^F^^DR|||||||||||1265908^^^ADT1|||||||||||||||||||||||||20110213145801|\rOBX|||WT^WEIGHT||117|pounds|\rOBX|||HT^HEIGHT||105|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20110213150037||ADT^A06|9C38584D790076F2FF984187B1071EDE8332095C1DE497343183105F401B5900|P|2.6|\rEVN||20110213145409||||20110213144810|\rPID|||5887326^^^ADT1||WHITE^Tracy||19950811|F||AI|972 Delphi Cres.^^LA^CA^64876|||||||68-776-150|182-882-440|\rNK1|1|Meade^Sabrina|Parent|\rNK1|2|Muir^Mary|Parent|\rNK1|3|Adams^Tracy|Second Cousin|\rPV1||E||||||5101^Meade^Jim^F^^DR|||||||||||9292275^^^ADT1|||||||||||||||||||||||||20110213145418|\rOBX|||WT^WEIGHT||101|pounds|\rOBX|||HT^HEIGHT||55|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20110213144634||ADT^A05|9C38584D79000135E785EF8BF9BE400C9FBB6C6AFE54E4223EF736E3B459D60F|P|2.6|\rEVN||20110213144809||||20110213144454|\rPID|||3053682^^^ADT1||Muir^Gary||19890208|M||Martian|11 Yonge St.^^ST. LOUIS^MO^42833|||||||11-119-334|425-626-129|\rNK1|1|Adams^John|Parent|\rNK1|2|Adams^John|Sibling|\rNK1|3|Garland^Fred|Parent|\rNK1|4|Smith^Jim|Grandchild|\rNK1|5|Adams^Jim|Parent|\rNK1|6|WHITE^Fred|Grandchild|\rPV1||E||||||5101^Fitzgerald^Tracy^F^^DR|||||||||||7134617^^^ADT1|||||||||||||||||||||||||20110213145237|\rOBX|||WT^WEIGHT||60|pounds|\rOBX|||HT^HEIGHT||114|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|Lab|Main HIS|St. Micheals|20110213145616||ADT^A03|9C38584D83005383B32CC07A415EF60B1EA6C743F46DE059A9CBFF8B2A3356C4|P|2.6|\rEVN||20110213145540||||20110213150104|\rPID|||4750816^^^ADT1||Smith^Fred||19910826|M||AI|363 Miller Lane^^Chicago^IL^8823|||||||9-223-832|409-199-350|\rNK1|1|Muir^Gary|Second Cousin|\rNK1|2|Fitzgerald^Fred|Second Cousin|\rNK1|3|Garland^Fred|Second Cousin|\rNK1|4|Adams^Mary|Sibling|\rPV1||E||||||5101^Fitzgerald^Fred^F^^DR|||||||||||830104^^^ADT1|||||||||||||||||||||||||20110213150010|\rOBX|||WT^WEIGHT||37|pounds|\rOBX|||HT^HEIGHT||99|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20110213144646||ADT^A04|9C38584D8300E0F345A18AC2274938229F3CE22EAB1186619E841942E0FB6014|P|2.6|\rEVN||20110213150121||||20110213145734|\rPID|||3510239^^^ADT1||WHITE^Mary||20040331|F||EU|559 Yonge St.^^LA^CA^38365|||||||12-49-834|478-280-738|\rNK1|1|Garland^Jim|Parent|\rNK1|2|Fitzgerald^Fred|Grandchild|\rNK1|3|Garland^Mary|Grandchild|\rNK1|4|WHITE^Jim|Grandchild|\rNK1|5|Garland^Sabrina|Sibling|\rNK1|6|Fitzgerald^Mary|Grandchild|\rPV1||E||||||5101^Smith^Sabrina^F^^DR|||||||||||9739677^^^ADT1|||||||||||||||||||||||||20110213145843|\rOBX|||WT^WEIGHT||45|pounds|\rOBX|||HT^HEIGHT||103|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20110213145511||ADT^A07|9C38584D8D0014650AFAEEDAB97F46549016C96AF2EEFB366DD17A0688F7AEBD|P|2.6|\rEVN||20110213144957||||20110213145443|\rPID|||9902951^^^ADT1||Adams^John||20060131|M||Mixed|699 Miller Lane^^Chicago^IL^15830|||||||77-346-51|753-934-334|\rNK1|1|Garland^Fred|Second Cousin|\rPV1||E||||||5101^Fitzgerald^Tracy^F^^DR|||||||||||8428296^^^ADT1|||||||||||||||||||||||||20110213150031|\rOBX|||WT^WEIGHT||85|pounds|\rOBX|||HT^HEIGHT||58|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20110213144733||ADT^A01|9C38584D8D0047B277F7E0AD0E1101618B2F6CA3EE7C75B588E840A46E1C5428|P|2.6|\rEVN||20110213145519||||20110213150051|\rPID|||1333659^^^ADT1||Fitzgerald^Gary||19800228|M||Mixed|310 Miller Lane^^ST. LOUIS^MO^60817|||||||54-563-712|381-632-968|\rNK1|1|Muir^Gary|Parent|\rNK1|2|Garland^Jim|Sibling|\rPV1||E||||||5101^Smith^Gary^F^^DR|||||||||||382092^^^ADT1|||||||||||||||||||||||||20110213145310|\rOBX|||WT^WEIGHT||75|pounds|\rOBX|||HT^HEIGHT||92|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20110213145909||ADT^A05|9C38584D8D00B3BB00ADB7340E3C9646A60C708753E94119EE593AB17C1FA074|P|2.6|\rEVN||20110213145707||||20110213145230|\rPID|||2525712^^^ADT1||Meade^Mary||19811115|F||Unknown|65 Main Rd.^^Toronto^ON^86629|||||||70-594-60|696-367-770|\rNK1|1|Muir^Fred|Second Cousin|\rNK1|2|Garland^Jim|Grandchild|\rNK1|3|WHITE^Sabrina|Sibling|\rNK1|4|WHITE^Sabrina|Parent|\rNK1|5|Adams^Mary|Grandchild|\rPV1||E||||||5101^Meade^Gary^F^^DR|||||||||||4749596^^^ADT1|||||||||||||||||||||||||20110213144806|\rOBX|||WT^WEIGHT||111|pounds|\rOBX|||HT^HEIGHT||29|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20110213145503||ADT^A05|9C38584D9700D472AEDAE828B469DFB88CE742798062F14E74D0D6F8F01FE8C8|P|2.6|\rEVN||20110213144727||||20110213145140|\rPID|||450454^^^ADT1||Garland^Tracy||19901218|F||Unknown|847 Miller Lane^^ST. LOUIS^MO^78277|||||||69-66-617|161-71-905|\rNK1|1|WHITE^Sabrina|Sibling|\rNK1|2|Adams^Tracy|Grandchild|\rNK1|3|Fitzgerald^Mary|Parent|\rNK1|4|Fitzgerald^Jim|Parent|\rNK1|5|Adams^Fred|Second Cousin|\rPV1||E||||||5101^WHITE^Jim^F^^DR|||||||||||4650105^^^ADT1|||||||||||||||||||||||||20110213145704|\rOBX|||WT^WEIGHT||45|pounds|\rOBX|||HT^HEIGHT||29|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20110213145440||ADT^A06|9C38584D97004FFAD1376E5B097D9D232248AC2175E2C74A0A4CEC8EFE8380BE|P|2.6|\rEVN||20110213150054||||20110213145711|\rPID|||8506424^^^ADT1||WHITE^Jim||19851206|M||Unknown|627 Yonge St.^^ST. LOUIS^MO^53548|||||||43-978-327|304-311-479|\rNK1|1|Meade^Fred|Second Cousin|\rNK1|2|Adams^Sabrina|Sibling|\rPV1||E||||||5101^Adams^Tracy^F^^DR|||||||||||7930234^^^ADT1|||||||||||||||||||||||||20110213145504|\rOBX|||WT^WEIGHT||82|pounds|\rOBX|||HT^HEIGHT||38|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|E\\T\\R|Main HIS|St. Micheals|20110213144645||ADT^A01|9C38584D9700F834419DDBAF86B60DABBB5415675E63FF7B861D27C54CFB20D2|P|2.6|\rEVN||20110213145455||||20110213144826|\rPID|||281686^^^ADT1||Muir^Tracy||19870929|F||EU|75 Yonge St.^^ST. LOUIS^MO^97402|||||||5-883-565|869-596-89|\rNK1|1|Smith^John|Sibling|\rNK1|2|Muir^Mary|Sibling|\rNK1|3|Adams^Tracy|Grandchild|\rNK1|4|Garland^Jim|Sibling|\rNK1|5|Garland^John|Second Cousin|\rNK1|6|Muir^Gary|Sibling|\rPV1||E||||||5101^WHITE^Fred^F^^DR|||||||||||7756889^^^ADT1|||||||||||||||||||||||||20110213144533|\rOBX|||WT^WEIGHT||97|pounds|\rOBX|||HT^HEIGHT||89|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|E\\T\\R|Main HIS|St. Micheals|20110213144929||ADT^A01|9C38584DA100736F8E6093E1A2EC516402A14D6B08F4DB1EE14CD1927C93758B|P|2.6|\rEVN||20110213145748||||20110213144641|\rPID|||8765831^^^ADT1||Fitzgerald^Mary||20070910|F||Martian|979 Yonge St.^^LA^CA^61589|||||||31-170-446|302-893-380|\rNK1|1|Muir^Sabrina|Second Cousin|\rNK1|2|Adams^John|Parent|\rNK1|3|Fitzgerald^Tracy|Parent|\rPV1||E||||||5101^Meade^Mary^F^^DR|||||||||||9913632^^^ADT1|||||||||||||||||||||||||20110213150130|\rOBX|||WT^WEIGHT||125|pounds|\rOBX|||HT^HEIGHT||95|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|E\\T\\R|Main HIS|St. Micheals|20110213145041||ADT^A07|9C38584DA1008B369F5397A56FF536FC3AEDC5EFACE275AAE5BD6526B6AA32F5|P|2.6|\rEVN||20110213144943||||20110213144613|\rPID|||9611499^^^ADT1||Smith^Fred||19990807|M||Unknown|193 Delphi Cres.^^Chicago^IL^70928|||||||46-935-552|600-165-588|\rNK1|1|Smith^John|Second Cousin|\rNK1|2|Meade^Tracy|Second Cousin|\rNK1|3|Smith^Gary|Sibling|\rNK1|4|Adams^Jim|Second Cousin|\rNK1|5|Muir^Gary|Grandchild|\rNK1|6|Fitzgerald^Gary|Grandchild|\rPV1||E||||||5101^Adams^Gary^F^^DR|||||||||||3180334^^^ADT1|||||||||||||||||||||||||20110213145307|\rOBX|||WT^WEIGHT||119|pounds|\rOBX|||HT^HEIGHT||75|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20110213144546||ADT^A03|9C38584DA100876D6B24C0754BA478A770872A99962F061F490AC906BC0FC0AB|P|2.6|\rEVN||20110213144855||||20110213145033|\rPID|||1361126^^^ADT1||Smith^John||20010607|M||Mixed|14 Yonge St.^^ST. LOUIS^MO^68135|||||||17-925-430|438-175-578|\rNK1|1|Meade^Fred|Second Cousin|\rNK1|2|Muir^Jim|Grandchild|\rPV1||E||||||5101^Garland^John^F^^DR|||||||||||6067690^^^ADT1|||||||||||||||||||||||||20110213145219|\rOBX|||WT^WEIGHT||39|pounds|\rOBX|||HT^HEIGHT||119|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|E\\T\\R|Main HIS|St. Micheals|20110213150041||ADT^A06|9C38584DAB00374D23C7A67A02C6D9663E5182F45118FB517045CAD879E2B63B|P|2.6|\rEVN||20110213145245||||20110213144826|\rPID|||842922^^^ADT1||Adams^Sabrina||19840424|F||Unknown|547 Miller Lane^^Toronto^ON^41176|||||||16-886-469|657-873-473|\rNK1|1|Muir^Tracy|Parent|\rNK1|2|Muir^Fred|Parent|\rNK1|3|Muir^John|Parent|\rPV1||E||||||5101^Fitzgerald^Mary^F^^DR|||||||||||734581^^^ADT1|||||||||||||||||||||||||20110213145853|\rOBX|||WT^WEIGHT||82|pounds|\rOBX|||HT^HEIGHT||90|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20110213145941||ADT^A04|9C38584DAB004C38799874ECD7D3D86F68F9ED565F5550F1CDEED2330B7DBF58|P|2.6|\rEVN||20110213145310||||20110213145636|\rPID|||960113^^^ADT1||Fitzgerald^Fred||20000419|M||Mixed|856 Delphi Cres.^^Toronto^ON^40458|||||||74-927-913|582-399-943|\rNK1|1|Garland^Tracy|Sibling|\rPV1||E||||||5101^Adams^Tracy^F^^DR|||||||||||8173772^^^ADT1|||||||||||||||||||||||||20110213145802|\rOBX|||WT^WEIGHT||111|pounds|\rOBX|||HT^HEIGHT||51|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20110213145256||ADT^A05|9C38584DAB008476F4EA1AC2ACAFFBB208B9AFA41E479751C89309DE9376D801|P|2.6|\rEVN||20110213145628||||20110213145847|\rPID|||6613361^^^ADT1||Fitzgerald^Fred||20040407|M||AI|382 Main Rd.^^Toronto^ON^63109|||||||18-391-992|612-952-158|\rNK1|1|Garland^Tracy|Parent|\rNK1|2|Muir^Gary|Grandchild|\rNK1|3|WHITE^Mary|Grandchild|\rPV1||E||||||5101^Meade^Fred^F^^DR|||||||||||3454390^^^ADT1|||||||||||||||||||||||||20110213150039|\rOBX|||WT^WEIGHT||62|pounds|\rOBX|||HT^HEIGHT||34|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20110213144546||ADT^A01|9C38584DB50059D3A29E458CDB71C0C828112FA2D334F638986355CF76701B9A|P|2.6|\rEVN||20110213145412||||20110213144453|\rPID|||1177099^^^ADT1||WHITE^Sabrina||19980228|F||AI|903 Yonge St.^^Chicago^IL^59923|||||||99-634-522|973-370-400|\rNK1|1|Smith^Fred|Parent|\rNK1|2|Garland^Sabrina|Second Cousin|\rNK1|3|Meade^Mary|Parent|\rNK1|4|WHITE^Jim|Parent|\rNK1|5|Garland^Gary|Second Cousin|\rPV1||E||||||5101^Adams^John^F^^DR|||||||||||8912015^^^ADT1|||||||||||||||||||||||||20110213144816|\rOBX|||WT^WEIGHT||124|pounds|\rOBX|||HT^HEIGHT||37|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|E\\T\\R|Main HIS|St. Micheals|20110213150025||ADT^A04|9C38584DB500A5DB9A1102BF37C74B58294B5EC6ACCAAF9F08B219FF7B77F256|P|2.6|\rEVN||20110213150114||||20110213150029|\rPID|||4659566^^^ADT1||Fitzgerald^Fred||19930622|M||Unknown|416 Delphi Cres.^^ST. LOUIS^MO^77477|||||||20-7-955|397-712-872|\rNK1|1|Fitzgerald^John|Grandchild|\rNK1|2|Smith^John|Parent|\rPV1||E||||||5101^Garland^Mary^F^^DR|||||||||||5489364^^^ADT1|||||||||||||||||||||||||20110213145557|\rOBX|||WT^WEIGHT||99|pounds|\rOBX|||HT^HEIGHT||81|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|Lab|Main HIS|St. Micheals|20110213145341||ADT^A07|9C38584DB50044F6ED3E02FAE13576F1AAE0F8854FE1E6DB0F26196382F7DD12|P|2.6|\rEVN||20110213145501||||20110213144638|\rPID|||210273^^^ADT1||Adams^Sabrina||19910530|F||AI|227 Miller Lane^^LA^CA^81731|||||||24-562-457|754-820-480|\rNK1|1|Garland^Tracy|Sibling|\rPV1||E||||||5101^Garland^Tracy^F^^DR|||||||||||8999603^^^ADT1|||||||||||||||||||||||||20110213145047|\rOBX|||WT^WEIGHT||54|pounds|\rOBX|||HT^HEIGHT||65|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20110213145419||ADT^A06|9C38584DBF005DE677125E32C9037BE55A2321677638D80A5AC2F19FB398E50E|P|2.6|\rEVN||20110213145737||||20110213145451|\rPID|||7766655^^^ADT1||Muir^Sabrina||19960911|F||AI|598 Main Rd.^^Chicago^IL^41670|||||||35-973-654|498-983-825|\rNK1|1|Fitzgerald^John|Grandchild|\rNK1|2|Adams^Tracy|Grandchild|\rNK1|3|Muir^Jim|Sibling|\rNK1|4|Adams^Mary|Parent|\rNK1|5|WHITE^Sabrina|Sibling|\rNK1|6|Fitzgerald^Tracy|Parent|\rPV1||E||||||5101^WHITE^Jim^F^^DR|||||||||||3887448^^^ADT1|||||||||||||||||||||||||20110213145358|\rOBX|||WT^WEIGHT||70|pounds|\rOBX|||HT^HEIGHT||75|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|E\\T\\R|Main HIS|St. Micheals|20110213145522||ADT^A07|9C38584DBF006B4791D18FEFE8FD0068E253C824C8BF9490E96904A453F48DFC|P|2.6|\rEVN||20110213145836||||20110213144837|\rPID|||1226539^^^ADT1||Meade^John||19950627|M||AI|951 Main Rd.^^Chicago^IL^74392|||||||85-416-163|8-501-55|\rNK1|1|Smith^Jim|Grandchild|\rNK1|2|WHITE^Gary|Second Cousin|\rNK1|3|Adams^Sabrina|Grandchild|\rPV1||E||||||5101^Muir^Jim^F^^DR|||||||||||1947386^^^ADT1|||||||||||||||||||||||||20110213144851|\rOBX|||WT^WEIGHT||42|pounds|\rOBX|||HT^HEIGHT||24|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20110213145138||ADT^A07|9C38584DBF00DFCF6132CEA58AFA0ED96133B9F21B98A55ED66E51DD42F0363A|P|2.6|\rEVN||20110213145825||||20110213144642|\rPID|||681174^^^ADT1||Garland^Jim||19900601|M||Unknown|193 Miller Lane^^LA^CA^87014|||||||81-920-111|603-167-518|\rNK1|1|Meade^Jim|Grandchild|\rNK1|2|Garland^Mary|Parent|\rPV1||E||||||5101^WHITE^Mary^F^^DR|||||||||||1313822^^^ADT1|||||||||||||||||||||||||20110213144712|\rOBX|||WT^WEIGHT||52|pounds|\rOBX|||HT^HEIGHT||61|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|Lab|Main HIS|St. Micheals|20110213144530||ADT^A08|9C38584DC900281AD3B7D6A123EDCD791BF07526FB4D4BA6D4480330FD50B79C|P|2.6|\rEVN||20110213145402||||20110213145937|\rPID|||4667196^^^ADT1||Muir^Jim||19860816|M||Mixed|161 Miller Lane^^Toronto^ON^92007|||||||46-920-801|123-363-729|\rNK1|1|Meade^Mary|Sibling|\rNK1|2|Smith^Mary|Grandchild|\rNK1|3|Muir^Mary|Second Cousin|\rNK1|4|Adams^Mary|Grandchild|\rPV1||E||||||5101^Meade^Tracy^F^^DR|||||||||||4772485^^^ADT1|||||||||||||||||||||||||20110213144650|\rOBX|||WT^WEIGHT||96|pounds|\rOBX|||HT^HEIGHT||117|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|Lab|Main HIS|St. Micheals|20110213145702||ADT^A08|9C38584DC900E439161F270CE88F52F79507E60D72220596490388E66377F3B4|P|2.6|\rEVN||20110213144954||||20110213145819|\rPID|||6761681^^^ADT1||Muir^Tracy||19810707|F||Mixed|94 Delphi Cres.^^LA^CA^13303|||||||54-672-695|556-400-822|\rNK1|1|Adams^Fred|Grandchild|\rNK1|2|Meade^John|Grandchild|\rPV1||E||||||5101^Muir^Gary^F^^DR|||||||||||8439588^^^ADT1|||||||||||||||||||||||||20110213145535|\rOBX|||WT^WEIGHT||126|pounds|\rOBX|||HT^HEIGHT||87|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20110213145732||ADT^A08|9C38584DC90054DA99F51FBF3A36DB18CEEC50DA8012EF1FF89B267AF70B5D92|P|2.6|\rEVN||20110213145303||||20110213145755|\rPID|||830409^^^ADT1||Meade^Fred||19921018|M||AI|430 Delphi Cres.^^LA^CA^49452|||||||38-218-516|984-267-252|\rNK1|1|Fitzgerald^John|Second Cousin|\rNK1|2|Smith^Gary|Parent|\rNK1|3|Meade^Mary|Grandchild|\rNK1|4|Garland^Fred|Second Cousin|\rPV1||E||||||5101^Smith^Tracy^F^^DR|||||||||||3109531^^^ADT1|||||||||||||||||||||||||20110213145903|\rOBX|||WT^WEIGHT||60|pounds|\rOBX|||HT^HEIGHT||82|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20110213145003||ADT^A08|9C38584DD4006A5E8A7212B650706C4C78981FE1EC4BCA98FB993CD33AD61B9C|P|2.6|\rEVN||20110213144722||||20110213144738|\rPID|||1296732^^^ADT1||Fitzgerald^Fred||19950407|M||Martian|753 Miller Lane^^LA^CA^30882|||||||86-208-757|867-367-289|\rNK1|1|Smith^Fred|Grandchild|\rPV1||E||||||5101^Adams^Tracy^F^^DR|||||||||||3704032^^^ADT1|||||||||||||||||||||||||20110213145142|\rOBX|||WT^WEIGHT||123|pounds|\rOBX|||HT^HEIGHT||110|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20110213145257||ADT^A05|9C38584DD400853608AE09F61210987A9F8720ADAE01815DE4C5EF43D0D306CE|P|2.6|\rEVN||20110213144743||||20110213145308|\rPID|||4539934^^^ADT1||Meade^Tracy||20080615|F||Mixed|247 Miller Lane^^ST. LOUIS^MO^83431|||||||49-425-481|223-470-402|\rNK1|1|Muir^Jim|Second Cousin|\rNK1|2|Muir^Sabrina|Grandchild|\rPV1||E||||||5101^WHITE^John^F^^DR|||||||||||1286356^^^ADT1|||||||||||||||||||||||||20110213144455|\rOBX|||WT^WEIGHT||46|pounds|\rOBX|||HT^HEIGHT||47|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20110213144454||ADT^A07|9C38584DD400BE1356E0ED85FEF30CF0E4DEEFBD461DE6A68A2FF2673F3F0201|P|2.6|\rEVN||20110213144945||||20110213144649|\rPID|||6643269^^^ADT1||Meade^Sabrina||19911209|F||Unknown|643 Miller Lane^^Toronto^ON^80956|||||||68-854-656|184-87-855|\rNK1|1|Meade^John|Sibling|\rNK1|2|Muir^Mary|Second Cousin|\rNK1|3|Adams^John|Parent|\rNK1|4|Smith^John|Parent|\rPV1||E||||||5101^Adams^Mary^F^^DR|||||||||||1557360^^^ADT1|||||||||||||||||||||||||20110213150101|\rOBX|||WT^WEIGHT||62|pounds|\rOBX|||HT^HEIGHT||59|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|E\\T\\R|Main HIS|St. Micheals|20110213145047||ADT^A06|9C38584DD400E17741A25FE957259D93FD9ABF1E07AD3E0A8A7042752821861F|P|2.6|\rEVN||20110213150052||||20110213144623|\rPID|||9179967^^^ADT1||Fitzgerald^Tracy||19840730|F||Martian|863 Delphi Cres.^^Chicago^IL^37080|||||||44-911-895|631-775-251|\rNK1|1|Fitzgerald^Sabrina|Grandchild|\rNK1|2|WHITE^Tracy|Grandchild|\rNK1|3|Garland^Sabrina|Sibling|\rNK1|4|Smith^Tracy|Sibling|\rNK1|5|Meade^Jim|Grandchild|\rNK1|6|Adams^Tracy|Parent|\rPV1||E||||||5101^Muir^Jim^F^^DR|||||||||||5665456^^^ADT1|||||||||||||||||||||||||20110213145042|\rOBX|||WT^WEIGHT||69|pounds|\rOBX|||HT^HEIGHT||59|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20110213144834||ADT^A08|9C38584DDE006555DDFCD9BAD8AFE63E77CCB24EB059EBCBEEADC61E9CCB5076|P|2.6|\rEVN||20110213144713||||20110213144848|\rPID|||9154637^^^ADT1||Muir^Sabrina||19821024|F||Martian|78 Yonge St.^^LA^CA^64614|||||||51-162-92|713-167-433|\rNK1|1|Fitzgerald^Sabrina|Second Cousin|\rNK1|2|Adams^Mary|Second Cousin|\rNK1|3|Meade^Mary|Parent|\rNK1|4|Muir^Mary|Sibling|\rPV1||E||||||5101^Meade^Mary^F^^DR|||||||||||8575701^^^ADT1|||||||||||||||||||||||||20110213145754|\rOBX|||WT^WEIGHT||31|pounds|\rOBX|||HT^HEIGHT||103|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|Lab|Main HIS|St. Micheals|20110213145130||ADT^A05|9C38584DDE001CA4863C01317A5C5D9F2FBD6521B673B8C67DC0E0AE7C6D3536|P|2.6|\rEVN||20110213144715||||20110213145604|\rPID|||6911527^^^ADT1||Meade^Sabrina||19791208|F||Unknown|296 Yonge St.^^Toronto^ON^85506|||||||23-358-66|211-884-622|\rNK1|1|Meade^Jim|Second Cousin|\rNK1|2|Garland^Jim|Grandchild|\rNK1|3|Smith^Sabrina|Parent|\rNK1|4|WHITE^John|Second Cousin|\rPV1||E||||||5101^Muir^Mary^F^^DR|||||||||||6531266^^^ADT1|||||||||||||||||||||||||20110213150031|\rOBX|||WT^WEIGHT||94|pounds|\rOBX|||HT^HEIGHT||89|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20110213150045||ADT^A05|9C38584DDE00A79817DD33216F2FD5BC2D9E6773F18E034D8B6C7BDA7EC97B2F|P|2.6|\rEVN||20110213145630||||20110213145214|\rPID|||8631550^^^ADT1||Muir^Sabrina||19881221|F||AI|754 Main Rd.^^ST. LOUIS^MO^91393|||||||5-721-850|981-765-70|\rNK1|1|Smith^Sabrina|Second Cousin|\rNK1|2|Adams^Tracy|Grandchild|\rNK1|3|Smith^Mary|Grandchild|\rNK1|4|WHITE^Fred|Second Cousin|\rNK1|5|Adams^Tracy|Grandchild|\rPV1||E||||||5101^Garland^Mary^F^^DR|||||||||||8966643^^^ADT1|||||||||||||||||||||||||20110213150102|\rOBX|||WT^WEIGHT||103|pounds|\rOBX|||HT^HEIGHT||54|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|E\\T\\R|Main HIS|St. Micheals|20110213144522||ADT^A07|9C38584DE800E29D6B432C79E2A17523C8B9212EF4B6453CB9D61D248C9A9B09|P|2.6|\rEVN||20110213144514||||20110213145838|\rPID|||7033601^^^ADT1||WHITE^Fred||20030604|M||Martian|318 Miller Lane^^Toronto^ON^23234|||||||7-772-764|385-595-399|\rNK1|1|Smith^Mary|Grandchild|\rNK1|2|Garland^Mary|Second Cousin|\rNK1|3|Muir^John|Parent|\rNK1|4|Smith^Sabrina|Second Cousin|\rPV1||E||||||5101^Smith^Tracy^F^^DR|||||||||||9090243^^^ADT1|||||||||||||||||||||||||20110213144701|\rOBX|||WT^WEIGHT||37|pounds|\rOBX|||HT^HEIGHT||28|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20110213150131||ADT^A08|9C38584DE800C21A06E30322F1D3A541191900226E0664DE9403CD253B062565|P|2.6|\rEVN||20110213145041||||20110213145342|\rPID|||361950^^^ADT1||Garland^John||20000124|M||Mixed|500 Yonge St.^^LA^CA^23558|||||||27-349-385|79-539-297|\rNK1|1|Garland^Jim|Grandchild|\rPV1||E||||||5101^WHITE^Gary^F^^DR|||||||||||3382367^^^ADT1|||||||||||||||||||||||||20110213145235|\rOBX|||WT^WEIGHT||80|pounds|\rOBX|||HT^HEIGHT||37|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20110213145359||ADT^A07|9C38584DE80075EDD0DE3B4D31C2588B432C4F14DC3DC7B0481CFEBACBFB96F8|P|2.6|\rEVN||20110213145849||||20110213144906|\rPID|||8273568^^^ADT1||Meade^Sabrina||19861205|F||AI|654 Main Rd.^^ST. LOUIS^MO^91528|||||||88-373-261|907-896-650|\rNK1|1|WHITE^Mary|Second Cousin|\rNK1|2|WHITE^John|Grandchild|\rNK1|3|Meade^John|Grandchild|\rNK1|4|WHITE^Jim|Sibling|\rNK1|5|Garland^Mary|Parent|\rPV1||E||||||5101^Fitzgerald^Gary^F^^DR|||||||||||5641346^^^ADT1|||||||||||||||||||||||||20110213145642|\rOBX|||WT^WEIGHT||118|pounds|\rOBX|||HT^HEIGHT||28|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20110213144647||ADT^A07|9C38584DF200FB0E3F3A8B3A206601BA3DFE391E857B27CEA4791C3B0F1CD787|P|2.6|\rEVN||20110213145814||||20110213144700|\rPID|||8581805^^^ADT1||Garland^John||20040913|M||EU|690 Main Rd.^^ST. LOUIS^MO^83935|||||||49-493-184|118-473-243|\rNK1|1|Adams^Sabrina|Sibling|\rNK1|2|Smith^Tracy|Second Cousin|\rNK1|3|Smith^Sabrina|Sibling|\rNK1|4|Smith^John|Grandchild|\rPV1||E||||||5101^Smith^Sabrina^F^^DR|||||||||||1436201^^^ADT1|||||||||||||||||||||||||20110213144851|\rOBX|||WT^WEIGHT||119|pounds|\rOBX|||HT^HEIGHT||94|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20110213145053||ADT^A01|9C38584DF200078CABA1749F1DF531BB21615C176950E96780EFA562CEED10EE|P|2.6|\rEVN||20110213145645||||20110213145112|\rPID|||6470839^^^ADT1||WHITE^Sabrina||20010314|F||Mixed|72 Delphi Cres.^^Chicago^IL^31349|||||||29-140-699|882-838-832|\rNK1|1|Adams^Fred|Grandchild|\rNK1|2|Meade^Jim|Sibling|\rPV1||E||||||5101^Adams^Sabrina^F^^DR|||||||||||5646840^^^ADT1|||||||||||||||||||||||||20110213144634|\rOBX|||WT^WEIGHT||62|pounds|\rOBX|||HT^HEIGHT||46|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20110213145146||ADT^A04|9C38584DF2005B282D8D379FAA2FC79EA7B6A5B2027A1EC40C239025DD7F89C1|P|2.6|\rEVN||20110213144603||||20110213145911|\rPID|||4697409^^^ADT1||Meade^Tracy||20091028|F||Mixed|465 Delphi Cres.^^Chicago^IL^95629|||||||64-449-461|235-54-392|\rNK1|1|WHITE^Mary|Sibling|\rNK1|2|WHITE^Sabrina|Second Cousin|\rNK1|3|Fitzgerald^Sabrina|Second Cousin|\rNK1|4|Fitzgerald^Tracy|Grandchild|\rPV1||E||||||5101^WHITE^Jim^F^^DR|||||||||||7535630^^^ADT1|||||||||||||||||||||||||20110213145419|\rOBX|||WT^WEIGHT||51|pounds|\rOBX|||HT^HEIGHT||118|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|E\\T\\R|Main HIS|St. Micheals|20110213144823||ADT^A05|9C38584DFC00129FF39E867180306231B7762B75C1EC052D5E2308C951B629CB|P|2.6|\rEVN||20110213144504||||20110213144809|\rPID|||5805841^^^ADT1||Adams^Fred||19920526|M||Unknown|413 Yonge St.^^Chicago^IL^90344|||||||5-763-540|688-237-365|\rNK1|1|Meade^Mary|Grandchild|\rNK1|2|Garland^Tracy|Second Cousin|\rPV1||E||||||5101^Muir^Fred^F^^DR|||||||||||7231971^^^ADT1|||||||||||||||||||||||||20110213144814|\rOBX|||WT^WEIGHT||74|pounds|\rOBX|||HT^HEIGHT||38|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20110213150054||ADT^A01|9C38584DFC00282B0474FF3C85C4E9852E0804F43D0912183A86FBD3DFAF8776|P|2.6|\rEVN||20110213150113||||20110213144712|\rPID|||3163244^^^ADT1||Garland^Jim||19900704|M||Unknown|784 Main Rd.^^LA^CA^59905|||||||47-699-54|549-463-83|\rNK1|1|Meade^John|Grandchild|\rNK1|2|Garland^Tracy|Grandchild|\rNK1|3|Muir^Sabrina|Sibling|\rNK1|4|Muir^Jim|Second Cousin|\rNK1|5|WHITE^Mary|Second Cousin|\rPV1||E||||||5101^Smith^Mary^F^^DR|||||||||||1682791^^^ADT1|||||||||||||||||||||||||20110213144650|\rOBX|||WT^WEIGHT||123|pounds|\rOBX|||HT^HEIGHT||75|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|E\\T\\R|Main HIS|St. Micheals|20110213144809||ADT^A08|9C38584DFC00E6089C909D2D5B490F84B960CFAFF36924D1E39E40B86CEF9046|P|2.6|\rEVN||20110213145934||||20110213144454|\rPID|||708945^^^ADT1||Adams^Fred||19830725|M||Unknown|895 Miller Lane^^LA^CA^21705|||||||22-892-888|938-230-966|\rNK1|1|Fitzgerald^Mary|Grandchild|\rNK1|2|Fitzgerald^John|Sibling|\rNK1|3|Smith^John|Grandchild|\rNK1|4|Fitzgerald^Sabrina|Parent|\rNK1|5|Fitzgerald^Tracy|Sibling|\rNK1|6|Garland^Tracy|Sibling|\rPV1||E||||||5101^Muir^Tracy^F^^DR|||||||||||4643086^^^ADT1|||||||||||||||||||||||||20110213145909|\rOBX|||WT^WEIGHT||89|pounds|\rOBX|||HT^HEIGHT||78|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20110213144709||ADT^A03|9C38584D06011A512BC59C5FB3720D7AA027A0D9C85604E169C34A17B0AE098A|P|2.6|\rEVN||20110213145325||||20110213144943|\rPID|||3602100^^^ADT1||Adams^Fred||19880815|M||AI|490 Yonge St.^^LA^CA^54808|||||||27-149-627|891-384-606|\rNK1|1|Fitzgerald^Fred|Grandchild|\rNK1|2|Meade^Mary|Parent|\rPV1||E||||||5101^Adams^Fred^F^^DR|||||||||||6746727^^^ADT1|||||||||||||||||||||||||20110213145812|\rOBX|||WT^WEIGHT||82|pounds|\rOBX|||HT^HEIGHT||82|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|E\\T\\R|Main HIS|St. Micheals|20110213145300||ADT^A01|9C38584D0601D4C631AF3BC1BDDDAF5492D7A9C74760A21CECC91A42CE6C76A4|P|2.6|\rEVN||20110213145011||||20110213145323|\rPID|||1666006^^^ADT1||Adams^Mary||19940430|F||Mixed|675 Yonge St.^^LA^CA^15455|||||||12-357-792|108-236-911|\rNK1|1|Smith^Tracy|Sibling|\rNK1|2|Smith^Fred|Grandchild|\rNK1|3|Adams^Mary|Sibling|\rNK1|4|WHITE^Fred|Parent|\rPV1||E||||||5101^Fitzgerald^Jim^F^^DR|||||||||||5633106^^^ADT1|||||||||||||||||||||||||20110213145602|\rOBX|||WT^WEIGHT||46|pounds|\rOBX|||HT^HEIGHT||27|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20110213145159||ADT^A07|9C38584D060109BC0E9E63B0EE19D687BB1FE818DC8960DD737F339BB20C87C6|P|2.6|\rEVN||20110213145827||||20110213145010|\rPID|||1756341^^^ADT1||Muir^Tracy||20100419|F||Unknown|768 Miller Lane^^Chicago^IL^60857|||||||31-511-632|455-951-437|\rNK1|1|Fitzgerald^Tracy|Second Cousin|\rNK1|2|Fitzgerald^Gary|Parent|\rNK1|3|Meade^Gary|Sibling|\rNK1|4|Garland^Sabrina|Sibling|\rNK1|5|Smith^Tracy|Sibling|\rPV1||E||||||5101^Adams^Sabrina^F^^DR|||||||||||7087924^^^ADT1|||||||||||||||||||||||||20110213145647|\rOBX|||WT^WEIGHT||85|pounds|\rOBX|||HT^HEIGHT||109|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20110213145544||ADT^A07|9C38584D10016D47C392347B81F95EA47F82FA4AE126693DD190D3CEC53F1C08|P|2.6|\rEVN||20110213145817||||20110213145928|\rPID|||4117863^^^ADT1||WHITE^Mary||19960729|F||Mixed|174 Yonge St.^^Chicago^IL^70327|||||||58-247-490|902-834-274|\rNK1|1|Fitzgerald^Tracy|Parent|\rNK1|2|Smith^Jim|Second Cousin|\rNK1|3|Smith^Jim|Grandchild|\rNK1|4|WHITE^Fred|Grandchild|\rNK1|5|Garland^John|Parent|\rPV1||E||||||5101^WHITE^Fred^F^^DR|||||||||||7236854^^^ADT1|||||||||||||||||||||||||20110213145239|\rOBX|||WT^WEIGHT||85|pounds|\rOBX|||HT^HEIGHT||85|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|Lab|Main HIS|St. Micheals|20110213145542||ADT^A08|9C38584D10013D4967145E0721D867C780DDA82E680532E36139E79A868FEAE9|P|2.6|\rEVN||20110213150046||||20110213144701|\rPID|||1427961^^^ADT1||Fitzgerald^Mary||20091021|F||Unknown|864 Yonge St.^^ST. LOUIS^MO^99475|||||||10-837-224|65-747-688|\rNK1|1|Adams^Sabrina|Parent|\rNK1|2|Adams^Sabrina|Grandchild|\rPV1||E||||||5101^Smith^Jim^F^^DR|||||||||||5864742^^^ADT1|||||||||||||||||||||||||20110213145621|\rOBX|||WT^WEIGHT||88|pounds|\rOBX|||HT^HEIGHT||37|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20110213145325||ADT^A03|9C38584D100192A24DFBF7FA127726759B78F4E66FA8EC5BF62FB470722A5659|P|2.6|\rEVN||20110213145133||||20110213145434|\rPID|||5139927^^^ADT1||Garland^Sabrina||19980109|F||Mixed|626 Main Rd.^^ST. LOUIS^MO^8256|||||||96-697-699|666-374-406|\rNK1|1|Muir^Sabrina|Sibling|\rNK1|2|Fitzgerald^Mary|Sibling|\rNK1|3|Garland^John|Parent|\rPV1||E||||||5101^Garland^Tracy^F^^DR|||||||||||6928617^^^ADT1|||||||||||||||||||||||||20110213144951|\rOBX|||WT^WEIGHT||113|pounds|\rOBX|||HT^HEIGHT||51|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|Lab|Main HIS|St. Micheals|20110213150052||ADT^A03|9C38584D10019C1A6E52397CCC192D55DF527CD91C9036CEE751E141963C50D2|P|2.6|\rEVN||20110213144707||||20110213145532|\rPID|||1216163^^^ADT1||Adams^Tracy||20031227|F||Mixed|895 Miller Lane^^Chicago^IL^41136|||||||15-289-538|421-27-876|\rNK1|1|WHITE^Sabrina|Grandchild|\rPV1||E||||||5101^Adams^John^F^^DR|||||||||||2435072^^^ADT1|||||||||||||||||||||||||20110213145149|\rOBX|||WT^WEIGHT||109|pounds|\rOBX|||HT^HEIGHT||39|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20110213144535||ADT^A01|9C38584D1A01BEB2D2FA88F771A1725538FDBD2FDF7085DEBB129FA27439D489|P|2.6|\rEVN||20110213145748||||20110213144733|\rPID|||6213874^^^ADT1||WHITE^Mary||20100125|F||EU|826 Miller Lane^^ST. LOUIS^MO^58040|||||||32-155-516|512-470-848|\rNK1|1|Garland^John|Second Cousin|\rNK1|2|Meade^Tracy|Second Cousin|\rNK1|3|Meade^Mary|Grandchild|\rPV1||E||||||5101^Smith^Tracy^F^^DR|||||||||||3681753^^^ADT1|||||||||||||||||||||||||20110213145226|\rOBX|||WT^WEIGHT||100|pounds|\rOBX|||HT^HEIGHT||21|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|E\\T\\R|Main HIS|St. Micheals|20110213144804||ADT^A07|9C38584D1A011F1D36262B41882DF2F1F724153D55D6A415165C28F05B6918A2|P|2.6|\rEVN||20110213144928||||20110213145518|\rPID|||2988373^^^ADT1||Adams^John||19890630|M||Unknown|340 Yonge St.^^Toronto^ON^99942|||||||51-367-735|872-979-140|\rNK1|1|WHITE^John|Second Cousin|\rNK1|2|WHITE^Mary|Sibling|\rNK1|3|Adams^Sabrina|Grandchild|\rNK1|4|Garland^Tracy|Parent|\rNK1|5|Meade^Mary|Second Cousin|\rNK1|6|Garland^Gary|Parent|\rPV1||E||||||5101^Muir^Gary^F^^DR|||||||||||2977081^^^ADT1|||||||||||||||||||||||||20110213145612|\rOBX|||WT^WEIGHT||119|pounds|\rOBX|||HT^HEIGHT||65|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20110213145701||ADT^A07|9C38584D1A015FD00CFCA8BC8628F25FE6265A56AC8907C3A1A9A4133A56274D|P|2.6|\rEVN||20110213145829||||20110213145235|\rPID|||2244331^^^ADT1||WHITE^Gary||19950110|M||Unknown|215 Yonge St.^^Toronto^ON^58187|||||||19-149-570|23-480-47|\rNK1|1|Muir^Tracy|Sibling|\rNK1|2|Garland^Jim|Parent|\rNK1|3|Fitzgerald^Fred|Parent|\rPV1||E||||||5101^Adams^Sabrina^F^^DR|||||||||||477615^^^ADT1|||||||||||||||||||||||||20110213145411|\rOBX|||WT^WEIGHT||46|pounds|\rOBX|||HT^HEIGHT||119|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20110213144938||ADT^A04|9C38584D24016BA22F0D39F8779732E986D3E447A2551C8C3A8682B655A2067D|P|2.6|\rEVN||20110213144625||||20110213145927|\rPID|||4438002^^^ADT1||Adams^Sabrina||20060422|F||Mixed|172 Miller Lane^^Chicago^IL^43413|||||||54-678-406|872-86-737|\rNK1|1|Fitzgerald^Jim|Grandchild|\rNK1|2|Adams^Fred|Second Cousin|\rNK1|3|Fitzgerald^Sabrina|Grandchild|\rPV1||E||||||5101^Fitzgerald^Fred^F^^DR|||||||||||4915922^^^ADT1|||||||||||||||||||||||||20110213145720|\rOBX|||WT^WEIGHT||114|pounds|\rOBX|||HT^HEIGHT||93|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20110213145655||ADT^A03|9C38584D24018D6A6CC2CB248D4034FFD151AC36479F35D306B11731ECFD66BA|P|2.6|\rEVN||20110213150036||||20110213144520|\rPID|||2054201^^^ADT1||Fitzgerald^Gary||20091116|M||EU|115 Main Rd.^^LA^CA^76296|||||||14-809-597|491-954-127|\rNK1|1|Smith^Mary|Parent|\rNK1|2|Fitzgerald^Fred|Parent|\rNK1|3|Fitzgerald^Sabrina|Grandchild|\rNK1|4|Meade^Mary|Second Cousin|\rNK1|5|WHITE^Jim|Parent|\rPV1||E||||||5101^Muir^Gary^F^^DR|||||||||||159917^^^ADT1|||||||||||||||||||||||||20110213150009|\rOBX|||WT^WEIGHT||44|pounds|\rOBX|||HT^HEIGHT||63|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20110213144909||ADT^A01|9C38584D240191A5D2DBFB425BAC590B0243362B788F29F381483D78A96E8955|P|2.6|\rEVN||20110213144952||||20110213145717|\rPID|||9310586^^^ADT1||Garland^Sabrina||19880202|F||AI|700 Yonge St.^^Toronto^ON^2527|||||||60-869-307|661-810-33|\rNK1|1|Smith^Sabrina|Grandchild|\rNK1|2|Garland^Mary|Second Cousin|\rNK1|3|Smith^Mary|Sibling|\rNK1|4|Garland^Jim|Parent|\rPV1||E||||||5101^Smith^Mary^F^^DR|||||||||||2884610^^^ADT1|||||||||||||||||||||||||20110213145644|\rOBX|||WT^WEIGHT||122|pounds|\rOBX|||HT^HEIGHT||50|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|Lab|Main HIS|St. Micheals|20110213150024||ADT^A01|9C38584D2E019739A17D0E21AF08FE708EED598B0B151EFE3B3675F70907FA47|P|2.6|\rEVN||20110213144453||||20110213145630|\rPID|||8979155^^^ADT1||Muir^Tracy||20070604|F||Mixed|509 Main Rd.^^Toronto^ON^56923|||||||55-147-503|879-223-624|\rNK1|1|Garland^Tracy|Second Cousin|\rPV1||E||||||5101^WHITE^Tracy^F^^DR|||||||||||930815^^^ADT1|||||||||||||||||||||||||20110213144817|\rOBX|||WT^WEIGHT||83|pounds|\rOBX|||HT^HEIGHT||93|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20110213145157||ADT^A01|9C38584D2E01E4E7F52DD4386FDAE5676BD81ECBB6B0F7C9A8C582A9E50C84CF|P|2.6|\rEVN||20110213145659||||20110213144643|\rPID|||90640^^^ADT1||Garland^John||19870113|M||Unknown|997 Main Rd.^^Chicago^IL^74471|||||||46-322-177|805-263-841|\rNK1|1|WHITE^Mary|Sibling|\rNK1|2|WHITE^Jim|Sibling|\rNK1|3|Garland^Mary|Grandchild|\rNK1|4|Fitzgerald^Tracy|Second Cousin|\rNK1|5|Garland^John|Parent|\rPV1||E||||||5101^WHITE^Mary^F^^DR|||||||||||8228400^^^ADT1|||||||||||||||||||||||||20110213144810|\rOBX|||WT^WEIGHT||82|pounds|\rOBX|||HT^HEIGHT||46|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20110213144704||ADT^A03|9C38584D2E0189BD91272CBAE59F53222D3E502B7F07D65D40EED866BFA8E0D4|P|2.6|\rEVN||20110213150111||||20110213144925|\rPID|||7631763^^^ADT1||Garland^Sabrina||19981123|F||Mixed|808 Delphi Cres.^^Toronto^ON^10264|||||||58-835-812|222-505-279|\rNK1|1|Muir^Tracy|Parent|\rNK1|2|Fitzgerald^Jim|Parent|\rNK1|3|Garland^Sabrina|Second Cousin|\rPV1||E||||||5101^Smith^John^F^^DR|||||||||||28383^^^ADT1|||||||||||||||||||||||||20110213145759|\rOBX|||WT^WEIGHT||44|pounds|\rOBX|||HT^HEIGHT||98|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|E\\T\\R|Main HIS|St. Micheals|20110213145046||ADT^A05|9C38584D3801FCD06A99F5328425084670822A5FA6F4ABE09B3ECC6294947FCB|P|2.6|\rEVN||20110213145056||||20110213145524|\rPID|||5550706^^^ADT1||Smith^Mary||20000601|F||Martian|964 Miller Lane^^ST. LOUIS^MO^34114|||||||33-784-474|662-635-544|\rNK1|1|Smith^Gary|Second Cousin|\rNK1|2|Adams^John|Sibling|\rNK1|3|Meade^Jim|Parent|\rNK1|4|Adams^Tracy|Parent|\rNK1|5|Smith^Sabrina|Grandchild|\rNK1|6|Fitzgerald^Mary|Sibling|\rPV1||E||||||5101^Adams^John^F^^DR|||||||||||1655935^^^ADT1|||||||||||||||||||||||||20110213144525|\rOBX|||WT^WEIGHT||53|pounds|\rOBX|||HT^HEIGHT||54|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20110213145337||ADT^A04|9C38584D3801DF749C888AC236EEF085CA7F139ED66C02E3D49E86CB80EDF99F|P|2.6|\rEVN||20110213145220||||20110213145220|\rPID|||9489730^^^ADT1||Meade^John||19941023|M||EU|673 Delphi Cres.^^LA^CA^88564|||||||87-29-403|320-67-389|\rNK1|1|Fitzgerald^Mary|Parent|\rPV1||E||||||5101^Adams^Jim^F^^DR|||||||||||3351238^^^ADT1|||||||||||||||||||||||||20110213145126|\rOBX|||WT^WEIGHT||64|pounds|\rOBX|||HT^HEIGHT||118|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20110213144925||ADT^A06|9C38584D3801F8A6C904534233C351AF36BDB2A55489147184DF49A2E603A7A9|P|2.6|\rEVN||20110213145153||||20110213150020|\rPID|||1366619^^^ADT1||WHITE^Tracy||20090225|F||Mixed|600 Main Rd.^^Toronto^ON^48350|||||||56-922-702|74-42-48|\rNK1|1|Garland^Jim|Grandchild|\rNK1|2|Adams^Jim|Sibling|\rNK1|3|Meade^Tracy|Second Cousin|\rNK1|4|Meade^John|Grandchild|\rPV1||E||||||5101^Fitzgerald^Mary^F^^DR|||||||||||1565295^^^ADT1|||||||||||||||||||||||||20110213145639|\rOBX|||WT^WEIGHT||44|pounds|\rOBX|||HT^HEIGHT||91|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20110213145935||ADT^A06|9C38584D4201B1A7447487139E7039E6F18C04CB0EBC2F92FDE8B8447AC95996|P|2.6|\rEVN||20110213145903||||20110213145534|\rPID|||1042207^^^ADT1||Muir^Fred||19990412|M||EU|558 Main Rd.^^ST. LOUIS^MO^85213|||||||60-539-373|874-832-191|\rNK1|1|Meade^John|Grandchild|\rNK1|2|Smith^Sabrina|Grandchild|\rNK1|3|Meade^Fred|Grandchild|\rNK1|4|Meade^Mary|Second Cousin|\rPV1||E||||||5101^Garland^John^F^^DR|||||||||||8668172^^^ADT1|||||||||||||||||||||||||20110213145744|\rOBX|||WT^WEIGHT||128|pounds|\rOBX|||HT^HEIGHT||39|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|E\\T\\R|Main HIS|St. Micheals|20110213145955||ADT^A05|9C38584D4201A879C8670EEB58C44A1CCE80B37178AD3CE6C8418F01BED1F09F|P|2.6|\rEVN||20110213144623||||20110213144905|\rPID|||7704092^^^ADT1||Garland^John||19821121|M||Unknown|133 Miller Lane^^LA^CA^20768|||||||65-778-582|890-563-564|\rNK1|1|Smith^Fred|Parent|\rNK1|2|Garland^Tracy|Sibling|\rNK1|3|Meade^Mary|Sibling|\rNK1|4|Adams^Jim|Parent|\rPV1||E||||||5101^WHITE^Fred^F^^DR|||||||||||8577532^^^ADT1|||||||||||||||||||||||||20110213144923|\rOBX|||WT^WEIGHT||45|pounds|\rOBX|||HT^HEIGHT||60|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|E\\T\\R|Main HIS|St. Micheals|20110213145849||ADT^A08|9C38584D420143375B39A52BE35A88AE3AF10688BE17B906CDF6AA8E61DF7213|P|2.6|\rEVN||20110213145232||||20110213145259|\rPID|||690939^^^ADT1||Muir^Tracy||20020209|F||Martian|825 Main Rd.^^Chicago^IL^85775|||||||45-979-235|68-527-347|\rNK1|1|Garland^Fred|Second Cousin|\rNK1|2|Fitzgerald^Jim|Second Cousin|\rNK1|3|Meade^Fred|Sibling|\rNK1|4|Garland^Tracy|Sibling|\rPV1||E||||||5101^Muir^John^F^^DR|||||||||||91251^^^ADT1|||||||||||||||||||||||||20110213145910|\rOBX|||WT^WEIGHT||118|pounds|\rOBX|||HT^HEIGHT||37|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|E\\T\\R|Main HIS|St. Micheals|20110213144716||ADT^A07|9C38584D4C01E822A4D4F6DFF9F3D028D9DB4414C9C7176D8B112C6E8310186E|P|2.6|\rEVN||20110213144712||||20110213145823|\rPID|||6196783^^^ADT1||Garland^Sabrina||19880805|F||AI|351 Main Rd.^^ST. LOUIS^MO^12745|||||||98-212-205|611-499-982|\rNK1|1|Muir^John|Second Cousin|\rNK1|2|Adams^John|Sibling|\rNK1|3|Fitzgerald^Sabrina|Sibling|\rPV1||E||||||5101^Garland^Fred^F^^DR|||||||||||6639302^^^ADT1|||||||||||||||||||||||||20110213145201|\rOBX|||WT^WEIGHT||101|pounds|\rOBX|||HT^HEIGHT||59|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20110213145425||ADT^A07|9C38584D4C0101637B4F3A5FB49D2F3C2DDDF009727CDFF293BC7D9B33AF203D|P|2.6|\rEVN||20110213145536||||20110213144738|\rPID|||9278542^^^ADT1||Muir^Fred||20020217|M||Martian|651 Yonge St.^^Chicago^IL^9232|||||||94-262-151|495-568-620|\rNK1|1|Muir^Sabrina|Sibling|\rNK1|2|Muir^Sabrina|Second Cousin|\rNK1|3|Fitzgerald^Sabrina|Parent|\rNK1|4|Fitzgerald^Gary|Sibling|\rNK1|5|Meade^Mary|Grandchild|\rPV1||E||||||5101^Muir^Mary^F^^DR|||||||||||6874599^^^ADT1|||||||||||||||||||||||||20110213145234|\rOBX|||WT^WEIGHT||81|pounds|\rOBX|||HT^HEIGHT||74|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20110213145328||ADT^A05|9C38584D4C0154DC0DF4E0718433769219B9DF0B4549DBD6F1ABF13ED076328E|P|2.6|\rEVN||20110213145248||||20110213145817|\rPID|||5737175^^^ADT1||Adams^Gary||19830407|M||Unknown|415 Miller Lane^^Chicago^IL^32023|||||||78-317-551|284-567-70|\rNK1|1|Adams^Gary|Parent|\rPV1||E||||||5101^Meade^Gary^F^^DR|||||||||||9833674^^^ADT1|||||||||||||||||||||||||20110213145905|\rOBX|||WT^WEIGHT||123|pounds|\rOBX|||HT^HEIGHT||113|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20110213145148||ADT^A01|9C38584D4C0147A933D6A5A9B71299ECA41DBBB0729133DF58D222CC8FED4D62|P|2.6|\rEVN||20110213144544||||20110213145654|\rPID|||9873348^^^ADT1||Garland^Tracy||19810905|F||Martian|866 Yonge St.^^Chicago^IL^44160|||||||87-735-38|691-280-197|\rNK1|1|Fitzgerald^Sabrina|Parent|\rNK1|2|Fitzgerald^John|Grandchild|\rNK1|3|Fitzgerald^Tracy|Sibling|\rPV1||E||||||5101^Adams^John^F^^DR|||||||||||2810145^^^ADT1|||||||||||||||||||||||||20110213144526|\rOBX|||WT^WEIGHT||86|pounds|\rOBX|||HT^HEIGHT||42|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|E\\T\\R|Main HIS|St. Micheals|20110213144527||ADT^A01|9C38584D5601B053AB6D1F3309AEB30FEF6E9351C24D05F23352E3F5D7260A1A|P|2.6|\rEVN||20110213144701||||20110213145710|\rPID|||7901242^^^ADT1||WHITE^John||20051213|M||AI|235 Yonge St.^^ST. LOUIS^MO^94686|||||||52-505-484|174-227-902|\rNK1|1|Smith^Mary|Parent|\rNK1|2|Muir^Fred|Grandchild|\rNK1|3|Meade^Tracy|Parent|\rNK1|4|Muir^Jim|Second Cousin|\rNK1|5|Garland^John|Parent|\rNK1|6|Garland^Mary|Sibling|\rPV1||E||||||5101^Adams^Sabrina^F^^DR|||||||||||314951^^^ADT1|||||||||||||||||||||||||20110213145838|\rOBX|||WT^WEIGHT||72|pounds|\rOBX|||HT^HEIGHT||112|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|E\\T\\R|Main HIS|St. Micheals|20110213145253||ADT^A06|9C38584D56015DB8B6B7FF875411F106E4A1CE28F2746C46869B3A2A532AF0E1|P|2.6|\rEVN||20110213145806||||20110213145242|\rPID|||5737175^^^ADT1||Adams^Sabrina||19940923|F||Martian|472 Yonge St.^^ST. LOUIS^MO^78133|||||||35-79-628|344-589-326|\rNK1|1|WHITE^John|Parent|\rNK1|2|Muir^Mary|Second Cousin|\rNK1|3|Meade^Sabrina|Parent|\rNK1|4|Muir^Gary|Parent|\rNK1|5|Meade^Fred|Parent|\rNK1|6|Muir^Jim|Sibling|\rPV1||E||||||5101^Smith^Tracy^F^^DR|||||||||||677817^^^ADT1|||||||||||||||||||||||||20110213144832|\rOBX|||WT^WEIGHT||84|pounds|\rOBX|||HT^HEIGHT||97|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20110213144932||ADT^A05|9C38584D6001B1251F7B054C042CE58D329AAB7562BD0E9CBEB6ECFF3434B72D|P|2.6|\rEVN||20110213145403||||20110213144641|\rPID|||7169408^^^ADT1||WHITE^Gary||19840229|M||EU|600 Yonge St.^^LA^CA^86034|||||||54-509-605|508-954-925|\rNK1|1|Garland^Sabrina|Parent|\rPV1||E||||||5101^Garland^Sabrina^F^^DR|||||||||||6320994^^^ADT1|||||||||||||||||||||||||20110213144944|\rOBX|||WT^WEIGHT||112|pounds|\rOBX|||HT^HEIGHT||36|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20110213145959||ADT^A07|9C38584D60017AD4CC3066C735863ED57A5F9BA7AC353FD309EA1F16FD820912|P|2.6|\rEVN||20110213144644||||20110213145744|\rPID|||1964172^^^ADT1||WHITE^Tracy||19921009|F||Mixed|475 Miller Lane^^Chicago^IL^23548|||||||59-400-327|97-29-353|\rNK1|1|Adams^John|Grandchild|\rPV1||E||||||5101^Fitzgerald^Tracy^F^^DR|||||||||||9054841^^^ADT1|||||||||||||||||||||||||20110213144715|\rOBX|||WT^WEIGHT||95|pounds|\rOBX|||HT^HEIGHT||110|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|E\\T\\R|Main HIS|St. Micheals|20110213145939||ADT^A05|9C38584D600151D69C9A4769182F70CF69D4F8B94ED0DF97D249B3D7A7099D1C|P|2.6|\rEVN||20110213150004||||20110213150049|\rPID|||6150090^^^ADT1||Adams^Tracy||19940825|F||Mixed|974 Yonge St.^^Chicago^IL^46327|||||||80-424-603|267-456-363|\rNK1|1|Adams^Mary|Grandchild|\rNK1|2|Meade^Sabrina|Parent|\rNK1|3|Fitzgerald^Gary|Second Cousin|\rNK1|4|Smith^Tracy|Second Cousin|\rNK1|5|Fitzgerald^John|Parent|\rPV1||E||||||5101^Garland^John^F^^DR|||||||||||3071993^^^ADT1|||||||||||||||||||||||||20110213145813|\rOBX|||WT^WEIGHT||84|pounds|\rOBX|||HT^HEIGHT||92|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20110213145354||ADT^A06|9C38584D6A01808110D5BD2BA25F750A0DB5AEB972706E5C0792B8C344D7F7B5|P|2.6|\rEVN||20110213145315||||20110213145743|\rPID|||973846^^^ADT1||Muir^Jim||20100210|M||AI|282 Delphi Cres.^^ST. LOUIS^MO^51814|||||||76-988-637|106-474-428|\rNK1|1|Adams^Gary|Parent|\rPV1||E||||||5101^Fitzgerald^John^F^^DR|||||||||||1669668^^^ADT1|||||||||||||||||||||||||20110213145859|\rOBX|||WT^WEIGHT||92|pounds|\rOBX|||HT^HEIGHT||44|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|E\\T\\R|Main HIS|St. Micheals|20110213145107||ADT^A03|9C38584D6A01B7148A1AC346C059BF8818894E1C8F20A4C33AFE264475310A8D|P|2.6|\rEVN||20110213144507||||20110213145201|\rPID|||730308^^^ADT1||WHITE^Fred||19890701|M||Unknown|342 Main Rd.^^Chicago^IL^99298|||||||73-336-114|20-663-67|\rNK1|1|Smith^John|Second Cousin|\rNK1|2|Garland^Sabrina|Grandchild|\rNK1|3|Adams^Sabrina|Second Cousin|\rNK1|4|WHITE^Sabrina|Second Cousin|\rPV1||E||||||5101^Smith^Tracy^F^^DR|||||||||||4511246^^^ADT1|||||||||||||||||||||||||20110213150015|\rOBX|||WT^WEIGHT||66|pounds|\rOBX|||HT^HEIGHT||78|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20110213145009||ADT^A04|9C38584D6A01CABB4B1B3828C0CE65C5C3B557B2DD42589E4AD426EE78BCD3D1|P|2.6|\rEVN||20110213144909||||20110213145429|\rPID|||1895200^^^ADT1||Meade^Mary||20061216|F||Martian|829 Delphi Cres.^^ST. LOUIS^MO^68441|||||||1-898-764|185-995-592|\rNK1|1|WHITE^Fred|Parent|\rNK1|2|Meade^Mary|Grandchild|\rNK1|3|Adams^John|Sibling|\rPV1||E||||||5101^Muir^Jim^F^^DR|||||||||||5169225^^^ADT1|||||||||||||||||||||||||20110213144718|\rOBX|||WT^WEIGHT||124|pounds|\rOBX|||HT^HEIGHT||60|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|E\\T\\R|Main HIS|St. Micheals|20110213150016||ADT^A06|9C38584D7401AB2722AEC9A1C4B34D869529884EDC5FACAAB1D1E756AA45D0BD|P|2.6|\rEVN||20110213144719||||20110213144802|\rPID|||6867885^^^ADT1||WHITE^Sabrina||20000223|F||AI|219 Delphi Cres.^^ST. LOUIS^MO^74331|||||||31-806-768|709-670-285|\rNK1|1|Adams^Gary|Grandchild|\rNK1|2|Garland^Fred|Parent|\rPV1||E||||||5101^Garland^Mary^F^^DR|||||||||||3700369^^^ADT1|||||||||||||||||||||||||20110213145735|\rOBX|||WT^WEIGHT||65|pounds|\rOBX|||HT^HEIGHT||88|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|E\\T\\R|Main HIS|St. Micheals|20110213144937||ADT^A05|9C38584D7401EE8018B36E1B3F78C2631CBE3002140C9988D09EF56357450B38|P|2.6|\rEVN||20110213150033||||20110213144551|\rPID|||2178411^^^ADT1||Adams^Sabrina||20070829|F||AI|743 Delphi Cres.^^Toronto^ON^57924|||||||37-353-995|29-786-757|\rNK1|1|Fitzgerald^Fred|Second Cousin|\rNK1|2|Fitzgerald^Fred|Grandchild|\rNK1|3|Garland^Fred|Grandchild|\rNK1|4|Smith^Mary|Second Cousin|\rNK1|5|WHITE^Mary|Grandchild|\rNK1|6|WHITE^Sabrina|Sibling|\rPV1||E||||||5101^Garland^Tracy^F^^DR|||||||||||6642353^^^ADT1|||||||||||||||||||||||||20110213145151|\rOBX|||WT^WEIGHT||57|pounds|\rOBX|||HT^HEIGHT||27|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20110213145716||ADT^A08|9C38584D7401984DFECDC594024F85D9E8441285E4127A42CB12B1D7DC4C5F0B|P|2.6|\rEVN||20110213145417||||20110213144519|\rPID|||7896969^^^ADT1||WHITE^Sabrina||19870102|F||Unknown|612 Yonge St.^^Toronto^ON^79662|||||||24-10-754|137-670-202|\rNK1|1|Meade^John|Parent|\rNK1|2|Garland^Mary|Second Cousin|\rNK1|3|Meade^Sabrina|Second Cousin|\rPV1||E||||||5101^Meade^Fred^F^^DR|||||||||||5087741^^^ADT1|||||||||||||||||||||||||20110213144918|\rOBX|||WT^WEIGHT||101|pounds|\rOBX|||HT^HEIGHT||93|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|E\\T\\R|Main HIS|St. Micheals|20110213144621||ADT^A07|9C38584D7E0111E5BAFD3B5DF4FDDF6009889524C78A30FC60B4D31D48710A3B|P|2.6|\rEVN||20110213145954||||20110213145153|\rPID|||7093722^^^ADT1||Adams^Jim||20040801|M||AI|195 Miller Lane^^Toronto^ON^90521|||||||80-610-690|511-652-336|\rNK1|1|Meade^Mary|Sibling|\rNK1|2|Fitzgerald^John|Sibling|\rNK1|3|Garland^Tracy|Second Cousin|\rNK1|4|Garland^John|Parent|\rPV1||E||||||5101^WHITE^Jim^F^^DR|||||||||||3393048^^^ADT1|||||||||||||||||||||||||20110213144920|\rOBX|||WT^WEIGHT||44|pounds|\rOBX|||HT^HEIGHT||100|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20110213145223||ADT^A06|9C38584D7E01D9E4F0C497C0FEF23BA123A4E9929D9F7199D3E898160AAE8A23|P|2.6|\rEVN||20110213145104||||20110213144813|\rPID|||6340831^^^ADT1||Muir^Sabrina||19970510|F||Unknown|978 Delphi Cres.^^ST. LOUIS^MO^24598|||||||49-760-407|577-177-109|\rNK1|1|Garland^Jim|Sibling|\rPV1||E||||||5101^WHITE^Fred^F^^DR|||||||||||8991363^^^ADT1|||||||||||||||||||||||||20110213145025|\rOBX|||WT^WEIGHT||123|pounds|\rOBX|||HT^HEIGHT||33|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20110213145802||ADT^A05|9C38584D7E0181C0F5F1FEA6373028B2D609AA2F998771446258F5318AAC71AC|P|2.6|\rEVN||20110213144948||||20110213145913|\rPID|||3712272^^^ADT1||WHITE^Mary||19911102|F||Mixed|886 Main Rd.^^LA^CA^12974|||||||97-432-996|665-302-61|\rNK1|1|Garland^Fred|Grandchild|\rNK1|2|WHITE^Jim|Grandchild|\rNK1|3|Meade^Tracy|Grandchild|\rPV1||E||||||5101^Meade^John^F^^DR|||||||||||3778802^^^ADT1|||||||||||||||||||||||||20110213145036|\rOBX|||WT^WEIGHT||114|pounds|\rOBX|||HT^HEIGHT||22|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20110213145219||ADT^A03|9C38584D88015A13371580775A745377346FA2712C7252E6DA499EF3354605EC|P|2.6|\rEVN||20110213145747||||20110213150104|\rPID|||1697745^^^ADT1||Fitzgerald^John||20020831|M||Unknown|937 Main Rd.^^LA^CA^31111|||||||92-408-756|647-836-468|\rNK1|1|WHITE^Tracy|Sibling|\rPV1||E||||||5101^Muir^John^F^^DR|||||||||||3550218^^^ADT1|||||||||||||||||||||||||20110213145733|\rOBX|||WT^WEIGHT||111|pounds|\rOBX|||HT^HEIGHT||66|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20110213144457||ADT^A03|9C38584D88014B67E7D27236A23D9A81BBF10AAA1872C2F7BA22E5DD8F35C7E8|P|2.6|\rEVN||20110213145408||||20110213145605|\rPID|||7754448^^^ADT1||Muir^Gary||20000312|M||Martian|106 Main Rd.^^LA^CA^99304|||||||82-701-304|289-291-824|\rNK1|1|Garland^Jim|Second Cousin|\rNK1|2|WHITE^Gary|Grandchild|\rNK1|3|Garland^John|Parent|\rNK1|4|Meade^Gary|Grandchild|\rNK1|5|Adams^Fred|Parent|\rPV1||E||||||5101^Smith^Fred^F^^DR|||||||||||8594317^^^ADT1|||||||||||||||||||||||||20110213144827|\rOBX|||WT^WEIGHT||71|pounds|\rOBX|||HT^HEIGHT||59|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20110213144604||ADT^A05|9C38584D8801DDFF7167447471D25B6A25CBD61CEBE9E30B0D254B22262555CB|P|2.6|\rEVN||20110213144611||||20110213145837|\rPID|||5683157^^^ADT1||Fitzgerald^Gary||19820531|M||EU|996 Delphi Cres.^^Chicago^IL^20738|||||||54-701-565|788-779-979|\rNK1|1|Meade^Jim|Parent|\rNK1|2|Smith^Sabrina|Parent|\rNK1|3|Meade^Jim|Sibling|\rNK1|4|Garland^Mary|Parent|\rNK1|5|Muir^Tracy|Parent|\rNK1|6|Garland^Gary|Second Cousin|\rPV1||E||||||5101^Smith^Mary^F^^DR|||||||||||6100345^^^ADT1|||||||||||||||||||||||||20110213145954|\rOBX|||WT^WEIGHT||83|pounds|\rOBX|||HT^HEIGHT||116|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|E\\T\\R|Main HIS|St. Micheals|20110213145126||ADT^A06|9C38584D92019F0BBFB31DDBBF854A7827BF20F4EAD8D8566E9C5B79D979B43C|P|2.6|\rEVN||20110213144546||||20110213144506|\rPID|||9486678^^^ADT1||Fitzgerald^Fred||20030304|M||AI|833 Miller Lane^^ST. LOUIS^MO^50911|||||||11-281-61|834-148-799|\rNK1|1|Fitzgerald^Mary|Second Cousin|\rNK1|2|Meade^Gary|Second Cousin|\rPV1||E||||||5101^Meade^Gary^F^^DR|||||||||||7623829^^^ADT1|||||||||||||||||||||||||20110213145658|\rOBX|||WT^WEIGHT||68|pounds|\rOBX|||HT^HEIGHT||52|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20110213144530||ADT^A03|9C38584D9201E91B81E2F8FA37B4C079722DA15E22B028A1348FFBF04917A99F|P|2.6|\rEVN||20110213144506||||20110213145600|\rPID|||675985^^^ADT1||WHITE^Mary||19950731|F||AI|233 Miller Lane^^Chicago^IL^29951|||||||58-801-819|84-199-668|\rNK1|1|Adams^Mary|Sibling|\rPV1||E||||||5101^Meade^Tracy^F^^DR|||||||||||1570788^^^ADT1|||||||||||||||||||||||||20110213150035|\rOBX|||WT^WEIGHT||86|pounds|\rOBX|||HT^HEIGHT||72|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|Lab|Main HIS|St. Micheals|20110213145642||ADT^A08|9C38584D9201F08D2A17C8B01A1762AA5191A65B1AFC45C87CFF9B65D7BC0C20|P|2.6|\rEVN||20110213145747||||20110213145048|\rPID|||1200904^^^ADT1||Adams^Jim||20050213|M||Mixed|637 Miller Lane^^LA^CA^58776|||||||12-805-131|688-806-876|\rNK1|1|Fitzgerald^Tracy|Second Cousin|\rNK1|2|Garland^Fred|Grandchild|\rPV1||E||||||5101^Muir^Tracy^F^^DR|||||||||||5024262^^^ADT1|||||||||||||||||||||||||20110213145435|\rOBX|||WT^WEIGHT||111|pounds|\rOBX|||HT^HEIGHT||25|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|E\\T\\R|Main HIS|St. Micheals|20110213145754||ADT^A06|9C38584D9C0175735BA5C94EFDCAD34B1E8CCD50CC24A4609DA27328214A6E65|P|2.6|\rEVN||20110213145941||||20110213145733|\rPID|||4789270^^^ADT1||Garland^Gary||19890108|M||Mixed|72 Main Rd.^^Toronto^ON^61342|||||||84-121-150|14-388-94|\rNK1|1|Muir^Jim|Grandchild|\rNK1|2|Garland^John|Grandchild|\rNK1|3|Garland^Tracy|Second Cousin|\rNK1|4|WHITE^Mary|Parent|\rNK1|5|Muir^Fred|Second Cousin|\rNK1|6|WHITE^Mary|Grandchild|\rPV1||E||||||5101^Meade^Fred^F^^DR|||||||||||8895230^^^ADT1|||||||||||||||||||||||||20110213144538|\rOBX|||WT^WEIGHT||126|pounds|\rOBX|||HT^HEIGHT||74|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20110213145253||ADT^A03|9C38584D9C016563B40132A1B4F2FABA5DF6B8AD81C0C9701F87C6C851A7EE59|P|2.6|\rEVN||20110213150034||||20110213145849|\rPID|||1828975^^^ADT1||Muir^Fred||20090828|M||Unknown|353 Main Rd.^^Toronto^ON^25526|||||||53-817-663|475-758-401|\rNK1|1|Meade^Fred|Grandchild|\rNK1|2|WHITE^John|Second Cousin|\rNK1|3|Adams^Fred|Grandchild|\rNK1|4|Adams^Mary|Sibling|\rNK1|5|Meade^Fred|Grandchild|\rPV1||E||||||5101^Adams^Mary^F^^DR|||||||||||6900845^^^ADT1|||||||||||||||||||||||||20110213145758|\rOBX|||WT^WEIGHT||90|pounds|\rOBX|||HT^HEIGHT||36|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20110213150037||ADT^A01|9C38584D9C01F8FA8B3858DE3A2E0204C63CEEB91B14B855A8906060AAB1E2E6|P|2.6|\rEVN||20110213145248||||20110213145121|\rPID|||6451002^^^ADT1||WHITE^Fred||19840921|M||EU|791 Yonge St.^^LA^CA^53648|||||||60-925-744|587-585-627|\rNK1|1|Adams^John|Parent|\rPV1||E||||||5101^Muir^Fred^F^^DR|||||||||||4776757^^^ADT1|||||||||||||||||||||||||20110213144501|\rOBX|||WT^WEIGHT||123|pounds|\rOBX|||HT^HEIGHT||101|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20110213145746||ADT^A01|9C38584DA601DE67526BDE828253DD1A6920D00AD531D058D1C0AFE9B29406B5|P|2.6|\rEVN||20110213145937||||20110213144644|\rPID|||4159978^^^ADT1||Fitzgerald^Sabrina||19820313|F||Martian|97 Miller Lane^^ST. LOUIS^MO^9177|||||||54-371-384|717-256-166|\rNK1|1|Garland^John|Parent|\rNK1|2|Adams^Jim|Parent|\rNK1|3|Garland^Tracy|Parent|\rNK1|4|WHITE^Mary|Sibling|\rPV1||E||||||5101^Garland^Fred^F^^DR|||||||||||5466475^^^ADT1|||||||||||||||||||||||||20110213145802|\rOBX|||WT^WEIGHT||33|pounds|\rOBX|||HT^HEIGHT||109|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20110213145638||ADT^A07|9C38584DA601678C740D895498904444594A40E7407B649CDF8FDC72CDE3541E|P|2.6|\rEVN||20110213144939||||20110213145336|\rPID|||7933591^^^ADT1||Smith^Mary||19900109|F||EU|493 Delphi Cres.^^LA^CA^39247|||||||66-750-541|8-245-704|\rNK1|1|Smith^Jim|Second Cousin|\rNK1|2|Muir^Sabrina|Grandchild|\rNK1|3|Garland^Tracy|Grandchild|\rNK1|4|Garland^John|Sibling|\rNK1|5|Fitzgerald^Mary|Grandchild|\rNK1|6|Fitzgerald^John|Grandchild|\rPV1||E||||||5101^Smith^Sabrina^F^^DR|||||||||||6386914^^^ADT1|||||||||||||||||||||||||20110213144526|\rOBX|||WT^WEIGHT||122|pounds|\rOBX|||HT^HEIGHT||55|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|Lab|Main HIS|St. Micheals|20110213145110||ADT^A03|9C38584DA60176EE44F0BCA9A154E75ED7A5C0329BD3B36EC54F3F229FBAD772|P|2.6|\rEVN||20110213145000||||20110213145230|\rPID|||5113681^^^ADT1||Meade^Tracy||20071005|F||Unknown|24 Main Rd.^^Toronto^ON^41252|||||||90-587-335|743-118-808|\rNK1|1|Meade^Tracy|Sibling|\rPV1||E||||||5101^Fitzgerald^Tracy^F^^DR|||||||||||722374^^^ADT1|||||||||||||||||||||||||20110213144644|\rOBX|||WT^WEIGHT||106|pounds|\rOBX|||HT^HEIGHT||25|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20110213145420||ADT^A03|9C38584DB001F039AEB05CF7FA93DDD06AC4747C33F787D7092A3DA07C46E637|P|2.6|\rEVN||20110213144751||||20110213145325|\rPID|||4840846^^^ADT1||Meade^John||19910205|M||EU|334 Yonge St.^^ST. LOUIS^MO^55959|||||||50-705-845|367-71-360|\rNK1|1|Meade^Jim|Grandchild|\rNK1|2|Adams^Sabrina|Sibling|\rNK1|3|Smith^Gary|Grandchild|\rNK1|4|WHITE^Tracy|Grandchild|\rNK1|5|Fitzgerald^Mary|Grandchild|\rNK1|6|Garland^Sabrina|Second Cousin|\rPV1||E||||||5101^Smith^Mary^F^^DR|||||||||||8956572^^^ADT1|||||||||||||||||||||||||20110213145111|\rOBX|||WT^WEIGHT||53|pounds|\rOBX|||HT^HEIGHT||97|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20110213145457||ADT^A06|9C38584DB001B4C6C2C1A929079E2D6EBAE1DD3BB1C156CF1B7C3C3A99B40AF9|P|2.6|\rEVN||20110213145440||||20110213144716|\rPID|||9046296^^^ADT1||Adams^John||20070420|M||Mixed|75 Main Rd.^^Chicago^IL^1172|||||||52-704-744|313-995-910|\rNK1|1|Meade^Tracy|Grandchild|\rNK1|2|Garland^Gary|Grandchild|\rNK1|3|Adams^Gary|Second Cousin|\rPV1||E||||||5101^Fitzgerald^Jim^F^^DR|||||||||||1124913^^^ADT1|||||||||||||||||||||||||20110213145229|\rOBX|||WT^WEIGHT||96|pounds|\rOBX|||HT^HEIGHT||49|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|Lab|Main HIS|St. Micheals|20110213144615||ADT^A08|9C38584DB001F9BD78AEC4FCFAAEC4DF3F36A0031B11B11C404230036FABAA04|P|2.6|\rEVN||20110213144828||||20110213145829|\rPID|||6873073^^^ADT1||Muir^Mary||19981203|F||EU|147 Delphi Cres.^^Toronto^ON^99270|||||||63-36-284|21-104-260|\rNK1|1|Fitzgerald^Mary|Grandchild|\rNK1|2|Fitzgerald^Jim|Parent|\rNK1|3|Fitzgerald^Mary|Grandchild|\rNK1|4|Meade^Gary|Grandchild|\rNK1|5|Adams^Sabrina|Second Cousin|\rPV1||E||||||5101^Meade^Jim^F^^DR|||||||||||6280099^^^ADT1|||||||||||||||||||||||||20110213144800|\rOBX|||WT^WEIGHT||122|pounds|\rOBX|||HT^HEIGHT||32|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|Lab|Main HIS|St. Micheals|20110213144929||ADT^A03|9C38584DBA014FE38B00CD191ADBABF1C10216BD1F52FB32E96C18A20E21FF8A|P|2.6|\rEVN||20110213145034||||20110213150012|\rPID|||5498825^^^ADT1||Meade^Tracy||19891027|F||Martian|269 Miller Lane^^ST. LOUIS^MO^82882|||||||19-206-623|842-500-592|\rNK1|1|Fitzgerald^John|Sibling|\rNK1|2|Smith^Tracy|Sibling|\rNK1|3|Fitzgerald^Tracy|Grandchild|\rNK1|4|Meade^Sabrina|Sibling|\rPV1||E||||||5101^Fitzgerald^Mary^F^^DR|||||||||||1254921^^^ADT1|||||||||||||||||||||||||20110213145555|\rOBX|||WT^WEIGHT||116|pounds|\rOBX|||HT^HEIGHT||38|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20110213144743||ADT^A05|9C38584DBA018EDEB9C1547476F4183D55977C6733FE2B11F8E8679ED49C2D9E|P|2.6|\rEVN||20110213150037||||20110213144905|\rPID|||9108859^^^ADT1||Muir^Mary||19811229|F||Martian|588 Miller Lane^^ST. LOUIS^MO^59438|||||||88-836-750|762-235-780|\rNK1|1|Fitzgerald^Sabrina|Grandchild|\rNK1|2|Fitzgerald^Fred|Parent|\rNK1|3|Muir^Mary|Grandchild|\rNK1|4|Muir^Mary|Sibling|\rPV1||E||||||5101^Adams^John^F^^DR|||||||||||4062624^^^ADT1|||||||||||||||||||||||||20110213145658|\rOBX|||WT^WEIGHT||91|pounds|\rOBX|||HT^HEIGHT||118|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|Lab|Main HIS|St. Micheals|20110213144941||ADT^A05|9C38584DBA01EDB0346C08E69CDE69537A9717B9D571BA2453AF49655B677FB6|P|2.6|\rEVN||20110213145319||||20110213145736|\rPID|||9578844^^^ADT1||Fitzgerald^Sabrina||20000121|F||Martian|97 Main Rd.^^Toronto^ON^9910|||||||49-231-336|536-926-52|\rNK1|1|WHITE^Jim|Grandchild|\rNK1|2|Adams^Fred|Sibling|\rNK1|3|Smith^John|Grandchild|\rNK1|4|Garland^Mary|Second Cousin|\rNK1|5|Smith^Tracy|Grandchild|\rNK1|6|WHITE^Mary|Parent|\rPV1||E||||||5101^Adams^Jim^F^^DR|||||||||||2717063^^^ADT1|||||||||||||||||||||||||20110213145634|\rOBX|||WT^WEIGHT||125|pounds|\rOBX|||HT^HEIGHT||41|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20110213145555||ADT^A06|9C38584DC401EB7C1D3787F286F0976343A34FC0C7C243C6A9DB4604D031A385|P|2.6|\rEVN||20110213145258||||20110213150048|\rPID|||67141^^^ADT1||Garland^Tracy||19851207|F||Martian|283 Delphi Cres.^^LA^CA^59377|||||||81-71-800|752-766-478|\rNK1|1|Fitzgerald^Sabrina|Sibling|\rNK1|2|Fitzgerald^Gary|Sibling|\rNK1|3|Fitzgerald^Jim|Grandchild|\rNK1|4|Muir^Mary|Grandchild|\rNK1|5|Muir^Gary|Second Cousin|\rPV1||E||||||5101^Muir^Fred^F^^DR|||||||||||1460006^^^ADT1|||||||||||||||||||||||||20110213150009|\rOBX|||WT^WEIGHT||58|pounds|\rOBX|||HT^HEIGHT||73|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|E\\T\\R|Main HIS|St. Micheals|20110213150119||ADT^A03|9C38584DC4016A97CBA6DB687A97A544A5B507075F558A9C9EE7C5A06FDA2F4C|P|2.6|\rEVN||20110213145019||||20110213144856|\rPID|||6723533^^^ADT1||Smith^Fred||20020807|M||AI|504 Delphi Cres.^^Chicago^IL^5320|||||||53-651-985|753-896-371|\rNK1|1|Fitzgerald^Tracy|Sibling|\rNK1|2|Adams^Sabrina|Parent|\rNK1|3|Meade^Jim|Sibling|\rNK1|4|Adams^Gary|Parent|\rNK1|5|Garland^Jim|Second Cousin|\rPV1||E||||||5101^Adams^Sabrina^F^^DR|||||||||||4366894^^^ADT1|||||||||||||||||||||||||20110213145344|\rOBX|||WT^WEIGHT||36|pounds|\rOBX|||HT^HEIGHT||28|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20110213144746||ADT^A07|9C38584DC4016927A47A6E66A9115FBC10F2AFF3D87ED03EE0697B4B69E5B182|P|2.6|\rEVN||20110213145745||||20110213145331|\rPID|||8736228^^^ADT1||Garland^Mary||19980627|F||AI|623 Miller Lane^^Chicago^IL^93243|||||||96-160-582|825-113-556|\rNK1|1|Garland^Tracy|Grandchild|\rNK1|2|Smith^Tracy|Parent|\rNK1|3|WHITE^Jim|Grandchild|\rNK1|4|Adams^Jim|Second Cousin|\rNK1|5|Meade^Sabrina|Sibling|\rPV1||E||||||5101^WHITE^Fred^F^^DR|||||||||||890225^^^ADT1|||||||||||||||||||||||||20110213145752|\rOBX|||WT^WEIGHT||122|pounds|\rOBX|||HT^HEIGHT||108|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20110213145934||ADT^A04|9C38584DCE013B7E92B4826E77FB4B252AC153FF6B0EBDFD91119A704C1A34CB|P|2.6|\rEVN||20110213144623||||20110213150007|\rPID|||6164434^^^ADT1||Garland^John||19860901|M||AI|424 Miller Lane^^ST. LOUIS^MO^10856|||||||27-960-896|175-535-526|\rNK1|1|WHITE^Mary|Parent|\rNK1|2|Meade^Mary|Parent|\rNK1|3|Garland^Sabrina|Grandchild|\rPV1||E||||||5101^Adams^John^F^^DR|||||||||||2131413^^^ADT1|||||||||||||||||||||||||20110213144941|\rOBX|||WT^WEIGHT||126|pounds|\rOBX|||HT^HEIGHT||112|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|E\\T\\R|Main HIS|St. Micheals|20110213150033||ADT^A01|9C38584DCE018EA1C9036982D220C72EC8783D207C2ACB062ACD474EA5E5281F|P|2.6|\rEVN||20110213145257||||20110213144511|\rPID|||9620044^^^ADT1||Smith^Mary||20000128|F||Martian|833 Delphi Cres.^^Toronto^ON^79674|||||||65-463-468|715-121-151|\rNK1|1|Fitzgerald^Sabrina|Grandchild|\rPV1||E||||||5101^Adams^Jim^F^^DR|||||||||||9070101^^^ADT1|||||||||||||||||||||||||20110213145613|\rOBX|||WT^WEIGHT||41|pounds|\rOBX|||HT^HEIGHT||110|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|Lab|Main HIS|St. Micheals|20110213145914||ADT^A04|9C38584DCE01324E4D88A8E28E387E99A192BAF780623EBE6E1C1B07D021F103|P|2.6|\rEVN||20110213145917||||20110213145845|\rPID|||4509415^^^ADT1||Meade^Mary||20110114|F||Unknown|380 Yonge St.^^ST. LOUIS^MO^64067|||||||90-309-839|928-755-9|\rNK1|1|Smith^Tracy|Sibling|\rNK1|2|Muir^Sabrina|Parent|\rPV1||E||||||5101^Fitzgerald^Gary^F^^DR|||||||||||5099643^^^ADT1|||||||||||||||||||||||||20110213145515|\rOBX|||WT^WEIGHT||45|pounds|\rOBX|||HT^HEIGHT||62|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20110213144736||ADT^A04|9C38584DD8011266F8EB1C9A21D0C04B176148978DEFC6AE7D4C24C204603449|P|2.6|\rEVN||20110213150104||||20110213145955|\rPID|||8197882^^^ADT1||Meade^John||19941117|M||AI|778 Yonge St.^^ST. LOUIS^MO^40172|||||||23-693-687|523-314-587|\rNK1|1|Smith^Jim|Second Cousin|\rNK1|2|Muir^Jim|Second Cousin|\rNK1|3|WHITE^Tracy|Second Cousin|\rNK1|4|Smith^Mary|Grandchild|\rPV1||E||||||5101^Garland^Sabrina^F^^DR|||||||||||9486678^^^ADT1|||||||||||||||||||||||||20110213145722|\rOBX|||WT^WEIGHT||60|pounds|\rOBX|||HT^HEIGHT||111|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|E\\T\\R|Main HIS|St. Micheals|20110213144859||ADT^A04|9C38584DD801C837DAE3D2181F12BEA0B2F2481943E4352B3E7288F02D322518|P|2.6|\rEVN||20110213145429||||20110213144850|\rPID|||1330607^^^ADT1||Muir^Tracy||20000827|F||AI|579 Delphi Cres.^^ST. LOUIS^MO^25459|||||||96-489-103|676-739-46|\rNK1|1|Adams^Tracy|Grandchild|\rPV1||E||||||5101^Meade^Mary^F^^DR|||||||||||4307077^^^ADT1|||||||||||||||||||||||||20110213150029|\rOBX|||WT^WEIGHT||94|pounds|\rOBX|||HT^HEIGHT||50|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|E\\T\\R|Main HIS|St. Micheals|20110213145637||ADT^A06|9C38584DD801D834202BB1E5C87FE4F0A0D6EEB07E7E4C735FFF9416833770DD|P|2.6|\rEVN||20110213150047||||20110213144657|\rPID|||6599933^^^ADT1||Smith^Gary||20040326|M||Martian|953 Yonge St.^^Toronto^ON^6733|||||||10-834-923|864-678-271|\rNK1|1|Muir^Mary|Grandchild|\rPV1||E||||||5101^Smith^Fred^F^^DR|||||||||||2200995^^^ADT1|||||||||||||||||||||||||20110213145400|\rOBX|||WT^WEIGHT||119|pounds|\rOBX|||HT^HEIGHT||30|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|Lab|Main HIS|St. Micheals|20110213144619||ADT^A01|9C38584DE201A2C53C764B7A6AA54B7DB8EFAA975CBE80F8E8E1D3756554F9C9|P|2.6|\rEVN||20110213145634||||20110213144541|\rPID|||1958678^^^ADT1||WHITE^Jim||19930616|M||AI|743 Delphi Cres.^^LA^CA^46648|||||||55-476-779|242-356-367|\rNK1|1|Muir^Fred|Grandchild|\rNK1|2|Adams^Jim|Parent|\rPV1||E||||||5101^WHITE^John^F^^DR|||||||||||9952391^^^ADT1|||||||||||||||||||||||||20110213145137|\rOBX|||WT^WEIGHT||121|pounds|\rOBX|||HT^HEIGHT||66|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|E\\T\\R|Main HIS|St. Micheals|20110213145350||ADT^A01|9C38584DE2012D72CDCECE6871BD8A68BE924A4C7841E1722894FFD74C0212EB|P|2.6|\rEVN||20110213145231||||20110213145511|\rPID|||1911375^^^ADT1||Smith^Fred||20051011|M||Mixed|412 Delphi Cres.^^ST. LOUIS^MO^32496|||||||11-311-653|881-163-450|\rNK1|1|Smith^Gary|Second Cousin|\rNK1|2|Muir^Gary|Sibling|\rNK1|3|Fitzgerald^Tracy|Parent|\rNK1|4|Smith^Tracy|Sibling|\rPV1||E||||||5101^Muir^Mary^F^^DR|||||||||||910673^^^ADT1|||||||||||||||||||||||||20110213145609|\rOBX|||WT^WEIGHT||117|pounds|\rOBX|||HT^HEIGHT||41|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20110213145439||ADT^A05|9C38584DE2014B5F2B0723AB2A710D29BFC5E0B10BA640E59914869A910B954C|P|2.6|\rEVN||20110213144506||||20110213145203|\rPID|||3269448^^^ADT1||Muir^Sabrina||20001106|F||Martian|294 Delphi Cres.^^Toronto^ON^36473|||||||54-856-764|166-330-810|\rNK1|1|Adams^Sabrina|Sibling|\rPV1||E||||||5101^Meade^Mary^F^^DR|||||||||||1138341^^^ADT1|||||||||||||||||||||||||20110213145755|\rOBX|||WT^WEIGHT||116|pounds|\rOBX|||HT^HEIGHT||53|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20110213144832||ADT^A07|9C38584DEC01796544922B9D92E28C266382E0531E334F1F475E0984F5B518DB|P|2.6|\rEVN||20110213145643||||20110213145947|\rPID|||5329142^^^ADT1||Adams^Gary||19980627|M||AI|354 Main Rd.^^Toronto^ON^79793|||||||25-470-133|757-93-682|\rNK1|1|Adams^Sabrina|Sibling|\rNK1|2|Smith^Gary|Parent|\rNK1|3|WHITE^Sabrina|Second Cousin|\rNK1|4|Meade^Sabrina|Second Cousin|\rPV1||E||||||5101^Smith^Sabrina^F^^DR|||||||||||2866604^^^ADT1|||||||||||||||||||||||||20110213145249|\rOBX|||WT^WEIGHT||116|pounds|\rOBX|||HT^HEIGHT||46|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|Lab|Main HIS|St. Micheals|20110213144955||ADT^A03|9C38584DEC017F0B572F01F0FCA9D9EB2B74B6C574A7113FBA4D62630CF87EB7|P|2.6|\rEVN||20110213145025||||20110213145629|\rPID|||9085665^^^ADT1||Garland^Jim||19840401|M||Unknown|265 Main Rd.^^ST. LOUIS^MO^15070|||||||84-371-264|525-253-179|\rNK1|1|Garland^Sabrina|Sibling|\rNK1|2|Fitzgerald^Tracy|Parent|\rNK1|3|Garland^Jim|Grandchild|\rNK1|4|Meade^Gary|Grandchild|\rNK1|5|Smith^Tracy|Parent|\rPV1||E||||||5101^Meade^Sabrina^F^^DR|||||||||||9496444^^^ADT1|||||||||||||||||||||||||20110213150125|\rOBX|||WT^WEIGHT||51|pounds|\rOBX|||HT^HEIGHT||42|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20110213145017||ADT^A07|9C38584DEC0126C78146A44A02717752E959C4876E3B0ADD3295E3468DB9359C|P|2.6|\rEVN||20110213144752||||20110213144640|\rPID|||8229316^^^ADT1||Garland^Gary||20010528|M||EU|964 Main Rd.^^Toronto^ON^73684|||||||32-234-159|515-556-821|\rNK1|1|Adams^Sabrina|Grandchild|\rNK1|2|Smith^Sabrina|Second Cousin|\rPV1||E||||||5101^Muir^Mary^F^^DR|||||||||||6549577^^^ADT1|||||||||||||||||||||||||20110213144852|\rOBX|||WT^WEIGHT||42|pounds|\rOBX|||HT^HEIGHT||84|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20110213145948||ADT^A08|9C38584DF601FB7275DBA00FD526F947DCDF3F2118A7030563ABF32294BBC910|P|2.6|\rEVN||20110213145753||||20110213144953|\rPID|||7560655^^^ADT1||Smith^Fred||19970720|M||Martian|764 Main Rd.^^LA^CA^14515|||||||15-797-40|610-273-975|\rNK1|1|Adams^Fred|Parent|\rNK1|2|Muir^Tracy|Parent|\rNK1|3|Garland^Jim|Second Cousin|\rNK1|4|Adams^Gary|Parent|\rNK1|5|Meade^Mary|Parent|\rPV1||E||||||5101^Meade^Mary^F^^DR|||||||||||5341960^^^ADT1|||||||||||||||||||||||||20110213145006|\rOBX|||WT^WEIGHT||60|pounds|\rOBX|||HT^HEIGHT||74|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|E\\T\\R|Main HIS|St. Micheals|20110213144837||ADT^A01|9C38584DF601760617130CAAC2877E7705FFFE178CEFDAE5078AFE95854004C2|P|2.6|\rEVN||20110213144759||||20110213144858|\rPID|||7471541^^^ADT1||Smith^Mary||19891203|F||Martian|687 Delphi Cres.^^ST. LOUIS^MO^4880|||||||78-584-811|674-891-771|\rNK1|1|WHITE^Sabrina|Second Cousin|\rNK1|2|Fitzgerald^Gary|Sibling|\rNK1|3|Garland^Gary|Parent|\rNK1|4|WHITE^Mary|Parent|\rPV1||E||||||5101^Muir^Gary^F^^DR|||||||||||5303812^^^ADT1|||||||||||||||||||||||||20110213144851|\rOBX|||WT^WEIGHT||40|pounds|\rOBX|||HT^HEIGHT||70|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20110213150024||ADT^A06|9C38584DF601F5319ACFAE8E2EC7F658DE53572C02B81A9F2D8F9419DFD64DAC|P|2.6|\rEVN||20110213144659||||20110213144759|\rPID|||1022676^^^ADT1||WHITE^Gary||19860626|M||Martian|537 Yonge St.^^Chicago^IL^33461|||||||45-452-833|161-47-731|\rNK1|1|Muir^Jim|Sibling|\rPV1||E||||||5101^Muir^Mary^F^^DR|||||||||||8605304^^^ADT1|||||||||||||||||||||||||20110213145653|\rOBX|||WT^WEIGHT||92|pounds|\rOBX|||HT^HEIGHT||67|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20110213145041||ADT^A01|9C38584D000254549FB24E7FAC435F0B3B451854201263B33BA0944828B2A040|P|2.6|\rEVN||20110213144728||||20110213145936|\rPID|||9734183^^^ADT1||Garland^Gary||19790829|M||Martian|541 Main Rd.^^LA^CA^71126|||||||29-219-356|163-754-142|\rNK1|1|WHITE^Tracy|Sibling|\rNK1|2|Muir^Jim|Parent|\rNK1|3|Garland^Jim|Parent|\rPV1||E||||||5101^Smith^John^F^^DR|||||||||||2796716^^^ADT1|||||||||||||||||||||||||20110213145013|\rOBX|||WT^WEIGHT||99|pounds|\rOBX|||HT^HEIGHT||104|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|E\\T\\R|Main HIS|St. Micheals|20110213145825||ADT^A06|9C38584D0002089BA613AA1CDB68DB3386288E65503E8BF9506BADD41058A9C8|P|2.6|\rEVN||20110213145054||||20110213150043|\rPID|||6583148^^^ADT1||WHITE^Fred||20060611|M||EU|950 Miller Lane^^Toronto^ON^1652|||||||95-503-212|827-577-648|\rNK1|1|Fitzgerald^John|Grandchild|\rNK1|2|WHITE^Mary|Parent|\rNK1|3|Muir^Sabrina|Parent|\rNK1|4|WHITE^Gary|Sibling|\rPV1||E||||||5101^Garland^Sabrina^F^^DR|||||||||||2151250^^^ADT1|||||||||||||||||||||||||20110213145849|\rOBX|||WT^WEIGHT||53|pounds|\rOBX|||HT^HEIGHT||109|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20110213145502||ADT^A08|9C38584D0002B7BC64C02B02E880CCE5655297654015A92CB30B1C25BF910FB0|P|2.6|\rEVN||20110213150053||||20110213144458|\rPID|||3680838^^^ADT1||Meade^Mary||19950313|F||Unknown|279 Main Rd.^^Chicago^IL^96737|||||||50-493-79|327-331-480|\rNK1|1|Adams^John|Grandchild|\rNK1|2|Adams^Gary|Sibling|\rNK1|3|Smith^Jim|Second Cousin|\rPV1||E||||||5101^Smith^Jim^F^^DR|||||||||||2086246^^^ADT1|||||||||||||||||||||||||20110213145321|\rOBX|||WT^WEIGHT||121|pounds|\rOBX|||HT^HEIGHT||80|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20110213144635||ADT^A01|9C38584D0A025D5A577194FCDFA822B231B759A10113CB8F5FEA21A6DD9BD623|P|2.6|\rEVN||20110213150121||||20110213145452|\rPID|||3358867^^^ADT1||Adams^Mary||19871216|F||Unknown|335 Main Rd.^^ST. LOUIS^MO^91177|||||||86-296-315|25-702-494|\rNK1|1|Garland^Mary|Parent|\rNK1|2|Adams^Sabrina|Second Cousin|\rNK1|3|Adams^John|Second Cousin|\rPV1||E||||||5101^Smith^Gary^F^^DR|||||||||||6711020^^^ADT1|||||||||||||||||||||||||20110213145436|\rOBX|||WT^WEIGHT||120|pounds|\rOBX|||HT^HEIGHT||29|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20110213145236||ADT^A01|9C38584D0A0294639369EBBEEC6804BA4A30F599626252D607F5472B9FCBFEFA|P|2.6|\rEVN||20110213150100||||20110213145731|\rPID|||4802393^^^ADT1||Adams^Gary||20010808|M||AI|958 Main Rd.^^LA^CA^19627|||||||46-406-62|983-668-331|\rNK1|1|Adams^Tracy|Sibling|\rNK1|2|WHITE^Gary|Second Cousin|\rNK1|3|Muir^John|Parent|\rNK1|4|Meade^Mary|Second Cousin|\rPV1||E||||||5101^Fitzgerald^Gary^F^^DR|||||||||||8274178^^^ADT1|||||||||||||||||||||||||20110213145238|\rOBX|||WT^WEIGHT||78|pounds|\rOBX|||HT^HEIGHT||28|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|Lab|Main HIS|St. Micheals|20110213145227||ADT^A06|9C38584D0A02977282720309D5F9E17B4481D6B6516B97D0361A8A4B9A852410|P|2.6|\rEVN||20110213145210||||20110213144826|\rPID|||8113956^^^ADT1||Meade^Jim||19820401|M||Mixed|842 Main Rd.^^LA^CA^18867|||||||24-740-947|506-634-63|\rNK1|1|WHITE^Tracy|Sibling|\rNK1|2|Meade^Mary|Parent|\rNK1|3|Muir^Sabrina|Parent|\rNK1|4|Adams^Jim|Parent|\rNK1|5|Fitzgerald^Tracy|Second Cousin|\rNK1|6|Garland^Jim|Grandchild|\rPV1||E||||||5101^WHITE^Jim^F^^DR|||||||||||5570543^^^ADT1|||||||||||||||||||||||||20110213145340|\rOBX|||WT^WEIGHT||99|pounds|\rOBX|||HT^HEIGHT||111|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20110213145559||ADT^A06|9C38584D1402E49057C858151ADE12834A592FA8451E78B1FD7F56E4F97AF06B|P|2.6|\rEVN||20110213145257||||20110213145440|\rPID|||9174169^^^ADT1||Fitzgerald^Sabrina||19871016|F||Martian|368 Main Rd.^^Toronto^ON^69155|||||||41-693-397|725-428-952|\rNK1|1|Muir^Mary|Sibling|\rPV1||E||||||5101^Meade^Gary^F^^DR|||||||||||4507584^^^ADT1|||||||||||||||||||||||||20110213144931|\rOBX|||WT^WEIGHT||87|pounds|\rOBX|||HT^HEIGHT||26|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20110213144924||ADT^A06|9C38584D1402943F8B2B9A1923924DE9688A738D6CDD88F6571745E20DF75AAD|P|2.6|\rEVN||20110213145643||||20110213144813|\rPID|||5879696^^^ADT1||WHITE^Gary||20010710|M||EU|371 Yonge St.^^Chicago^IL^34333|||||||97-581-527|321-787-435|\rNK1|1|Meade^Sabrina|Sibling|\rNK1|2|Muir^Tracy|Parent|\rNK1|3|Adams^John|Second Cousin|\rNK1|4|Meade^Gary|Parent|\rNK1|5|Adams^Jim|Sibling|\rPV1||E||||||5101^Garland^Fred^F^^DR|||||||||||5912656^^^ADT1|||||||||||||||||||||||||20110213145501|\rOBX|||WT^WEIGHT||31|pounds|\rOBX|||HT^HEIGHT||50|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|Lab|Main HIS|St. Micheals|20110213145228||ADT^A08|9C38584D1402370CB388CC4FFCC76CE1DC3CEB206563448C4E66E70618FC9E74|P|2.6|\rEVN||20110213145534||||20110213144914|\rPID|||8334299^^^ADT1||Garland^Sabrina||19901126|F||Mixed|613 Main Rd.^^Toronto^ON^84899|||||||88-240-914|339-743-11|\rNK1|1|Adams^Mary|Second Cousin|\rNK1|2|Garland^John|Parent|\rPV1||E||||||5101^WHITE^Sabrina^F^^DR|||||||||||9775994^^^ADT1|||||||||||||||||||||||||20110213145956|\rOBX|||WT^WEIGHT||35|pounds|\rOBX|||HT^HEIGHT||111|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|Lab|Main HIS|St. Micheals|20110213144857||ADT^A04|9C38584D1E0255886FD47CF10C376E1D4C73A62F5B4BB74C3E82279FE74B2B98|P|2.6|\rEVN||20110213144736||||20110213144959|\rPID|||3041170^^^ADT1||Garland^Sabrina||19791108|F||AI|245 Main Rd.^^LA^CA^93780|||||||42-872-672|607-426-770|\rNK1|1|Fitzgerald^Sabrina|Grandchild|\rNK1|2|Adams^John|Grandchild|\rNK1|3|Muir^Jim|Second Cousin|\rNK1|4|Adams^John|Parent|\rPV1||E||||||5101^Garland^Fred^F^^DR|||||||||||2509232^^^ADT1|||||||||||||||||||||||||20110213150010|\rOBX|||WT^WEIGHT||74|pounds|\rOBX|||HT^HEIGHT||43|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|E\\T\\R|Main HIS|St. Micheals|20110213145625||ADT^A01|9C38584D1E0224530F9E19FDD441F3C82D00D6D347AED28FC23C813FC3B0A425|P|2.6|\rEVN||20110213145242||||20110213145811|\rPID|||6325877^^^ADT1||Meade^Jim||19941130|M||EU|377 Main Rd.^^Toronto^ON^4044|||||||50-894-80|387-212-18|\rNK1|1|Adams^John|Grandchild|\rNK1|2|Smith^Jim|Parent|\rNK1|3|Fitzgerald^John|Parent|\rPV1||E||||||5101^WHITE^Mary^F^^DR|||||||||||8071230^^^ADT1|||||||||||||||||||||||||20110213145145|\rOBX|||WT^WEIGHT||98|pounds|\rOBX|||HT^HEIGHT||101|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20110213145617||ADT^A05|9C38584D1E0276FFAA7F265158C25CC4018FBADD0A5212017D9CFC892463D479|P|2.6|\rEVN||20110213145252||||20110213145540|\rPID|||8392895^^^ADT1||Meade^Tracy||20090630|F||Mixed|744 Main Rd.^^Toronto^ON^42442|||||||24-314-185|345-422-23|\rNK1|1|Smith^John|Sibling|\rNK1|2|Fitzgerald^John|Grandchild|\rNK1|3|Fitzgerald^Jim|Grandchild|\rNK1|4|Garland^Mary|Parent|\rNK1|5|Adams^Tracy|Parent|\rPV1||E||||||5101^Adams^Jim^F^^DR|||||||||||6745506^^^ADT1|||||||||||||||||||||||||20110213145140|\rOBX|||WT^WEIGHT||101|pounds|\rOBX|||HT^HEIGHT||100|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|Lab|Main HIS|St. Micheals|20110213144939||ADT^A08|9C38584D2802F9249872EACDAF7F49C25F1EF62FB22D0440F3F19D38B2896B7D|P|2.6|\rEVN||20110213144553||||20110213144915|\rPID|||9422589^^^ADT1||Garland^Jim||19910914|M||Unknown|231 Miller Lane^^Toronto^ON^71917|||||||76-879-212|367-432-680|\rNK1|1|Meade^Sabrina|Second Cousin|\rNK1|2|Muir^Jim|Parent|\rNK1|3|Muir^Fred|Parent|\rNK1|4|Fitzgerald^Tracy|Second Cousin|\rPV1||E||||||5101^Meade^John^F^^DR|||||||||||7360454^^^ADT1|||||||||||||||||||||||||20110213144958|\rOBX|||WT^WEIGHT||35|pounds|\rOBX|||HT^HEIGHT||71|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|E\\T\\R|Main HIS|St. Micheals|20110213144850||ADT^A04|9C38584D2802E66C8B6D797D27BB7019C08D0DD93DB1D49105B3B30F3886EE63|P|2.6|\rEVN||20110213144606||||20110213144934|\rPID|||6521500^^^ADT1||Fitzgerald^Sabrina||20000415|F||EU|689 Delphi Cres.^^LA^CA^76885|||||||65-773-847|147-509-393|\rNK1|1|Muir^Mary|Grandchild|\rNK1|2|WHITE^Fred|Grandchild|\rNK1|3|Meade^Fred|Parent|\rPV1||E||||||5101^Muir^Sabrina^F^^DR|||||||||||9544969^^^ADT1|||||||||||||||||||||||||20110213145548|\rOBX|||WT^WEIGHT||80|pounds|\rOBX|||HT^HEIGHT||46|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20110213145419||ADT^A05|9C38584D2802CF3547C0D6A7EE8A5637340AB108B632F00F343CB68A6B56F4F0|P|2.6|\rEVN||20110213150129||||20110213145518|\rPID|||1544542^^^ADT1||WHITE^John||19860509|M||AI|591 Miller Lane^^LA^CA^79470|||||||51-560-890|912-734-171|\rNK1|1|Meade^Tracy|Parent|\rNK1|2|Smith^Fred|Sibling|\rNK1|3|WHITE^Mary|Parent|\rNK1|4|Muir^Mary|Second Cousin|\rPV1||E||||||5101^Adams^Sabrina^F^^DR|||||||||||4053469^^^ADT1|||||||||||||||||||||||||20110213144524|\rOBX|||WT^WEIGHT||40|pounds|\rOBX|||HT^HEIGHT||46|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|E\\T\\R|Main HIS|St. Micheals|20110213145539||ADT^A08|9C38584D32020B5F6A6B80C955D80106DF0BB45FA9B6789758B6BDEAE0D6F019|P|2.6|\rEVN||20110213144518||||20110213145131|\rPID|||6828516^^^ADT1||Garland^Gary||19871127|M||Martian|962 Delphi Cres.^^LA^CA^19691|||||||98-204-846|480-953-223|\rNK1|1|Smith^Sabrina|Parent|\rNK1|2|Garland^John|Parent|\rNK1|3|WHITE^John|Second Cousin|\rNK1|4|Garland^Gary|Sibling|\rNK1|5|Fitzgerald^John|Parent|\rNK1|6|Muir^Gary|Sibling|\rPV1||E||||||5101^Meade^Tracy^F^^DR|||||||||||6001770^^^ADT1|||||||||||||||||||||||||20110213145729|\rOBX|||WT^WEIGHT||100|pounds|\rOBX|||HT^HEIGHT||98|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|E\\T\\R|Main HIS|St. Micheals|20110213144703||ADT^A07|9C38584D3202805A562CB7684FA2AA435A27AC2677633AD09DD3B9B204C21E73|P|2.6|\rEVN||20110213144510||||20110213144956|\rPID|||7209692^^^ADT1||Adams^Mary||19990208|F||Mixed|406 Main Rd.^^ST. LOUIS^MO^79720|||||||1-350-850|494-440-63|\rNK1|1|Adams^Mary|Parent|\rNK1|2|Garland^Sabrina|Parent|\rNK1|3|Garland^Sabrina|Parent|\rPV1||E||||||5101^Garland^Gary^F^^DR|||||||||||5689566^^^ADT1|||||||||||||||||||||||||20110213150042|\rOBX|||WT^WEIGHT||106|pounds|\rOBX|||HT^HEIGHT||107|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20110213144728||ADT^A07|9C38584D3C0218D9E63B735C85F6A296F5C40280FA8CA33E40FC8164B66C9256|P|2.6|\rEVN||20110213144525||||20110213145830|\rPID|||4362926^^^ADT1||Smith^Tracy||20010305|F||Unknown|925 Delphi Cres.^^LA^CA^16947|||||||98-717-443|198-416-597|\rNK1|1|Fitzgerald^John|Sibling|\rNK1|2|Adams^Jim|Parent|\rNK1|3|Garland^Sabrina|Second Cousin|\rNK1|4|Meade^Sabrina|Sibling|\rPV1||E||||||5101^Adams^Fred^F^^DR|||||||||||791345^^^ADT1|||||||||||||||||||||||||20110213145357|\rOBX|||WT^WEIGHT||32|pounds|\rOBX|||HT^HEIGHT||103|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20110213144630||ADT^A08|9C38584D3C024ABA892DD9A1D4A018FC426A33517110E7C3F2EAC351751D72C8|P|2.6|\rEVN||20110213145321||||20110213144837|\rPID|||8425550^^^ADT1||WHITE^Fred||19830815|M||EU|372 Yonge St.^^Chicago^IL^68694|||||||48-282-15|300-840-429|\rNK1|1|Fitzgerald^Jim|Parent|\rNK1|2|Meade^Mary|Grandchild|\rNK1|3|Muir^Mary|Parent|\rNK1|4|Meade^Fred|Grandchild|\rPV1||E||||||5101^Meade^Mary^F^^DR|||||||||||5008698^^^ADT1|||||||||||||||||||||||||20110213144608|\rOBX|||WT^WEIGHT||96|pounds|\rOBX|||HT^HEIGHT||118|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20110213150004||ADT^A06|9C38584D3C02D3C5AD54E82CC5D413C898EE7FBBAEE73B4CB8B5E1A2B8ABB319|P|2.6|\rEVN||20110213145526||||20110213144540|\rPID|||6805933^^^ADT1||Garland^Jim||19850923|M||Unknown|950 Delphi Cres.^^LA^CA^61052|||||||45-670-748|596-102-629|\rNK1|1|Adams^John|Sibling|\rNK1|2|Adams^Tracy|Second Cousin|\rPV1||E||||||5101^Fitzgerald^Tracy^F^^DR|||||||||||6090274^^^ADT1|||||||||||||||||||||||||20110213144857|\rOBX|||WT^WEIGHT||67|pounds|\rOBX|||HT^HEIGHT||119|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|E\\T\\R|Main HIS|St. Micheals|20110213145051||ADT^A01|9C38584D4602B2F0D6CE2D8B40AD37E5D4B80827BF5E1F3067CC0F13BB49D0DF|P|2.6|\rEVN||20110213150115||||20110213145638|\rPID|||1414533^^^ADT1||Smith^Jim||19991224|M||Unknown|652 Delphi Cres.^^LA^CA^30598|||||||36-495-528|592-353-636|\rNK1|1|Meade^Sabrina|Parent|\rNK1|2|Smith^Mary|Parent|\rNK1|3|WHITE^Jim|Grandchild|\rPV1||E||||||5101^Muir^Jim^F^^DR|||||||||||9011200^^^ADT1|||||||||||||||||||||||||20110213145221|\rOBX|||WT^WEIGHT||75|pounds|\rOBX|||HT^HEIGHT||28|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|E\\T\\R|Main HIS|St. Micheals|20110213144738||ADT^A04|9C38584D4602590209E683A3C3A19958EEE0E2B35087AE9266D1B45257DB71EE|P|2.6|\rEVN||20110213145320||||20110213144618|\rPID|||8782311^^^ADT1||Muir^Sabrina||19891001|F||AI|712 Main Rd.^^LA^CA^96746|||||||44-331-238|143-852-330|\rNK1|1|WHITE^Sabrina|Sibling|\rNK1|2|WHITE^Fred|Grandchild|\rNK1|3|Garland^Jim|Parent|\rNK1|4|WHITE^Mary|Sibling|\rNK1|5|WHITE^Sabrina|Parent|\rPV1||E||||||5101^Garland^Mary^F^^DR|||||||||||8540605^^^ADT1|||||||||||||||||||||||||20110213144602|\rOBX|||WT^WEIGHT||123|pounds|\rOBX|||HT^HEIGHT||51|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|E\\T\\R|Main HIS|St. Micheals|20110213145558||ADT^A03|9C38584D4602797BC742BBAA449149354C5DAEF5128DE5E67BA338EFEF2A04C4|P|2.6|\rEVN||20110213145710||||20110213150108|\rPID|||6196173^^^ADT1||Garland^Mary||19810319|F||Martian|128 Miller Lane^^Toronto^ON^29029|||||||41-650-414|751-791-92|\rNK1|1|Adams^Gary|Parent|\rNK1|2|Smith^Tracy|Second Cousin|\rNK1|3|Muir^Sabrina|Second Cousin|\rNK1|4|Meade^Fred|Second Cousin|\rNK1|5|Muir^Gary|Parent|\rPV1||E||||||5101^Fitzgerald^John^F^^DR|||||||||||2596515^^^ADT1|||||||||||||||||||||||||20110213145612|\rOBX|||WT^WEIGHT||38|pounds|\rOBX|||HT^HEIGHT||46|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20110213150057||ADT^A07|9C38584D5002F034716C75E5A2A1862A4625B1244F54D8D31E9C827F752A6A98|P|2.6|\rEVN||20110213150026||||20110213145249|\rPID|||742211^^^ADT1||Smith^Fred||19830207|M||Martian|815 Main Rd.^^LA^CA^30137|||||||20-62-310|350-263-125|\rNK1|1|Garland^Gary|Second Cousin|\rNK1|2|Fitzgerald^Mary|Second Cousin|\rNK1|3|Meade^Fred|Second Cousin|\rNK1|4|Meade^John|Parent|\rNK1|5|Meade^Gary|Grandchild|\rPV1||E||||||5101^Meade^Mary^F^^DR|||||||||||1734367^^^ADT1|||||||||||||||||||||||||20110213144601|\rOBX|||WT^WEIGHT||52|pounds|\rOBX|||HT^HEIGHT||105|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_ADT|XYZ_ADMITTING|MESA_IS|XYZ_HOSPITAL|||ADT^A04|101102|P|2.3.1||||||||\rEVN||200004211000||||200004210950\rPID|||583020^^^ADT1||WHITE^CHARLES||19980704|M||AI|7616 STANFORD AVE^^ST. LOUIS^MO^63130|||||||20-98-1701||||||||||||\rPV1||E||||||5101^NELL^FREDERICK^P^^DR|||||||||||V1002^^^ADT1|||||||||||||||||||||||||200004210950||||||||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_OP|XYZ_HOSPITAL|MESA_OF|XYZ_RADIOLOGY|||ORM^O01|101104|P|2.3.1||||||||\rPID|||583020^^^ADT1||WHITE^CHARLES||19980704|M||AI|7616 STANFORD AVE^^ST. LOUIS^MO^63130|||||||20-98-1701||||||||||||\rPV1||E|$PATIENT_LOCATION$||||$ATTENDING_DOCTOR$|5101^NELL^FREDERICK^P^^DR|||||||||||V1002^^^ADT1|||||||||||||||||||||||||200004210950||||||||\rORC|NW|A101Z^MESA_ORDPLC|||||1^once^^^^S||200004210955|^ROSEWOOD^RANDOLPH||7101^ESTRADA^JAIME^P^^DR||3145551212|200004210955||922229-10^IHE-RAD^IHE-CODE-231||\rOBR|1|A101Z^MESA_ORDPLC||P1^Procedure 1^ERL_MESA|||||||||xxx||Radiology^^^^R|7101^ESTRADA^JAIME^P^^DR|||||||||||1^once^^^^S|||WALK|Project Manager||||||||||A||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_OF|XYZ_RADIOLOGY|MESA_IM|XYZ_IMAGE_MANAGER|||ORM^O01|$MESSAGE_CONTROL_ID$|P|2.3.1||||||||\rPID|||583020^^^ADT1||WHITE^CHARLES||19980704|M||AI|7616 STANFORD AVE^^ST. LOUIS^MO^63130|||||||20-98-1701||||||||||||\rPV1||E||||||5101^NELL^FREDERICK^P^^DR|||||||||||V1002^^^ADT1|||||||||||||||||||||||||200004210950||||||||\rORC|NW|A101Z^MESA_ORDPLC|B101Z^MESA_ORDFIL||SC||1^once^^^^S||200004210950|^ROSEWOOD^RANDOLPH||7101^ESTRADA^JAIME^P^^DR||3145551212|200004210950||922229-10^IHE-RAD^IHE-CODE-231||\rOBR|1|A101Z^MESA_ORDPLC|B101Z^MESA_ORDFIL|P1^Procedure 1^ERL_MESA^X1_A1^SP Action Item X1_A1^DSS_MESA|||||||||xxx||Radiology^^^^R|7101^ESTRADA^JAIME^P^^DR||ACCESSION_NUMBER|REQUESTED_PROCEDURE_ID|SCHEDULED_PROCEDURE_STEP_ID||||MR|||1^once^^^^S|||WALK|||||||||||A||\rZDS|1.2.1^100^Application^DICOM\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_ADT|XYZ_ADMITTING|MESA_IS|XYZ_HOSPITAL|||ADT^A06|101126|P|2.3.1||||||||\rEVN||200004211000||||200004210950\rPID|||583020^^^ADT1||WHITE^CHARLES||19980704|M||AI|7616 STANFORD AVE^^ST. LOUIS^MO^63130|||||||20-98-1701||||||||||||\rPV1||I|1E^111^1^XYZ_HOSPITAL|||$PRIOR_LOCATION$|1234^WEAVER^TIMOTHY^P^^DR|5101^NELL^FREDERICK^P^^DR|||||||||||V1002^^^ADT1|||||||||||||||||||||||||200004210950||||||||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_OF|XYZ_RADIOLOGY|MESA_IM|XYZ_RADIOLOGY|||ADT^A06|101128|P|2.3.1||||||||\rEVN||200004211000||||200004210950\rPID|||583020^^^ADT1||WHITE^CHARLES||19980704|M||AI|7616 STANFORD AVE^^ST. LOUIS^MO^63130|||||||20-98-1701||||||||||||\rPV1||I|1E^111^1^XYZ_HOSPITAL|||$PRIOR_LOCATION$|1234^WEAVER^TIMOTHY^P^^DR|5101^NELL^FREDERICK^P^^DR|||||||||||V1002^^^ADT1|||||||||||||||||||||||||200004210950||||||||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_ADT|XYZ_ADMITTING|MESA_IS|XYZ_HOSPITAL|||ADT^A03|101130|P|2.3.1||||||||\rEVN||200004212200||||200004211950\rPID|||583020^^^ADT1||WHITE^CHARLES||19980704|M||AI|7616 STANFORD AVE^^ST. LOUIS^MO^63130|||||||20-98-1701||||||||||||\rPV1||I|1E^111^1^XYZ_HOSPITAL||||1234^WEAVER^TIMOTHY^P^^DR|5101^NELL^FREDERICK^P^^DR|||||||||||V1002^^^ADT1||||||||||||||||||||||||||$DISCHARGE_DATE_TIME$|||||||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_OF|XYZ_RADIOLOGY|MESA_IM|XYZ_RADIOLOGY|||ADT^A03|101132|P|2.3.1||||||||\rEVN||200004212200||||200004211950\rPID|||583020^^^ADT1||WHITE^CHARLES||19980704|M||AI|7616 STANFORD AVE^^ST. LOUIS^MO^63130|||||||20-98-1701||||||||||||\rPV1||I|1E^111^1^XYZ_HOSPITAL||||1234^WEAVER^TIMOTHY^P^^DR|5101^NELL^FREDERICK^P^^DR|||||||||||V1002^^^ADT1||||||||||||||||||||||||||$DISCHARGE_DATE_TIME$|||||||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_ADT|XYZ_ADMITTING|MESA_IS|XYZ_HOSPITAL|||ADT^A04|101160|P|2.3.1||||||||\rEVN||200004230800||||200004230800\rPID|||583220^^^ADT1||DOE^J2|||M||AI||||||||20-98-3210||||||||||||\rPV1||E||||||5101^NELL^FREDERICK^P^^DR|||||||||||V1102^^^ADT1|||||||||||||||||||||||||200004230800||||||||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_OF|XYZ_RADIOLOGY|MESA_IM|XYZ_RADIOLOGY|||ADT^A40|101161|P|2.3.1||||||||\rEVN||200004211000||||200004210950\rPID|||583220^^^ADT1||DOE^J2|||M||AI||||||||20-98-3210||||||||||||\rMRG|T9020^^^OF1|||T9020^^^OF1|||SUNDAY^J1\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_OP|XYZ_HOSPITAL|MESA_OF|XYZ_RADIOLOGY|||ORM^O01|101162|P|2.3.1||||||||\rPID|||583220^^^ADT1||DOE^J2|||M||AI||||||||20-98-3210||||||||||||\rPV1||E|$PATIENT_LOCATION$||||$ATTENDING_DOCTOR$|5101^NELL^FREDERICK^P^^DR|||||||||||V1102^^^ADT1|||||||||||||||||||||||||200004230800||||||||\rORC|NW||B101Y^MESA_ORDFIL||||1^once^^^^S||200004230955|^ROSEWOOD^RANDOLPH||7101^ESTRADA^JAIME^P^^DR||3145551212|200004230955||922229-10^IHE-RAD^IHE-CODE-231||\rOBR|1||B101Y^MESA_ORDFIL|P2^Procedure 2^ERL_MESA|||||||||xxx||Radiology^^^^R|7101^ESTRADA^JAIME^P^^DR|||||||||||1^once^^^^S|||WALK|R/O xxx||||||||||A||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_OP|XYZ_HOSPITAL|MESA_OF|XYZ_RADIOLOGY|||ORR^O02|101164|P|2.3.1||||||||\rMSA|AA|101162|ACK|||\rORC|NA|A101Y^MESA_ORDPLC|B101Y^MESA_ORDFIL||||1^once^^^^S||200007010800|^FEDERICO^SACERDOTI||7101^ESTRADA^JAIME^P^^DR||3145551212|200007010800||922229-10^IHE-RAD^IHE-CODE-231||\rOBR|1|A101Y^MESA_ORDPLC|B101Y^MESA_ORDFIL|P2^Procedure 2^ERL_MESA||||||||||||7101^ESTRADA^JAIME^P^^DR|||||||||||1^once^^^^S||||R/O xxx||||||||||||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_OF|XYZ_RADIOLOGY|MESA_IM|XYZ_IMAGE_MANAGER|||ORM^O01|$MESSAGE_CONTROL_ID$|P|2.3.1||||||||\rPID|||583220^^^ADT1||DOE^J2|||M||AI||||||||20-98-3210||||||||||||\rPV1||E||||||5101^NELL^FREDERICK^P^^DR|||||||||||V1102^^^ADT1|||||||||||||||||||||||||200004230800||||||||\rORC|NW|A101Y^MESA_ORDPLC|B101Y^MESA_ORDFIL||SC||1^once^^^^S||200004210950|^ROSEWOOD^RANDOLPH||7101^ESTRADA^JAIME^P^^DR||3145551212|200004210950||922229-10^IHE-RAD^IHE-CODE-231||\rOBR|1|A101Y^MESA_ORDPLC|B101Y^MESA_ORDFIL|P2^Procedure 2^ERL_MESA^X2_A1^SP Action Item X2_A1^DSS_MESA|||||||||xxx||Radiology^^^^R|7101^ESTRADA^JAIME^P^^DR||ACCESSION_NUMBER|REQUESTED_PROCEDURE_ID|SCHEDULED_PROCEDURE_STEP_ID||||MR|||1^once^^^^S|||WALK|||||||||||A||\rZDS|1.2.1^100^Application^DICOM\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_ADT|XYZ_ADMITTING|MESA_IS|XYZ_HOSPITAL|||ADT^A40|101166|P|2.3.1||||||||\rEVN||200004211000||||200004210950\rPID|||583020^^^ADT1||WHITE^CHARLES||19980704|M||AI|7616 STANFORD AVE^^ST. LOUIS^MO^63130|||||||20-98-1701||||||||||||\rMRG|583220^^^ADT1|||583220^^^ADT1|||DOE^J2\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_OF|XYZ_RADIOLOGY|MESA_IM|XYZ_RADIOLOGY|||ADT^A40|101168|P|2.3.1||||||||\rEVN||200004211000||||200004210950\rPID|||583020^^^ADT1||WHITE^CHARLES||19980704|M||AI|7616 STANFORD AVE^^ST. LOUIS^MO^63130|||||||20-98-1701||||||||||||\rMRG|583220^^^ADT1|||583220^^^ADT1|||DOE^J2\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_OP|XYZ_HOSPITAL|MESA_OF|XYZ_RADIOLOGY|||ORM^O01|101182|P|2.3.1||||||||\rPID|||583020^^^ADT1||WHITE^CHARLES||19980704|M||AI|7616 STANFORD AVE^^ST. LOUIS^MO^63130|||||||20-98-1701||||||||||||\rPV1||E|$PATIENT_LOCATION$||||$ATTENDING_DOCTOR$|5101^NELL^FREDERICK^P^^DR|||||||||||V1102^^^ADT1|||||||||||||||||||||||||200004230800||||||||\rORC|NW|A101X^MESA_ORDPLC|||||1^once^^^^S||200004210955|^ROSEWOOD^RANDOLPH||7101^ESTRADA^JAIME^P^^DR||3145551212|200004210955||922229-10^IHE-RAD^IHE-CODE-231||\rOBR|1|A101X^MESA_ORDPLC||P21^Procedure 21^ERL_MESA|||||||||xxx||Radiology^^^^R|7101^ESTRADA^JAIME^P^^DR|||||||||||1^once^^^^S|||WALK|R/O xxx||||||||||A||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_OF|XYZ_RADIOLOGY|MESA_IM|XYZ_IMAGE_MANAGER|||ORM^O01|$MESSAGE_CONTROL_ID$|P|2.3.1||||||||\rPID|||583020^^^ADT1||WHITE^CHARLES||19980704|M||AI|7616 STANFORD AVE^^ST. LOUIS^MO^63130|||||||20-98-1701||||||||||||\rPV1||E||||||5101^NELL^FREDERICK^P^^DR|||||||||||V1102^^^ADT1|||||||||||||||||||||||||200004230800||||||||\rORC|NW|A101X^MESA_ORDPLC|B101X^MESA_ORDFIL||SC||1^once^^^^S||200004210950|^ROSEWOOD^RANDOLPH||7101^ESTRADA^JAIME^P^^DR||3145551212|200004210950||922229-10^IHE-RAD^IHE-CODE-231||\rOBR|1|A101X^MESA_ORDPLC|B101X^MESA_ORDFIL|P21^Procedure 21^ERL_MESA^X21_A1^SP Action Item X21_A1^DSS_MESA|||||||||xxx||Radiology^^^^R|7101^ESTRADA^JAIME^P^^DR||ACCESSION_NUMBER|REQUESTED_PROCEDURE_ID|SCHEDULED_PROCEDURE_STEP_ID||||MR|||1^once^^^^S|||WALK|||||||||||A||\rZDS|1.113654.100.101.3^100^Application^DICOM\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_OP|XYZ_HOSPITAL|MESA_OF|XYZ_RADIOLOGY|||ORM^O01|101188|P|2.3.1||||||||\rPID|||583020^^^ADT1||WHITE^CHARLES||19980704|M||AI|7616 STANFORD AVE^^ST. LOUIS^MO^63130|||||||20-98-1701||||||||||||\rPV1||E|||||||||||||||||V1102^^^ADT1|||||||||||||||||||||||||||||||||\rORC|CA|A101X^MESA_ORDPLC|||||||||||||||||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_OF|XYZ_RADIOLOGY|MESA_IM|XYZ_IMAGE_MANAGER|||ORM^O01|$MESSAGE_CONTROL_ID$|P|2.3.1||||||||\rPID|||583020^^^ADT1||WHITE^CHARLES||19980704|M||AI|7616 STANFORD AVE^^ST. LOUIS^MO^63130|||||||20-98-1701||||||||||||\rPV1||E||||||5101^NELL^FREDERICK^P^^DR|||||||||||V1102^^^ADT1|||||||||||||||||||||||||200004230800||||||||\rORC|CA|A101X^MESA_ORDPLC|B101X^MESA_ORDFIL||CA||1^once^^^^S||200004210950|^ROSEWOOD^RANDOLPH||7101^ESTRADA^JAIME^P^^DR||3145551212|200004210950||922229-10^IHE-RAD^IHE-CODE-231||\rOBR|1|A101X^MESA_ORDPLC|B101X^MESA_ORDFIL|P21^Procedure 21^ERL_MESA^X21_A1^SP Action Item X21_A1^DSS_MESA|||||||||xxx||Radiology^^^^R|7101^ESTRADA^JAIME^P^^DR||ACCESSION_NUMBER|REQUESTED_PROCEDURE_ID|SCHEDULED_PROCEDURE_STEP_ID||||MR|||1^once^^^^S|||WALK|||||||||||A||\rZDS|1.113654.100.101.3^100^Application^DICOM\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_OP|XYZ_HOSPITAL|MESA_OF|XYZ_RADIOLOGY|||ORM^O01|101192|P|2.3.1||||||||\rPID|||583020^^^ADT1||WHITE^CHARLES||19980704|M||AI|7616 STANFORD AVE^^ST. LOUIS^MO^63130|||||||20-98-1701||||||||||||\rPV1||E|$PATIENT_LOCATION$||||$ATTENDING_DOCTOR$|5101^NELL^FREDERICK^P^^DR|||||||||||V1102^^^ADT1|||||||||||||||||||||||||200004230800||||||||\rORC|NW|A101W^MESA_ORDPLC|||||1^once^^^^S||200004210955|^ROSEWOOD^RANDOLPH||7101^ESTRADA^JAIME^P^^DR||3145551212|200004210955||922229-10^IHE-RAD^IHE-CODE-231||\rOBR|1|A101W^MESA_ORDPLC||P22^Procedure 22^ERL_MESA|||||||||xxx||Radiology^^^^R|7101^ESTRADA^JAIME^P^^DR|||||||||||1^once^^^^S|||WALK|$REASON_FOR_STUDY$||||||||||A||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_OF|XYZ_RADIOLOGY|MESA_IM|XYZ_IMAGE_MANAGER|||ORM^O01|$MESSAGE_CONTROL_ID$|P|2.3.1||||||||\rPID|||583020^^^ADT1||WHITE^CHARLES||19980704|M||AI|7616 STANFORD AVE^^ST. LOUIS^MO^63130|||||||20-98-1701||||||||||||\rPV1||E||||||5101^NELL^FREDERICK^P^^DR|||||||||||V1102^^^ADT1|||||||||||||||||||||||||200004230800||||||||\rORC|NW|A101W^MESA_ORDPLC|B101W^MESA_ORDFIL||SC||1^once^^^^S||200004210950|^ROSEWOOD^RANDOLPH||7101^ESTRADA^JAIME^P^^DR||3145551212|200004210950||922229-10^IHE-RAD^IHE-CODE-231||\rOBR|1|A101W^MESA_ORDPLC|B101W^MESA_ORDFIL|P22^Procedure 22^ERL_MESA^X22_A1^SP Action Item X22_A1^DSS_MESA|||||||||xxx||Radiology^^^^R|7101^ESTRADA^JAIME^P^^DR||ACCESSION_NUMBER|REQUESTED_PROCEDURE_ID|SCHEDULED_PROCEDURE_STEP_ID||||RT|||1^once^^^^S|||WALK|||||||||||A||\rZDS|1.2.1^100^Application^DICOM\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_ADT|XYZ_ADMITTING|MESA_IS|XYZ_HOSPITAL|||ADT^A05|102102|P|2.3.1||||||||\rEVN||200006211300||||200006211300\rPID|||583030^^^ADT1||BROWN^JAMES||19501216|M||AI|537 PURDUE AVE^^ST. LOUIS^MO^63130|||||||20-95-2000||||||||||||\rPV1||P|$PATIENT_LOCATION$||||$ATTENDING_DOCTOR$|$REFERRING_DOCTOR$|||||||||||$VISIT_NUMBER$|||||||||||||||||||||||||$ADMIT_DATE_TIME$||||||||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_OP|XYZ_HOSPITAL|MESA_OF|XYZ_RADIOLOGY|||ORM^O01|102104|P|2.3.1||||||||\rPID|||583030^^^ADT1||BROWN^JAMES||19501216|M||AI|537 PURDUE AVE^^ST. LOUIS^MO^63130|||||||20-95-2000||||||||||||\rPV1||P|1W^^^XYZ_HOSPITAL||||1234^WEAVER^TIMOTHY^P^^DR|5101^NELL^FREDERICK^P^^DR|||||||||||V1001^^^ADT1|||||||||||||||||||||||||$ADMIT_DATE_TIME$||||||||\rORC|NW|A102Z^MESA_ORDPLC|||||1^once^^20000701^^R||200006211400|^ROSEWOOD^RANDOLPH||7101^ESTRADA^JAIME^P^^DR||3145551212|20000701||922229-10^IHE-RAD^IHE-CODE-231||\rOBR|1|A102Z^MESA_ORDPLC||P1^Procedure 1^ERL_MESA|||||||||xxx||Radiology^^^^R|7101^ESTRADA^JAIME^P^^DR|||||||||||1^once^^20000701^^R|||WALK|$REASON_FOR_STUDY$||||||||||A||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_ADT|XYZ_ADMITTING|MESA_IS|XYZ_HOSPITAL|||ORM^O01|$MESSAGE_CONTROL_ID$|P|2.3.1||||||||\rPID|||583030^^^ADT1||BROWN^JAMES||19501216|M||AI|537 PURDUE AVE^^ST. LOUIS^MO^63130|||||||20-95-2000||||||||||||\rPV1||P|1W^^^XYZ_HOSPITAL||||1234^WEAVER^TIMOTHY^P^^DR|5101^NELL^FREDERICK^P^^DR$|||||||||||V1001^^^ADT1|||||||||||||||||||||||||||||||||\rORC|NW|A102Z^MESA_ORDPLC|B102Z^MESA_ORDFIL||SC||1^once^^20000701^^R||200006211500|^ROSEWOOD^RANDOLPH||7101^ESTRADA^JAIME^P^^DR||3145551212|20000701||922229-10^IHE-RAD^IHE-CODE-231||\rOBR|1|A102Z^MESA_ORDPLC|B102Z^MESA_ORDFIL|P1^Procedure 1^ERL_MESA^X1_A1^SP Action Item X1_A1^DSS_MESA|||||||||xxx||Radiology^^^^R|7101^ESTRADA^JAIME^P^^DR||ACCESSION_NUMBER|REQUESTED_PROCEDURE_ID|SCHEDULED_PROCEDURE_STEP_ID||||MR|||1^once^^20000701^^R|||WALK|||||||||||A||\rZDS|1.2.1^102^Application^DICOM\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_OP|XYZ_HOSPITAL|MESA_OF|XYZ_RADIOLOGY|||ADT^A01|102108|P|2.3.1||||||||\rEVN||200007010800||||200007010800\rPID|||583030^^^ADT1||BROWN^JAMES||19501216|M||AI|537 PURDUE AVE^^ST. LOUIS^MO^63130|||||||20-95-2000||||||||||||\rPV1||I|1W^111^2^XYZ_HOSPITAL||||1234^WEAVER^TIMOTHY^P^^DR||||||||||1234^WEAVER^TIMOTHY^P^^DR||V1001^^^ADT1|||||||||||||||||||||||||200007010800||||||||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_OP|XYZ_HOSPITAL|MESA_OF|XYZ_RADIOLOGY|||ORM^O01|102122|P|2.3.1||||||||\rPID|||583030^^^ADT1||BROWN^JAMES||19501216|M||AI|537 PURDUE AVE^^ST. LOUIS^MO^63130|||||||20-95-2000||||||||||||\rPV1||I|1W^^^XYZ_HOSPITAL||||1234^WEAVER^TIMOTHY^P^^DR|5101^NELL^FREDERICK^P^^DR|||||||||||V1001^^^ADT1|||||||||||||||||||||||||200007010800||||||||\rORC|NW|A102Y^MESA_ORDPLC|||||1^once^^20000701^^R||200007011100|^ROSEWOOD^RANDOLPH||7101^ESTRADA^JAIME^P^^DR||3145551212|20000701||922229-10^IHE-RAD^IHE-CODE-231||\rOBR|1|A102Y^MESA_ORDPLC||P21^Procedure 21^ERL_MESA|||||||||xxx||Radiology^^^^R|7101^ESTRADA^JAIME^P^^DR|||||||||||1^once^^20000701^^R|||WALK|$REASON_FOR_STUDY$||||||||||A||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_ADT|XYZ_ADMITTING|MESA_IS|XYZ_HOSPITAL|||ORM^O01|$MESSAGE_CONTROL_ID$|P|2.3.1||||||||\rPID|||583030^^^ADT1||BROWN^JAMES||19501216|M||AI|537 PURDUE AVE^^ST. LOUIS^MO^63130|||||||20-95-2000||||||||||||\rPV1||I|1W^111^2^XYZ_HOSPITAL||||1234^WEAVER^TIMOTHY^P^^DR|5101^NELL^FREDERICK^P^^DR$|||||||||||V1001^^^ADT1|||||||||||||||||||||||||200007010800||||||||\rORC|NW|A102Y^MESA_ORDPLC|B102Y^MESA_ORDFIL||SC||1^once^^20000701||200007011130|^ROSEWOOD^RANDOLPH||7101^ESTRADA^JAIME^P^^DR||3145551212|20000701||922229-10^IHE-RAD^IHE-CODE-231||\rOBR|1|A102Y^MESA_ORDPLC|B102Y^MESA_ORDFIL|P21^Procedure 21^ERL_MESA^X21_A1^SP Action Item X1_A21^DSS_MESA|||||||||xxx||Radiology^^^^R|7101^ESTRADA^JAIME^P^^DR||ACCESSION_NUMBER|REQUESTED_PROCEDURE_ID|SCHEDULED_PROCEDURE_STEP_ID||||RT|||1^once^^20000701|||WALK|||||||||||A||\rZDS|1.2.1^102.2^Application^DICOM\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_OP|XYZ_HOSPITAL|MESA_OF|XYZ_RADIOLOGY|||ORM^O01|102126|P|2.3.1||||||||\rPID|||583030^^^ADT1||BROWN^JAMES||19501216|M||AI|537 PURDUE AVE^^ST. LOUIS^MO^63130|||||||20-95-2000||||||||||||\rPV1||I|||||||||||||||||V1001^^^ADT1|||||||||||||||||||||||||||||||||\rORC|CA|A102Y^MESA_ORDPLC|||||||||||||||||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_ADT|XYZ_ADMITTING|MESA_IS|XYZ_HOSPITAL|||ORM^O01|$MESSAGE_CONTROL_ID$|P|2.3.1||||||||\rPID|||583030^^^ADT1||BROWN^JAMES||19501216|M||AI|537 PURDUE AVE^^ST. LOUIS^MO^63130|||||||20-95-2000||||||||||||\rPV1||I|1W^111^2^XYZ_HOSPITAL||||1234^WEAVER^TIMOTHY^P^^DR|5101^NELL^FREDERICK^P^^DR$|||||||||||V1001^^^ADT1|||||||||||||||||||||||||200007010800||||||||\rORC|CA|A102Y^MESA_ORDPLC|B102Y^MESA_ORDFIL||CA||1^once^^20000701^^R||200007011200|^ROSEWOOD^RANDOLPH||7101^ESTRADA^JAIME^P^^DR||3145551212|20000701||922229-10^IHE-RAD^IHE-CODE-231||\rOBR|1|A102Y^MESA_ORDPLC|B102Y^MESA_ORDFIL|P21^Procedure 21^ERL_MESA^X21_A1^SP Action Item X1_A21^DSS_MESA|||||||||xxx||Radiology^^^^R|7101^ESTRADA^JAIME^P^^DR||ACCESSION_NUMBER|REQUESTED_PROCEDURE_ID|SCHEDULED_PROCEDURE_STEP_ID||||RT|||1^once^^20000701^^R|||WALK|||||||||||A||\rZDS|1.2.1^102.2^Application^DICOM\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_OP|XYZ_HOSPITAL|MESA_OF|XYZ_RADIOLOGY|||ORM^O01|102130|P|2.3.1||||||||\rPID|||583030^^^ADT1||BROWN^JAMES||19501216|M||AI|537 PURDUE AVE^^ST. LOUIS^MO^63130|||||||20-95-2000||||||||||||\rPV1||I|1W^^^XYZ_HOSPITAL||||1234^WEAVER^TIMOTHY^P^^DR|5101^NELL^FREDERICK^P^^DR|||||||||||V1001^^^ADT1|||||||||||||||||||||||||200007010800||||||||\rORC|NW||B102X^MESA_ORDFIL||||1^once^^20000701^^R||200007011300|^ROSEWOOD^RANDOLPH||7101^ESTRADA^JAIME^P^^DR||3145551212|20000701||922229-10^IHE-RAD^IHE-CODE-231||\rOBR|1||B102X^MESA_ORDFIL|P22^Procedure 22^ERL_MESA|||||||||xxx||Radiology^^^^R|7101^ESTRADA^JAIME^P^^DR|||||||||||1^once^^20000701^^R|||WALK|$REASON_FOR_STUDY$||||||||||A||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_OP|XYZ_HOSPITAL|MESA_OF|XYZ_RADIOLOGY|||ORM^O01|102131|P|2.3.1||||||||\rPID|||583030^^^ADT1||BROWN^JAMES||19501216|M||AI|537 PURDUE AVE^^ST. LOUIS^MO^63130|||||||20-95-2000||||||||||||\rPV1||I|1W^^^XYZ_HOSPITAL||||1234^WEAVER^TIMOTHY^P^^DR|5101^NELL^FREDERICK^P^^DR|||||||||||V1001^^^ADT1|||||||||||||||||||||||||200007010800||||||||\rORC|NW|A102X^MESA_ORDFIL|B102X^MESA_ORDFIL||||1^once^^20000701^^R||200007011300|^ROSEWOOD^RANDOLPH||7101^ESTRADA^JAIME^P^^DR||3145551212|20000701||922229-10^IHE-RAD^IHE-CODE-231||\rOBR|1|A102X^MESA_ORDFIL|B102X^MESA_ORDFIL|P22^Procedure 22^ERL_MESA|||||||||xxx||Radiology^^^^R|7101^ESTRADA^JAIME^P^^DR|||||||||||1^once^^20000701^^R|||WALK|$REASON_FOR_STUDY$||||||||||A||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_OP|XYZ_HOSPITAL|MESA_OF|XYZ_RADIOLOGY|||ORR^O02|102132|P|2.3.1||||||||\rMSA|AA|102130|ACK|||\rORC|NA|A102X^MESA_ORDPLC|B102X^MESA_ORDFIL||||1^once^^20000701^^R||200007011230|^ROSEWOOD^RANDOLPH||7101^ESTRADA^JAIME^P^^DR||3145551212|20000701||922229-10^IHE-RAD^IHE-CODE-231||\rOBR|1|A102X^MESA_ORDPLC|B102X^MESA_ORDFIL|P22^Procedure 22^ERL_MESA||||||||||||7101^ESTRADA^JAIME^P^^DR|||||||||||1^once^^20000701^^R||||$REASON_FOR_STUDY$||||||||||||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_ADT|XYZ_ADMITTING|MESA_IS|XYZ_HOSPITAL|||ORM^O01|102134$|P|2.3.1||||||||\rPID|||583030^^^ADT1||BROWN^JAMES||19501216|M||AI|537 PURDUE AVE^^ST. LOUIS^MO^63130|||||||20-95-2000||||||||||||\rPV1||I|1W^111^2^XYZ_HOSPITAL||||1234^WEAVER^TIMOTHY^P^^DR|5101^NELL^FREDERICK^P^^DR$|||||||||||V1001^^^ADT1|||||||||||||||||||||||||200007010800||||||||\rORC|NW|A102X^MESA_ORDPLC|B102X^MESA_ORDFIL||SC||1^once^^20000701^^R||200007011330|^ROSEWOOD^RANDOLPH||7101^ESTRADA^JAIME^P^^DR||3145551212|20000701||922229-10^IHE-RAD^IHE-CODE-231||\rOBR|1|A102X^MESA_ORDPLC|B102X^MESA_ORDFIL|P22^Procedure 22^ERL_MESA^X22_A1^SP Action Item X1_A22^DSS_MESA|||||||||xxx||Radiology^^^^R|7101^ESTRADA^JAIME^P^^DR||ACCESSION_NUMBER|REQUESTED_PROCEDURE_ID|SCHEDULED_PROCEDURE_STEP_ID||||RT|||1^once^^20000701^^R|||WALK|||||||||||A||\rZDS|1.2.1^102.3^Application^DICOM\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_OP|XYZ_HOSPITAL|MESA_OF|XYZ_RADIOLOGY|||ADT^A03|102136|P|2.3.1||||||||\rEVN||200007011800||||200007011800\rPID|||583030^^^ADT1||BROWN^JAMES||19501216|M||AI|537 PURDUE AVE^^ST. LOUIS^MO^63130|||||||20-95-2000||||||||||||\rPV1||I|1W^111^2^XYZ_HOSPITAL||||1234^WEAVER^TIMOTHY^P^^DR||||||||||||V1001^^^ADT1||||||||||||||||||||||||||$DISCHARGE_DATE_TIME$|||||||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_OP|XYZ_HOSPITAL|MESA_OF|XYZ_RADIOLOGY|||ADT^A03|102138|P|2.3.1||||||||\rEVN||200007011810||||200007011810\rPID|||583030^^^ADT1||BROWN^JAMES||19501216|M||AI|537 PURDUE AVE^^ST. LOUIS^MO^63130|||||||20-95-2000||||||||||||\rPV1||I|1W^111^2^XYZ_HOSPITAL||||1234^WEAVER^TIMOTHY^P^^DR||||||||||||V1001^^^ADT1||||||||||||||||||||||||||$DISCHARGE_DATE_TIME$|||||||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_ADT|XYZ_ADMITTING|$RECEIVING_APP$|$RECEIVING_FACILITY$|||ADT^A04|103102|P|2.3.1||||||||\rEVN||200007010800||||200007010800\rPID|||583295^^^ADT1||DOE^J1|||M||WH||||||||20-98-3295||||||||||||\rPV1||E||||||5101^NELL^FREDERICK^P^^DR|||||||||||V1295^^^ADT1|||||||||||||||||||||||||200007010800||||||||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_OP|XYZ_HOSPITAL|MESA_OF|XYZ_RADIOLOGY|||ORM^O01|103104|P|2.3.1||||||||\rPID|||583295^^^ADT1||DOE^J1|||M||WH||||||||20-98-3295||||||||||||\rPV1||E|ED||||1234^WEAVER^TIMOTHY^P^^DR|5101^NELL^FREDERICK^P^^DR|||||||||||V1295^^^ADT1|||||||||||||||||||||||||200007010800||||||||\rORC|NW|A103Z^MESA_ORDPLC|||||1^once^^^^S||200007010830|^ROSEWOOD^RANDOLPH||7101^ESTRADA^JAIME^P^^DR||3145551212|200007010830||922229-10^IHE-RAD^IHE-CODE-231||\rOBR|1|A103Z^MESA_ORDPLC||P1^Procedure 1^ERL_MESA|||||||||xxx||Radiology^^^^R|7101^ESTRADA^JAIME^P^^DR|||||||||||1^once^^^^S|||WALK|$REASON_FOR_STUDY$||||||||||A||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_OF|XYZ_RADIOLOGY|MESA_IM|XYZ_IMAGE_MANAGER|||ORM^O01|103106|P|2.3.1||||||||\rPID|||583295^^^ADT1||DOE^J1|||M||WH||||||||20-98-3295||||||||||||\rPV1||E|ED||||1234^WEAVER^TIMOTHY^P^^DR|5101^NELL^FREDERICK^P^^DR|||||||||||V1295^^^ADT1|||||||||||||||||||||||||200007010800||||||||\rORC|NW|A103Z^MESA_ORDPLC|B103Z^MESA_ORDFIL||SC||1^once^^^^S||200007010900|^ROSEWOOD^RANDOLPH||7101^ESTRADA^JAIME^P^^DR||3145551212|200007010900||922229-10^IHE-RAD^IHE-CODE-231||\rOBR|1|A103Z^MESA_ORDPLC|B103Z^MESA_ORDFIL|P1^Procedure 1^ERL_MESA^X1_A1^SP Action Item X1_A1^DSS_MESA|||||||||xxx||Radiology^^^^R|7101^ESTRADA^JAIME^P^^DR||ACCESSION_NUMBER|REQUESTED_PROCEDURE_ID|SCHEDULED_PROCEDURE_STEP_ID||||MR|||1^once^^^^S|||WALK|||||||||||A||\rZDS|1.2.1^103^Application^DICOM\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_ADT|XYZ_ADMITTING|$RECEIVING_APP$|$RECEIVING_FACILITY$|||ADT^A08|103130|P|2.3.1||||||||\rEVN||200007011800||||200007011800\rPID|||583295^^^ADT1||SILVERHEELS^JAY||19000102|M||WH|7324 CLAYTON RD^^ST. LOUIS^MO^63130|||||||20-98-3295||||||||||||\rPV1||E|ED||||1234^WEAVER^TIMOTHY^P^^DR|5101^NELL^FREDERICK^P^^DR|||||||||||V1295^^^ADT1|||||||||||||||||||||||||200007010800||||||||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_OF|XYZ_RADIOLOGY|MESA_IM|MESA_IMAGE_MANAGER|||ADT^A08|103132|P|2.3.1||||||||\rEVN||200007011800||||200007011800\rPID|||583295^^^ADT1||SILVERHEELS^JAY||19000102|M||WH|7324 CLAYTON RD^^ST. LOUIS^MO^63130|||||||20-98-3295||||||||||||\rPV1||E|ED||||1234^WEAVER^TIMOTHY^P^^DR|5101^NELL^FREDERICK^P^^DR|||||||||||V1295^^^ADT1|||||||||||||||||||||||||200007010800||||||||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_ADT|XYZ_ADMITTING|MESA_IS|XYZ_HOSPITAL|||ADT^A04|104102|P|2.3.1||||||||\rEVN||200008101200||||200008101200\rPID|||583040^^^ADT1||BLUE^ERICA||18980502|F||BL|15 PRINCETON^^ST. LOUIS^MO^63130|||||||20-98-3040||||||||||||\rPV1||E||||||5202^SCHULTZ^KEVIN^G^^DR|||||||||||V3041^^^ADT1|||||||||||||||||||||||||200008101130||||||||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_OP|XYZ_HOSPITAL|MESA_OF|XYZ_RADIOLOGY|||ORM^O01|104104|P|2.3.1||||||||\rPID|||583040^^^ADT1||BLUE^ERICA||18980502|F||BL|15 PRINCETON^^ST. LOUIS^MO^63130|||||||20-98-3040||||||||||||\rPV1||E|ED||||3456^ROSZEK^JEANETTE^G^^DR|5202^SCHULTZ^KEVIN^G^^DR|||||||||||V3041^^^ADT1|||||||||||||||||||||||||200008101130||||||||\rORC|NW|A101Z^MESA_ORDPLC|||||1^once^^^^S||200008101300|^ROSEWOOD^RANDOLPH||7202^ESSELMAN^HENRY^G^^DR||3145551212|200008101130||922229-10^IHE-RAD^IHE-CODE-231||\rOBR|1|A101Z^MESA_ORDPLC||P4^Procedure 4^ERL_MESA|||||||||xxx||Radiology^^^^R|7202^ESSELMAN^HENRY^G^^DR|||||||||||1^once^^^^S|||WALK|Patient complains of abc||||||||||A||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_OF|XYZ_RADIOLOGY|MESA_IM|XYZ_IMAGE_MANAGER|||ORM^O01|104106|P|2.3.1||||||||\rPID|||583040^^^ADT1||BLUE^ERICA||18980502|F||BL|15 PRINCETON^^ST. LOUIS^MO^63130|||||||20-98-3040||||||||||||\rPV1||E|ED||||3456^ROSZEK^JEANETTE^G^^DR|5202^SCHULTZ^KEVIN^G^^DR|||||||||||V3041^^^ADT1|||||||||||||||||||||||||200008101130||||||||\rORC|NW|A104Z^MESA_ORDPLC|B104Z^MESA_ORDFIL||SC||1^once^^^^S||200008101330|^ROSEWOOD^RANDOLPH||7101^ESTRADA^JAIME^P^^DR||3145551212|200008101330||922229-10^IHE-RAD^IHE-CODE-231||\rOBR|1|A104Z^MESA_ORDPLC|B104Z^MESA_ORDFIL|P4^Procedure 4^ERL_MESA^X4A_A1^SP Action Item X4A_A1^DSS_MESA|||||||||xxx||Radiology^^^^R|7101^ESTRADA^JAIME^P^^DR||ACCESSION_NUMBER|REQUESTED_PROCEDURE_ID|SCHEDULED_PROCEDURE_STEP_ID_1||||MR|||1^once^^^^S|||WALK|||||||||||A||\rORC|NW|A104Z^MESA_ORDPLC|B104Z^MESA_ORDFIL||SC||1^once^^^^S||200008101330|^ROSEWOOD^RANDOLPH||7101^ESTRADA^JAIME^P^^DR||3145551212|200008101330||922229-10^IHE-RAD^IHE-CODE-231||\rOBR|1|A104Z^MESA_ORDPLC|B104Z^MESA_ORDFIL|P4^Procedure 4^ERL_MESA^X4B_A1^SP Action Item X4B_A1^DSS_MESA|||||||||xxx||Radiology^^^^R|7101^ESTRADA^JAIME^P^^DR||ACCESSION_NUMBER|REQUESTED_PROCEDURE_ID|SCHEDULED_PROCEDURE_STEP_ID_2||||MR|||1^once^^^^S|||WALK|||||||||||A||\rORC|NW|A104Z^MESA_ORDPLC|B104Z^MESA_ORDFIL||SC||1^once^^^^S||200008101330|^ROSEWOOD^RANDOLPH||7101^ESTRADA^JAIME^P^^DR||3145551212|200008101330||922229-10^IHE-RAD^IHE-CODE-231||\rOBR|1|A104Z^MESA_ORDPLC|B104Z^MESA_ORDFIL|P4^Procedure 4^ERL_MESA^X4B_A2^SP Action Item X4B_A2^DSS_MESA|||||||||xxx||Radiology^^^^R|7101^ESTRADA^JAIME^P^^DR||ACCESSION_NUMBER|REQUESTED_PROCEDURE_ID|SCHEDULED_PROCEDURE_STEP_ID_3||||MR|||1^once^^^^S|||WALK|||||||||||A||\rZDS|1.113654.3.104.1^100^Application^DICOM\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_ADT|XYZ_ADMITTING|MESA_IS|XYZ_HOSPITAL|||ADT^A04|104142|P|2.3.1||||||||\rEVN||200008101800||||200008101800\rPID|||583045^^^ADT1||DOE^J3|||F||BL||||||||20-98-3045||||||||||||\rPV1||E||||||5303^BAJAMA^AMNA^^^DR|||||||||||V3045^^^ADT1|||||||||||||||||||||||||200008101800||||||||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_OF|XYZ_RADIOLOGY|MESA_OP|XYZ_HOSPITAL|||ORM^O01|104144|P|2.3.1||||||||\rPID|||583045^^^ADT1||DOE^J3|||M||BL||||||||20-98-3045||||||||||||\rPV1||E|ED||||5678^BAXA^TIMOTHY^P^^DR|5303^BAJWA^AMNA^^^DR|||||||||||V3045^^^ADT1|||||||||||||||||||||||||200008101800||||||||\rORC|NW||B104y^MESA_ORDFIL||||1^once^^^^S||200008101830|^ROSEWOOD^RANDOLPH||7101^ESTRADA^JAIME^P^^DR||3145551212|200008101830||922229-10^IHE-RAD^IHE-CODE-231||\rOBR|1||B104y^MESA_ORDFIL|P1^Procedure 1^ERL_MESA|||||||||xxx||Radiology^^^^R|7101^ESTRADA^JAIME^P^^DR|||||||||||1^once^^^^S|||WALK|Need to R/O xyz||||||||||A||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_OP|XYZ_HOSPITAL|MESA_OF|XYZ_RADIOLOGY|||ORR^O02|104146|P|2.3.1||||||||\rMSA|AA|0|ACK|||\rORC|NA|A104Y^MESA_ORDPLC|B104Y^MESA_ORDFIL||||1^once^^^^S||200008101840|^ROSEWOOD^RANDOLPH||7101^ESTRADA^JAIME^P^^DR||3145551212|200008101830||922229-10^IHE-RAD^IHE-CODE-231||\rOBR|1|A104Y^MESA_ORDPLC|B104Y^MESA_ORDFIL|P1^Procedure 1^ERL_MESA||||||||||||7101^ESTRADA^JAIME^P^^DR|||||||||||1^once^^^^S||||Need to R/O xyz||||||||||||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_OF|XYZ_RADIOLOGY|MESA_IM|XYZ_IMAGE_MANAGER|||ORM^O01|104148|P|2.3.1||||||||\rPID|||583045^^^ADT1||DOE^J3|||M||BL||||||||20-98-3045||||||||||||\rPV1||E|ED||||5678^BAXA^TIMOTHY^P^^DR|5303^BAJWA^AMNA^^^DR|||||||||||V3045^^^ADT1|||||||||||||||||||||||||200008101800||||||||\rORC|NW|A104Y^MESA_ORDPLC|B104Y^MESA_ORDFIL||SC||1^once^^^^S||200008101850|^ROSEWOOD^RANDOLPH||7101^ESTRADA^JAIME^P^^DR||3145551212|200008101830||922229-10^IHE-RAD^IHE-CODE-231||\rOBR|1|A104Y^MESA_ORDPLC|B104Y^MESA_ORDFIL|P1^Procedure 1^ERL_MESA^X1_A1^SP Action Item X1_A1^DSS_MESA|||||||||xxx||Radiology^^^^R|7101^ESTRADA^JAIME^P^^DR||ACCESSION_NUMBER|REQUESTED_PROCEDURE_ID|SCHEDULED_PROCEDURE_STEP_ID||||MR|||1^once^^^^S|||WALK|||||||||||A||\rZDS|1.113654.3.104.2^Application^DICOM\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_ADT|XYZ_ADMITTING|MESA_IS|XYZ_HOSPITAL|||ADT^A40|104182|P|2.3.1||||||||\rEVN||200008102100||||200008102100\rPID|||583040^^^ADT1||BLUE^ERICA||18980502|F||BL|15 PRINCETON^^ST. LOUIS^MO^63130|||||||20-98-3040||||||||||||\rMRG|583045^^^ADT1|||583045^^^ADT1|||DOE^J3\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_OF|XYZ_RADIOLOGY|MESA_IM|MESA_IMAGE_MANAGER|||ADT^A40|104184|P|2.3.1||||||||\rEVN||200008101900||||200008101900\rPID|||583040^^^ADT1||BLUE^ERICA||18980502|F||BL|15 PRINCETON^^ST. LOUIS^MO^63130|||||||20-98-3040||||||||||||\rMRG|583045^^^ADT1|||583045^^^ADT1|||DOE^J3\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_ADT|XYZ_ADMITTING|MESA_IS|XYZ_HOSPITAL$|||ADT^A04|105102|P|2.3.1||||||||\rEVN||200008161300||||200008161300\rPID|||583085^^^ADT1||DOE^J4|||M||AP||||||||20-98-3085||||||||||||\rPV1||E||||||5101^NELL^FREDERICK^P^^DR|||||||||||V1085^^^ADT1|||||||||||||||||||||||||200008161300||||||||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_OF|XYZ_RADIOLOGY|MESA_OP|XYZ_HOSPITAL|||ORM^O01|105114|P|2.3.1||||||||\rPID|||583085^^^ADT1||DOE^J4|||M||AP||||||||20-98-3085||||||||||||\rPV1||E|ED||||1234^WEAVER^TIMOTHY^P^^DR|5101^NELL^FREDERICK^P^^DR|||||||||||V3085^^^ADT1|||||||||||||||||||||||||200008161300||||||||\rORC|NW||B105Z^MESA_ORDFIL||||1^once^^^^S||200008161500|^ROSEWOOD^RANDOLPH||7101^ESTRADA^JAIME^P^^DR||3145551212|200008161500||922229-10^IHE-RAD^IHE-CODE-231||\rOBR|1||B105Z^MESA_ORDFIL|P2^Procedure 2^ERL_MESA|||||||||xxx||Radiology^^^^R|7101^ESTRADA^JAIME^P^^DR|||||||||||1^once^^^^S|||WALK|R/O efg||||||||||A||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_OP|XYZ_HOSPITAL|MESA_OF|XYZ_RADIOLOGY|||ORR^O02|$MESSAGE_CONTROL_ID$|P|2.3.1||||||||\rMSA|AA|0|ACK|||\rORC|NA|A105Z^MESA_ORDPLC|B105Z^MESA_ORDFIL||||1^once^^^^S||200008161510|^ROSEWOOD^RANDOLPH||7101^ESTRADA^JAIME^P^^DR||3145551212|200008161510||922229-10^IHE-RAD^IHE-CODE-231||\rOBR|1|A105Z^MESA_ORDPLC|B105Z^MESA_ORDFIL|P2^Procedure 2^ERL_MESA||||||||||||7101^ESTRADA^JAIME^P^^DR|||||||||||1^once^^^^S||||R/O efg||||||||||||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_OF|XYZ_RADIOLOGY|MESA_IM|XYZ_IMAGE_MANAGER|||ORM^O01|105118|P|2.3.1||||||||\rPID|||583085^^^ADT1||DOE^J4|||M||AP||||||||20-98-3085||||||||||||\rPV1||E|ED||||1234^WEAVER^TIMOTHY^P^^DR|5101^NELL^FREDERICK^P^^DR|||||||||||V3085^^^ADT1|||||||||||||||||||||||||200008161300||||||||\rORC|NW|A105Y^MESA_ORDPLC|B105Y^MESA_ORDFIL||SC||1^once^^^^S||200008161510|^ROSEWOOD^RANDOLPH||7101^ESTRADA^JAIME^P^^DR||3145551212|200008161510||922229-10^IHE-RAD^IHE-CODE-231||\rOBR|1|A105Y^MESA_ORDPLC|B105Y^MESA_ORDFIL|P2^Procedure 2^ERL_MESA^X2_A1^SP Action Item X2_A1^DSS_MESA|||||||||xxx||Radiology^^^^R|7101^ESTRADA^JAIME^P^^DR||ACCESSION_NUMBER|REQUESTED_PROCEDURE_ID|SCHEDULED_PROCEDURE_STEP_ID||||MR|||1^once^^^^S|||WALK|||||||||||A||\rZDS|1.2.1^100^Application^DICOM\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_ADT|XYZ_ADMITTING|MESA_IS|XYZ_HOSPITAL$|||ADT^A08|105120|P|2.3.1||||||||\rEVN||200008161900||||200008161900\rPID|||583085^^^ADT1||MUSTARD^STEPHEN||19201102|M||AP|ONE BROOKINGS WAY^^ST. LOUIS^MO^63130|||||||20-98-3085||||||||||||\rPV1||E|ED||||1234^WEAVER^TIMOTHY^P^^DR|5101^NELL^FREDERICK^P^^DR|||||||||||V1085^^^ADT1|||||||||||||||||||||||||200008161300||||||||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_OF|XYZ_RADIOLOGY|MESA_IM|MESA_IMAGE_MANAGER|||ADT^A08|105122|P|2.3.1||||||||\rEVN||200008161910||||200008161910\rPID|||583085^^^ADT1||MUSTARD^STEPHEN||19201102|M||AP|ONE BROOKINGS WAY^^ST. LOUIS^MO^63130|||||||20-98-3085||||||||||||\rPV1||E|ED||||1234^WEAVER^TIMOTHY^P^^DR|5101^NELL^FREDERICK^P^^DR|||||||||||V1085^^^ADT1|||||||||||||||||||||||||200008161300||||||||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_ADT|XYZ_ADMITTING|MESA_IS|XYZ_HOSPITAL|||ADT^A04|106102|P|2.3.1||||||||\rEVN||200107090950||||200107090950\rPID|||583050^^^ADT1||GREEN^CATHY||19580804|F||WH|4525 SCOTT AVE^^ST. LOUIS^MO^63110|||||||20-98-3050||||||||||||\rPV1||E||||||5101^NELL^FREDERICK^P^^DR|||||||||||V0106^^^ADT1|||||||||||||||||||||||||200107090950||||||||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_OP|XYZ_HOSPITAL|MESA_OF|XYZ_RADIOLOGY|||ORM^O01|106104|P|2.3.1||||||||\rPID|||583050^^^ADT1||GREEN^CATHY||19580804|F||WH|4525 SCOTT AVE^^ST. LOUIS^MO^63110|||||||20-98-3050||||||||||||\rPV1||E||||||5101^NELL^FREDERICK^P^^DR|||||||||||V0106^^^ADT1|||||||||||||||||||||||||200107090950||||||||\rORC|NW|A106Z^MESA_ORDPLC|||||1^once^^20010709^^R||200107091400|^ROSEWOOD^RANDOLPH||7101^ESTRADA^JAIME^P^^DR||3145551212|20010709||922229-10^IHE-RAD^IHE-CODE-231||\rOBR|1|A106Z^MESA_ORDPLC||P6^Procedure 6^ERL_MESA|||||||||xxx||Radiology^^^^R|7101^ESTRADA^JAIME^P^^DR|||||||||||1^once^^20010709^^R|||WALK|PGP Test 106||||||||||A||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_OP|XYZ_HOSPITAL|MESA_OF|XYZ_RADIOLOGY|||ORM^O01|106106|P|2.3.1||||||||\rPID|||583050^^^ADT1||GREEN^CATHY||19580804|F||WH|4525 SCOTT AVE^^ST. LOUIS^MO^63110|||||||20-98-3050||||||||||||\rPV1||E||||||5101^NELL^FREDERICK^P^^DR|||||||||||V0106^^^ADT1|||||||||||||||||||||||||200107090950||||||||\rORC|NW|A106Y^MESA_ORDPLC|||||1^once^^20010709^^R||200107091400|^ROSEWOOD^RANDOLPH||7101^ESTRADA^JAIME^P^^DR||3145551212|20010709||922229-10^IHE-RAD^IHE-CODE-231||\rOBR|1|A106Y^MESA_ORDPLC||P7^Procedure 7^ERL_MESA|||||||||xxx||Radiology^^^^R|7101^ESTRADA^JAIME^P^^DR|||||||||||1^once^^20010709^^R|||WALK|PGP Test 106||||||||||A||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_OF|XYZ_RADIOLOGY|MESA_IM|XYZ_IMAGE_MANAGER|||ORM^O01|106108|P|2.3.1||||||||\rPID|||583050^^^ADT1||GREEN^CATHY||19580804|F||WH|4525 SCOTT AVE^^ST. LOUIS^MO^63110|||||||20-98-3050||||||||||||\rPV1||E||||||5101^NELL^FREDERICK^P^^DR|||||||||||V0106^^^ADT1|||||||||||||||||||||||||200107090950||||||||\rORC|NW|A106Z^MESA_ORDPLC|B106Z^MESA_ORDFIL||SC||1^once^^^^S||200107111850|^ROSEWOOD^RANDOLPH||7101^ESTRADA^JAIME^P^^DR||3145551212|200008101830||922229-10^IHE-RAD^IHE-CODE-231||\rOBR|1|A106Z^MESA_ORDPLC|B106Z^MESA_ORDFIL|P6^Procedure 6^ERL_MESA^X6_A1^SP Action Item X6_A1^DSS_MESA|||||||||xxx||Radiology^^^^R|7101^ESTRADA^JAIME^P^^DR||ACCESSION_NUMBER|REQUESTED_PROCEDURE_ID|SCHEDULED_PROCEDURE_STEP_ID||||MR|||1^once^^^^S|||WALK|||||||||||A||\rZDS|1.113654.3.106.1^Application^DICOM\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_OF|XYZ_RADIOLOGY|MESA_IM|XYZ_IMAGE_MANAGER|||ORM^O01|106110|P|2.3.1||||||||\rPID|||583050^^^ADT1||GREEN^CATHY||19580804|F||WH|4525 SCOTT AVE^^ST. LOUIS^MO^63110|||||||20-98-3050||||||||||||\rPV1||E||||||5101^NELL^FREDERICK^P^^DR|||||||||||V0106^^^ADT1|||||||||||||||||||||||||200107090950||||||||\rORC|NW|A106Y^MESA_ORDPLC|B106Y^MESA_ORDFIL||SC||1^once^^^^S||200107111850|^ROSEWOOD^RANDOLPH||7101^ESTRADA^JAIME^P^^DR||3145551212|200008101830||922229-10^IHE-RAD^IHE-CODE-231||\rOBR|1|A106Y^MESA_ORDPLC|B106Y^MESA_ORDFIL|P7^Procedure 7^ERL_MESA^X7_A1^SP Action Item X7_A1^DSS_MESA|||||||||xxx||Radiology^^^^R|7101^ESTRADA^JAIME^P^^DR||ACCESSION_NUMBER|REQUESTED_PROCEDURE_ID|SCHEDULED_PROCEDURE_STEP_ID||||MR|||1^once^^^^S|||WALK|||||||||||A||\rZDS|1.113654.3.106.2^Application^DICOM\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_ADT|XYZ_ADMITTING|MESA_IS|XYZ_HOSPITAL|||ADT^A04|107102|P|2.3.1||||||||\rEVN||200107090950||||200107090950\rPID|||583060^^^ADT1||ROSE^CARL||19601204|M||BL|510 S KINGSHIGHWAY BLVD AVE^^ST. LOUIS^MO^63110|||||||20-98-3060||||||||||||\rPV1||E||||||5101^NELL^FREDERICK^P^^DR|||||||||||V0107^^^ADT1|||||||||||||||||||||||||200107090950||||||||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_OP|XYZ_HOSPITAL|MESA_OF|XYZ_RADIOLOGY|||ORM^O01|107104|P|2.3.1||||||||\rPID|||583060^^^ADT1||ROSE^CARL||19601204|M||BL|510 S KINGSHIGHWAY BLVD AVE^^ST. LOUIS^MO^63110|||||||20-98-3060||||||||||||\rPV1||E||||||5101^NELL^FREDERICK^P^^DR|||||||||||V0107^^^ADT1|||||||||||||||||||||||||200107090950||||||||\rORC|NW|A107Z^MESA_ORDPLC|||||1^once^^20010709^^R||200107091400|^ROSEWOOD^RANDOLPH||7101^ESTRADA^JAIME^P^^DR||3145551212|20010709||922229-10^IHE-RAD^IHE-CODE-231||\rOBR|1|A107Z^MESA_ORDPLC||P6^Procedure 6^ERL_MESA|||||||||xxx||Radiology^^^^R|7101^ESTRADA^JAIME^P^^DR|||||||||||1^once^^20010709^^R|||WALK|Test Order Status From Filler||||||||||A||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_OF|XYZ_RADIOLOGY|MESA_IM|XYZ_IMAGE_MANAGER|||ORM^O01|107106|P|2.3.1||||||||\rPID|||583060^^^ADT1||ROSE^CARL||19601204|M||BL|510 S KINGSHIGHWAY BLVD AVE^^ST. LOUIS^MO^63110|||||||20-98-3060||||||||||||\rPV1||E||||||5101^NELL^FREDERICK^P^^DR|||||||||||V0107^^^ADT1|||||||||||||||||||||||||200107090950||||||||\rORC|NW|A107Z^MESA_ORDPLC|B107Z^MESA_ORDFIL||SC||1^once^^^^S||200107111850|^ROSEWOOD^RANDOLPH||7101^ESTRADA^JAIME^P^^DR||3145551212|200008101830||922229-10^IHE-RAD^IHE-CODE-231||\rOBR|1|A107Z^MESA_ORDPLC|B107Z^MESA_ORDFIL|P6^Procedure 6^ERL_MESA^X6_A1^SP Action Item X6_A1^DSS_MESA|||||||||xxx||Radiology^^^^R|7101^ESTRADA^JAIME^P^^DR||ACCESSION_NUMBER|REQUESTED_PROCEDURE_ID|SCHEDULED_PROCEDURE_STEP_ID||||MR|||1^once^^^^S|||WALK|||||||||||A||\rZDS|1.113654.3.107.1^Application^DICOM\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_OP|XYZ_HOSPITAL|MESA_OF|XYZ_RADIOLOGY|||ORM^O01|107112|P|2.3.1||||||||\rORC|SC|xxxx|B107Z^MESA_ORDFIL||IP||||||||||||||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_OP|XYZ_HOSPITAL|MESA_OF|XYZ_RADIOLOGY|||ORM^O01|107116|P|2.3.1||||||||\rORC|SC|xxxx|B107Z^MESA_ORDFIL||CM||||||||||||||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_ADT|XYZ_ADMITTING|MESA_IS|XYZ_HOSPITAL|||ADT^A04|211102|P|2.3.1||||||||\rEVN||200007010800||||200007010800\rPID|||MM211^^^ADT1||MODALITY^211||19500101|M||BL|537 PURDUE AVE^^ST. LOUIS^MO^63130|||||||20-95-MM211||||||||||||\rPV1||E||||||5101^NELL^FREDERICK^P^^DR|||||||||||V211^^^ADT1|||||||||||||||||||||||||200007010800||||||||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_OP|XYZ_HOSPITAL|MESA_OF|XYZ_RADIOLOGY|||ORM^O01|211104|P|2.3.1||||||||\rPID|||MM211^^^ADT1||MODALITY^211||19500101|M||BL|537 PURDUE AVE^^ST. LOUIS^MO^63130|||||||20-95-MM211||||||||||||\rPV1||E|1W^111^2^XYZ_HOSPITAL||||1234^WEAVER^TIMOTHY^P^^DR|5101^NELL^FREDERICK^P^^DR|||||||||||V211^^^ADT1|||||||||||||||||||||||||200007010800||||||||\rORC|NW|A211Z^MESA_ORDPLC|||||1^once^^20000701^^R||200006211400|^ROSEWOOD^RANDOLPH||7101^ESTRADA^JAIME^P^^DR||3145551212|20000701||922229-10^IHE-RAD^IHE-CODE-231||\rOBR|1|A211Z^MESA_ORDPLC||P1^Procedure 1^ERL_MESA|||||||||xxx||Radiology^^^^R|7101^ESTRADA^JAIME^P^^DR|||||||||||1^once^^20000701^^R|||WALK|Modality Test 211||||||||||A||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_ADT|XYZ_ADMITTING|MESA_IS|XYZ_HOSPITAL|||ADT^A04|213102|P|2.3.1||||||||\rEVN||200007010800||||200007010800\rPID|||MM213^^^ADT1||MODALITY^213||19500102|M||BL|537 PURDUE AVE^^ST. LOUIS^MO^63130|||||||20-95-MM213||||||||||||\rPV1||E||||||5101^NELL^FREDERICK^P^^DR|||||||||||V213^^^ADT1|||||||||||||||||||||||||200007010800||||||||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_OP|XYZ_HOSPITAL|MESA_OF|XYZ_RADIOLOGY|||ORM^O01|213104|P|2.3.1||||||||\rPID|||MM213^^^ADT1||MODALITY^213||19500102|M||BL|537 PURDUE AVE^^ST. LOUIS^MO^63130|||||||20-95-MM213||||||||||||\rPV1||E|1W^111^2^XYZ_HOSPITAL||||1234^WEAVER^TIMOTHY^P^^DR|5101^NELL^FREDERICK^P^^DR|||||||||||V213^^^ADT1|||||||||||||||||||||||||200007010800||||||||\rORC|NW|A213Z^MESA_ORDPLC|||||1^once^^20000701^^R||200006211400|^ROSEWOOD^RANDOLPH||7101^ESTRADA^JAIME^P^^DR||3145551212|20000701||922229-10^IHE-RAD^IHE-CODE-231||\rOBR|1|A213Z^MESA_ORDPLC||P8^Procedure 8^ERL_MESA|||||||||xxx||Radiology^^^^R|7101^ESTRADA^JAIME^P^^DR|||||||||||1^once^^20000701^^R|||WALK|Modality Test 213||||||||||A||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_ADT|XYZ_ADMITTING|MESA_IS|XYZ_HOSPITAL|||ADT^A04|214102|P|2.3.1||||||||\rEVN||200007010800||||200007010800\rPID|||MM214^^^ADT1||MODALITY^214||19500103|M||BL|537 PURDUE AVE^^ST. LOUIS^MO^63130|||||||20-95-MM214||||||||||||\rPV1||E||||||5101^NELL^FREDERICK^P^^DR|||||||||||V214^^^ADT1|||||||||||||||||||||||||200007010800||||||||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_OP|XYZ_HOSPITAL|MESA_OF|XYZ_RADIOLOGY|||ORM^O01|214104|P|2.3.1||||||||\rPID|||MM214^^^ADT1||MODALITY^214||19500103|M||BL|537 PURDUE AVE^^ST. LOUIS^MO^63130|||||||20-95-MM214||||||||||||\rPV1||E|1W^111^2^XYZ_HOSPITAL||||1234^WEAVER^TIMOTHY^P^^DR|5101^NELL^FREDERICK^P^^DR|||||||||||V214^^^ADT1|||||||||||||||||||||||||200007010800||||||||\rORC|NW|A214Z^MESA_ORDPLC|||||1^once^^20000701^^R||200006211400|^ROSEWOOD^RANDOLPH||7101^ESTRADA^JAIME^P^^DR||3145551212|20000701||922229-10^IHE-RAD^IHE-CODE-231||\rOBR|1|A214Z^MESA_ORDPLC||P4^Procedure 4^ERL_MESA|||||||||xxx||Radiology^^^^R|7101^ESTRADA^JAIME^P^^DR|||||||||||1^once^^20000701^^R|||WALK|Modality Test 214||||||||||A||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_ADT|XYZ_ADMITTING|MESA_IS|XYZ_HOSPITAL|||ADT^A04|215102|P|2.3.1||||||||\rEVN||200007010800||||200007010800\rPID|||MM215^^^ADT1||MODALITY^215||19500110|M||BL|537 PURDUE AVE^^ST. LOUIS^MO^63130|||||||20-95-MM215||||||||||||\rPV1||E||||||5101^NELL^FREDERICK^P^^DR|||||||||||V215^^^ADT1|||||||||||||||||||||||||200007010800||||||||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_OP|XYZ_HOSPITAL|MESA_OF|XYZ_RADIOLOGY|||ORM^O01|215104|P|2.3.1||||||||\rPID|||MM215^^^ADT1||MODALITY^215||19500110|M||BL|537 PURDUE AVE^^ST. LOUIS^MO^63130|||||||20-95-MM215||||||||||||\rPV1||E|1W^111^2^XYZ_HOSPITAL||||1234^WEAVER^TIMOTHY^P^^DR|5101^NELL^FREDERICK^P^^DR|||||||||||V215^^^ADT1|||||||||||||||||||||||||200007010800||||||||\rORC|NW|A215Z^MESA_ORDPLC|||||1^once^^20000701^^R||200006211400|^ROSEWOOD^RANDOLPH||7101^ESTRADA^JAIME^P^^DR||3145551212|20000701||922229-10^IHE-RAD^IHE-CODE-231||\rOBR|1|A215Z^MESA_ORDPLC||P10^Procedure 10^ERL_MESA|||||||||xxx||Radiology^^^^R|7101^ESTRADA^JAIME^P^^DR|||||||||||1^once^^20000701^^R|||WALK|Modality Test 215||||||||||A||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_ADT|XYZ_ADMITTING|MESA_IS|XYZ_HOSPITAL|||ADT^A04|221102|P|2.3.1||||||||\rEVN||200007010800||||200007010800\rPID|||MM221^^^ADT1||MODALITY^221||19500121|M||BL|537 PURDUE AVE^^ST. LOUIS^MO^63130|||||||20-95-MM221||||||||||||\rPV1||E||||||5101^NELL^FREDERICK^P^^DR|||||||||||V221^^^ADT1|||||||||||||||||||||||||200007010800||||||||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_OP|XYZ_HOSPITAL|MESA_OF|XYZ_RADIOLOGY|||ORM^O01|221104|P|2.3.1||||||||\rPID|||MM221^^^ADT1||MODALITY^221||19500121|M||BL|537 PURDUE AVE^^ST. LOUIS^MO^63130|||||||20-95-MM221||||||||||||\rPV1||E|1W^111^2^XYZ_HOSPITAL||||1234^WEAVER^TIMOTHY^P^^DR|5101^NELL^FREDERICK^P^^DR|||||||||||V221^^^ADT1|||||||||||||||||||||||||200007010800||||||||\rORC|NW|A221Z^MESA_ORDPLC|||||1^once^^20000701^^R||200006211400|^ROSEWOOD^RANDOLPH||7101^ESTRADA^JAIME^P^^DR||3145551212|20000701||922229-10^IHE-RAD^IHE-CODE-231||\rOBR|1|A221Z^MESA_ORDPLC||P3^Procedure 3^ERL_MESA|||||||||xxx||Radiology^^^^R|7101^ESTRADA^JAIME^P^^DR|||||||||||1^once^^20000701^^R|||WALK|Modality Test 221||||||||||A||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_ADT|XYZ_ADMITTING|MESA_IS|XYZ_HOSPITAL|||ADT^A04|222102|P|2.3.1||||||||\rEVN||200007010800||||200007010800\rPID|||MM222^^^ADT1||MODALITY^222||19500122|M||BL|537 PURDUE AVE^^ST. LOUIS^MO^63130|||||||20-95-MM222||||||||||||\rPV1||E||||||5101^NELL^FREDERICK^P^^DR|||||||||||V222^^^ADT1|||||||||||||||||||||||||200007010800||||||||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_OP|XYZ_HOSPITAL|MESA_OF|XYZ_RADIOLOGY|||ORM^O01|222104|P|2.3.1||||||||\rPID|||MM222^^^ADT1||MODALITY^222||19500122|M||BL|537 PURDUE AVE^^ST. LOUIS^MO^63130|||||||20-95-MM222||||||||||||\rPV1||E|1W^111^2^XYZ_HOSPITAL||||1234^WEAVER^TIMOTHY^P^^DR|5101^NELL^FREDERICK^P^^DR|||||||||||V222^^^ADT1|||||||||||||||||||||||||200007010800||||||||\rORC|NW|A222Z^MESA_ORDPLC|||||1^once^^20000701^^R||200006211400|^ROSEWOOD^RANDOLPH||7101^ESTRADA^JAIME^P^^DR||3145551212|20000701||922229-10^IHE-RAD^IHE-CODE-231||\rOBR|1|A222Z^MESA_ORDPLC||P6^Procedure 6^ERL_MESA|||||||||xxx||Radiology^^^^R|7101^ESTRADA^JAIME^P^^DR|||||||||||1^once^^20000701^^R|||WALK|Modality Test 222||||||||||A||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_OP|XYZ_HOSPITAL|MESA_OF|XYZ_RADIOLOGY|||ORM^O01|222106|P|2.3.1||||||||\rPID|||MM222^^^ADT1||MODALITY^222||19500122|M||BL|537 PURDUE AVE^^ST. LOUIS^MO^63130|||||||20-95-MM222||||||||||||\rPV1||E|1W^111^2^XYZ_HOSPITAL||||1234^WEAVER^TIMOTHY^P^^DR|5101^NELL^FREDERICK^P^^DR|||||||||||V222^^^ADT1|||||||||||||||||||||||||200007010800||||||||\rORC|NW|A222Y^MESA_ORDPLC|||||1^once^^20000701^^R||200006211400|^ROSEWOOD^RANDOLPH||7101^ESTRADA^JAIME^P^^DR||3145551212|20000701||922229-10^IHE-RAD^IHE-CODE-231||\rOBR|1|A222Y^MESA_ORDPLC||P7^Procedure 7^ERL_MESA|||||||||xxx||Radiology^^^^R|7101^ESTRADA^JAIME^P^^DR|||||||||||1^once^^20000701^^R|||WALK|Modality Test 222||||||||||A||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_ADT|XYZ_ADMITTING|MESA_IS|XYZ_HOSPITAL|||ADT^A04|231102|P|2.3.1||||||||\rEVN||200007010800||||200007010800\rPID|||MM231^^^ADT1||MODALITY^231||19500121|M||BL|537 PURDUE AVE^^ST. LOUIS^MO^63130|||||||20-95-MM231||||||||||||\rPV1||E||||||5101^NELL^FREDERICK^P^^DR|||||||||||V231^^^ADT1|||||||||||||||||||||||||200007010800||||||||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_OP|XYZ_HOSPITAL|MESA_OF|XYZ_RADIOLOGY|||ORM^O01|231104|P|2.3.1||||||||\rPID|||MM231^^^ADT1||MODALITY^231||19500121|M||BL|537 PURDUE AVE^^ST. LOUIS^MO^63130|||||||20-95-MM231||||||||||||\rPV1||E|1W^111^2^XYZ_HOSPITAL||||1234^WEAVER^TIMOTHY^P^^DR|5101^NELL^FREDERICK^P^^DR|||||||||||V231^^^ADT1|||||||||||||||||||||||||200007010800||||||||\rORC|NW|A231Z^MESA_ORDPLC|||||1^once^^20000701^^R||200006211400|^ROSEWOOD^RANDOLPH||7101^ESTRADA^JAIME^P^^DR||3145551212|20000701||922229-10^IHE-RAD^IHE-CODE-231||\rOBR|1|A231Z^MESA_ORDPLC||P5^Procedure 5^ERL_MESA|||||||||xxx||Radiology^^^^R|7101^ESTRADA^JAIME^P^^DR|||||||||||1^once^^20000701^^R|||WALK|Modality Test 231||||||||||A||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_ADT|XYZ_ADMITTING|MESA_IS|XYZ_HOSPITAL|||ADT^A04|241102|P|2.3.1||||||||\rEVN||200007010800||||200007010800\rPID|||MM241^^^ADT1||MODALITY^241||19500121|M||BL|537 PURDUE AVE^^ST. LOUIS^MO^63130|||||||20-95-MM241||||||||||||\rPV1||E||||||5101^NELL^FREDERICK^P^^DR|||||||||||V241^^^ADT1|||||||||||||||||||||||||200007010800||||||||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_OP|XYZ_HOSPITAL|MESA_OF|XYZ_RADIOLOGY|||ORM^O01|241104|P|2.3.1||||||||\rPID|||MM241^^^ADT1||MODALITY^241||19500121|M||BL|537 PURDUE AVE^^ST. LOUIS^MO^63130|||||||20-95-MM241||||||||||||\rPV1||E|1W^111^2^XYZ_HOSPITAL||||1234^WEAVER^TIMOTHY^P^^DR|5101^NELL^FREDERICK^P^^DR|||||||||||V241^^^ADT1|||||||||||||||||||||||||200007010800||||||||\rORC|NW|A241Z^MESA_ORDPLC|||||1^once^^20000701^^R||200006211400|^ROSEWOOD^RANDOLPH||7101^ESTRADA^JAIME^P^^DR||3145551212|20000701||922229-10^IHE-RAD^IHE-CODE-231||\rOBR|1|A241Z^MESA_ORDPLC||P2^Procedure 2^ERL_MESA|||||||||xxx||Radiology^^^^R|7101^ESTRADA^JAIME^P^^DR|||||||||||1^once^^20000701^^R|||WALK|Modality Test 241||||||||||A||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MESA_RPT_MGR|EAST_RADIOLOGY|REPOSITORY|XYZ|||ORU^R01|MESA3b781ae8|P|2.3.1||||||||\rPID|||CR3^^^ADT1||CRTHREE^PAUL|||||||||||||PatientAcct||||||||||||\rOBR|||||||20010501141500.0000||||||||||||||||||F||||||||||||||||||\rOBX|1|HD|SR Instance UID||1.113654.1.2001.30.2.1||||||F||||||\rOBX|2|TX|SR Text||Radiology Report History Cough Findings PA evaluation of the chest demonstrates the lungs to be expanded and clear.  Conclusions Normal PA chest x-ray.||||||F||||||\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH^\\|~&^CHCS\\LABCH^N00183^DATAGATE^3M^20020628010004.0-0400^^ORU\\R01^R00183-241717954^P^2.3^\rPID^1^^305058\\\\N00183^01/226-33-1738^MOUSE\\JR\\MICKEY S^^19870818^M^^C^115 VIRGINIA DR\\\\NEWPORT NEWS\\VIRGINIA\\23602^^7579888621^^^S^CAT^^229-45-6625^^^9^^^^^4012\\USAF FAM MBR AD\\\\F41^\rORC^RE^020628-00063^^^CM^^^^^26934\\MOUSE\\MINNIE\\K^44832\\DUCK\\DONALD\\W^^67820\\PEDIATRIC EMERGENCY ROOM\\99HOS\\1\\MEDICAL CENTER DISNEY\\99DIV^^20020628002300^\rOBR^1^020628-00063^^2668\\CBC W/AUTO DIFF^STAT^0^20020628004200.0-0400^^^^^^CUBE 9^20020628004810.0-0400^8827\\WHOLE BLOOD,NOS\\99LRP\\\\\\108\\BLOOD\\99LRS^44832\\DAFFY\\DUCK\\W^^56883539^^020628 PHE 2026^^^BIAA^^F^^\\\\\\\\\\STAT^\rNTE^^^Order Comment: CUBE 9^\rOBX^1^ST^1809\\WHITE BLOOD CELLS 0801\\99LRT^^7.9^X1000/UL^4.5-10.8^^^^F^^^20020628010001^^6094\\DYCHES\\CLINE\\\\\\\\\\99USR^\rOBX^2^ST^1843\\RED BLOOD CELLS 0801\\99LRT^^4.15^X10(6)/UL^4.70-6.20^L^^^F^^^20020628010001^^6094\\DYCHES\\CLINE\\\\\\\\\\99USR^\rOBX^3^ST^1860\\HEMOGLOBIN\\99LRT^^12.5^G/DL^13.5-17.5^L^^^F^^^20020628010001^^6094\\DYCHES\\CLINE\\\\\\\\\\99USR^\rOBX^4^ST^1865\\HEMATOCRIT\\99LRT^^35.2^%^37.0-49.0^L^^^F^^^20020628010001^^6094\\DYCHES\\CLINE\\\\\\\\\\99USR^\rOBX^5^ST^1900\\MCV\\99LRT^^84.8^FL^80-94^^^^F^^^20020628010001^^6094\\DYCHES\\CLINE\\\\\\\\\\99USR^\rOBX^6^ST^1910\\MCH\\99LRT^^30.0^PG^26.0-34.0^^^^F^^^20020628010001^^6094\\DYCHES\\CLINE\\\\\\\\\\99USR^\rOBX^7^ST^1916\\MCHC\\99LRT^^35.4^G/DL^32.0-36.0^^^^F^^^20020628010001^^6094\\DYCHES\\CLINE\\\\\\\\\\99USR^\rOBX^8^ST^1923\\RED CELL DIST WIDTH\\99LRT^^11.9^%^14.5^^^^F^^^20020628010001^^6094\\DYCHES\\CLINE\\\\\\\\\\99USR^\rOBX^9^ST^1925\\PLATELETS\\99LRT^^292^X1000/UL^140-440^^^^F^^^20020628010001^^6094\\DYCHES\\CLINE\\\\\\\\\\99USR^\rOBX^10^ST^1942\\MPV\\99LRT^^7.3^FL^11.4^^^^F^^^20020628010001^^6094\\DYCHES\\CLINE\\\\\\\\\\99USR^\rOBX^11^ST^1943\\NEUTROPHILS\\99LRT^^73.20^%^56-80^^^^F^^^20020628010001^^6094\\DYCHES\\CLINE\\\\\\\\\\99USR^\rOBX^12^ST^1952\\LYMPHOCYTES\\99LRT^^11.50^%^20-45^L^^^F^^^20020628010001^^6094\\DYCHES\\CLINE\\\\\\\\\\99USR^\rOBX^13^ST^1961\\MONOCYTES\\99LRT^^14.90^%^0-12^H^^^F^^^20020628010001^^6094\\DYCHES\\CLINE\\\\\\\\\\99USR^\rOBX^14^ST^1973\\EOSINOPHILS\\99LRT^^0.10^%^0-5^^^^F^^^20020628010001^^6094\\DYCHES\\CLINE\\\\\\\\\\99USR^\rOBX^15^ST^1974\\BASOPHIL %-AUTOMATED\\99LRT^^0.30^%^0-2^^^^F^^^20020628010001^^6094\\DYCHES\\CLINE\\\\\\\\\\99USR^\rOBX^16^ST^1977\\NEUTROPHIL #-AUTOMATED\\99LRT^^5.80^X1000/UL^2.25-8.64^^^^F^^^20020628010001^^6094\\DYCHES\\CLINE\\\\\\\\\\99USR^\rOBX^17^ST^1986\\LYMPHOCYTE #-AUTOMATED\\99LRT^^0.9^x1000/uL^0.9-4.86^^^^F^^^20020628010001^^6094\\DYCHES\\CLINE\\\\\\\\\\99USR^\rOBX^18^ST^1989\\MONOCYTE #-AUTOMATED\\99LRT^^1.20^X1000/UL^0.0-1.08^H^^^F^^^20020628010001^^6094\\DYCHES\\CLINE\\\\\\\\\\99USR^\rOBX^19^ST^1996\\EOSINOPHIL #-AUTOMATED\\99LRT^^0.00^X1000/UL^0.0-0.54^^^^F^^^20020628010001^^6094\\DYCHES\\CLINE\\\\\\\\\\99USR^\rOBX^20^ST^2002\\BASOPHIL #-AUTOMATED\\99LRT^^0.00^X1000/UL^0.0-0.22^^^^F^^^20020628010001^^6094\\DYCHES\\CLINE\\\\\\\\\\99USR^\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH^\\|~*^CHCS\\LABCH^N00183^DATAGATE^3M^20020628010004.0-0400^~F~~S~~T~~E~~R~^ORU\\R01^R00183-241717954^P^2.3^^^^^^a|b|c\rPID^1^^305058\\\\N00183^01/226-33-1738^MOUSE\\JR\\MICKEY S^^19870818^M^^C^115 VIRGINIA DR\\\\NEWPORT NEWS\\VIRGINIA\\23602^^757-988-8621^(757) 766-2243^^S^CAT^^229-45-6625^^^9^^^^^4012\\USAF FAM MBR AD\\\\F41^\rORC^RE^020628-00063^^^CM^^^^^26934\\MOUSE\\MINNIE\\K^44832\\DUCK\\DONALD\\W^^67820\\PEDIATRIC EMERGENCY ROOM\\99HOS\\1\\MEDICAL CENTER DISNEY\\99DIV^^20020628002300^\rOBR^1^020628-00063^^2668\\CBC W/AUTO DIFF^STAT^0^20020628004200.0-0400^^^^^^CUBE 9^20020628004810.0-0400^8827\\WHOLE BLOOD,NOS\\99LRP\\\\\\108\\BLOOD\\99LRS^44832\\DAFFY\\DUCK\\W^^56883539^^020628 PHE 2026^^^BIAA^^F^^10*CC\\\\\\\\\\STAT^\rNTE^^^Order Comment: CUBE 9^\rOBX^1^ST^1809\\WHITE BLOOD CELLS 0801\\99LRT^^7.9^X1000/UL^4.5-10.8^^^^F^^^20020628010001^^6094\\DYCHES\\CLINE\\\\\\\\\\99USR^\rOBX^2^ST^1843\\RED BLOOD CELLS 0801\\99LRT^^4.15^X10(6)/UL^4.70-6.20^L^^^F^^^20020628010001^^6094\\DYCHES\\CLINE\\\\\\\\\\99USR^\rOBX^3^ST^1860\\HEMOGLOBIN\\99LRT^^12.5^G/DL^13.5-17.5^L^^^F^^^20020628010001^^6094\\DYCHES\\CLINE\\\\\\\\\\99USR^\rOBX^4^ST^1865\\HEMATOCRIT\\99LRT^^35.2^%^37.0-49.0^L^^^F^^^20020628010001^^6094\\DYCHES\\CLINE\\\\\\\\\\99USR^\rOBX^5^ST^1900\\MCV\\99LRT^^84.8^FL^80-94^^^^F^^^20020628010001^^6094\\DYCHES\\CLINE\\\\\\\\\\99USR^\rOBX^6^ST^1910\\MCH\\99LRT^^30.0^PG^26.0-34.0^^^^F^^^20020628010001^^6094\\DYCHES\\CLINE\\\\\\\\\\99USR^\rOBX^7^ST^1916\\MCHC\\99LRT^^35.4^G/DL^32.0-36.0^^^^F^^^20020628010001^^6094\\DYCHES\\CLINE\\\\\\\\\\99USR^\rOBX^8^ST^1923\\RED CELL DIST WIDTH\\99LRT^^11.9^%^14.5^^^^F^^^20020628010001^^6094\\DYCHES\\CLINE\\\\\\\\\\99USR^\rOBX^9^ST^1925\\PLATELETS\\99LRT^^292^X1000/UL^140-440^^^^F^^^20020628010001^^6094\\DYCHES\\CLINE\\\\\\\\\\99USR^\rOBX^10^ST^1942\\MPV\\99LRT^^7.3^FL^11.4^^^^F^^^20020628010001^^6094\\DYCHES\\CLINE\\\\\\\\\\99USR^\rOBX^11^ST^1943\\NEUTROPHILS\\99LRT^^73.20^%^56-80^^^^F^^^20020628010001^^6094\\DYCHES\\CLINE\\\\\\\\\\99USR^\rOBX^12^ST^1952\\LYMPHOCYTES\\99LRT^^11.50^%^20-45^L^^^F^^^20020628010001^^6094\\DYCHES\\CLINE\\\\\\\\\\99USR^\rOBX^13^ST^1961\\MONOCYTES\\99LRT^^14.90^%^0-12^H^^^F^^^20020628010001^^6094\\DYCHES\\CLINE\\\\\\\\\\99USR^\rOBX^14^ST^1973\\EOSINOPHILS\\99LRT^^0.10^%^0-5^^^^F^^^20020628010001^^6094\\DYCHES\\CLINE\\\\\\\\\\99USR^\rOBX^15^ST^1974\\BASOPHIL %-AUTOMATED\\99LRT^^0.30^%^0-2^^^^F^^^20020628010001^^6094\\DYCHES\\CLINE\\\\\\\\\\99USR^\rOBX^16^ST^1977\\NEUTROPHIL #-AUTOMATED\\99LRT^^5.80^X1000/UL^2.25-8.64^^^^F^^^20020628010001^^6094\\DYCHES\\CLINE\\\\\\\\\\99USR^\rOBX^17^ST^1986\\LYMPHOCYTE #-AUTOMATED\\99LRT^^0.9^x1000/uL^0.9-4.86^^^^F^^^20020628010001^^6094\\DYCHES\\CLINE\\\\\\\\\\99USR^\rOBX^18^ST^1989\\MONOCYTE #-AUTOMATED\\99LRT^^1.20^X1000/UL^0.0-1.08^H^^^F^^^20020628010001^^6094\\DYCHES\\CLINE\\\\\\\\\\99USR^\rOBX^19^ST^1996\\EOSINOPHIL #-AUTOMATED\\99LRT^^0.00^X1000/UL^0.0-0.54^^^^F^^^20020628010001^^6094\\DYCHES\\CLINE\\\\\\\\\\99USR^\rOBX^20^ST^2002\\BASOPHIL #-AUTOMATED\\99LRT^^0.00^X1000/UL^0.0-0.22^^^^F^^^20020628010001^^6094\\DYCHES\\CLINE\\\\\\\\\\99USR^\r\n",
+         "Name": ""
+      }
+   ]
+}
