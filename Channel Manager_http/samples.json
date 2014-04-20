@@ -1,0 +1,8 @@
+{
+   "Samples": [
+      {
+         "Message": "GET /channelmanager/ HTTP/1.1\r\nHost: localhost:6544\r\nConnection: keep-alive\r\nCache-Control: max-age=0\r\nAccept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8\r\nUser-Agent: Mozilla/5.0 (Windows NT 5.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.116 Safari/537.36\r\nReferer: http://localhost:6543/dashboard.html?\r\nAccept-Encoding: gzip,deflate,sdch\r\nAccept-Language: en-GB,en-US;q=0.8,en;q=0.6\r\nCookie: 12C5D5AC8926BC8280663BD23FD88D5B_admin_PopupTop=494; 12C5D5AC8926BC8280663BD23FD88D5B_admin_PopupLeft=731; 12C5D5AC8926BC8280663BD23FD88D5B_admin_PopupWidth=533.1999998092651; 12C5D5AC8926BC8280663BD23FD88D5B_admin_PopupHeight=342.19999980926514; 7D253C779C2F8025A5D7951DA74FBD41_admin_PopupWidth=696.1999998092651; 7D253C779C2F8025A5D7951DA74FBD41_admin_PopupHeight=391.19999980926514; 7D253C779C2F8025A5D7951DA74FBD41_admin_PopupTop=249; 7D253C779C2F8025A5D7951DA74FBD41_admin_PopupLeft=586; D2ADFA0F392169532EA176C69C1D6D33_admin_PopupTop=229.5; D2ADFA0F392169532EA176C69C1D6D33_admin_PopupLeft=431.5; D2ADFA0F392169532EA176C69C1D6D33_admin_PopupWidth=408.19999980926514; D2ADFA0F392169532EA176C69C1D6D33_admin_PopupHeight=293.19999980926514; Mapper-SessionId=BBF1103BE3665937048DB7E8B6389854; EDTprojectPaneWidth=308px; EDTdockHeight=101px; Iguana-SessionID-99295334827F5ED08CFFFDC079C1FC5B-6543=25ABBF60E76EECD97E6612F51BAA153D; Iguana-SessionID-931D8711E361D15E2E43CB851D72A4F5-6543=02F9BCA0940FDCFE1079E2C898E75C3E; version_notification_close_date=\r\n\r\n",
+         "Name": ""
+      }
+   ]
+}

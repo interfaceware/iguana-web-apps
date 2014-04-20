@@ -815,6 +815,15 @@ function iguanaServer.connect(Args)
    
    -- Private variables.
    local Data = {}
+   if not Args.url and iguana.webInfo then
+      local I = iguana.webInfo()
+      if I.web_config.use_https then
+         Args.url = 'https://'
+      else
+         Args.url = 'http://'
+      end
+      Args.url= Args.url..I.host..':'..I.web_config.port..'/'
+   end
    Data.Url = checkParam(Args, "url", "string")
    Data.Username = checkParam(Args, "username", "string")
    Data.Password = checkParam(Args, "password", "string")
