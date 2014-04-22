@@ -1,0 +1,10 @@
+{
+   "Name": "04-Test Data Generator (From Translator)",
+   "LuaDependencies": [
+      "node",
+      "ran"
+   ],
+   "OtherDependencies": [
+      "example/demo.vmd"
+   ]
+}
