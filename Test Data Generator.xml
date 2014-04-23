@@ -4,7 +4,7 @@
          <dequeue source_name="self" dequeue_guid="B0702340295532FA3C6334B6E73F491A"></dequeue>
       </dequeue_list>
    </to_file>
-   <from_mapper guid="3339B72F5517AF29491FDB50BAE66E25" use_most_recent_milestone="true" milestone="" poll_time="10000"></from_mapper>
+   <from_mapper guid="3339B72F5517AF29491FDB50BAE66E25" use_most_recent_milestone="true" milestone="" poll_time="3000"></from_mapper>
    <message_filter filter_after_logging="true" log_pre_post_filter_message="true" filter_vmd_path="" transformation_mode="0" scripted_transformation_configuration_name="default" incoming_configuration_name="" outgoing_configuration_name="" error_handling="0" use_translator_filter="true" translator_guid="00000000000000000000000000000000" translator_milestone="" translator_use_most_recent_milestone="true">
       <ignored_message message_name=""></ignored_message>
    </message_filter>

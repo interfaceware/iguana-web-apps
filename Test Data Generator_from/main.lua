@@ -11,6 +11,6 @@ function main()
    -- through code
    Msg, Name = hl7.parse{vmd='example/demo.vmd', data=ran.RandomMessage()}
    trace(Msg)
-   queue.push{data=Msg}
+   queue.push{data=Msg:S()}
 end
 

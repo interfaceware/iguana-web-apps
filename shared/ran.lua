@@ -40,10 +40,24 @@ function ran.PV1(PV1)
    PV1[8][1][4] = 'F'
    PV1[19][1] = math.random(9999999)
    PV1[44][1] = ran.TimeStamp()
+   PV1[3][1] = "emergency_room"
+   PV1[3][3] = ran.choose(ran.BedEmerg)
+   --[[
    PV1[3][1] = ran.choose(ran.PointOfCare)
-   PV1[3][2] = ran.choose(ran.Room)
-   PV1[3][3] = ran.choose(ran.Bed)
-   -- what to do for "problem" ?
+   if PV1[3][1]:S() == 'emergency_room' then
+      PV1[3][3] = ran.choose(ran.BedEmerg)
+   elseif PV1[3][1]:S() == 'burn_ward' then
+      PV1[3][3] = ran.choose(ran.BedBurn)
+   elseif PV1[3][1]:S() == 'intensive_care_unit' then
+      PV1[3][3] = ran.choose(ran.BedICU)
+   elseif PV1[3][1]:S() == 'long_term_care' then
+      PV1[3][3] = ran.choose(ran.BedLTC)
+   elseif PV1[3][1]:S() == 'acute_cardiovascular_unit' then
+      PV1[3][3] = ran.choose(ran.BedCardio)
+   elseif PV1[3][1]:S() == 'childrens_ward' then
+      PV1[3][3] = ran.choose(ran.BedChildrens)
+   end
+   --]]
    PV1:S()
 end
 
@@ -75,10 +89,15 @@ ran.Application = { 'AcmeMed', 'MedPoke', 'CowZing' }
 --
 -- Random values for Bed Monitor app
 --
-ran.PointOfCare = {'emergency_room', 'burn_ward', 'intensive_care_unit', 'long_term_care','acute_cardiovascular_unit', 'childrens_ward'}
-ran.Room = {'100', '101', '102', '103', '104', '105', '106', '107', '108', '109', '110'}
-ran.Bed = {'BigBed1', 'BigBed2', 'BigBed3', 'BigBed4', 'MediumBed1', 'MediumBed2', 'MediumBed3', 'MediumBed4', 'LittleBed1', 'LittleBed2', 'LittleBed3', 'LittleBed4', 'TinyBed1', 'TinyBed2', 'TinyBed3', 'TinyBed4'}
-ran.Conditions = {'Heart Palpitations', 'Dizziness', 'Numbness', 'Blurred Vision', 'Acute Stomach Pain', 'Stroke', 'Tuberculosis'}
+--ran.PointOfCare = {'emergency_room', 'burn_ward', 'intensive_care_unit', 'long_term_care','acute_cardiovascular_unit', 'childrens_ward'}
+ran.BedEmerg = {'100', '101', '102', '103', '104', '105', '106', '107', '108', '109'}
+ran.BedBurn  = {'110' ,'111' ,'112' ,'113' ,'114' ,'115' ,'116' ,'117' ,'118' ,'119'}
+ran.BedICU = {'120' ,'121' ,'122' ,'123' ,'124' ,'125' ,'126' ,'127' ,'128' ,'129'}
+ran.BedLTC = {'130' ,'131' ,'132' ,'133' ,'134' ,'135' ,'136' ,'137' ,'138' ,'139'}
+ran.BedCardio = {'140' ,'141' ,'142' ,'143' ,'144' ,'145' ,'146' ,'147' ,'148' ,'149'}
+ran.BedChildrens = {'150' ,'151' ,'152' ,'153' ,'154' ,'155' ,'156' ,'157' ,'158' ,'159'}
+
+ran.Conditions = {'Heart Palpitations', 'Dizziness', 'Numbness', 'Blurred Vision', 'Acute Stomach Pain', 'Stroke', 'Tuberculosis', 'Vomiting', 'Head Trauma', 'Lacerations', 'Burns', 'Poisoning'}
 
 function ran.lastName() return ran.choose(ran.LastNames) end
 
