@@ -61,10 +61,18 @@ local function IsText(FileName)
 end
 
 local function ConvertLF(Content)
-   if os.isWindows() then
-      Content = Content:gsub('\r\n', '\n')
-   end
+   Content = Content:gsub('\r\n', '\n')
    return Content
+end
+
+local function OnlyWriteChangedFile(FileName, Content)
+   if os.fs.access(FileName) then
+      local CurrentContent = os.fs.readFile(FileName)
+      if CurrentContent == Content then
+         return
+      end
+   end
+   os.fs.writeFile(FileName, Content)   
 end
 
 local function WriteFiles(Root, Tree)
@@ -74,7 +82,7 @@ local function WriteFiles(Root, Tree)
          if IsText(FileName) then
             Content = ConvertLF(Content)            
          end
-         os.fs.writeFile(FileName, Content)
+         OnlyWriteChangedFile(FileName, Content)
       elseif type(Content) == 'table' then
           WriteFiles(Root..'/'..Name, Content)
       end
