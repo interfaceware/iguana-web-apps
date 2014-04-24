@@ -16,7 +16,6 @@ require 'cm.app.listChannels'
 require 'cm.config'
 
 -- TODO - user should login to provide the user name and password
-
 cm.config.username = 'admin'
 cm.config.password = 'password'
 
