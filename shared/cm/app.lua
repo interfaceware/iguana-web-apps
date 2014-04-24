@@ -16,6 +16,7 @@ require 'cm.app.listChannels'
 require 'cm.config'
 
 -- TODO - user should login to provide the user name and password
+
 cm.config.username = 'admin'
 cm.config.password = 'password'
 
@@ -75,7 +76,9 @@ local function OnlyWriteChangedFile(FileName, Content)
          return
       end
    end
-   os.fs.writeFile(FileName, Content)   
+   trace(FileName)
+   os.fs.writeFile(FileName, Content)
+   os.fs.chmod(FileName, 666)
 end
 
 local function WriteFiles(Root, Tree)
