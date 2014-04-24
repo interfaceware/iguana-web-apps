@@ -35,6 +35,7 @@ function getCondition(Row)
    end
 end
 
+-- TODO - this belongs in a shared module.
 function connect()
-   return db.connect{api=db.SQLITE, name='bedmonitor.sqlite', live=true}
+   return db.connect{api=db.SQLITE, name='bedmonitor', live=true}
 end

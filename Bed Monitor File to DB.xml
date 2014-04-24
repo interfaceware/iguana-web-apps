@@ -1,5 +1,5 @@
 <channel name="Bed Monitor File to DB" guid="01EB206C4923869B07B13C2E5CEFCF7E" description="" start_automatically="false" logging_level="1" use_message_filter="false">
-   <to_mapper guid="96C437A4BDF1653DDBC02ACF1A076A93" use_most_recent_milestone="true" milestone="">
+   <to_mapper guid="E72714CFF506F7AAF452F8CD7CC6197A" use_most_recent_milestone="true" milestone="">
       <dequeue_list>
          <dequeue source_name="self" dequeue_guid="1D2735C136074034A4AA7E2A00C2C785"></dequeue>
       </dequeue_list>

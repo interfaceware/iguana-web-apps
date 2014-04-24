@@ -4,8 +4,6 @@
       "bedmonitor.app",
       "bedmonitor.app.listBeds",
       "file",
-      "iguana.channel",
-      "iguanaServer",
       "lib.webserver",
       "node",
       "stringutil"
