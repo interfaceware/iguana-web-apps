@@ -8,3 +8,5 @@
 *.html text
 *.htm  text
 *.js   text
+*.vmd  text
+*.xml  text
