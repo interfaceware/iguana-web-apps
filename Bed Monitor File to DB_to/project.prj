@@ -1,7 +1,7 @@
 {
    "Name": "Bed Monitor File to DB (To Translator)",
    "LuaDependencies": [
-      
+      "db.sqlite"
    ],
    "OtherDependencies": [
       "bedtables.vmd",

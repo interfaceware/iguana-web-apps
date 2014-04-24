@@ -27,15 +27,10 @@ function getName(Row)
 end
 
 function getCondition(Row)
-   local Cond = Row.condition:nodeValue()
-   if Cond == 'NULL' or Cond == '' then 
+   local Cond = Row.condition:S()
+   if Cond == '' then 
       return "N/A" 
    else
       return Cond
    end
-end
-
--- TODO - this belongs in a shared module.
-function connect()
-   return db.connect{api=db.SQLITE, name='bedmonitor', live=true}
 end
