@@ -37,40 +37,40 @@ local function ProjectFile(MainDir)
    return json.parse{data=D}
 end
 
-
-local function CopyFileList(FileList)
-   for i=1, #FileList do
-      local Content = os.fs.readFile(FileList[i].from)
-      os.fs.writeFile(FileList[i].to, Content)
+local function AddFile(Dir, File, Content)
+   local Parts = File:split('/')
+   local SubDir = Dir
+   for i = 1, #Parts-1 do
+      if #Parts[i] > 0 then
+         if not SubDir[Parts[i]] then SubDir[Parts[i]] = {} end
+         SubDir = SubDir[Parts[i]]
+      end
    end
-end
-
-function ZipFileList(ScratchDir)
-   local P = io.popen{dir=ScratchDir, command='zip', arguments="-r project.zip *"}
-   local Content = P:read('*a')
+   SubDir[Parts[#Parts]] = Content
 end
 
 local function BuildTransZip(RepoDir, ProjectDir, TargetGuid, ScratchDir)
-   local FileList = {}
+   local Dir = {}
    local MainDir = RepoDir..'/'..ProjectDir..'/'
    for K,V in os.fs.glob(MainDir..'*') do
-      FileList[#FileList+1] = {from=K, to=ScratchDir..'/'..TargetGuid..'/'..K:sub(#MainDir+1)}
+      local Content = os.fs.readFile(K)
+      AddFile(Dir,TargetGuid..'/'..K:sub(#MainDir), Content)
    end
+   trace(Dir)
    local P = ProjectFile(MainDir)
    for i = 1, #P.OtherDependencies do 
-      FileList[#FileList+1] = {from=RepoDir..'/other/'..P.OtherDependencies[i]}
-      FileList[#FileList].to = ScratchDir..'/other/'..P.OtherDependencies[i]
+      local Content = os.fs.readFile(RepoDir..'/other/'..P.OtherDependencies[i])
+      AddFile(Dir, '/other/'..P.OtherDependencies[i], Content)
    end
    for i = 1, #P.LuaDependencies do 
-      FileList[#FileList+1] = {from=RepoDir..'/shared/'..P.LuaDependencies[i]:gsub("%.", '/')..'.lua'}
-      FileList[#FileList].to = ScratchDir..'/shared/'..P.LuaDependencies[i]:gsub("%.",'/')..'.lua'
+      local Content = os.fs.readFile(RepoDir..'/shared/'..P.LuaDependencies[i]:gsub("%.", '/')..'.lua')
+      AddFile(Dir, '/shared/'..P.LuaDependencies[i]:gsub("%.", "/")..'.lua', Content)
    end
-   trace(FileList)
-   CopyFileList(FileList)
-   ZipFileList(ScratchDir)
-   local ZipData = os.fs.readFile(ScratchDir..'/project.zip')
-   os.fs.cleanDir(ScratchDir)
-   return filter.base64.enc(ZipData)
+   trace(Dir)
+   os.ts.time()
+   local ZipData2 = filter.zip.deflate(Dir)
+   os.ts.time()
+   return filter.base64.enc(ZipData2)
 end
 
 function iguana.channel.add(T)
@@ -78,22 +78,29 @@ function iguana.channel.add(T)
    local Definition = T.definition
    local Api = T.api
    local ScratchDir = T.scratch
-   
+   os.ts.time()
+
    local ChanDef = ChannelDefinition(RepoDir, Definition)
    if T.name then 
       ChanDef.channel.name = T.name
    end
-   
+   os.ts.time()
    local NewChanDef = Api:addChannel{config=ChanDef, live=true}
+   os.ts.time()
    local TranList = iguana.channel.getTranslators(NewChanDef)
+   os.ts.time()
    for TransType,Guid in pairs(TranList) do
       local Start = os.ts.time()
       local ZipData = BuildTransZip(RepoDir, Definition..'_'..TransType, Guid, ScratchDir)
       local EndTime = os.ts.time()
       trace(EndTime-Start)
+      os.ts.time()
       Api:importProject{project=ZipData, guid=Guid, sample_data='replace', live=true}
+      os.ts.time()
       Api:saveProjectMilestone{guid=Guid, milestone_name='Channel Manager '..os.date(), live=true}
+      os.ts.time()
    end
+   os.ts.time()
    return NewChanDef
 end
 

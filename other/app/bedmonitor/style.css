@@ -7,10 +7,11 @@ body {
 }
    
 h1 {
+   margin: 0px;
    font-size: 2.8em;
    font-weight: 700;
    text-align: center;
-   padding: 35px 0px 25px 0px;
+   padding: 25px 0px 20px 0px;
    background: -webkit-linear-gradient(#a5db58, #7bc144) #a5db58;
    background: -o-linear-gradient(#a5db58, #7bc144) #a5db58;
    background: -moz-linear-gradient(#a5db58, #7bc144) #a5db58;
@@ -19,14 +20,7 @@ h1 {
    text-shadow: #264504 0px 1px 2px;
    box-shadow: #888888 0px 1px 1px;
 }
-   
-#global, #channels_list {
-   background: none repeat scroll 0 0 #FCFCFC;
-   border: 1px solid #DDDDDD;
-   border-radius: 5px;
-   margin: 10px;
-   padding: 20px;
-}
+
    
    
 .status-green {
@@ -65,20 +59,59 @@ h1 {
    margin: 0px auto;
 }
 
-   
-th {
-   font-size: 0.75em;
-   font-weight: 600 !important;
-   text-transform: uppercase;
-   letter-spacing: 0.15em;
+
+table.dataTable {
+    border-color: #DDDDDD;
+    border-image: none;
+    border-style: solid solid solid none;
+    border-width: 1px 1px 1px 0px;
+    margin-top: 40px;
+    margin-bottom: 10px;
 }
-   
+
+thead {
+    background-color: #FAFAFA !important;
+    background-image: linear-gradient(to bottom, #FAFAFA, #EFEFEF) !important;
+    box-shadow: none;
+    height: 46px;
+    overflow: hidden;
+    color: #444444;
+}
+
+th {
+    font-size: 0.75em;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    border-left: 1px solid #DDDDDD;
+    border-bottom: 1px solid #CCCCCC !important;
+}
+
 td {
-   font-size: 0.9em;
-   font-weight: 300;
-   border-top: 1px solid #DDDDDD;
-   border-left: 1px solid #DDDDDD;
-   width: 120px; /* fix me */
+    font-size: 0.9em;
+    font-weight: 300;
+    border-top: 1px solid #DDDDDD;
+    border-left: 1px solid #DDDDDD;
+}
+
+table.dataTable td {
+    padding: 5px 10px;
+}
+
+table.dataTable tr.odd {
+    background-color: #FFFFFF;
+}
+
+table.dataTable tr.even {
+    background-color: #F9F9F9;
+}
+
+table.dataTable tr.odd td.sorting_1 {
+    background-color: #f3fafc;
+}
+
+table.dataTable tr.even td.sorting_1 {
+    background-color: #e7f4f9;
 }
 
 /* Some of this CSS might need to factored out into library CSS for datatables */
@@ -93,8 +126,8 @@ div.dataTables_wrapper {
    border: 1px solid #DDDDDD;
    border-radius: 5px;
    box-shadow: none;
-   overflow: hidden;
    padding: 15px 15px 10px 15px;
+   margin: 30px;
 }
    
 .dataTables_length label,
@@ -110,4 +143,5 @@ input {
    border: 1px solid #DDDDDD;
    height: 20px;
 }
+
 

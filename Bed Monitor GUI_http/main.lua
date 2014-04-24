@@ -1,17 +1,17 @@
 -- The server and the app object are global.
-require 'cm.app'
+require 'bedmonitor.app'
 require 'lib.webserver'
 
 function main(Data)
    local Server = lib.webserver.create{
-   actions=cm.actions,
-   default='app/cm/index.html',
-   -- If the test property is defined then static files are pulled from the sandbox 
-   -- rather than from the mile-stoned versioned copies of the files.  In production
-   -- the test propery should be commmented out.
-   --test='admin'    
-}
- 
+      actions = bm.actions,
+      default = 'app/bedmonitor/index.html',
+      -- If the test property is defined then static files are pulled from the sandbox 
+      -- rather than from the mile-stoned versioned copies of the files.  In production
+      -- the test propery should be commmented out.
+      test = 'admin'    
+   }
+   
    iguana.channelConfig{guid=iguana.channelGuid()}
    
    iguana.stopOnError(false) 

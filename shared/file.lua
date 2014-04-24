@@ -46,9 +46,9 @@ local FileOpen = io.open
 
 function io.open(FileName, Mode)
    FileName = os.fs.name.toNative(FileName)
-   local Success, Result = pcall(FileOpen, FileName, Mode) 
+   local Success, Result, ErrMessage = pcall(FileOpen, FileName, Mode) 
    if Success then
-      return Result
+      return Result, ErrMessage
    else   
       error(Result, 1)
    end
@@ -73,7 +73,9 @@ function os.fs.writeFile(Name, Content)
          os.fs.mkdir(Dir)
       end
    end
-   local F = io.open(Name, "wb+")
+   os.fs.access(Name, 'w')
+   local F, Err = io.open(Name, "wb+")
+   if not F then error("Unable to write to "..Err) end
    F:write(Content)
    F:close()
 end

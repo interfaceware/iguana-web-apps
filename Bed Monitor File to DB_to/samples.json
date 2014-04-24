@@ -1,0 +1,8 @@
+{
+   "Samples": [
+      {
+         "Message": "MSH|^~\\&|AcmeMed|E\\T\\R|Main HIS|St. Micheals|20110613084407||ADT^A03|A30858532600116CA366CB628959EBA2C9468AD1D12EB6238AAB045A104EDC1C|P|2.6|\rEVN||20011026073839||||20110119024856|\rPID|||9706515||Fitzgerald^Sabrina||19510219|F||Mixed|124 Delphi Cres.^^Toronto^ON^17018|||||||13-799-348|985-168-355|\rNK1|1|Smith^Mary|Second Cousin|\rNK1|2|Garland^Sabrina|Grandchild|\rNK1|3|Garland^Mary|Sibling|\rNK1|4|Meade^Fred|Parent|\rNK1|5|Adams^Sabrina|Sibling|\rPV1|||childrens_ward^^154|||||^Garland^Sabrina^F|||||||||||8741165|||||||||||||||||||||||||20020105040854|\rOBX|||WT||85|pounds|\rOBX|||HT^HEIGHT||57|cm|\rOBX|||CD^CONDITION||&Heart Palpitations|\r",
+         "Name": ""
+      }
+   ]
+}

@@ -1,0 +1,12 @@
+# All linefeeds like CRLF are set to LF
+* text eol=lf
+
+# These are text files
+*.json text
+*.css  text
+*.lua  text
+*.html text
+*.htm  text
+*.js   text
+*.vmd  text
+*.xml  text

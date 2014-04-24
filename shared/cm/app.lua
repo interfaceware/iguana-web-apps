@@ -10,7 +10,7 @@ cm = {}
 cm.config = {}
 
 -- Use posix file conventions.
-cm.config.channelExportPath = 'D:/community/iguana-web-apps/'
+cm.config.channelExportPath = '~/community/iguana-web-apps/'
 cm.config.scratchDir = os.fs.tempDir()..'/channelmanager/'
 cm.app = {}
 
@@ -50,11 +50,43 @@ function cm.app.addChannel(R)
    return {success=true}
 end
 
+local TextFile={
+   [".lua"]=true,   
+   [".js"]=true,
+   [".xml"]=true,
+   [".css"]=true,
+   [".vmd"]=true,
+   [".json"]=true
+}
+
+local function IsText(FileName)
+   local Ext = FileName:match('.*(%.%a+)$')
+   return TextFile[Ext]      
+end
+
+local function ConvertLF(Content)
+   Content = Content:gsub('\r\n', '\n')
+   return Content
+end
+
+local function OnlyWriteChangedFile(FileName, Content)
+   if os.fs.access(FileName) then
+      local CurrentContent = os.fs.readFile(FileName)
+      if CurrentContent == Content then
+         return
+      end
+   end
+   os.fs.writeFile(FileName, Content)   
+end
+
 local function WriteFiles(Root, Tree)
    for Name, Content in pairs(Tree) do
       if type(Content) == 'string' then
          local FileName = Root..'/'..Name
-         os.fs.writeFile(FileName, Content)
+         if IsText(FileName) then
+            Content = ConvertLF(Content)            
+         end
+         OnlyWriteChangedFile(FileName, Content)
       elseif type(Content) == 'table' then
           WriteFiles(Root..'/'..Name, Content)
       end

@@ -8,45 +8,45 @@
    <vmd_description></vmd_description>
    <use_dotnet_properties>True</use_dotnet_properties>
    <global name="global">
-      <table name="status">
-         <description>Status table.</description>
+      <table name="bed">
+         <description>Bed Table</description>
          <action>1</action>
-         <column name="server_guid">
+         <column name="bed_name">
             <description></description>
             <type>String</type>
          </column>
-         <column name="ts">
-            <description></description>
-            <type>Integer</type>
-         </column>
-         <column name="summary">
+         <column name="ward">
             <description></description>
             <type>String</type>
          </column>
-         <column name="status">
+         <column name="patient_first_name">
             <description></description>
-            <type>Integer</type>
+            <type>String</type>
          </column>
-         <column name="name">
+         <column name="patient_last_name">
+            <description></description>
+            <type>String</type>
+         </column>
+         <column name="condition">
             <description></description>
             <type>String</type>
          </column>
       </table>
-      <message name="Message">
+      <message name="ADT">
          <description></description>
-         <table_grammar name="Message">
+         <table_grammar name="ADT">
             <type>group</type>
-            <table_grammar name="status">
+            <table_grammar name="bed">
                <type>table</type>
-               <table_ref>status</table_ref>
+               <table_ref>bed</table_ref>
             </table_grammar>
          </table_grammar>
       </message>
    </global>
    <config name="default">
-      <match msg="Message">
+      <match msg="ADT">
       </match>
-      <table name="status">
+      <table name="bed">
          <config_mapset name="default">
             <mapset name="Mapset">
                <node_address>
@@ -61,35 +61,35 @@
                </node_address>
             </mapset>
          </config_mapset>
-         <column name="server_guid">
+         <column name="bed_name">
             <config name="default">
                <is_key>True</is_key>
                <in_equation><![CDATA[]]></in_equation>
                <out_equation><![CDATA[]]></out_equation>
             </config>
          </column>
-         <column name="ts">
+         <column name="ward">
             <config name="default">
                <is_key>False</is_key>
                <in_equation><![CDATA[]]></in_equation>
                <out_equation><![CDATA[]]></out_equation>
             </config>
          </column>
-         <column name="summary">
+         <column name="patient_first_name">
             <config name="default">
                <is_key>False</is_key>
                <in_equation><![CDATA[]]></in_equation>
                <out_equation><![CDATA[]]></out_equation>
             </config>
          </column>
-         <column name="status">
+         <column name="patient_last_name">
             <config name="default">
                <is_key>False</is_key>
                <in_equation><![CDATA[]]></in_equation>
                <out_equation><![CDATA[]]></out_equation>
             </config>
          </column>
-         <column name="name">
+         <column name="condition">
             <config name="default">
                <is_key>False</is_key>
                <in_equation><![CDATA[]]></in_equation>
@@ -97,7 +97,7 @@
             </config>
          </column>
       </table>
-      <message name="Message">
+      <message name="ADT">
          <ignore_unknown_segments>True</ignore_unknown_segments>
          <ignore_segment_order>False</ignore_segment_order>
          <in_equation><![CDATA[]]></in_equation>
@@ -110,11 +110,11 @@
             <max_repeats>0</max_repeats>
             <type>group</type>
          </message_grammar>
-         <table_grammar name="Message">
+         <table_grammar name="ADT">
             <type>group</type>
             <grammar_field_index>-1</grammar_field_index>
             <grammar_root_ref>0</grammar_root_ref>
-            <table_grammar name="status">
+            <table_grammar name="bed">
                <type>table</type>
                <grammar_field_index>-1</grammar_field_index>
                <mapset_ref>Mapset</mapset_ref>
