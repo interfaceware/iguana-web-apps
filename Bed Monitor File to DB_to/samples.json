@@ -1,7 +1,543 @@
 {
    "Samples": [
       {
-         "Message": "MSH|^~\\&|AcmeMed|E\\T\\R|Main HIS|St. Micheals|20110613084407||ADT^A03|A30858532600116CA366CB628959EBA2C9468AD1D12EB6238AAB045A104EDC1C|P|2.6|\rEVN||20011026073839||||20110119024856|\rPID|||9706515||Fitzgerald^Sabrina||19510219|F||Mixed|124 Delphi Cres.^^Toronto^ON^17018|||||||13-799-348|985-168-355|\rNK1|1|Smith^Mary|Second Cousin|\rNK1|2|Garland^Sabrina|Grandchild|\rNK1|3|Garland^Mary|Sibling|\rNK1|4|Meade^Fred|Parent|\rNK1|5|Adams^Sabrina|Sibling|\rPV1|||childrens_ward^^154|||||^Garland^Sabrina^F|||||||||||8741165|||||||||||||||||||||||||20020105040854|\rOBX|||WT||85|pounds|\rOBX|||HT^HEIGHT||57|cm|\rOBX|||CD^CONDITION||&Heart Palpitations|\r",
+         "Message": "MSH|^~\\&|MedPoke|E\\T\\R|Main HIS|St. Micheals|20040825025645||ADT^A03|024159536D02386F5090B0F454955D4AF3EDCF22104FB50D8783E2DCBE4C2E53|P|2.6|\rEVN||20121112022224||||20100401013724|\rPID|||7370033||Fitzgerald^Sabrina||19780628|F||Unknown|592 Miller Lane^^Chicago^IL^54487|||||||14-365-4|6-667-268|\rNK1|1|Garland^Sabrina|Parent|\rPV1|||emergency_room^^108|||||^White^Gary^F|||||||||||5286339|||||||||||||||||||||||||20090923084610|\rOBX|||WT||109|pounds|\rOBX|||HT^HEIGHT||47|cm|\rOBX|||CD^CONDITION||&Heart Palpitations|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20040416080120||ADT^A04|53415953690225043CD671C88101421E4140A7310D68852F5E9D5987BFF8A9F8|P|2.6|\rEVN||20040713062938||||20120125091104|\rPID|||3153114||Muir^Fred||19970908|M||EU|274 Yonge St.^^Toronto^ON^30912|||||||19-46-958|101-839-179|\rNK1|1|Muir^Tracy|Second Cousin|\rNK1|2|White^Fred|Second Cousin|\rNK1|3|Garland^Fred|Parent|\rNK1|4|Fitzgerald^Sabrina|Second Cousin|\rNK1|5|Meade^Sabrina|Second Cousin|\rPV1|||emergency_room^^103|||||^Meade^Tracy^F|||||||||||2521651|||||||||||||||||||||||||20011016055106|\rOBX|||WT||50|pounds|\rOBX|||HT^HEIGHT||66|cm|\rOBX|||CD^CONDITION||&Poisoning|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|E\\T\\R|Main HIS|St. Micheals|20030524010601||ADT^A04|544159537E023D8A4D42EEB5049850269D6F45789E05A8CAE434E4817F2A484B|P|2.6|\rEVN||20050303094310||||20120120104829|\rPID|||7559013||Fitzgerald^Jim||19650916|M||EU|693 Miller Lane^^Toronto^ON^59943|||||||72-283-909|729-386-744|\rNK1|1|Smith^Mary|Second Cousin|\rNK1|2|White^Jim|Sibling|\rNK1|3|Meade^Gary|Grandchild|\rNK1|4|Fitzgerald^Fred|Grandchild|\rNK1|5|White^Tracy|Grandchild|\rPV1|||emergency_room^^101|||||^Smith^Jim^F|||||||||||168573|||||||||||||||||||||||||20030106063040|\rOBX|||WT||58|pounds|\rOBX|||HT^HEIGHT||51|cm|\rOBX|||CD^CONDITION||&Burns|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|E\\T\\R|Main HIS|St. Micheals|20090513094204||ADT^A01|5541595391020BAEB7FB86A561B569AF5685156A9A2C17072D3A02DBA981A8FC|P|2.6|\rEVN||20080309061734||||20080418114349|\rPID|||4303003||Garland^Jim||19710506|M||Martian|21 Main Rd.^^Chicago^IL^63884|||||||2-775-836|678-373-197|\rNK1|1|Smith^Fred|Grandchild|\rNK1|2|Adams^John|Sibling|\rNK1|3|Garland^Gary|Parent|\rPV1|||emergency_room^^106|||||^Adams^Fred^F|||||||||||5192649|||||||||||||||||||||||||20020906044633|\rOBX|||WT||113|pounds|\rOBX|||HT^HEIGHT||103|cm|\rOBX|||CD^CONDITION||&Burns|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20021112052716||ADT^A03|56415953A302D808D3356B59F2B6E76F7EFFF79751F6833D53AEF9E6C3E97427|P|2.6|\rEVN||20110124045529||||20030117093854|\rPID|||5395943||Smith^Mary||19871109|F||Martian|790 Miller Lane^^LA^CA^38352|||||||25-474-291|627-912-103|\rNK1|1|Adams^Jim|Second Cousin|\rPV1|||emergency_room^^103|||||^Smith^Jim^F|||||||||||9525290|||||||||||||||||||||||||20010603042244|\rOBX|||WT||66|pounds|\rOBX|||HT^HEIGHT||66|cm|\rOBX|||CD^CONDITION||&Burns|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20020509033533||ADT^A03|57415953E702BB18F40D24821CCD8929395C6B35454C97B26F41B8DE6F6BE7A4|P|2.6|\rEVN||20030220023921||||20041102085038|\rPID|||5787651||Smith^Gary||19070123|M||AI|228 Miller Lane^^Chicago^IL^58887|||||||28-570-238|611-590-273|\rNK1|1|Garland^Jim|Second Cousin|\rNK1|2|White^Tracy|Sibling|\rNK1|3|Muir^Mary|Second Cousin|\rNK1|4|Muir^Mary|Sibling|\rPV1|||emergency_room^^108|||||^Fitzgerald^Gary^F|||||||||||5462939|||||||||||||||||||||||||20060118022903|\rOBX|||WT||108|pounds|\rOBX|||HT^HEIGHT||43|cm|\rOBX|||CD^CONDITION||&Burns|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|E\\T\\R|Main HIS|St. Micheals|20021124022924||ADT^A05|58415953F302B4827CDC4FFD7F9F4809464EB680B13F9D046C84BF93CEB7ED34|P|2.6|\rEVN||20041025063643||||20110126054032|\rPID|||2933028||Muir^Sabrina||19280907|F||Martian|687 Delphi Cres.^^LA^CA^53470|||||||35-216-655|808-83-415|\rNK1|1|Garland^Mary|Second Cousin|\rNK1|2|Garland^Sabrina|Parent|\rNK1|3|Fitzgerald^Tracy|Second Cousin|\rNK1|4|Garland^Jim|Parent|\rNK1|5|Garland^John|Grandchild|\rPV1|||emergency_room^^108|||||^White^Tracy^F|||||||||||862361|||||||||||||||||||||||||20040308085901|\rOBX|||WT||48|pounds|\rOBX|||HT^HEIGHT||43|cm|\rOBX|||CD^CONDITION||&Lacerations|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20030604103518||ADT^A01|74415953AA026B9BD19A3123B2F3121C8B23A6F3DC7DC4BC7C3781C199D6A9A9|P|2.6|\rEVN||20020317113857||||20050203042424|\rPID|||9788109||White^Tracy||19360925|F||AI|565 Miller Lane^^Chicago^IL^87544|||||||33-87-112|977-801-883|\rNK1|1|Fitzgerald^Mary|Second Cousin|\rPV1|||emergency_room^^107|||||^Meade^Sabrina^F|||||||||||999583|||||||||||||||||||||||||20120428030439|\rOBX|||WT||67|pounds|\rOBX|||HT^HEIGHT||65|cm|\rOBX|||CD^CONDITION||&Burns|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20110225041105||ADT^A01|75415953B4025E4C75D7D5A4455EBBA043F2782D7CC99546FDDCD685ECEB125F|P|2.6|\rEVN||20070222014645||||20011027053716|\rPID|||4296747||Smith^Sabrina||19531125|F||AI|404 Main Rd.^^Toronto^ON^94207|||||||78-541-307|390-673-33|\rNK1|1|Fitzgerald^Fred|Grandchild|\rNK1|2|Meade^Mary|Second Cousin|\rPV1|||emergency_room^^106|||||^Smith^Mary^F|||||||||||1410206|||||||||||||||||||||||||20010213054006|\rOBX|||WT||65|pounds|\rOBX|||HT^HEIGHT||54|cm|\rOBX|||CD^CONDITION||&Head Trauma|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|E\\T\\R|Main HIS|St. Micheals|20010215083425||ADT^A03|76415953F7028C6454CC648579DFE7C3B09A4FE0E026CEA5DA9A9927364C8506|P|2.6|\rEVN||20051024070220||||20040115115951|\rPID|||4350494||Garland^Sabrina||19110410|F||Mixed|358 Delphi Cres.^^LA^CA^29097|||||||71-36-752|186-196-358|\rNK1|1|Meade^Tracy|Second Cousin|\rNK1|2|Adams^Sabrina|Sibling|\rNK1|3|White^Sabrina|Sibling|\rPV1|||emergency_room^^109|||||^White^Mary^F|||||||||||7827918|||||||||||||||||||||||||20040311012538|\rOBX|||WT||87|pounds|\rOBX|||HT^HEIGHT||39|cm|\rOBX|||CD^CONDITION||&Stroke|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20061027010633||ADT^A01|7741595305036F82D2FEE99E963FFDBCE46E2CC5258A0D7885CD4C1E2B516470|P|2.6|\rEVN||20010810112213||||20040219031831|\rPID|||4842549||Fitzgerald^Mary||19100923|F||EU|817 Main Rd.^^Chicago^IL^3831|||||||62-668-851|734-57-267|\rNK1|1|White^Sabrina|Sibling|\rPV1|||emergency_room^^101|||||^Muir^Gary^F|||||||||||4214066|||||||||||||||||||||||||20070828091518|\rOBX|||WT||128|pounds|\rOBX|||HT^HEIGHT||38|cm|\rOBX|||CD^CONDITION||&Burns|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20091013093209||ADT^A04|78415953160332EC09A08F56D132987A4850C8F357565DA6888615CC089B7D2C|P|2.6|\rEVN||20010127063004||||20110120035530|\rPID|||956841||Muir^Jim||19530301|M||Martian|657 Delphi Cres.^^Chicago^IL^9369|||||||66-113-389|662-667-98|\rNK1|1|White^Gary|Sibling|\rPV1|||emergency_room^^100|||||^Adams^John^F|||||||||||1966182|||||||||||||||||||||||||20060927010347|\rOBX|||WT||49|pounds|\rOBX|||HT^HEIGHT||38|cm|\rOBX|||CD^CONDITION||&Dizziness|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20120816113642||ADT^A03|7A4159533D0063134085B75781FAE9866221DD9A93A73429FB5B61EAF7FA4070|P|2.6|\rEVN||20010125063940||||20010624030608|\rPID|||9656635||Meade^Tracy||19740128|F||EU|836 Main Rd.^^Chicago^IL^82714|||||||24-812-59|769-151-397|\rNK1|1|White^Tracy|Grandchild|\rNK1|2|Smith^Jim|Parent|\rNK1|3|Smith^Sabrina|Sibling|\rNK1|4|Fitzgerald^Tracy|Sibling|\rNK1|5|Smith^Sabrina|Grandchild|\rPV1|||emergency_room^^102|||||^Smith^John^F|||||||||||707876|||||||||||||||||||||||||20090728034808|\rOBX|||WT||69|pounds|\rOBX|||HT^HEIGHT||49|cm|\rOBX|||CD^CONDITION||&Burns|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20130328110606||ADT^A04|7B4159534E00B30ECF25001402767217C4BE99BEFD2971DF303594097501F4D9|P|2.6|\rEVN||20060726014826||||20060715011445|\rPID|||4885310||Garland^Sabrina||19840902|F||AI|382 Miller Lane^^Toronto^ON^69479|||||||81-10-748|353-779-510|\rNK1|1|White^Sabrina|Grandchild|\rPV1|||emergency_room^^105|||||^Meade^Gary^F|||||||||||7740778|||||||||||||||||||||||||20110925022439|\rOBX|||WT||107|pounds|\rOBX|||HT^HEIGHT||78|cm|\rOBX|||CD^CONDITION||&Acute Stomach Pain|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20011104020711||ADT^A04|7C4159535F00BDAFC3DB3106BA5EF17AD1438B1E3618BD9BBF4E6261C9393127|P|2.6|\rEVN||20091120074624||||20110611040351|\rPID|||3633800||Smith^Fred||19221008|M||Unknown|322 Miller Lane^^ST. LOUIS^MO^78023|||||||80-387-402|753-837-256|\rNK1|1|Muir^Fred|Second Cousin|\rNK1|2|White^Jim|Parent|\rPV1|||emergency_room^^108|||||^Smith^John^F|||||||||||108|||||||||||||||||||||||||20010322022428|\rOBX|||WT||106|pounds|\rOBX|||HT^HEIGHT||23|cm|\rOBX|||CD^CONDITION||&Heart Palpitations|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|E\\T\\R|Main HIS|St. Micheals|20130605060907||ADT^A04|7D4159537000FF59969EE32E1494A564FDB7A513F497B3A5962563378CF2C650|P|2.6|\rEVN||20031117071647||||20120501054737|\rPID|||9062132||Smith^Mary||19661027|F||Martian|757 Yonge St.^^LA^CA^86087|||||||24-716-314|999-953-504|\rNK1|1|Smith^Tracy|Grandchild|\rNK1|2|Muir^John|Sibling|\rNK1|3|Fitzgerald^Sabrina|Parent|\rNK1|4|White^Mary|Parent|\rNK1|5|Smith^Sabrina|Sibling|\rNK1|6|Garland^John|Grandchild|\rPV1|||emergency_room^^107|||||^Smith^Sabrina^F|||||||||||84876|||||||||||||||||||||||||20081019060947|\rOBX|||WT||55|pounds|\rOBX|||HT^HEIGHT||40|cm|\rOBX|||CD^CONDITION||&Numbness|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20040302094315||ADT^A05|7E415953820028E3F86371CF5C49BED249A80B5EAE018B0AB3156D04BD105710|P|2.6|\rEVN||20010602012203||||20010925075445|\rPID|||4704174||Garland^Jim||19320626|M||AI|741 Delphi Cres.^^Chicago^IL^23727|||||||88-988-882|238-195-132|\rNK1|1|White^Tracy|Second Cousin|\rNK1|2|Smith^Sabrina|Sibling|\rNK1|3|White^Fred|Second Cousin|\rPV1|||emergency_room^^102|||||^Muir^Tracy^F|||||||||||8578650|||||||||||||||||||||||||20011128115918|\rOBX|||WT||67|pounds|\rOBX|||HT^HEIGHT||23|cm|\rOBX|||CD^CONDITION||&Head Trauma|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20110122052708||ADT^A03|7F4159539400AA5039E92EA2FCF9CC4DA3A91234548769B382A791E95F75B37D|P|2.6|\rEVN||20070401051218||||20040715022307|\rPID|||2526835||Garland^Tracy||19230801|F||Unknown|459 Main Rd.^^LA^CA^64589|||||||65-644-378|741-805-944|\rNK1|1|Meade^Sabrina|Second Cousin|\rNK1|2|Garland^Fred|Sibling|\rPV1|||emergency_room^^101|||||^Adams^Tracy^F|||||||||||1154069|||||||||||||||||||||||||20070412010450|\rOBX|||WT||87|pounds|\rOBX|||HT^HEIGHT||40|cm|\rOBX|||CD^CONDITION||&Burns|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20040422114659||ADT^A05|80415953D800DB4D1A9FEF980C14D8961408B11673B0710869BE12D592D6301B|P|2.6|\rEVN||20010906102827||||20130406090426|\rPID|||6865763||Meade^Gary||19030725|M||Martian|312 Miller Lane^^Chicago^IL^20220|||||||80-974-637|968-245-638|\rNK1|1|Fitzgerald^Tracy|Second Cousin|\rNK1|2|Garland^Fred|Second Cousin|\rNK1|3|Smith^John|Sibling|\rNK1|4|Fitzgerald^Tracy|Grandchild|\rNK1|5|Meade^Tracy|Second Cousin|\rPV1|||emergency_room^^101|||||^Muir^Tracy^F|||||||||||7222035|||||||||||||||||||||||||20010921095812|\rOBX|||WT||87|pounds|\rOBX|||HT^HEIGHT||117|cm|\rOBX|||CD^CONDITION||&Acute Stomach Pain|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|E\\T\\R|Main HIS|St. Micheals|20070806112938||ADT^A04|81415953EC00C981565CE4E0818136478FD67B8D9EE610883F01B8C4DFF959B0|P|2.6|\rEVN||20041127093845||||20130409032607|\rPID|||8583325||White^Tracy||19441017|F||EU|130 Yonge St.^^ST. LOUIS^MO^83281|||||||85-776-348|567-623-740|\rNK1|1|Smith^Sabrina|Second Cousin|\rPV1|||emergency_room^^105|||||^Meade^Jim^F|||||||||||7442423|||||||||||||||||||||||||20050518070521|\rOBX|||WT||92|pounds|\rOBX|||HT^HEIGHT||66|cm|\rOBX|||CD^CONDITION||&Tuberculosis|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20050719095020||ADT^A05|82415953FF00192412F1B1256415B7B9FD301B8F67D6311FBE861082B9EE5ECB|P|2.6|\rEVN||20130621014050||||20130312010419|\rPID|||3560020||Fitzgerald^Jim||19010208|M||Unknown|634 Delphi Cres.^^Toronto^ON^68422|||||||91-768-212|833-766-929|\rNK1|1|Meade^Tracy|Parent|\rNK1|2|White^John|Grandchild|\rNK1|3|Adams^Tracy|Second Cousin|\rPV1|||emergency_room^^101|||||^Smith^Jim^F|||||||||||1322160|||||||||||||||||||||||||20010813075754|\rOBX|||WT||96|pounds|\rOBX|||HT^HEIGHT||79|cm|\rOBX|||CD^CONDITION||&Burns|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20061106112627||ADT^A04|8341595312012DB98A15C850F676F69F4CAC913FD9A08CA09F19F4705C38EFE6|P|2.6|\rEVN||20080921025427||||20010515024923|\rPID|||3747944||Meade^Jim||19271014|M||Unknown|291 Delphi Cres.^^LA^CA^90672|||||||62-839-846|28-852-436|\rNK1|1|White^Jim|Parent|\rNK1|2|Meade^Fred|Grandchild|\rNK1|3|Garland^Sabrina|Parent|\rNK1|4|White^Tracy|Sibling|\rNK1|5|White^Mary|Sibling|\rPV1|||emergency_room^^108|||||^Garland^John^F|||||||||||7708818|||||||||||||||||||||||||20010415025938|\rOBX|||WT||99|pounds|\rOBX|||HT^HEIGHT||51|cm|\rOBX|||CD^CONDITION||&Numbness|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|E\\T\\R|Main HIS|St. Micheals|20081102075204||ADT^A04|84415953270173C7E93D4ABCA65C44328C481F3144EA05312E1F044C57966342|P|2.6|\rEVN||20040210030714||||20011122080434|\rPID|||3996999||White^Tracy||19970407|F||EU|40 Miller Lane^^Toronto^ON^2875|||||||18-974-603|925-719-3|\rNK1|1|Fitzgerald^Sabrina|Second Cousin|\rNK1|2|Fitzgerald^Sabrina|Second Cousin|\rNK1|3|Garland^Mary|Grandchild|\rNK1|4|Meade^Tracy|Second Cousin|\rPV1|||emergency_room^^107|||||^Adams^Gary^F|||||||||||2723981|||||||||||||||||||||||||20010221064120|\rOBX|||WT||118|pounds|\rOBX|||HT^HEIGHT||22|cm|\rOBX|||CD^CONDITION||&Numbness|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|Lab|Main HIS|St. Micheals|20030828031514||ADT^A04|854159536C01BDEC3E5AB8C6CBF656EE7CC4BCA0614DFBB7EDE2364D819C14CD|P|2.6|\rEVN||20130422033437||||20080727052340|\rPID|||8857384||White^Mary||19930623|F||Mixed|504 Yonge St.^^Chicago^IL^65511|||||||29-671-732|427-575-896|\rNK1|1|Garland^Tracy|Sibling|\rPV1|||emergency_room^^100|||||^Fitzgerald^Mary^F|||||||||||4752838|||||||||||||||||||||||||20010211111120|\rOBX|||WT||47|pounds|\rOBX|||HT^HEIGHT||66|cm|\rOBX|||CD^CONDITION||&Vomiting|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|E\\T\\R|Main HIS|St. Micheals|20010724115457||ADT^A05|864159537F0171A682EF669C23023521D6791E040A422616742175006BB91968|P|2.6|\rEVN||20060519053450||||20091020045432|\rPID|||1307348||White^Jim||19730312|M||Martian|723 Main Rd.^^Chicago^IL^87961|||||||1-994-710|371-74-794|\rNK1|1|Smith^Mary|Grandchild|\rNK1|2|Smith^Mary|Sibling|\rNK1|3|Smith^Tracy|Second Cousin|\rNK1|4|Adams^Tracy|Grandchild|\rNK1|5|Fitzgerald^Tracy|Sibling|\rPV1|||emergency_room^^105|||||^Adams^Mary^F|||||||||||6664730|||||||||||||||||||||||||20040225030128|\rOBX|||WT||35|pounds|\rOBX|||HT^HEIGHT||67|cm|\rOBX|||CD^CONDITION||&Tuberculosis|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20060328012051||ADT^A03|874159539101584EAFC67FE6C567A91F94BD9A3ACB77339244AF5675776FD25F|P|2.6|\rEVN||20050424052341||||20030117112333|\rPID|||435895||Fitzgerald^Sabrina||19680617|F||Mixed|266 Yonge St.^^LA^CA^95586|||||||9-510-432|139-90-321|\rNK1|1|Fitzgerald^Mary|Grandchild|\rNK1|2|Smith^John|Second Cousin|\rPV1|||emergency_room^^107|||||^Meade^Tracy^F|||||||||||1233754|||||||||||||||||||||||||20060207040351|\rOBX|||WT||57|pounds|\rOBX|||HT^HEIGHT||24|cm|\rOBX|||CD^CONDITION||&Tuberculosis|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|E\\T\\R|Main HIS|St. Micheals|20060921040950||ADT^A01|88415953A501EA5B488C49E930F9CE7E4FAEC19E28ACB0A03973304E61AE3779|P|2.6|\rEVN||20090314042135||||20060913105610|\rPID|||3964530||Garland^Jim||19020926|M||AI|408 Main Rd.^^ST. LOUIS^MO^63690|||||||30-37-321|630-874-162|\rNK1|1|Adams^Sabrina|Parent|\rNK1|2|White^Fred|Sibling|\rNK1|3|Fitzgerald^Mary|Second Cousin|\rNK1|4|Muir^Sabrina|Grandchild|\rPV1|||emergency_room^^101|||||^White^Tracy^F|||||||||||4489133|||||||||||||||||||||||||20111007051246|\rOBX|||WT||112|pounds|\rOBX|||HT^HEIGHT||103|cm|\rOBX|||CD^CONDITION||&Burns|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20050421033213||ADT^A04|89415953B2011992DA6D722F29AB0E64C0C853221318B9F42394DDA872973441|P|2.6|\rEVN||20060106103559||||20080928110815|\rPID|||4640456||Garland^Jim||19850627|M||AI|86 Delphi Cres.^^LA^CA^98459|||||||49-668-600|449-485-832|\rNK1|1|Smith^Tracy|Grandchild|\rNK1|2|Fitzgerald^Fred|Parent|\rNK1|3|Meade^John|Parent|\rNK1|4|Fitzgerald^Mary|Sibling|\rPV1|||emergency_room^^107|||||^Garland^Gary^F|||||||||||2858562|||||||||||||||||||||||||20040807032041|\rOBX|||WT||117|pounds|\rOBX|||HT^HEIGHT||23|cm|\rOBX|||CD^CONDITION||&Poisoning|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20130425014212||ADT^A03|8A415953C60104A5D150C81256FE1447AFB323DC53E921C5AFE9A4E0AC80DB9C|P|2.6|\rEVN||20060908025931||||20101110094444|\rPID|||2735440||Fitzgerald^Gary||19500518|M||Unknown|665 Miller Lane^^ST. LOUIS^MO^64162|||||||23-778-518|771-790-262|\rNK1|1|Meade^Sabrina|Parent|\rNK1|2|Fitzgerald^Mary|Second Cousin|\rNK1|3|Muir^Sabrina|Second Cousin|\rPV1|||emergency_room^^104|||||^Garland^Tracy^F|||||||||||168537|||||||||||||||||||||||||20020218084148|\rOBX|||WT||54|pounds|\rOBX|||HT^HEIGHT||22|cm|\rOBX|||CD^CONDITION||&Lacerations|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|Lab|Main HIS|St. Micheals|20100212031843||ADT^A04|8B415953D9011D1709DE31C0F33DDBBEA4CC09B4387C9F00642524017A8C6B11|P|2.6|\rEVN||20060207014032||||20091120092846|\rPID|||5182365||Adams^Gary||19810527|M||Unknown|246 Miller Lane^^Toronto^ON^10063|||||||20-752-888|407-141-309|\rNK1|1|Fitzgerald^Sabrina|Grandchild|\rNK1|2|Meade^John|Grandchild|\rNK1|3|Meade^Tracy|Grandchild|\rNK1|4|Meade^Mary|Grandchild|\rNK1|5|Meade^John|Sibling|\rPV1|||emergency_room^^109|||||^Adams^Tracy^F|||||||||||872407|||||||||||||||||||||||||20020702011301|\rOBX|||WT||123|pounds|\rOBX|||HT^HEIGHT||75|cm|\rOBX|||CD^CONDITION||&Heart Palpitations|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20100127014945||ADT^A05|8C415953EC010485E4F992496DF576B81CA0EBCC62E4F39F2F12FEAF38DA07F7|P|2.6|\rEVN||20060701070320||||20101026113001|\rPID|||1168340||Adams^Tracy||19690115|F||AI|725 Delphi Cres.^^LA^CA^5871|||||||37-723-784|139-179-598|\rNK1|1|Muir^John|Grandchild|\rNK1|2|Muir^John|Parent|\rNK1|3|Smith^Fred|Parent|\rNK1|4|Smith^Fred|Parent|\rNK1|5|White^Sabrina|Grandchild|\rNK1|6|Fitzgerald^Mary|Sibling|\rPV1|||emergency_room^^109|||||^Meade^Tracy^F|||||||||||8071057|||||||||||||||||||||||||20130216012728|\rOBX|||WT||95|pounds|\rOBX|||HT^HEIGHT||88|cm|\rOBX|||CD^CONDITION||&Tuberculosis|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20090502074834||ADT^A03|8D415953FF01FEC5E64EBCB073FC1ED47D0390B7B56B73A9266C267177581E50|P|2.6|\rEVN||20041004044629||||20120523091117|\rPID|||5848660||White^Mary||19610924|F||Unknown|495 Miller Lane^^Toronto^ON^81356|||||||67-798-699|830-955-983|\rNK1|1|Muir^John|Sibling|\rPV1|||emergency_room^^103|||||^Fitzgerald^John^F|||||||||||2558948|||||||||||||||||||||||||20100505114346|\rOBX|||WT||127|pounds|\rOBX|||HT^HEIGHT||109|cm|\rOBX|||CD^CONDITION||&Stroke|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20080102100634||ADT^A01|8E41595313026AF1685931113FC48BB07776B6FDE2F031226364191D433D48B3|P|2.6|\rEVN||20060717080136||||20010505073014|\rPID|||7856127||Garland^Mary||19010805|F||AI|156 Yonge St.^^LA^CA^67580|||||||13-502-416|843-272-146|\rNK1|1|Muir^John|Second Cousin|\rNK1|2|Smith^Sabrina|Second Cousin|\rNK1|3|Fitzgerald^Mary|Second Cousin|\rPV1|||emergency_room^^105|||||^Smith^Gary^F|||||||||||9254195|||||||||||||||||||||||||20060101015258|\rOBX|||WT||122|pounds|\rOBX|||HT^HEIGHT||43|cm|\rOBX|||CD^CONDITION||&Poisoning|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|E\\T\\R|Main HIS|St. Micheals|20110514110857||ADT^A01|8F41595322022AAA961C190E7C131FFFC69A25D1674D7BDE2E0EE2F3D1C39645|P|2.6|\rEVN||20010124055435||||20010323103107|\rPID|||2031262||Smith^Tracy||19610416|F||Martian|331 Delphi Cres.^^Toronto^ON^22767|||||||48-551-546|763-468-741|\rNK1|1|Fitzgerald^Tracy|Parent|\rNK1|2|Muir^John|Second Cousin|\rPV1|||emergency_room^^105|||||^Smith^Fred^F|||||||||||8799685|||||||||||||||||||||||||20070211115739|\rOBX|||WT||98|pounds|\rOBX|||HT^HEIGHT||66|cm|\rOBX|||CD^CONDITION||&Vomiting|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|Lab|Main HIS|St. Micheals|20010705010149||ADT^A04|9041595332026283A3E796A450A09A0EC1DFDE61A4D73D9B3062A9C1897B859C|P|2.6|\rEVN||20020710104959||||20130928013346|\rPID|||6650715||White^Tracy||19270626|F||Martian|739 Main Rd.^^Toronto^ON^62698|||||||16-358-516|413-290-191|\rNK1|1|Fitzgerald^Tracy|Second Cousin|\rNK1|2|White^Mary|Grandchild|\rNK1|3|Muir^Mary|Second Cousin|\rNK1|4|Garland^Sabrina|Second Cousin|\rNK1|5|Muir^Mary|Sibling|\rPV1|||emergency_room^^101|||||^Meade^Jim^F|||||||||||8451715|||||||||||||||||||||||||20100623113858|\rOBX|||WT||71|pounds|\rOBX|||HT^HEIGHT||115|cm|\rOBX|||CD^CONDITION||&Head Trauma|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20100405013940||ADT^A01|914159534502094BC17CE1D218A51125894378E7C2D3CBA6845A8771F582896C|P|2.6|\rEVN||20010814071458||||20081103081645|\rPID|||6314789||Smith^Jim||19270717|M||Martian|659 Miller Lane^^Toronto^ON^57450|||||||8-481-908|427-213-836|\rNK1|1|Meade^Fred|Second Cousin|\rNK1|2|Fitzgerald^Tracy|Grandchild|\rNK1|3|Adams^Tracy|Second Cousin|\rPV1|||emergency_room^^106|||||^White^Sabrina^F|||||||||||7798188|||||||||||||||||||||||||20040116015501|\rOBX|||WT||129|pounds|\rOBX|||HT^HEIGHT||102|cm|\rOBX|||CD^CONDITION||&Stroke|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|E\\T\\R|Main HIS|St. Micheals|20100911065612||ADT^A01|924159535802853D2064DC5A571F0673945137ECA872210CDBA7919BF9D73428|P|2.6|\rEVN||20040828081923||||20100328042239|\rPID|||8715270||Fitzgerald^Mary||19220725|F||Mixed|904 Delphi Cres.^^LA^CA^78407|||||||42-182-481|869-87-524|\rNK1|1|Smith^Mary|Parent|\rNK1|2|Adams^Sabrina|Grandchild|\rNK1|3|Adams^John|Grandchild|\rNK1|4|Fitzgerald^Mary|Sibling|\rNK1|5|Garland^Tracy|Sibling|\rPV1|||emergency_room^^109|||||^Garland^John^F|||||||||||3726362|||||||||||||||||||||||||20110108105450|\rOBX|||WT||92|pounds|\rOBX|||HT^HEIGHT||69|cm|\rOBX|||CD^CONDITION||&Heart Palpitations|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20070926103558||ADT^A04|934159536D02805EB2FE4DA962133DCBA5A3F1E4E4B3F7ACE7EF3033A0F1034B|P|2.6|\rEVN||20010605020535||||20120811011911|\rPID|||847748||Adams^Mary||19670522|F||Martian|142 Miller Lane^^Chicago^IL^23146|||||||45-423-369|728-566-357|\rNK1|1|White^Tracy|Sibling|\rNK1|2|White^Sabrina|Sibling|\rNK1|3|Smith^Fred|Parent|\rNK1|4|Garland^Tracy|Second Cousin|\rPV1|||emergency_room^^104|||||^Garland^Mary^F|||||||||||7027569|||||||||||||||||||||||||20020117045043|\rOBX|||WT||62|pounds|\rOBX|||HT^HEIGHT||66|cm|\rOBX|||CD^CONDITION||&Acute Stomach Pain|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20091125022449||ADT^A04|944159537E02A43A59E679A477FC374EED45589EF31D345CE1B6867C97358C27|P|2.6|\rEVN||20040303011710||||20030114031608|\rPID|||9127883||Meade^Jim||19271113|M||Martian|544 Miller Lane^^Chicago^IL^21899|||||||53-437-747|41-436-619|\rNK1|1|Muir^Mary|Second Cousin|\rNK1|2|Muir^Mary|Sibling|\rNK1|3|Muir^Mary|Sibling|\rPV1|||emergency_room^^100|||||^Smith^Tracy^F|||||||||||4334208|||||||||||||||||||||||||20060426062234|\rOBX|||WT||97|pounds|\rOBX|||HT^HEIGHT||43|cm|\rOBX|||CD^CONDITION||&Poisoning|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20020521040806||ADT^A03|954159539302CD9ABB6E29D7F0F6DF047A3768BB50C041F23F5F738221B5FE7C|P|2.6|\rEVN||20030121051119||||20070319083439|\rPID|||1670357||Garland^John||19660301|M||Martian|704 Miller Lane^^LA^CA^21692|||||||93-493-555|940-817-364|\rNK1|1|Muir^Tracy|Second Cousin|\rPV1|||emergency_room^^103|||||^White^Gary^F|||||||||||2094861|||||||||||||||||||||||||20100912082329|\rOBX|||WT||97|pounds|\rOBX|||HT^HEIGHT||35|cm|\rOBX|||CD^CONDITION||&Head Trauma|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|E\\T\\R|Main HIS|St. Micheals|20070712070554||ADT^A01|96415953A7029CE8188A71A787A7F93DAE4BE5AC5B522A1E9CBB10102C6E1055|P|2.6|\rEVN||20130804064439||||20060720104054|\rPID|||9931564||Adams^Sabrina||19240717|F||EU|365 Delphi Cres.^^ST. LOUIS^MO^78285|||||||88-645-100|703-455-883|\rNK1|1|Meade^Tracy|Parent|\rNK1|2|Adams^John|Grandchild|\rPV1|||emergency_room^^106|||||^White^Mary^F|||||||||||5238562|||||||||||||||||||||||||20050211085815|\rOBX|||WT||75|pounds|\rOBX|||HT^HEIGHT||66|cm|\rOBX|||CD^CONDITION||&Poisoning|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|E\\T\\R|Main HIS|St. Micheals|20051111015739||ADT^A01|97415953B902168CD60BD7B8356A8E52F3EB898289F0E7A6C4069E0FDE05BE54|P|2.6|\rEVN||20031028110137||||20110323100923|\rPID|||915148||Fitzgerald^John||19900605|M||EU|783 Yonge St.^^Chicago^IL^45105|||||||99-309-68|485-748-718|\rNK1|1|Adams^Sabrina|Sibling|\rNK1|2|Smith^Jim|Grandchild|\rNK1|3|Fitzgerald^Sabrina|Grandchild|\rPV1|||emergency_room^^104|||||^Garland^Jim^F|||||||||||1844225|||||||||||||||||||||||||20070809010255|\rOBX|||WT||130|pounds|\rOBX|||HT^HEIGHT||23|cm|\rOBX|||CD^CONDITION||&Poisoning|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20010112091141||ADT^A05|98415953CD02583AB9655DBE6BBCBF57B579BD06B08BB38681D5487B7695603C|P|2.6|\rEVN||20040915080738||||20080314060154|\rPID|||415207||Adams^Sabrina||19240325|F||Martian|33 Delphi Cres.^^Toronto^ON^52431|||||||37-869-773|380-234-635|\rNK1|1|Meade^Jim|Grandchild|\rNK1|2|Fitzgerald^Fred|Second Cousin|\rNK1|3|Fitzgerald^Sabrina|Grandchild|\rNK1|4|Adams^Fred|Parent|\rPV1|||emergency_room^^101|||||^White^Fred^F|||||||||||6491854|||||||||||||||||||||||||20110303011022|\rOBX|||WT||48|pounds|\rOBX|||HT^HEIGHT||31|cm|\rOBX|||CD^CONDITION||&Head Trauma|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20041005012338||ADT^A01|99415953DF02054AE6987DFE84C3EAE32730D8053EA35D71510144E31B7C3D05|P|2.6|\rEVN||20110628031646||||20061019074516|\rPID|||5889227||Muir^Jim||19730301|M||Mixed|711 Yonge St.^^LA^CA^92221|||||||50-329-527|50-570-943|\rNK1|1|White^Tracy|Grandchild|\rNK1|2|Meade^Tracy|Parent|\rNK1|3|Muir^John|Second Cousin|\rNK1|4|White^Jim|Second Cousin|\rNK1|5|Meade^Gary|Parent|\rPV1|||emergency_room^^108|||||^Smith^Sabrina^F|||||||||||8185234|||||||||||||||||||||||||20110727115202|\rOBX|||WT||72|pounds|\rOBX|||HT^HEIGHT||84|cm|\rOBX|||CD^CONDITION||&Lacerations|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|E\\T\\R|Main HIS|St. Micheals|20030725081505||ADT^A04|9A415953F302441E45848C7F9A2219DE89F89BFAF6E052E1E5F44C72D1DBFE37|P|2.6|\rEVN||20100317074958||||20100422071036|\rPID|||5574434||Smith^Mary||19550801|F||EU|691 Delphi Cres.^^ST. LOUIS^MO^7954|||||||81-949-110|565-915-134|\rNK1|1|Fitzgerald^Jim|Parent|\rNK1|2|White^Mary|Grandchild|\rNK1|3|Smith^Tracy|Sibling|\rNK1|4|Fitzgerald^Gary|Grandchild|\rNK1|5|Meade^Tracy|Parent|\rNK1|6|Smith^Fred|Second Cousin|\rPV1|||emergency_room^^105|||||^Garland^Fred^F|||||||||||6997167|||||||||||||||||||||||||20011112011742|\rOBX|||WT||82|pounds|\rOBX|||HT^HEIGHT||40|cm|\rOBX|||CD^CONDITION||&Numbness|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20130711024206||ADT^A05|9B41595306039E69C67CD605F6AFFA190CE53EA206C7FB4276962E2B7FD2336C|P|2.6|\rEVN||20100622024224||||20031001065049|\rPID|||549131||Muir^Tracy||19450504|F||Mixed|20 Yonge St.^^ST. LOUIS^MO^65681|||||||14-12-546|752-211-318|\rNK1|1|White^Gary|Parent|\rNK1|2|Fitzgerald^Tracy|Second Cousin|\rNK1|3|White^Tracy|Parent|\rNK1|4|Adams^Sabrina|Grandchild|\rNK1|5|Smith^Fred|Second Cousin|\rNK1|6|Meade^Tracy|Second Cousin|\rPV1|||emergency_room^^106|||||^Fitzgerald^Tracy^F|||||||||||1193956|||||||||||||||||||||||||20080921071158|\rOBX|||WT||86|pounds|\rOBX|||HT^HEIGHT||53|cm|\rOBX|||CD^CONDITION||&Blurred Vision|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|Lab|Main HIS|St. Micheals|20100520110113||ADT^A03|9C415953190346784193B1D79D5F376ED93116D05A9F46AFCDB3C7B3B8E3432E|P|2.6|\rEVN||20010901085553||||20101019043001|\rPID|||5706057||Muir^Fred||19230519|M||Martian|787 Delphi Cres.^^Toronto^ON^88360|||||||9-283-474|619-956-744|\rNK1|1|Garland^Mary|Second Cousin|\rNK1|2|Muir^Tracy|Sibling|\rNK1|3|Fitzgerald^Jim|Sibling|\rNK1|4|Adams^Tracy|Sibling|\rNK1|5|White^Tracy|Second Cousin|\rNK1|6|Meade^John|Sibling|\rPV1|||emergency_room^^101|||||^Garland^Gary^F|||||||||||3204523|||||||||||||||||||||||||20101025015007|\rOBX|||WT||103|pounds|\rOBX|||HT^HEIGHT||47|cm|\rOBX|||CD^CONDITION||&Acute Stomach Pain|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|Lab|Main HIS|St. Micheals|20020509092219||ADT^A04|9D4159532B03FC47C1A0D2E7E0D9D1C1674981DCFED29ABB50DFEEEFBADC893B|P|2.6|\rEVN||20060820100406||||20040211095125|\rPID|||8282950||Fitzgerald^Gary||19861120|M||Unknown|4 Delphi Cres.^^Chicago^IL^44214|||||||58-314-593|929-59-725|\rNK1|1|Adams^John|Sibling|\rNK1|2|Meade^John|Grandchild|\rPV1|||emergency_room^^107|||||^Adams^Tracy^F|||||||||||2799552|||||||||||||||||||||||||20010428051907|\rOBX|||WT||115|pounds|\rOBX|||HT^HEIGHT||113|cm|\rOBX|||CD^CONDITION||&Dizziness|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20041111011759||ADT^A01|9E4159533E03CE79FA4DCC1D3682F694024748177605FC96B1DD1C78435AA450|P|2.6|\rEVN||20010110034337||||20020605114708|\rPID|||3224904||Adams^Gary||19530715|M||Unknown|695 Delphi Cres.^^LA^CA^80393|||||||22-327-507|527-775-594|\rNK1|1|Smith^Tracy|Second Cousin|\rNK1|2|White^Fred|Parent|\rNK1|3|Fitzgerald^Fred|Parent|\rNK1|4|Adams^Fred|Parent|\rPV1|||emergency_room^^100|||||^White^Mary^F|||||||||||9259245|||||||||||||||||||||||||20131103092907|\rOBX|||WT||42|pounds|\rOBX|||HT^HEIGHT||109|cm|\rOBX|||CD^CONDITION||&Blurred Vision|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|Lab|Main HIS|St. Micheals|20010320112619||ADT^A05|9F41595352035C9FB4E4586EE8D292524C61DDE11C9F8F4068004CECEE812D06|P|2.6|\rEVN||20010710012155||||20110501091414|\rPID|||3224518||White^Fred||19310524|M||Mixed|190 Main Rd.^^Chicago^IL^51194|||||||22-541-54|77-862-270|\rNK1|1|Smith^Tracy|Sibling|\rNK1|2|Fitzgerald^Jim|Second Cousin|\rNK1|3|Garland^Jim|Grandchild|\rPV1|||emergency_room^^102|||||^Meade^Sabrina^F|||||||||||5812683|||||||||||||||||||||||||20040515112125|\rOBX|||WT||39|pounds|\rOBX|||HT^HEIGHT||47|cm|\rOBX|||CD^CONDITION||&Heart Palpitations|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|E\\T\\R|Main HIS|St. Micheals|20080615094130||ADT^A01|A0415953640361C118E4D25409227E7A4EF571443FEB44EF595D9194C3EB093F|P|2.6|\rEVN||20070710031834||||20010723100327|\rPID|||904325||Smith^Tracy||19210802|F||EU|156 Delphi Cres.^^LA^CA^80753|||||||27-221-259|515-594-614|\rNK1|1|White^Jim|Sibling|\rNK1|2|Adams^Mary|Grandchild|\rPV1|||emergency_room^^106|||||^Fitzgerald^Mary^F|||||||||||6312517|||||||||||||||||||||||||20050317082638|\rOBX|||WT||107|pounds|\rOBX|||HT^HEIGHT||70|cm|\rOBX|||CD^CONDITION||&Dizziness|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|Lab|Main HIS|St. Micheals|20090228111049||ADT^A03|A1415953AB03171F22103ED201941B3C2BAE45180F3655CA34BC58C5A885DBEE|P|2.6|\rEVN||20011128100146||||20101124015801|\rPID|||6413278||Meade^Mary||19770108|F||AI|8 Delphi Cres.^^Chicago^IL^2803|||||||17-869-947|776-173-378|\rNK1|1|Meade^Tracy|Second Cousin|\rPV1|||emergency_room^^109|||||^Fitzgerald^Sabrina^F|||||||||||6073013|||||||||||||||||||||||||20110701075848|\rOBX|||WT||36|pounds|\rOBX|||HT^HEIGHT||31|cm|\rOBX|||CD^CONDITION||&Acute Stomach Pain|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20110108094249||ADT^A01|A2415953BE0394602BFBA301BCD7AD6F15AE7AE0AB898D940CE109C39A7A1A90|P|2.6|\rEVN||20130103011112||||20091028063701|\rPID|||1091328||Muir^Jim||19420410|M||Mixed|358 Miller Lane^^Chicago^IL^90845|||||||77-730-806|954-179-437|\rNK1|1|Meade^Sabrina|Sibling|\rNK1|2|White^John|Parent|\rNK1|3|White^Mary|Second Cousin|\rNK1|4|Meade^Sabrina|Parent|\rPV1|||emergency_room^^105|||||^Fitzgerald^Jim^F|||||||||||4381320|||||||||||||||||||||||||20081105015731|\rOBX|||WT||80|pounds|\rOBX|||HT^HEIGHT||110|cm|\rOBX|||CD^CONDITION||&Burns|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|Lab|Main HIS|St. Micheals|20030806100537||ADT^A04|A3415953CF0375280FDAE77475C98BD9423107F823A0C2F3891A1950E8A8C4B0|P|2.6|\rEVN||20060208045904||||20090603080119|\rPID|||535658||Muir^Gary||19680601|M||Mixed|688 Miller Lane^^LA^CA^95684|||||||98-851-635|349-166-67|\rNK1|1|White^John|Sibling|\rNK1|2|Muir^Gary|Grandchild|\rPV1|||emergency_room^^104|||||^Garland^Fred^F|||||||||||2697212|||||||||||||||||||||||||20010227054337|\rOBX|||WT||63|pounds|\rOBX|||HT^HEIGHT||50|cm|\rOBX|||CD^CONDITION||&Tuberculosis|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|E\\T\\R|Main HIS|St. Micheals|20080526013047||ADT^A03|A4415953DD035984D2640CA03384F9F645A65E03ECD2FECB4337D59FB7349B44|P|2.6|\rEVN||20060917100509||||20030823061130|\rPID|||7285844||Muir^Jim||19900703|M||AI|697 Delphi Cres.^^Toronto^ON^18277|||||||64-231-232|837-779-771|\rNK1|1|Smith^Tracy|Second Cousin|\rNK1|2|Garland^Jim|Second Cousin|\rPV1|||emergency_room^^106|||||^White^Mary^F|||||||||||7484414|||||||||||||||||||||||||20130926021354|\rOBX|||WT||126|pounds|\rOBX|||HT^HEIGHT||45|cm|\rOBX|||CD^CONDITION||&Numbness|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20100612083340||ADT^A04|A64159530500C893A31E2317F17294626C7F90399C6053189BAE841A60392AE9|P|2.6|\rEVN||20120820035732||||20110225032349|\rPID|||6608077||Smith^Jim||19280713|M||EU|558 Miller Lane^^LA^CA^13534|||||||90-432-496|19-118-783|\rNK1|1|Smith^Jim|Parent|\rNK1|2|White^Gary|Grandchild|\rNK1|3|Muir^Fred|Parent|\rNK1|4|Smith^Gary|Second Cousin|\rNK1|5|Fitzgerald^Jim|Second Cousin|\rPV1|||emergency_room^^105|||||^Fitzgerald^Jim^F|||||||||||9396453|||||||||||||||||||||||||20070918112151|\rOBX|||WT||102|pounds|\rOBX|||HT^HEIGHT||38|cm|\rOBX|||CD^CONDITION||&Head Trauma|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20040813025218||ADT^A03|A74159534A00C7B0573599C5BF7B842AF131B339013DE33A2A53D2311CBF4CA6|P|2.6|\rEVN||20090212045914||||20090928091358|\rPID|||3841801||Muir^Sabrina||19631102|F||Unknown|293 Yonge St.^^Chicago^IL^58406|||||||96-159-454|246-672-204|\rNK1|1|White^Mary|Sibling|\rNK1|2|White^Gary|Grandchild|\rNK1|3|Garland^Jim|Second Cousin|\rNK1|4|Garland^Mary|Sibling|\rNK1|5|Garland^Tracy|Second Cousin|\rPV1|||emergency_room^^101|||||^Garland^John^F|||||||||||6219062|||||||||||||||||||||||||20040917020645|\rOBX|||WT||129|pounds|\rOBX|||HT^HEIGHT||105|cm|\rOBX|||CD^CONDITION||&Acute Stomach Pain|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20030603014718||ADT^A03|A84159535B002DC7BAB9C1288376AC5B9EAC7355E9DC4E3AFC73EBBD8D33A507|P|2.6|\rEVN||20030427031726||||20130318081804|\rPID|||5794568||Adams^Mary||19420418|F||EU|616 Yonge St.^^Chicago^IL^33775|||||||32-870-449|122-811-287|\rNK1|1|Adams^John|Sibling|\rNK1|2|White^Mary|Second Cousin|\rNK1|3|Smith^John|Second Cousin|\rNK1|4|Fitzgerald^Tracy|Second Cousin|\rNK1|5|Meade^Tracy|Parent|\rPV1|||emergency_room^^102|||||^Smith^Tracy^F|||||||||||1165474|||||||||||||||||||||||||20100801035057|\rOBX|||WT||117|pounds|\rOBX|||HT^HEIGHT||75|cm|\rOBX|||CD^CONDITION||&Acute Stomach Pain|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20080213041729||ADT^A05|A9415953D100C0C7E2C86FF1767875E26C9C35C670B9370408FC8CBC5ABC5E67|P|2.6|\rEVN||20041121082521||||20020910011111|\rPID|||9472074||Smith^Mary||19750417|F||Unknown|624 Miller Lane^^LA^CA^1652|||||||5-935-715|677-550-813|\rNK1|1|Fitzgerald^Tracy|Second Cousin|\rNK1|2|Meade^Fred|Second Cousin|\rPV1|||emergency_room^^109|||||^Smith^Jim^F|||||||||||5679698|||||||||||||||||||||||||20111101111615|\rOBX|||WT||113|pounds|\rOBX|||HT^HEIGHT||83|cm|\rOBX|||CD^CONDITION||&Tuberculosis|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20050919010141||ADT^A04|AA415953E30016E6C2209B33904D14DB09AB034697E47D7F4B1CB87B6E47F549|P|2.6|\rEVN||20010701011727||||20110315033614|\rPID|||8597038||Smith^Fred||19970328|M||EU|388 Yonge St.^^Toronto^ON^60703|||||||63-794-184|229-164-434|\rNK1|1|Smith^Mary|Grandchild|\rNK1|2|White^Gary|Sibling|\rNK1|3|Garland^Jim|Grandchild|\rNK1|4|White^John|Parent|\rNK1|5|Smith^John|Sibling|\rPV1|||emergency_room^^101|||||^Smith^Fred^F|||||||||||1893678|||||||||||||||||||||||||20080106042358|\rOBX|||WT||107|pounds|\rOBX|||HT^HEIGHT||119|cm|\rOBX|||CD^CONDITION||&Dizziness|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20050521113101||ADT^A04|AB415953F400DDDE63BC9B0178E0941E43D3A6C99E6B0B3C069B0469F366A34B|P|2.6|\rEVN||20010315075322||||20010117053633|\rPID|||6281588||Adams^John||19770501|M||EU|177 Yonge St.^^Chicago^IL^74446|||||||18-678-161|209-744-501|\rNK1|1|Adams^Tracy|Second Cousin|\rNK1|2|Garland^Tracy|Grandchild|\rNK1|3|Meade^John|Second Cousin|\rNK1|4|Fitzgerald^Mary|Parent|\rNK1|5|Garland^Jim|Grandchild|\rPV1|||emergency_room^^105|||||^Meade^Tracy^F|||||||||||6955601|||||||||||||||||||||||||20020315012347|\rOBX|||WT||124|pounds|\rOBX|||HT^HEIGHT||59|cm|\rOBX|||CD^CONDITION||&Burns|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20010607015912||ADT^A05|AC4159533B01592737968F440F1523C41B0D36BC8415C8F7537ED6C0910177F1|P|2.6|\rEVN||20030721062635||||20060101090326|\rPID|||6079717||White^Jim||19230303|M||Martian|735 Miller Lane^^Toronto^ON^11411|||||||25-369-694|998-625-131|\rNK1|1|Smith^Mary|Parent|\rPV1|||emergency_room^^105|||||^Adams^Tracy^F|||||||||||7744135|||||||||||||||||||||||||20060918032409|\rOBX|||WT||101|pounds|\rOBX|||HT^HEIGHT||77|cm|\rOBX|||CD^CONDITION||&Vomiting|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20030404093739||ADT^A01|AD41595382011DAB2D9E468A4F07E84BE506271340208EC192E571C45D639503|P|2.6|\rEVN||20061019032027||||20010315012742|\rPID|||6673222||Smith^Mary||19211012|F||Mixed|23 Miller Lane^^LA^CA^20998|||||||50-250-829|606-219-852|\rNK1|1|Smith^Tracy|Grandchild|\rNK1|2|Smith^Jim|Sibling|\rPV1|||emergency_room^^104|||||^Garland^Mary^F|||||||||||8459006|||||||||||||||||||||||||20130301010415|\rOBX|||WT||43|pounds|\rOBX|||HT^HEIGHT||58|cm|\rOBX|||CD^CONDITION||&Vomiting|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|Lab|Main HIS|St. Micheals|20030408095848||ADT^A05|AE41595394013DE68DFEFB5220DB8C38131E5DA9CF2CC45E4E34DBCE38054249|P|2.6|\rEVN||20060319102035||||20040817074036|\rPID|||8605461||Fitzgerald^Gary||19790216|M||Mixed|337 Yonge St.^^Toronto^ON^46025|||||||81-812-629|688-403-111|\rNK1|1|Garland^Sabrina|Second Cousin|\rNK1|2|Fitzgerald^Mary|Parent|\rNK1|3|Garland^Sabrina|Second Cousin|\rNK1|4|Fitzgerald^Tracy|Grandchild|\rNK1|5|Garland^Tracy|Sibling|\rNK1|6|Smith^Tracy|Parent|\rPV1|||emergency_room^^104|||||^Meade^Jim^F|||||||||||2374530|||||||||||||||||||||||||20110820104113|\rOBX|||WT||49|pounds|\rOBX|||HT^HEIGHT||51|cm|\rOBX|||CD^CONDITION||&Stroke|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|Lab|Main HIS|St. Micheals|20010224091154||ADT^A05|AF415953A60175A6089434D5DF25F742BB8C57062123A5F7BB8578CDB2F35ACC|P|2.6|\rEVN||20050222070301||||20040811015654|\rPID|||3883386||White^Tracy||19530719|F||EU|630 Main Rd.^^ST. LOUIS^MO^5329|||||||51-814-618|525-720-535|\rNK1|1|Muir^Fred|Sibling|\rNK1|2|Smith^John|Second Cousin|\rNK1|3|Fitzgerald^Mary|Parent|\rNK1|4|Garland^Sabrina|Parent|\rPV1|||emergency_room^^106|||||^Meade^Tracy^F|||||||||||3671489|||||||||||||||||||||||||20080123103640|\rOBX|||WT||31|pounds|\rOBX|||HT^HEIGHT||46|cm|\rOBX|||CD^CONDITION||&Blurred Vision|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20110424061159||ADT^A05|B0415953B901BB5F4DFA7F8536A211906F8C611CA593F1B6B5E299C0D0FDBC07|P|2.6|\rEVN||20030816033141||||20120821113914|\rPID|||9065078||Fitzgerald^Tracy||19091004|F||Martian|156 Main Rd.^^ST. LOUIS^MO^35213|||||||92-449-114|858-34-188|\rNK1|1|Smith^Jim|Sibling|\rNK1|2|Meade^Fred|Grandchild|\rNK1|3|Meade^Tracy|Sibling|\rPV1|||emergency_room^^101|||||^Adams^Sabrina^F|||||||||||8097339|||||||||||||||||||||||||20010808011804|\rOBX|||WT||113|pounds|\rOBX|||HT^HEIGHT||69|cm|\rOBX|||CD^CONDITION||&Heart Palpitations|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|E\\T\\R|Main HIS|St. Micheals|20120412102447||ADT^A01|B1415953FE01C0D87FFFFD3847E20B0988B0E917F9B7CAC3BA3958A5D66E1899|P|2.6|\rEVN||20090201010104||||20010124022558|\rPID|||8331866||Garland^Jim||19621019|M||Mixed|407 Delphi Cres.^^LA^CA^94070|||||||96-478-250|666-456-520|\rNK1|1|Adams^Mary|Parent|\rNK1|2|Muir^Fred|Sibling|\rNK1|3|Meade^Tracy|Sibling|\rNK1|4|Meade^Fred|Sibling|\rPV1|||emergency_room^^104|||||^Fitzgerald^Gary^F|||||||||||1477390|||||||||||||||||||||||||20130707024301|\rOBX|||WT||85|pounds|\rOBX|||HT^HEIGHT||99|cm|\rOBX|||CD^CONDITION||&Dizziness|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|E\\T\\R|Main HIS|St. Micheals|20030411075846||ADT^A01|B241595312028DEFDDBBCC22E51007BD147A5B546D33DA823364E4A3AD2A2CA3|P|2.6|\rEVN||20110813073540||||20100704112001|\rPID|||2969404||White^Mary||19520403|F||AI|50 Delphi Cres.^^ST. LOUIS^MO^25799|||||||16-209-701|519-59-11|\rNK1|1|Garland^Tracy|Grandchild|\rNK1|2|Muir^John|Sibling|\rNK1|3|Adams^John|Grandchild|\rNK1|4|Muir^Mary|Grandchild|\rPV1|||emergency_room^^100|||||^Smith^John^F|||||||||||7866002|||||||||||||||||||||||||20040127084550|\rOBX|||WT||90|pounds|\rOBX|||HT^HEIGHT||52|cm|\rOBX|||CD^CONDITION||&Stroke|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20030927093028||ADT^A01|B34159532502A13B10BBDC4CD55D3B71F1E43EFA4348B1184B2AF1EC0E980651|P|2.6|\rEVN||20060112040948||||20120724021118|\rPID|||2102596||Smith^Mary||19941123|F||EU|809 Miller Lane^^Toronto^ON^83541|||||||33-374-424|852-453-511|\rNK1|1|Garland^John|Second Cousin|\rNK1|2|Smith^Tracy|Sibling|\rNK1|3|White^Fred|Parent|\rNK1|4|Fitzgerald^Tracy|Sibling|\rPV1|||emergency_room^^109|||||^Meade^Gary^F|||||||||||4047074|||||||||||||||||||||||||20110602080210|\rOBX|||WT||88|pounds|\rOBX|||HT^HEIGHT||62|cm|\rOBX|||CD^CONDITION||&Blurred Vision|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|E\\T\\R|Main HIS|St. Micheals|20030127034605||ADT^A01|B44159533802E76987FA644CB7B177AE37C41E28F470304E2AE16C193E4C0736|P|2.6|\rEVN||20060521080919||||20050914070853|\rPID|||6179116||Garland^John||19770212|M||Unknown|876 Miller Lane^^Chicago^IL^52156|||||||62-515-243|880-908-198|\rNK1|1|Adams^Tracy|Second Cousin|\rNK1|2|White^Mary|Grandchild|\rNK1|3|Fitzgerald^Mary|Sibling|\rNK1|4|Fitzgerald^John|Grandchild|\rPV1|||emergency_room^^106|||||^Meade^Tracy^F|||||||||||5098358|||||||||||||||||||||||||20100119032847|\rOBX|||WT||56|pounds|\rOBX|||HT^HEIGHT||68|cm|\rOBX|||CD^CONDITION||&Lacerations|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|E\\T\\R|Main HIS|St. Micheals|20070912011401||ADT^A01|B54159534D02E458B552129332D709F0287F7DFAC7C4BF80DB94048BBE1B62C3|P|2.6|\rEVN||20040128091757||||20110502031444|\rPID|||6858487||Adams^John||19860125|M||Unknown|606 Yonge St.^^Toronto^ON^27617|||||||12-775-465|591-929-95|\rNK1|1|Muir^Sabrina|Parent|\rPV1|||emergency_room^^109|||||^Meade^Mary^F|||||||||||2270010|||||||||||||||||||||||||20010604095941|\rOBX|||WT||86|pounds|\rOBX|||HT^HEIGHT||38|cm|\rOBX|||CD^CONDITION||&Lacerations|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20050708112137||ADT^A04|B64159539202A925DD1D3A0F16DCCFA87E381661D429A87BF2A262E360FEC5A5|P|2.6|\rEVN||20050126020915||||20030326010205|\rPID|||1429884||Adams^John||19751115|M||EU|341 Yonge St.^^LA^CA^12878|||||||13-729-586|654-416-931|\rNK1|1|Smith^Sabrina|Sibling|\rNK1|2|Smith^Mary|Sibling|\rPV1|||emergency_room^^102|||||^Muir^Jim^F|||||||||||5534187|||||||||||||||||||||||||20031009082146|\rOBX|||WT||37|pounds|\rOBX|||HT^HEIGHT||38|cm|\rOBX|||CD^CONDITION||&Dizziness|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20101028081244||ADT^A05|B7415953A702B1322303757489FC037F860403BDFF820C3A0CD3294613EB4720|P|2.6|\rEVN||20040307114855||||20120212062029|\rPID|||4866687||Smith^Fred||19211014|M||Unknown|997 Miller Lane^^Chicago^IL^87564|||||||87-611-188|450-914-462|\rNK1|1|Smith^John|Grandchild|\rNK1|2|Muir^Gary|Parent|\rNK1|3|Adams^Fred|Sibling|\rPV1|||emergency_room^^100|||||^Adams^Gary^F|||||||||||7863725|||||||||||||||||||||||||20061026041650|\rOBX|||WT||102|pounds|\rOBX|||HT^HEIGHT||57|cm|\rOBX|||CD^CONDITION||&Poisoning|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|Lab|Main HIS|St. Micheals|20030615063227||ADT^A05|B8415953B702B7531D08AE9F54E7A566E6AA898B7E145E0C5A3EC60B5F28C17A|P|2.6|\rEVN||20090912070517||||20060109021014|\rPID|||8230929||White^Tracy||19741001|F||Martian|58 Delphi Cres.^^LA^CA^21801|||||||40-623-841|425-655-484|\rNK1|1|Muir^John|Sibling|\rNK1|2|Garland^Fred|Grandchild|\rNK1|3|Smith^Mary|Sibling|\rNK1|4|Meade^Fred|Grandchild|\rNK1|5|Garland^Mary|Parent|\rPV1|||emergency_room^^109|||||^White^Sabrina^F|||||||||||4178495|||||||||||||||||||||||||20100816020725|\rOBX|||WT||81|pounds|\rOBX|||HT^HEIGHT||101|cm|\rOBX|||CD^CONDITION||&Vomiting|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|E\\T\\R|Main HIS|St. Micheals|20050521010942||ADT^A05|B9415953C9026644AF6777CBD0F810A5025B00B0DF027FE1DB1D3787B4B678FF|P|2.6|\rEVN||20111016090439||||20050212035455|\rPID|||499200||Garland^John||19220903|M||EU|647 Main Rd.^^Toronto^ON^82100|||||||75-804-977|452-155-301|\rNK1|1|Smith^John|Sibling|\rNK1|2|Smith^Mary|Grandchild|\rNK1|3|White^Fred|Sibling|\rNK1|4|Garland^Mary|Second Cousin|\rPV1|||emergency_room^^103|||||^Adams^John^F|||||||||||3495621|||||||||||||||||||||||||20010623035528|\rOBX|||WT||43|pounds|\rOBX|||HT^HEIGHT||27|cm|\rOBX|||CD^CONDITION||&Tuberculosis|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|Lab|Main HIS|St. Micheals|20010328082650||ADT^A03|BA415953DC02A6285FD1C39F11AA626ADB4F2DDCE4981A397B16FFAFC1B76D4F|P|2.6|\rEVN||20010809103921||||20030117051733|\rPID|||7806384||Adams^Jim||19560611|M||AI|136 Miller Lane^^LA^CA^10610|||||||45-435-963|965-866-196|\rNK1|1|White^John|Parent|\rPV1|||emergency_room^^103|||||^Meade^Gary^F|||||||||||2490664|||||||||||||||||||||||||20130809011821|\rOBX|||WT||103|pounds|\rOBX|||HT^HEIGHT||92|cm|\rOBX|||CD^CONDITION||&Lacerations|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20030813031235||ADT^A04|BB41595322032CAF311FF447815EE3967058B01D53C7C270F5D7D2684F6A0465|P|2.6|\rEVN||20061112035303||||20010606044144|\rPID|||267276||Meade^John||19820223|M||AI|606 Miller Lane^^LA^CA^90085|||||||46-86-870|419-804-942|\rNK1|1|Meade^Sabrina|Sibling|\rNK1|2|White^Mary|Parent|\rNK1|3|Garland^John|Parent|\rPV1|||emergency_room^^104|||||^Adams^Fred^F|||||||||||6792542|||||||||||||||||||||||||20020209105555|\rOBX|||WT||108|pounds|\rOBX|||HT^HEIGHT||104|cm|\rOBX|||CD^CONDITION||&Poisoning|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20110108075914||ADT^A04|BC4159533303C6E8732AC96FD8A74887A0824DC8EC55BAE268E0F9AF9EE59508|P|2.6|\rEVN||20021104073756||||20020420052724|\rPID|||6312912||Meade^John||19811124|M||EU|700 Miller Lane^^LA^CA^55838|||||||63-960-541|397-318-545|\rNK1|1|Adams^Fred|Grandchild|\rNK1|2|Muir^Sabrina|Grandchild|\rNK1|3|Muir^Sabrina|Parent|\rNK1|4|Garland^John|Grandchild|\rPV1|||emergency_room^^104|||||^Meade^Gary^F|||||||||||4830205|||||||||||||||||||||||||20010316023532|\rOBX|||WT||94|pounds|\rOBX|||HT^HEIGHT||73|cm|\rOBX|||CD^CONDITION||&Stroke|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|E\\T\\R|Main HIS|St. Micheals|20041104020437||ADT^A05|BD4159534703A29B682F17F8216C4DDE71B8AF818B12BE2F75DD857DB64B94E9|P|2.6|\rEVN||20100416104232||||20081002114255|\rPID|||745259||Muir^Sabrina||19270823|F||EU|984 Yonge St.^^Toronto^ON^37651|||||||77-609-614|803-12-990|\rNK1|1|Adams^Mary|Sibling|\rNK1|2|White^Mary|Sibling|\rNK1|3|Muir^Jim|Grandchild|\rNK1|4|Meade^Mary|Second Cousin|\rNK1|5|Muir^Jim|Second Cousin|\rPV1|||emergency_room^^108|||||^Meade^John^F|||||||||||5587482|||||||||||||||||||||||||20110224045734|\rOBX|||WT||54|pounds|\rOBX|||HT^HEIGHT||59|cm|\rOBX|||CD^CONDITION||&Vomiting|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|E\\T\\R|Main HIS|St. Micheals|20131101110206||ADT^A03|BE4159535B0349BB8EB620018446D530145216A23B167CA156C0CA6E054AC42D|P|2.6|\rEVN||20010922035422||||20090113080739|\rPID|||2488906||Fitzgerald^Gary||19360704|M||Unknown|566 Delphi Cres.^^ST. LOUIS^MO^18407|||||||35-102-614|273-647-249|\rNK1|1|Garland^Mary|Grandchild|\rNK1|2|Adams^Gary|Sibling|\rPV1|||emergency_room^^101|||||^Garland^Jim^F|||||||||||2000014|||||||||||||||||||||||||20040408025416|\rOBX|||WT||86|pounds|\rOBX|||HT^HEIGHT||49|cm|\rOBX|||CD^CONDITION||&Lacerations|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|E\\T\\R|Main HIS|St. Micheals|20070420042747||ADT^A03|BF4159536D035F6D4FC3E7C85256CF6CA98153827EFCB96B81C9750293F987D9|P|2.6|\rEVN||20010327045025||||20100710010836|\rPID|||9017692||Garland^Fred||19170806|M||AI|693 Main Rd.^^LA^CA^4402|||||||28-983-824|301-722-895|\rNK1|1|White^Fred|Second Cousin|\rNK1|2|Smith^John|Second Cousin|\rNK1|3|Muir^Gary|Parent|\rNK1|4|Smith^Mary|Sibling|\rNK1|5|Smith^Fred|Parent|\rNK1|6|Meade^Fred|Second Cousin|\rPV1|||emergency_room^^106|||||^Garland^Gary^F|||||||||||7095664|||||||||||||||||||||||||20081118043759|\rOBX|||WT||111|pounds|\rOBX|||HT^HEIGHT||118|cm|\rOBX|||CD^CONDITION||&Head Trauma|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20131024012046||ADT^A01|C041595381039398A35CCCFFAFB033ED1A0F258661020C6BF0C0EFDDD80E0328|P|2.6|\rEVN||20110416085604||||20091023115634|\rPID|||9819316||Adams^Gary||19900110|M||Martian|403 Miller Lane^^LA^CA^94492|||||||82-683-525|340-211-591|\rNK1|1|Adams^Sabrina|Sibling|\rNK1|2|Muir^Fred|Second Cousin|\rNK1|3|White^Gary|Sibling|\rNK1|4|Garland^Sabrina|Sibling|\rPV1|||emergency_room^^101|||||^Garland^Fred^F|||||||||||7882710|||||||||||||||||||||||||20051121025715|\rOBX|||WT||78|pounds|\rOBX|||HT^HEIGHT||43|cm|\rOBX|||CD^CONDITION||&Vomiting|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20010908101446||ADT^A01|C141595394038D53BA84B1A59D2905DBDE95E9F7E726CFAE57C63FD4D75EEDC8|P|2.6|\rEVN||20010921034449||||20130313085601|\rPID|||1168101||Adams^Fred||19850210|M||Unknown|864 Yonge St.^^Chicago^IL^3766|||||||96-177-908|664-618-976|\rNK1|1|Garland^Tracy|Parent|\rNK1|2|Smith^Mary|Parent|\rNK1|3|Fitzgerald^Fred|Second Cousin|\rNK1|4|Adams^Jim|Second Cousin|\rNK1|5|Smith^John|Sibling|\rNK1|6|Fitzgerald^Sabrina|Second Cousin|\rPV1|||emergency_room^^101|||||^Fitzgerald^John^F|||||||||||6115879|||||||||||||||||||||||||20121001040544|\rOBX|||WT||78|pounds|\rOBX|||HT^HEIGHT||31|cm|\rOBX|||CD^CONDITION||&Heart Palpitations|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20020705070542||ADT^A04|C2415953A5036593E33E000F4EB3A67F5BA34306BB4D7C0C196DC472C1144287|P|2.6|\rEVN||20040221113605||||20020823090446|\rPID|||3766695||Meade^Mary||19620913|F||Mixed|65 Yonge St.^^Chicago^IL^83614|||||||35-952-514|450-41-39|\rNK1|1|Adams^John|Second Cousin|\rNK1|2|Muir^Sabrina|Grandchild|\rPV1|||emergency_room^^106|||||^Meade^Fred^F|||||||||||8184631|||||||||||||||||||||||||20110927065308|\rOBX|||WT||115|pounds|\rOBX|||HT^HEIGHT||116|cm|\rOBX|||CD^CONDITION||&Poisoning|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20070601022353||ADT^A03|C3415953B803178932249A52397B9FAA41B35BD5187ADACDE50CC63C77BA4FFD|P|2.6|\rEVN||20011026035609||||20110603010331|\rPID|||3149244||White^Tracy||19590410|F||Martian|18 Delphi Cres.^^Chicago^IL^1280|||||||50-575-868|174-475-845|\rNK1|1|White^Sabrina|Grandchild|\rPV1|||emergency_room^^104|||||^Garland^Fred^F|||||||||||1440456|||||||||||||||||||||||||20120901105318|\rOBX|||WT||56|pounds|\rOBX|||HT^HEIGHT||69|cm|\rOBX|||CD^CONDITION||&Burns|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20130110073530||ADT^A03|C4415953C903DA47639E8D415D0555B86F8492F11235E5066324708FA5AFCDDD|P|2.6|\rEVN||20011109034419||||20050917095106|\rPID|||7153570||Smith^Jim||19750902|M||Martian|141 Miller Lane^^ST. LOUIS^MO^64956|||||||93-69-242|212-631-839|\rNK1|1|Adams^Fred|Second Cousin|\rNK1|2|Meade^Jim|Parent|\rPV1|||emergency_room^^107|||||^Smith^Gary^F|||||||||||1994305|||||||||||||||||||||||||20101004051307|\rOBX|||WT||112|pounds|\rOBX|||HT^HEIGHT||120|cm|\rOBX|||CD^CONDITION||&Head Trauma|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|E\\T\\R|Main HIS|St. Micheals|20130108111212||ADT^A04|C5415953DA03B500EE538709789A7FC50CA1FA66430A79C0D67CDF7B2291A5BC|P|2.6|\rEVN||20040915010518||||20080111102922|\rPID|||4615229||White^Sabrina||19040426|F||Martian|648 Miller Lane^^ST. LOUIS^MO^98801|||||||40-876-212|459-198-77|\rNK1|1|Muir^John|Sibling|\rNK1|2|Garland^Fred|Grandchild|\rPV1|||emergency_room^^109|||||^Muir^Jim^F|||||||||||476707|||||||||||||||||||||||||20010306052443|\rOBX|||WT||43|pounds|\rOBX|||HT^HEIGHT||101|cm|\rOBX|||CD^CONDITION||&Numbness|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|E\\T\\R|Main HIS|St. Micheals|20080927033120||ADT^A01|C74159530600E84A0A278161E20B04E66B355F555042B521456DA58A7C671127|P|2.6|\rEVN||20090727024015||||20090208080257|\rPID|||5141137||Fitzgerald^Sabrina||19050504|F||Unknown|80 Miller Lane^^ST. LOUIS^MO^94008|||||||72-220-832|952-885-242|\rNK1|1|Smith^Fred|Grandchild|\rPV1|||emergency_room^^102|||||^Fitzgerald^Jim^F|||||||||||3304921|||||||||||||||||||||||||20070201082026|\rOBX|||WT||32|pounds|\rOBX|||HT^HEIGHT||31|cm|\rOBX|||CD^CONDITION||&Numbness|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20030213063428||ADT^A04|C841595318009E539B8E5150BA1658FB0DF10A2637EFE36DDDA60D8DB8D575E5|P|2.6|\rEVN||20010624063424||||20100601070559|\rPID|||7567177||White^Jim||19400101|M||Mixed|490 Main Rd.^^Chicago^IL^22762|||||||91-307-17|241-527-475|\rNK1|1|White^Tracy|Parent|\rNK1|2|Adams^Fred|Second Cousin|\rNK1|3|Garland^Jim|Sibling|\rNK1|4|Muir^Sabrina|Second Cousin|\rPV1|||emergency_room^^106|||||^Meade^Gary^F|||||||||||873889|||||||||||||||||||||||||20090301075143|\rOBX|||WT||52|pounds|\rOBX|||HT^HEIGHT||66|cm|\rOBX|||CD^CONDITION||&Numbness|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|Lab|Main HIS|St. Micheals|20100905010741||ADT^A01|C94159532800E2CA879244CEA0526D6A1CEE96B922BEEBAC68CE2D5693551F55|P|2.6|\rEVN||20060705070721||||20051007054613|\rPID|||741114||Fitzgerald^Tracy||19210427|F||AI|901 Delphi Cres.^^Toronto^ON^58719|||||||21-738-806|957-123-949|\rNK1|1|Adams^Sabrina|Parent|\rPV1|||emergency_room^^100|||||^Adams^Fred^F|||||||||||5923890|||||||||||||||||||||||||20021007021840|\rOBX|||WT||127|pounds|\rOBX|||HT^HEIGHT||112|cm|\rOBX|||CD^CONDITION||&Burns|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|E\\T\\R|Main HIS|St. Micheals|20030708032003||ADT^A04|CA4159533500ACC6AF8598110C588726E66A2AF20EE5BCEFE347A07889BDB317|P|2.6|\rEVN||20120428055721||||20021026113404|\rPID|||6089715||Smith^Tracy||19460526|F||Unknown|656 Miller Lane^^Chicago^IL^2117|||||||70-699-444|139-668-195|\rNK1|1|Muir^Sabrina|Grandchild|\rNK1|2|Meade^Mary|Second Cousin|\rNK1|3|Smith^Sabrina|Second Cousin|\rNK1|4|Fitzgerald^Mary|Second Cousin|\rNK1|5|Garland^Sabrina|Parent|\rNK1|6|Garland^Fred|Second Cousin|\rPV1|||emergency_room^^105|||||^White^Fred^F|||||||||||4730226|||||||||||||||||||||||||20010916010111|\rOBX|||WT||57|pounds|\rOBX|||HT^HEIGHT||110|cm|\rOBX|||CD^CONDITION||&Poisoning|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|Lab|Main HIS|St. Micheals|20081004055748||ADT^A01|CB41595342002C03CC71DABB5770AE4FDA695159EEA027EB2D6C7CF05699DBA0|P|2.6|\rEVN||20051001105518||||20050519032658|\rPID|||1344726||Meade^John||19360705|M||Unknown|924 Delphi Cres.^^LA^CA^94781|||||||39-504-137|371-501-852|\rNK1|1|Garland^Mary|Grandchild|\rNK1|2|White^Sabrina|Sibling|\rPV1|||emergency_room^^104|||||^White^Mary^F|||||||||||971380|||||||||||||||||||||||||20070715013258|\rOBX|||WT||126|pounds|\rOBX|||HT^HEIGHT||62|cm|\rOBX|||CD^CONDITION||&Numbness|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|E\\T\\R|Main HIS|St. Micheals|20020502020513||ADT^A03|CC41595350005B5092B8D6B83466577AC58A33C133BD531648C329A5041980D4|P|2.6|\rEVN||20030320111636||||20130218080124|\rPID|||8339787||Fitzgerald^Mary||19691111|F||Martian|909 Yonge St.^^Chicago^IL^97589|||||||30-160-857|826-218-368|\rNK1|1|Muir^Jim|Sibling|\rNK1|2|Meade^John|Grandchild|\rNK1|3|Garland^Sabrina|Sibling|\rNK1|4|Muir^Sabrina|Sibling|\rNK1|5|White^Sabrina|Parent|\rPV1|||emergency_room^^107|||||^Smith^Mary^F|||||||||||1990014|||||||||||||||||||||||||20070109110311|\rOBX|||WT||108|pounds|\rOBX|||HT^HEIGHT||65|cm|\rOBX|||CD^CONDITION||&Vomiting|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|Lab|Main HIS|St. Micheals|20100126105243||ADT^A04|CD41595363002A348925595D1DA31F9933E127A83FE3FF0A248E60F5AF6183B0|P|2.6|\rEVN||20060101030149||||20050503070509|\rPID|||7208886||Meade^Sabrina||19960510|F||Unknown|642 Main Rd.^^LA^CA^33044|||||||30-470-825|242-876-729|\rNK1|1|White^Sabrina|Sibling|\rNK1|2|Fitzgerald^Jim|Sibling|\rNK1|3|Fitzgerald^Gary|Grandchild|\rNK1|4|Garland^Sabrina|Parent|\rNK1|5|Fitzgerald^Fred|Sibling|\rPV1|||emergency_room^^103|||||^Muir^Tracy^F|||||||||||1774447|||||||||||||||||||||||||20030427014839|\rOBX|||WT||97|pounds|\rOBX|||HT^HEIGHT||84|cm|\rOBX|||CD^CONDITION||&Head Trauma|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20031126011710||ADT^A03|CE41595375004BBE36FCC93318C68490C857CC64D4A442048130DDA0296D55A6|P|2.6|\rEVN||20050110070631||||20060526013727|\rPID|||9504127||Muir^Sabrina||19430218|F||Unknown|37 Delphi Cres.^^LA^CA^76426|||||||18-550-167|373-737-390|\rNK1|1|Garland^Gary|Sibling|\rNK1|2|White^Sabrina|Second Cousin|\rNK1|3|White^Mary|Parent|\rPV1|||emergency_room^^109|||||^Meade^John^F|||||||||||7573472|||||||||||||||||||||||||20090501034503|\rOBX|||WT||83|pounds|\rOBX|||HT^HEIGHT||112|cm|\rOBX|||CD^CONDITION||&Dizziness|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|E\\T\\R|Main HIS|St. Micheals|20020616041339||ADT^A04|CF41595387006F97D5782A880BFBD5D1F89ED06CC109C41BA26BB9FE0DE47791|P|2.6|\rEVN||20030926050148||||20110801043627|\rPID|||3720694||Fitzgerald^Fred||19811001|M||Mixed|714 Main Rd.^^LA^CA^20490|||||||40-473-195|675-563-591|\rNK1|1|Meade^Jim|Second Cousin|\rNK1|2|Muir^John|Parent|\rNK1|3|Muir^Tracy|Sibling|\rNK1|4|Fitzgerald^Sabrina|Sibling|\rNK1|5|Meade^Tracy|Parent|\rNK1|6|Smith^Sabrina|Second Cousin|\rPV1|||emergency_room^^104|||||^Garland^Mary^F|||||||||||6176710|||||||||||||||||||||||||20010810072414|\rOBX|||WT||48|pounds|\rOBX|||HT^HEIGHT||79|cm|\rOBX|||CD^CONDITION||&Numbness|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20060428011949||ADT^A04|D04159539900F925C711C80A5CA20A764D9B8F2B1E78EA1E913DC2FEA91ABEB9|P|2.6|\rEVN||20101122045904||||20060901040932|\rPID|||5240872||Adams^Fred||19800209|M||EU|509 Yonge St.^^Toronto^ON^83093|||||||85-305-119|475-473-770|\rNK1|1|Fitzgerald^Tracy|Grandchild|\rNK1|2|Fitzgerald^John|Parent|\rPV1|||emergency_room^^102|||||^Smith^Sabrina^F|||||||||||9128214|||||||||||||||||||||||||20100510013153|\rOBX|||WT||127|pounds|\rOBX|||HT^HEIGHT||55|cm|\rOBX|||CD^CONDITION||&Blurred Vision|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|Lab|Main HIS|St. Micheals|20020125011751||ADT^A01|D1415953AB002B0885FD291BB9D7257A836CC82C76856F8EC662EF4FED28C552|P|2.6|\rEVN||20071110093059||||20060725025705|\rPID|||2708832||Smith^Tracy||19910905|F||Unknown|3 Main Rd.^^Chicago^IL^69072|||||||74-602-686|406-396-714|\rNK1|1|Garland^John|Parent|\rNK1|2|Adams^Tracy|Second Cousin|\rPV1|||emergency_room^^106|||||^Meade^Gary^F|||||||||||1872415|||||||||||||||||||||||||20120204052226|\rOBX|||WT||112|pounds|\rOBX|||HT^HEIGHT||109|cm|\rOBX|||CD^CONDITION||&Lacerations|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20130601033940||ADT^A04|D2415953BD00EDB8216BDAD680522E73B83E9E66CB97F6DE3F21F243702CE354|P|2.6|\rEVN||20010321062219||||20010613010154|\rPID|||2231735||Muir^Tracy||19981015|F||Unknown|652 Miller Lane^^LA^CA^10690|||||||31-133-104|781-862-730|\rNK1|1|White^Sabrina|Grandchild|\rNK1|2|Garland^Sabrina|Grandchild|\rNK1|3|White^Sabrina|Second Cousin|\rNK1|4|Muir^Tracy|Grandchild|\rNK1|5|Smith^Mary|Sibling|\rNK1|6|Adams^Jim|Parent|\rPV1|||emergency_room^^100|||||^White^Tracy^F|||||||||||2001348|||||||||||||||||||||||||20080814112439|\rOBX|||WT||47|pounds|\rOBX|||HT^HEIGHT||42|cm|\rOBX|||CD^CONDITION||&Vomiting|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|E\\T\\R|Main HIS|St. Micheals|20121101075514||ADT^A05|D34159530201A47735047B0E242C7C27973E6B21A6EDD2CDFAFBBC8652F3A338|P|2.6|\rEVN||20010324060354||||20110910030329|\rPID|||1450880||Muir^Gary||19731007|M||Mixed|256 Delphi Cres.^^Toronto^ON^3102|||||||46-544-919|113-58-832|\rNK1|1|White^John|Parent|\rNK1|2|Meade^Fred|Grandchild|\rNK1|3|Smith^Tracy|Sibling|\rNK1|4|Meade^Mary|Sibling|\rNK1|5|Smith^Mary|Sibling|\rNK1|6|White^Jim|Sibling|\rPV1|||emergency_room^^102|||||^Smith^John^F|||||||||||3947630|||||||||||||||||||||||||20091115044151|\rOBX|||WT||86|pounds|\rOBX|||HT^HEIGHT||30|cm|\rOBX|||CD^CONDITION||&Lacerations|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|E\\T\\R|Main HIS|St. Micheals|20110328091803||ADT^A04|D44159534701F4B1C415AB0A2C47B0B144588A5E4B4B2EDFFC17113DC95314A5|P|2.6|\rEVN||20020201111709||||20090119065752|\rPID|||5470643||Fitzgerald^Tracy||19410720|F||Unknown|910 Delphi Cres.^^Chicago^IL^31986|||||||69-884-332|760-405-558|\rNK1|1|Fitzgerald^Gary|Second Cousin|\rNK1|2|Adams^Sabrina|Sibling|\rNK1|3|Garland^Tracy|Grandchild|\rNK1|4|Garland^Fred|Parent|\rPV1|||emergency_room^^109|||||^Muir^Fred^F|||||||||||959244|||||||||||||||||||||||||20011024010420|\rOBX|||WT||70|pounds|\rOBX|||HT^HEIGHT||46|cm|\rOBX|||CD^CONDITION||&Dizziness|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|Lab|Main HIS|St. Micheals|20010621055918||ADT^A04|D54159535A0160A11EEE3ABF2FA951EF4C504D5C761786A2A77B420760E235A8|P|2.6|\rEVN||20061025115657||||20080222033052|\rPID|||9513377||Garland^Jim||19090402|M||Martian|854 Delphi Cres.^^Toronto^ON^22734|||||||93-797-551|587-602-693|\rNK1|1|Garland^Tracy|Sibling|\rNK1|2|Meade^Tracy|Second Cousin|\rPV1|||emergency_room^^104|||||^Muir^Tracy^F|||||||||||4500292|||||||||||||||||||||||||20071019113550|\rOBX|||WT||98|pounds|\rOBX|||HT^HEIGHT||75|cm|\rOBX|||CD^CONDITION||&Blurred Vision|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|Lab|Main HIS|St. Micheals|20100809010124||ADT^A04|D64159536D0152E7014B651ACB90EC2F9C9A59C305D44FCE69A1347CF68C1ADA|P|2.6|\rEVN||20090716110251||||20101105063430|\rPID|||7691769||Smith^Tracy||19720409|F||Martian|95 Delphi Cres.^^ST. LOUIS^MO^55251|||||||90-542-928|647-177-468|\rNK1|1|Fitzgerald^Jim|Grandchild|\rNK1|2|Smith^Fred|Second Cousin|\rPV1|||emergency_room^^104|||||^Fitzgerald^Gary^F|||||||||||6057954|||||||||||||||||||||||||20070227103914|\rOBX|||WT||87|pounds|\rOBX|||HT^HEIGHT||25|cm|\rOBX|||CD^CONDITION||&Head Trauma|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20080111061537||ADT^A01|D74159537E017AB176D67CF6B9ED824E4480DE667B309FF5F3D62FB1CB924B7E|P|2.6|\rEVN||20060118042757||||20010326065302|\rPID|||5167263||Meade^Sabrina||19260923|F||Unknown|490 Yonge St.^^Toronto^ON^33531|||||||6-576-818|145-370-170|\rNK1|1|Adams^John|Parent|\rNK1|2|White^John|Second Cousin|\rPV1|||emergency_room^^106|||||^White^Mary^F|||||||||||1967199|||||||||||||||||||||||||20020304053604|\rOBX|||WT||95|pounds|\rOBX|||HT^HEIGHT||117|cm|\rOBX|||CD^CONDITION||&Vomiting|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|E\\T\\R|Main HIS|St. Micheals|20080213031011||ADT^A04|D841595391016C8271E7277AAD318F2877B2D6BFC180B74590ECB52348FD1D4C|P|2.6|\rEVN||20120121015320||||20030204014524|\rPID|||5669872||Smith^Gary||19531001|M||Unknown|779 Main Rd.^^LA^CA^33842|||||||50-195-840|376-323-400|\rNK1|1|Muir^Gary|Grandchild|\rNK1|2|Adams^Tracy|Parent|\rNK1|3|Smith^Mary|Grandchild|\rNK1|4|Muir^Tracy|Sibling|\rNK1|5|Meade^Sabrina|Parent|\rNK1|6|Meade^Fred|Grandchild|\rPV1|||emergency_room^^105|||||^Garland^Mary^F|||||||||||3406860|||||||||||||||||||||||||20110108015708|\rOBX|||WT||117|pounds|\rOBX|||HT^HEIGHT||111|cm|\rOBX|||CD^CONDITION||&Acute Stomach Pain|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20030724043329||ADT^A01|D9415953D501C80D20893B8CFFFB141812530BE664E4EBE9F009CCA58EC7FF85|P|2.6|\rEVN||20011103020101||||20130623044911|\rPID|||1693328||Smith^Mary||19030526|F||Unknown|657 Main Rd.^^ST. LOUIS^MO^99581|||||||10-193-868|431-118-463|\rNK1|1|Fitzgerald^Tracy|Grandchild|\rNK1|2|Muir^John|Grandchild|\rNK1|3|Garland^Mary|Parent|\rPV1|||emergency_room^^100|||||^Garland^Mary^F|||||||||||558974|||||||||||||||||||||||||20050421061217|\rOBX|||WT||66|pounds|\rOBX|||HT^HEIGHT||50|cm|\rOBX|||CD^CONDITION||&Dizziness|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|E\\T\\R|Main HIS|St. Micheals|20100101084715||ADT^A03|DA415953E801A6EBE1F2C6D0E826487C4EC967BA1E76916A02F7F340A51D483D|P|2.6|\rEVN||20100419110434||||20120611023205|\rPID|||6182351||Meade^Mary||19411011|F||Unknown|363 Main Rd.^^ST. LOUIS^MO^48309|||||||28-27-753|295-197-640|\rNK1|1|Muir^Jim|Parent|\rNK1|2|Meade^Sabrina|Grandchild|\rPV1|||emergency_room^^105|||||^White^John^F|||||||||||7824417|||||||||||||||||||||||||20051017014153|\rOBX|||WT||36|pounds|\rOBX|||HT^HEIGHT||37|cm|\rOBX|||CD^CONDITION||&Dizziness|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|E\\T\\R|Main HIS|St. Micheals|20121013031310||ADT^A04|DB41595362026D99C4640435211AA2C14019E81FBE8F195901F0867855AF1B4C|P|2.6|\rEVN||20090108011006||||20080414010756|\rPID|||671997||Adams^John||19680425|M||Martian|742 Miller Lane^^Toronto^ON^56558|||||||12-221-18|572-355-289|\rNK1|1|White^Sabrina|Parent|\rNK1|2|Muir^Jim|Sibling|\rNK1|3|Meade^Sabrina|Sibling|\rNK1|4|Smith^Sabrina|Second Cousin|\rPV1|||emergency_room^^105|||||^Adams^Jim^F|||||||||||5969023|||||||||||||||||||||||||20010128115002|\rOBX|||WT||98|pounds|\rOBX|||HT^HEIGHT||112|cm|\rOBX|||CD^CONDITION||&Stroke|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20040101055857||ADT^A04|DC41595376020376EF4E00062866A925E110C16060F39E5D2A7D12EAEEB53FB3|P|2.6|\rEVN||20041101063236||||20070710103557|\rPID|||1062626||Smith^Mary||19470315|F||EU|351 Main Rd.^^LA^CA^15758|||||||21-403-673|820-68-94|\rNK1|1|Smith^Gary|Second Cousin|\rNK1|2|Meade^Sabrina|Parent|\rNK1|3|Smith^Tracy|Sibling|\rNK1|4|Meade^Gary|Parent|\rNK1|5|Fitzgerald^Fred|Sibling|\rNK1|6|Fitzgerald^John|Parent|\rPV1|||emergency_room^^106|||||^Adams^Jim^F|||||||||||8859638|||||||||||||||||||||||||20040623104541|\rOBX|||WT||128|pounds|\rOBX|||HT^HEIGHT||76|cm|\rOBX|||CD^CONDITION||&Poisoning|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|Lab|Main HIS|St. Micheals|20090610105412||ADT^A05|DD4159538602BBE53DE3B5EEDECF160D378DE1B697158A823C6E88C8712F2819|P|2.6|\rEVN||20060920091055||||20130101014723|\rPID|||3456028||Smith^Tracy||19271107|F||EU|317 Main Rd.^^ST. LOUIS^MO^49642|||||||36-650-130|228-287-681|\rNK1|1|Smith^Jim|Parent|\rPV1|||emergency_room^^100|||||^White^Sabrina^F|||||||||||3583452|||||||||||||||||||||||||20080104051738|\rOBX|||WT||57|pounds|\rOBX|||HT^HEIGHT||90|cm|\rOBX|||CD^CONDITION||&Stroke|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20060125011409||ADT^A03|DE415953CA02F24E85A14B0E83BC997D3D005325949B200944742DAD9A8FE16E|P|2.6|\rEVN||20021104063722||||20070419024126|\rPID|||6688491||Meade^John||19850207|M||Unknown|452 Yonge St.^^Toronto^ON^27087|||||||22-401-676|433-223-273|\rNK1|1|Fitzgerald^Sabrina|Parent|\rPV1|||emergency_room^^101|||||^Meade^Gary^F|||||||||||534760|||||||||||||||||||||||||20091023110441|\rOBX|||WT||83|pounds|\rOBX|||HT^HEIGHT||82|cm|\rOBX|||CD^CONDITION||&Burns|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|E\\T\\R|Main HIS|St. Micheals|20051002064238||ADT^A04|DF4159531103E1E3F6541F9E7B129297594AEF809F72BA29796BFA637AF83BEE|P|2.6|\rEVN||20071010080158||||20120105094655|\rPID|||7046469||Fitzgerald^Fred||19030318|M||Mixed|259 Main Rd.^^Chicago^IL^78582|||||||99-429-802|659-159-103|\rNK1|1|Adams^Mary|Grandchild|\rNK1|2|White^Tracy|Sibling|\rNK1|3|White^John|Second Cousin|\rNK1|4|Garland^Gary|Grandchild|\rNK1|5|Fitzgerald^John|Second Cousin|\rPV1|||emergency_room^^102|||||^Adams^Sabrina^F|||||||||||9649267|||||||||||||||||||||||||20061117102625|\rOBX|||WT||59|pounds|\rOBX|||HT^HEIGHT||116|cm|\rOBX|||CD^CONDITION||&Stroke|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20110625042419||ADT^A03|E0415953220384C259E4668F0C018C136E4139F439B5254DF1A0A3ED3FA66FAB|P|2.6|\rEVN||20100916022507||||20040901061538|\rPID|||3301947||Meade^Sabrina||19890403|F||EU|377 Main Rd.^^LA^CA^56824|||||||61-980-891|841-509-448|\rNK1|1|Garland^Fred|Second Cousin|\rNK1|2|Adams^Mary|Second Cousin|\rNK1|3|Garland^Mary|Sibling|\rPV1|||emergency_room^^100|||||^Fitzgerald^Sabrina^F|||||||||||7219931|||||||||||||||||||||||||20060719092342|\rOBX|||WT||58|pounds|\rOBX|||HT^HEIGHT||87|cm|\rOBX|||CD^CONDITION||&Lacerations|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20110812083015||ADT^A01|E14159533403310C1E980A0DDF0521880A0292DDB1B5718DAA75BB001B1CCF4E|P|2.6|\rEVN||20090203085146||||20020921091953|\rPID|||4563846||Smith^Gary||19010225|M||EU|803 Miller Lane^^LA^CA^57409|||||||69-707-623|544-246-990|\rNK1|1|Smith^Tracy|Second Cousin|\rPV1|||emergency_room^^104|||||^Meade^Sabrina^F|||||||||||7521233|||||||||||||||||||||||||20120122063311|\rOBX|||WT||101|pounds|\rOBX|||HT^HEIGHT||74|cm|\rOBX|||CD^CONDITION||&Head Trauma|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|E\\T\\R|Main HIS|St. Micheals|20060313023728||ADT^A04|E24159534803940FF6D0133505CC3767C2DDD12FDC31F09A15D5F4C203BE786B|P|2.6|\rEVN||20110518091203||||20030222053921|\rPID|||2712113||Smith^John||19111008|M||AI|802 Delphi Cres.^^LA^CA^61193|||||||80-895-721|135-963-297|\rNK1|1|Muir^Mary|Parent|\rNK1|2|Garland^John|Parent|\rNK1|3|Smith^Gary|Grandchild|\rNK1|4|Smith^Sabrina|Sibling|\rNK1|5|Garland^Tracy|Grandchild|\rNK1|6|Adams^Fred|Parent|\rPV1|||emergency_room^^109|||||^White^Sabrina^F|||||||||||4375723|||||||||||||||||||||||||20020713084504|\rOBX|||WT||66|pounds|\rOBX|||HT^HEIGHT||112|cm|\rOBX|||CD^CONDITION||&Heart Palpitations|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|E\\T\\R|Main HIS|St. Micheals|20031105104416||ADT^A05|E34159538D03FFC6AC497A3AF8B677F9D2B0CEE63811EDB9ADB89BA4BD5A008A|P|2.6|\rEVN||20070418024627||||20110122060141|\rPID|||1505947||Muir^John||19090619|M||Unknown|772 Main Rd.^^LA^CA^97481|||||||91-946-303|53-402-572|\rNK1|1|Smith^Mary|Sibling|\rNK1|2|Garland^Mary|Parent|\rPV1|||emergency_room^^104|||||^Smith^Mary^F|||||||||||7081156|||||||||||||||||||||||||20030423103835|\rOBX|||WT||99|pounds|\rOBX|||HT^HEIGHT||50|cm|\rOBX|||CD^CONDITION||&Burns|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|E\\T\\R|Main HIS|St. Micheals|20050301081923||ADT^A03|E44159539F03A2E6B6CE27818B010CBCF02042D2FC857B3FBF9E14E5E23E7225|P|2.6|\rEVN||20010918101538||||20100312084336|\rPID|||7380031||Meade^Sabrina||19331114|F||Martian|978 Miller Lane^^Toronto^ON^36461|||||||58-655-410|152-48-747|\rNK1|1|White^Fred|Second Cousin|\rNK1|2|White^Fred|Second Cousin|\rNK1|3|Muir^Fred|Parent|\rNK1|4|Meade^John|Grandchild|\rPV1|||emergency_room^^102|||||^Muir^Fred^F|||||||||||8480283|||||||||||||||||||||||||20100918015518|\rOBX|||WT||42|pounds|\rOBX|||HT^HEIGHT||69|cm|\rOBX|||CD^CONDITION||&Vomiting|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|Lab|Main HIS|St. Micheals|20100303104930||ADT^A05|E5415953B203B95D4DDFF20DB27CBE998EB9ED3ACE8D527E4F73C552718CE545|P|2.6|\rEVN||20130704091203||||20080504010512|\rPID|||9170210||Smith^John||19591112|M||EU|492 Main Rd.^^LA^CA^23571|||||||90-688-425|812-254-718|\rNK1|1|Meade^John|Sibling|\rNK1|2|Adams^Jim|Grandchild|\rPV1|||emergency_room^^105|||||^Meade^Mary^F|||||||||||1118806|||||||||||||||||||||||||20040317040948|\rOBX|||WT||62|pounds|\rOBX|||HT^HEIGHT||53|cm|\rOBX|||CD^CONDITION||&Lacerations|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20090119045213||ADT^A05|E6415953C403C67EEE0BE12AEB0E79F55332138BD2628A416FF18B5207C90446|P|2.6|\rEVN||20060127045353||||20040227105553|\rPID|||1145396||Muir^John||19010407|M||Mixed|343 Miller Lane^^LA^CA^12777|||||||76-94-906|367-495-219|\rNK1|1|Fitzgerald^John|Parent|\rNK1|2|Garland^Jim|Grandchild|\rPV1|||emergency_room^^107|||||^White^Gary^F|||||||||||3891780|||||||||||||||||||||||||20111027011248|\rOBX|||WT||103|pounds|\rOBX|||HT^HEIGHT||50|cm|\rOBX|||CD^CONDITION||&Tuberculosis|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|E\\T\\R|Main HIS|St. Micheals|20040126111909||ADT^A03|E7415953D503C77759FF14CEB06AFD3691F4DEC21A965F628002529A654B0BA6|P|2.6|\rEVN||20041022042033||||20031002053525|\rPID|||2106658||Fitzgerald^Mary||19010809|F||Unknown|454 Main Rd.^^Toronto^ON^23172|||||||21-901-282|60-278-925|\rNK1|1|Smith^Sabrina|Second Cousin|\rNK1|2|Muir^Jim|Grandchild|\rNK1|3|Muir^Tracy|Second Cousin|\rNK1|4|Smith^Sabrina|Second Cousin|\rNK1|5|Garland^Gary|Second Cousin|\rPV1|||emergency_room^^101|||||^Smith^Mary^F|||||||||||5677023|||||||||||||||||||||||||20041009045234|\rOBX|||WT||127|pounds|\rOBX|||HT^HEIGHT||91|cm|\rOBX|||CD^CONDITION||&Heart Palpitations|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|E\\T\\R|Main HIS|St. Micheals|20040519094907||ADT^A03|E94159533400C3C7BDEB5E1DEA6033D9F7077C06471C1DA48CA493DC1ACE2948|P|2.6|\rEVN||20041106112022||||20100502030258|\rPID|||8727783||Muir^Mary||19241004|F||AI|362 Delphi Cres.^^Chicago^IL^94932|||||||31-128-900|702-461-377|\rNK1|1|Adams^Gary|Grandchild|\rNK1|2|Garland^Mary|Sibling|\rNK1|3|Smith^Gary|Sibling|\rPV1|||emergency_room^^103|||||^Garland^John^F|||||||||||9749838|||||||||||||||||||||||||20060220085002|\rOBX|||WT||128|pounds|\rOBX|||HT^HEIGHT||64|cm|\rOBX|||CD^CONDITION||&Blurred Vision|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|E\\T\\R|Main HIS|St. Micheals|20110514081617||ADT^A05|EA4159534300865FE19CBC0618B6E721707C999B27C7F23B4ECC1964885DB2F1|P|2.6|\rEVN||20100225052810||||20110120035012|\rPID|||5372178||Meade^Fred||19140118|M||Unknown|963 Main Rd.^^ST. LOUIS^MO^56458|||||||92-22-639|546-683-919|\rNK1|1|Muir^Fred|Second Cousin|\rNK1|2|Garland^Tracy|Second Cousin|\rPV1|||emergency_room^^104|||||^Garland^Jim^F|||||||||||2042854|||||||||||||||||||||||||20040328070602|\rOBX|||WT||47|pounds|\rOBX|||HT^HEIGHT||112|cm|\rOBX|||CD^CONDITION||&Head Trauma|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|E\\T\\R|Main HIS|St. Micheals|20040118052020||ADT^A04|EB4159535700E9F47D1DE7FEE210FB8CD5E9AD8C12ECF381F4156A2F53445DEF|P|2.6|\rEVN||20020416050227||||20070325025435|\rPID|||6628323||Muir^Gary||19080411|M||Unknown|157 Yonge St.^^ST. LOUIS^MO^67193|||||||70-75-563|725-346-839|\rNK1|1|Meade^Mary|Sibling|\rNK1|2|Muir^Sabrina|Sibling|\rNK1|3|Garland^Mary|Grandchild|\rNK1|4|Meade^Gary|Grandchild|\rNK1|5|Smith^John|Grandchild|\rNK1|6|Fitzgerald^Mary|Parent|\rPV1|||emergency_room^^103|||||^Muir^Sabrina^F|||||||||||4386742|||||||||||||||||||||||||20100707112417|\rOBX|||WT||46|pounds|\rOBX|||HT^HEIGHT||24|cm|\rOBX|||CD^CONDITION||&Dizziness|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20050701042136||ADT^A04|EC4159536B002E57770E0C045D87BC356FF6D82F71B21EC1AE03BF9E1DE185AC|P|2.6|\rEVN||20011115055536||||20090519055618|\rPID|||756547||White^Tracy||19960124|F||Martian|280 Yonge St.^^Toronto^ON^9451|||||||50-735-786|866-147-185|\rNK1|1|White^Fred|Second Cousin|\rNK1|2|Smith^Tracy|Sibling|\rPV1|||emergency_room^^104|||||^Garland^Tracy^F|||||||||||5991054|||||||||||||||||||||||||20010120042111|\rOBX|||WT||76|pounds|\rOBX|||HT^HEIGHT||72|cm|\rOBX|||CD^CONDITION||&Blurred Vision|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20100913080602||ADT^A03|ED4159537F00109734C35961639BDB9D4787AFC4350A0340A3DB736C7C2B175B|P|2.6|\rEVN||20051101085543||||20101104071549|\rPID|||8439156||Adams^Mary||19650105|F||AI|650 Yonge St.^^Toronto^ON^46830|||||||32-102-649|503-835-902|\rNK1|1|Fitzgerald^Gary|Grandchild|\rNK1|2|Smith^John|Second Cousin|\rNK1|3|Meade^Fred|Second Cousin|\rNK1|4|Muir^John|Second Cousin|\rNK1|5|Fitzgerald^John|Sibling|\rPV1|||emergency_room^^108|||||^Fitzgerald^Mary^F|||||||||||5368239|||||||||||||||||||||||||20040219044322|\rOBX|||WT||109|pounds|\rOBX|||HT^HEIGHT||23|cm|\rOBX|||CD^CONDITION||&Stroke|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|E\\T\\R|Main HIS|St. Micheals|20020410100308||ADT^A03|EE415953C100F6FD832F1A10DCF0C924CEF5FCE5D72E21F84D33C84A91B35146|P|2.6|\rEVN||20021117092656||||20010221115401|\rPID|||7940628||Garland^Mary||19060619|F||Martian|236 Miller Lane^^Chicago^IL^37658|||||||51-457-808|780-484-637|\rNK1|1|White^Jim|Second Cousin|\rNK1|2|Adams^John|Second Cousin|\rNK1|3|Garland^Jim|Grandchild|\rNK1|4|Fitzgerald^Fred|Parent|\rNK1|5|White^Tracy|Parent|\rNK1|6|White^Tracy|Grandchild|\rPV1|||emergency_room^^102|||||^White^Jim^F|||||||||||134428|||||||||||||||||||||||||20120812020754|\rOBX|||WT||101|pounds|\rOBX|||HT^HEIGHT||114|cm|\rOBX|||CD^CONDITION||&Poisoning|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20010306115339||ADT^A01|EF415953D6008BC2CADB47EF1B62E263933D1D461B0553C1D8672FA9A9A1C630|P|2.6|\rEVN||20010923073118||||20130101040252|\rPID|||2229915||Adams^Sabrina||19040608|F||EU|734 Delphi Cres.^^Toronto^ON^27130|||||||42-508-887|72-359-557|\rNK1|1|Adams^John|Second Cousin|\rNK1|2|White^Gary|Parent|\rNK1|3|Garland^Sabrina|Sibling|\rNK1|4|Fitzgerald^Jim|Grandchild|\rNK1|5|Smith^Mary|Sibling|\rNK1|6|White^Tracy|Second Cousin|\rPV1|||emergency_room^^107|||||^White^Fred^F|||||||||||2048406|||||||||||||||||||||||||20090728021132|\rOBX|||WT||80|pounds|\rOBX|||HT^HEIGHT||44|cm|\rOBX|||CD^CONDITION||&Stroke|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|Lab|Main HIS|St. Micheals|20130116022021||ADT^A01|F0415953E800C08ECF3F8F97D42CDF120731F79B442D3D7BF707BCD4675E4211|P|2.6|\rEVN||20120622013230||||20011122034419|\rPID|||6681222||Meade^Gary||19790719|M||AI|673 Delphi Cres.^^Toronto^ON^14415|||||||93-260-954|729-226-493|\rNK1|1|Muir^Jim|Grandchild|\rPV1|||emergency_room^^107|||||^Fitzgerald^Mary^F|||||||||||5446089|||||||||||||||||||||||||20020407091321|\rOBX|||WT||53|pounds|\rOBX|||HT^HEIGHT||51|cm|\rOBX|||CD^CONDITION||&Burns|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|E\\T\\R|Main HIS|St. Micheals|20120516030717||ADT^A03|F1415953FB004E5B7635D375C6A6BC6CD8DCB78F4CD3B0122556CE4BBA08CDEA|P|2.6|\rEVN||20010917011557||||20100308035251|\rPID|||5014941||Meade^Mary||19360318|F||Unknown|995 Yonge St.^^Toronto^ON^73314|||||||79-378-296|680-667-427|\rNK1|1|Garland^Mary|Parent|\rNK1|2|Fitzgerald^Sabrina|Second Cousin|\rNK1|3|Muir^Fred|Parent|\rNK1|4|Meade^Tracy|Second Cousin|\rNK1|5|Smith^Sabrina|Sibling|\rPV1|||emergency_room^^106|||||^Adams^Fred^F|||||||||||1473982|||||||||||||||||||||||||20030310082642|\rOBX|||WT||124|pounds|\rOBX|||HT^HEIGHT||104|cm|\rOBX|||CD^CONDITION||&Stroke|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20110621100207||ADT^A01|F24159530D0105E25B5B565AC8E35B90194BF38B98D2DBB72234071E78B33890|P|2.6|\rEVN||20010404114259||||20010110012736|\rPID|||8063967||Garland^Gary||19240117|M||Unknown|836 Delphi Cres.^^Chicago^IL^49829|||||||38-472-954|589-272-414|\rNK1|1|Garland^John|Grandchild|\rNK1|2|Adams^Tracy|Sibling|\rNK1|3|Fitzgerald^Mary|Second Cousin|\rNK1|4|Muir^Tracy|Second Cousin|\rPV1|||emergency_room^^107|||||^Fitzgerald^Mary^F|||||||||||7762805|||||||||||||||||||||||||20120306022352|\rOBX|||WT||89|pounds|\rOBX|||HT^HEIGHT||29|cm|\rOBX|||CD^CONDITION||&Acute Stomach Pain|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|E\\T\\R|Main HIS|St. Micheals|20100916083655||ADT^A05|F341595353012777EACD67B5BC02691679248108A508E498E4558221051C3E24|P|2.6|\rEVN||20040817011306||||20101127045201|\rPID|||94859||Fitzgerald^Gary||19360820|M||AI|73 Delphi Cres.^^ST. LOUIS^MO^52258|||||||15-933-168|988-595-845|\rNK1|1|Meade^Gary|Parent|\rNK1|2|Fitzgerald^Tracy|Sibling|\rPV1|||emergency_room^^100|||||^Muir^Jim^F|||||||||||5781590|||||||||||||||||||||||||20010611050124|\rOBX|||WT||79|pounds|\rOBX|||HT^HEIGHT||97|cm|\rOBX|||CD^CONDITION||&Acute Stomach Pain|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20050813043207||ADT^A05|F441595364010FF6548D73233B538E0A4BDCFCE77DF30DB19A95BBE17D15BBA4|P|2.6|\rEVN||20100501073538||||20130311062016|\rPID|||7832039||Smith^John||19040813|M||AI|97 Delphi Cres.^^LA^CA^70542|||||||23-477-327|591-53-697|\rNK1|1|Smith^Jim|Parent|\rPV1|||emergency_room^^101|||||^Adams^Gary^F|||||||||||3096055|||||||||||||||||||||||||20060609031355|\rOBX|||WT||34|pounds|\rOBX|||HT^HEIGHT||29|cm|\rOBX|||CD^CONDITION||&Tuberculosis|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20060103050130||ADT^A01|F54159537701134743056E566433DA3EB39078CFE44DB248EC0927B56742694C|P|2.6|\rEVN||20030411115259||||20130625063019|\rPID|||4499819||Fitzgerald^Tracy||19340923|F||Unknown|130 Main Rd.^^LA^CA^1102|||||||83-341-173|365-200-165|\rNK1|1|Garland^John|Parent|\rNK1|2|White^Sabrina|Second Cousin|\rNK1|3|Fitzgerald^John|Second Cousin|\rNK1|4|Muir^Sabrina|Sibling|\rPV1|||emergency_room^^104|||||^Garland^Gary^F|||||||||||64279|||||||||||||||||||||||||20131121010831|\rOBX|||WT||106|pounds|\rOBX|||HT^HEIGHT||60|cm|\rOBX|||CD^CONDITION||&Heart Palpitations|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|Lab|Main HIS|St. Micheals|20131104023558||ADT^A04|F64159538701CFBEF72DE6EC65E1D86CF28923DD5E03FD5BF907C48E64E58429|P|2.6|\rEVN||20120726040619||||20051008115959|\rPID|||1123102||Meade^Sabrina||19080806|F||Mixed|539 Delphi Cres.^^ST. LOUIS^MO^35828|||||||44-997-700|214-666-990|\rNK1|1|Meade^Fred|Parent|\rNK1|2|Smith^Sabrina|Grandchild|\rPV1|||emergency_room^^103|||||^White^Mary^F|||||||||||9356863|||||||||||||||||||||||||20010823015250|\rOBX|||WT||79|pounds|\rOBX|||HT^HEIGHT||112|cm|\rOBX|||CD^CONDITION||&Head Trauma|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|E\\T\\R|Main HIS|St. Micheals|20110317042513||ADT^A05|F74159539701339296D34ECA895444FECC8459621AB87CBDE167F7812CBDF798|P|2.6|\rEVN||20011005010232||||20070105092543|\rPID|||7957625||Adams^John||19870112|M||Unknown|648 Miller Lane^^Chicago^IL^82868|||||||44-99-498|790-46-729|\rNK1|1|Fitzgerald^Jim|Second Cousin|\rNK1|2|Smith^John|Sibling|\rNK1|3|Smith^Tracy|Parent|\rNK1|4|Adams^John|Second Cousin|\rPV1|||emergency_room^^103|||||^Smith^Mary^F|||||||||||9961288|||||||||||||||||||||||||20121122114218|\rOBX|||WT||94|pounds|\rOBX|||HT^HEIGHT||93|cm|\rOBX|||CD^CONDITION||&Head Trauma|\r\n",
          "Name": ""
       }
    ]
