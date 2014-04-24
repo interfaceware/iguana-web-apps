@@ -1,6 +1,6 @@
--- The server and the app object are global.
 require 'bedmonitor.app'
 require 'lib.webserver'
+require 'db.sqlite'
 
 function main(Data)
    local Server = lib.webserver.create{
