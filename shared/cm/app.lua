@@ -54,6 +54,8 @@ local TextFile={
    [".xml"]=true,
    [".css"]=true,
    [".vmd"]=true,
+   [".html"]=true,
+   [".htm"]=true,
    [".json"]=true
 }
 
