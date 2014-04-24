@@ -48,10 +48,32 @@ function cm.app.addChannel(R)
    return {success=true}
 end
 
+local TextFile={
+   [".lua"]=true,   
+   [".js"]=true,
+   [".xml"]=true,
+   [".css"]=true,   
+}
+
+local function IsText(FileName)
+   local Ext = FileName:match('.*(%.%a+)$')
+   return TextFile[Ext]      
+end
+
+local function ConvertLF(Content)
+   if os.isWindows() then
+      Content = Content:gsub('\r\n', '\n')
+   end
+   return Content
+end
+
 local function WriteFiles(Root, Tree)
    for Name, Content in pairs(Tree) do
       if type(Content) == 'string' then
          local FileName = Root..'/'..Name
+         if IsText(FileName) then
+            Content = ConvertLF(Content)            
+         end
          os.fs.writeFile(FileName, Content)
       elseif type(Content) == 'table' then
           WriteFiles(Root..'/'..Name, Content)

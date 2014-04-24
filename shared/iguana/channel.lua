@@ -69,7 +69,6 @@ local function BuildTransZip(RepoDir, ProjectDir, TargetGuid, ScratchDir)
    trace(Dir)
    os.ts.time()
    local ZipData2 = filter.zip.deflate(Dir)
-   os.fs.writeFile("C:/project.zip", ZipData2)
    os.ts.time()
    return filter.base64.enc(ZipData2)
 end
