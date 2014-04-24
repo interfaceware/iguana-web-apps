@@ -154,9 +154,7 @@ end
 
 local Access = os.fs.access
 function os.fs.access(Path)
-   if os.isWindows() then
-      Path = Path:gsub('/', '\\')
-   end
+   Path = os.fs.name.toNative(Path)
    return Access(Path)
 end
 
@@ -174,3 +172,11 @@ function os.fs.glob(Path)
       end
    end
 end
+
+Chmod = os.fs.chmod
+function os.fs.chmod(Path, Permission)
+   Path = os.fs.name.toNative(Path)
+   Chmod(Path, Permission)
+end
+
+
