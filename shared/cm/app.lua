@@ -8,7 +8,7 @@ cm = {}
 cm.config = {}
 
 -- Use posix file conventions.
-cm.config.channelExportPath = 'D:/community/iguana-web-apps/'
+cm.config.channelExportPath = '~/community/iguana-web-apps/'
 cm.config.scratchDir = os.fs.tempDir()..'/channelmanager/'
 cm.app = {}
 
@@ -52,7 +52,9 @@ local TextFile={
    [".lua"]=true,   
    [".js"]=true,
    [".xml"]=true,
-   [".css"]=true,   
+   [".css"]=true,
+   [".vmd"]=true,
+   [".json"]=true
 }
 
 local function IsText(FileName)
