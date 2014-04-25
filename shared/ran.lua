@@ -190,7 +190,7 @@ function ran.addCondition(Out)
 end
 
 function ran.RandomMessage()
-   local Out = hl7.message{vmd='example/demo.vmd', name='ADT'} 
+   local Out = hl7.message{vmd='ran/demo.vmd', name='ADT'} 
    ran.scrubMSH(Out.MSH)
    ran.scrubEVN(Out.EVN)
    ran.scrubPID(Out.PID)
