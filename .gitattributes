@@ -10,3 +10,5 @@
 *.js   text
 *.vmd  text
 *.xml  text
+
+*.png binary

@@ -5,6 +5,6 @@
       "ran"
    ],
    "OtherDependencies": [
-      "example/demo.vmd"
+      "ran/demo.vmd"
    ]
 }

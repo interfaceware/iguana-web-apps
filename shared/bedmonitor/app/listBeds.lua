@@ -1,6 +1,6 @@
 
-function bm.app.listBeds(Request)
-   local DB = connect()
+function bedmonitor.app.listBeds(Request)
+   local DB = bedmonitor.db.connect()
    local Data = DB:query{sql="SELECT * FROM bed"}
 
    local Results = {aaData={}, aoColumns={}}
@@ -14,6 +14,7 @@ function bm.app.listBeds(Request)
       local Name = getName(Row)
       local Condition = getCondition(Row)
       Results.aaData[i] = {Row.bed_name:S(), Name, Condition}
+      json.serialize{data=Results.aaData[i],compact=true}
    end
    return Results
 end
@@ -27,15 +28,10 @@ function getName(Row)
 end
 
 function getCondition(Row)
-   local Cond = Row.condition:nodeValue()
-   if Cond == 'NULL' or Cond == '' then 
+   local Cond = Row.condition:S()
+   if Cond == '' then 
       return "N/A" 
    else
       return Cond
    end
-end
-
--- TODO - this belongs in a shared module.
-function connect()
-   return db.connect{api=db.SQLITE, name='bedmonitor', live=true}
 end

@@ -1,5 +1,5 @@
 $(document).ready(function($) {
-   console.log('Load page handling framework!!!');
+   console.log('Load page handling framework.');
    lib.page.init(app.cm.page);
    lib.ajax.errorFunc = cm.help.showError;
 });
@@ -44,7 +44,5 @@ PAGE.listBeds = function() {
       $.ajax(Params);
    }, 3000);
 }
-
-
 
 PAGE.default = PAGE.listBeds;

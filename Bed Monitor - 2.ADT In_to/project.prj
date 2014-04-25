@@ -1,10 +1,11 @@
 {
    "Name": "Bed Monitor File to DB (To Translator)",
    "LuaDependencies": [
-      "db.sqlite"
+      "bedmonitor.db",
+      "node"
    ],
    "OtherDependencies": [
-      "bedtables.vmd",
-      "example/demo.vmd"
+      "app/bedmonitor/bedtables.vmd",
+      "app/bedmonitor/demo.vmd"
    ]
 }

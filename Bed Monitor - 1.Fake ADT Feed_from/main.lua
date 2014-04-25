@@ -9,7 +9,7 @@ function main()
    -- Push the ADT message through to destination
    -- Press 'RandomMessage' on right to navigate
    -- through code
-   Msg, Name = hl7.parse{vmd='example/demo.vmd', data=ran.RandomMessage()}
+   Msg, Name = hl7.parse{vmd='ran/demo.vmd', data=ran.RandomMessage()}
    trace(Msg)
    queue.push{data=Msg:S()}
 end

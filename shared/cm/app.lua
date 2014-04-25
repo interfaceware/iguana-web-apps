@@ -10,7 +10,7 @@ cm = {}
 cm.config = {}
 
 -- Use posix file conventions.
-cm.config.channelExportPath = '~/community/iguana-web-apps/'
+cm.config.channelExportPath = 'D:/community/iguana-web-apps/'
 cm.config.scratchDir = os.fs.tempDir()..'/channelmanager/'
 cm.app = {}
 
@@ -56,6 +56,8 @@ local TextFile={
    [".xml"]=true,
    [".css"]=true,
    [".vmd"]=true,
+   [".html"]=true,
+   [".htm"]=true,
    [".json"]=true
 }
 
@@ -76,7 +78,8 @@ local function OnlyWriteChangedFile(FileName, Content)
          return
       end
    end
-   os.fs.writeFile(FileName, Content)   
+   trace(FileName)
+   os.fs.writeFile(FileName, Content, 666)
 end
 
 local function WriteFiles(Root, Tree)

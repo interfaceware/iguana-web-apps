@@ -1,10 +1,12 @@
 require 'bedmonitor.app'
+require 'bedmonitor.db'
 require 'lib.webserver'
-require 'db.sqlite'
+
+bedmonitor.db.init()
 
 function main(Data)
    local Server = lib.webserver.create{
-      actions = bm.actions,
+      actions = bedmonitor.actions,
       default = 'app/bedmonitor/index.html',
       -- If the test property is defined then static files are pulled from the sandbox 
       -- rather than from the mile-stoned versioned copies of the files.  In production

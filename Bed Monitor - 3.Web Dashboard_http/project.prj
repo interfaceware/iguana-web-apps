@@ -3,7 +3,7 @@
    "LuaDependencies": [
       "bedmonitor.app",
       "bedmonitor.app.listBeds",
-      "db.sqlite",
+      "bedmonitor.db",
       "file",
       "lib.webserver",
       "node",

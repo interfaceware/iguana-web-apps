@@ -10,10 +10,8 @@ function main(Data)
    -- rather than from the mile-stoned versioned copies of the files.  In production
    -- the test propery should be commmented out.
    --test='admin'    
-}
+}   
  
-   iguana.channelConfig{guid=iguana.channelGuid()}
-   
    iguana.stopOnError(false) 
    if iguana.isTest() then
       Server:serveRequest{data=Data}
