@@ -1,0 +1,20 @@
+{
+   "Name": "Unit test example (From HTTP)",
+   "LuaDependencies": [
+      "iguanaServer",
+      "regressions",
+      "regressions.config",
+      "regressions.core",
+      "regressions.presentation",
+      "server.simplewebserver",
+      "server.utils",
+      "spin",
+      "spin.conf",
+      "spin.core",
+      "stringutil",
+      "zip"
+   ],
+   "OtherDependencies": [
+      
+   ]
+}
