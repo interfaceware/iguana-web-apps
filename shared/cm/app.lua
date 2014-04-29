@@ -10,7 +10,7 @@ cm = {}
 cm.config = {}
 
 -- Use posix file conventions.
-cm.config.channelExportPath = 'D:/community/iguana-web-apps/'
+cm.config.channelExportPath = '/Users/jsm/iguanarepo'
 cm.config.scratchDir = os.fs.tempDir()..'/channelmanager/'
 cm.app = {}
 
