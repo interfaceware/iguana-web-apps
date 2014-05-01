@@ -1,0 +1,23 @@
+{
+   "Name": "Global dashboard (From HTTP)",
+   "LuaDependencies": [
+      "dashboard.store",
+      "file",
+      "lib.webserver",
+      "node"
+   ],
+   "OtherDependencies": [
+      "app/monitor/dashboard.css",
+      "app/monitor/index.html",
+      "app/monitor/main.js",
+      "arrow.gif",
+      "icon_DB.gif",
+      "icon_FILE.gif",
+      "icon_HTTPS.gif",
+      "icon_LLP.gif",
+      "icon_PLG-N.gif",
+      "icon_QUE.gif",
+      "icon_TRANS.gif",
+      "status.vmd"
+   ]
+}
