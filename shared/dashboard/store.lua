@@ -2,8 +2,6 @@ require 'node'
 local dashboard = {}
 dashboard.store = {}
 
-dashboard.presentation = require 'dashboard.presentation'
-
 ds = dashboard.store
 
 ds.threshold = 900
@@ -23,6 +21,15 @@ function ds.reset(C)
       status INTEGER,
       PRIMARY KEY (server_guid))]], live=true} 
    return {status='OK'}
+end
+
+function ds.init()
+   local Connection = ds.connection()
+   local Result = Connection:query{sql='SELECT * FROM sqlite_master WHERE type="table" and name="status"', live=true}
+   Connection:close()
+   if #Result == 0 then
+      ds.reset();
+   end
 end
 
 function ds.mapRequest(T, R)
@@ -225,11 +232,11 @@ function ds.css(R)
    return dashboard.presentation.css(R)
 end
 
-local ActionTable={
-   ['/monitor/send']=ds.receiveData,
-   ['/monitor/summary']=ds.summary,
-   ['/monitor/detail']=ds.detail,
-   ['/monitor/reset']=ds.reset
+ds.Actions={
+   ['send']=ds.receiveData,
+   ['summary']=ds.summary,
+   ['detail']=ds.detail,
+   ['reset']=ds.reset
 }
 
 local ContentTypeMap = {
