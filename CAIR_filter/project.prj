@@ -1,0 +1,9 @@
+{
+   "Name": "Cair (Filter)",
+   "LuaDependencies": [
+      "node"
+   ],
+   "OtherDependencies": [
+      "vxu.vmd"
+   ]
+}

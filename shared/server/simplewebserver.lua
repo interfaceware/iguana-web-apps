@@ -19,6 +19,7 @@ function ws.doJsonAction(R)
          ws.serveError(Result.error, Result.code)
          return false
       end
+      trace(Result)
       Result = json.serialize{data=Result}
       net.http.respond{body=Result, entity_type='text/json'}   
       return true
@@ -62,12 +63,12 @@ function ws.serveError(ErrMessage, Code, Stack, Data)
    if Data then 
       Body.data = Data 
    end
-   net.http.respond{code = Code, body = json.serialize{data = Body}, entity_type = 'text/json'}
-   -- Only log internal errors
+      -- Only log internal errors
    if Code > 499 then
       local ErrId = queue.push{data = Data}
       iguana.logError(Stack .. '\n' .. Data, ErrId)
    end
+   net.http.respond{code = Code, body = json.serialize{data = Body}, entity_type = 'text/json'}
 end
 
 function ws.template(Name, Content)

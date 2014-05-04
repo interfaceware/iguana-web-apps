@@ -62,7 +62,7 @@ function os.fs.tempDir()
    return os.fs.name.fromNative(Name):addDir()
 end
 
-function os.fs.writeFile(Name, Content)
+function os.fs.writeFile(Name, Content, Permissions)
    Name = os.fs.abspath(Name)
    local Parts = Name:split('/')
    local Dir = ''
@@ -70,14 +70,17 @@ function os.fs.writeFile(Name, Content)
       Dir = Dir..Parts[i]..'/'
       trace(Dir)
       if not os.fs.dirExists(Dir) then
-         os.fs.mkdir(Dir)
+         os.fs.mkdir(Dir, 777)
       end
    end
-   os.fs.access(Name, 'w')
+   os.fs.access(Name, 'w') 
    local F, Err = io.open(Name, "wb+")
    if not F then error("Unable to write to "..Err) end
    F:write(Content)
    F:close()
+   if Permissions then
+      os.fs.chmod(Name, Permissions)
+   end
 end
 
 
@@ -176,7 +179,8 @@ end
 Chmod = os.fs.chmod
 function os.fs.chmod(Path, Permission)
    Path = os.fs.name.toNative(Path)
-   Chmod(Path, Permission)
+   
+   if Chmod then Chmod(Path, Permission) end
 end
 
 

@@ -1,5 +1,5 @@
 $(document).ready(function($) {
-   console.log('Load page handling framework!!!');
+   console.log('Load page handling framework.');
    lib.page.init(app.cm.page);
    lib.ajax.errorFunc = cm.help.showError;
 });
@@ -35,16 +35,21 @@ PAGE.listBeds = function() {
 
    Params.success = function (Data) {
       var ChannelsTbl = $('#channels_list_table').dataTable();
-      for (var i = 0; i < Data.aaData.length; i++) {
-         ChannelsTbl.fnUpdate(Data.aaData[i], i);
+      var DataLength = Data.aaData.length;
+      var TableLength = ChannelsTbl.fnGetData().length;
+      var Row = 0;
+      for ( ; Row < TableLength; Row++) {
+         ChannelsTbl.fnUpdate(Data.aaData[Row], Row);
       }
+
+      for ( ; Row < DataLength; Row++) {
+         ChannelsTbl.fnAddData(Data.aaData[Row]);
+      };
    };
    
    setInterval(function() {
       $.ajax(Params);
    }, 3000);
 }
-
-
 
 PAGE.default = PAGE.listBeds;

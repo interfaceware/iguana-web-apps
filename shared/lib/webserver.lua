@@ -2,6 +2,8 @@ if not lib then lib = {} end
 
 lib.webserver = {}
 
+require 'file'
+
 local ws = lib.webserver
 
 local webMT = {__index=lib.webserver}

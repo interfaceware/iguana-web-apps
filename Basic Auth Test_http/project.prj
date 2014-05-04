@@ -1,0 +1,10 @@
+{
+   "Name": "Basic Auth Test (From HTTP)",
+   "LuaDependencies": [
+      "basicauth",
+      "stringutil"
+   ],
+   "OtherDependencies": [
+      
+   ]
+}

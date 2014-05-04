@@ -371,6 +371,7 @@ function watchHash() {
          return;
       }
    } else {
+      breadcrumbs(Hash, Vars);
       showMain();
    } 
 }   
@@ -394,9 +395,15 @@ function breadcrumbs(Hash, Vars) {
 
 function checkError(Error, Status, Message) {
    console.log(Error);
-   console.log(Error.responseJSON);
-   console.log(Error.responseJSON.stack);
-   $('#error').html("Error: " + Error.responseJSON.error + ' <a href="/regression_tests">Back to main screen</a>').show();
+   var ErrorString;
+   if (Error.responseJSON) {
+      console.log(Error.responseJSON);
+      console.log(Error.responseJSON.stack);
+      ErrorString = Error.responseJSON.error;
+   } else {
+      ErrorString = Error.responseText;
+   }
+   $('#error').html("Error: " + ErrorString + ' <a href="/regression_tests">Back to main screen</a>').show();
 }
 
 function doTests(Guid, Callback) {
@@ -439,7 +446,7 @@ function offerToBuild(Guid, index, Callback) {
    $("a#generate").click(function(event) {
       event.preventDefault();
       $.ajax({
-         url: "/regression_tests/build?channel=" + Tank.Guids[index][3],
+         url: "/regression_tests/build?channel=" + Guid,
          success: function(Data) {
             Tank.Guids[index][2] = true;
             console.log(Tank.Guids[index][2]);

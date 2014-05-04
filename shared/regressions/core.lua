@@ -19,7 +19,7 @@ local function getTranslatorGuid(ChannelGuid)
    C = regressions.core.loadChannel(ChannelGuid)
    if C.channel.use_message_filter:nodeValue() ~= 'false' then
       if tostring(C.channel.message_filter.translator_guid) == '00000000000000000000000000000000' then
-         server.serveError('Channel ' .. tostring(C.channel.name) ..' does not have a filter with a saved milestone.', 400)
+         error{error = 'Channel ' .. tostring(C.channel.name) ..' does not have a filter with a saved milestone.', code = 400}
         return  
       end
       return C.channel.message_filter.translator_guid
@@ -51,20 +51,6 @@ end
 
 local REDLIGHT = '<div class="status-red"></div>'
 local GREENLIGHT = '<div class="status-green"></div>'
-
--- This table holds an in-memory tree of all the files making up a translator instance.
-regressions.TheTrans = {}
-
-function regressions.core.cleanConfig()
-   regressions.TheTrans = {}
-end
-
--- Pull a script out of another translator and execute it
-function regressions.core.require(ModName)
-   local ReqScript = regressions.TheTrans.shared[ModName .. '.lua']
-   local MF = loadstring(ReqScript)
-   return MF()
-end
 
 
 ------------
@@ -105,7 +91,7 @@ function regressions.core.loadChannels()
       end
       
    else
-      return {"Error"}
+      error{error = "Could not load channel list", code = 500}
    end
    local Fields = {
       {['sTitle'] = 'Name', ['sType'] = 'html', ['sWidth'] = '40%'},
@@ -118,32 +104,35 @@ function regressions.core.loadChannels()
 end
 
 -- /regression_tests/run_tests?channel={GUID}
-function regressions.core.runTests(Request) 
+function regressions.core.runTests(Request)
    local Channel = Request.get_params.channel
    local ChannelName = Request.get_params.name or ''
    if not checkGuid(Channel) then 
-      return {error = "Sorry, channel " .. ChannelName .. " not found", code = 404}
+      error{error = "Sorry, channel " .. ChannelName .. " not found", code = 404}
    end
    
    -- Actully run the tests
-   Results = regressions.core.load(Channel)
-   return Results.error and Results or regressions.core.formatResults(Results, Channel, ChannelName)
+   regressions.core.load(Channel)
+   local Results = regressions.core.compare()
+   return regressions.core.formatResults(Results, Channel, ChannelName)
 end
 
 -- /regression_tests/build?channel={GUID}
 function regressions.core.build(Request) 
    local Channel = Request.get_params.channel
    if not checkGuid(Channel) then 
-      return {error = "Bad Channel GUID", code = 400}
+      error{error = "Bad Channel GUID", code = 400}
    end
-   return regressions.core.buildExpected(Channel)
+   regressions.core.load(Channel)
+   local Translator = getTranslatorGuid(Channel) 
+   return regressions.core.buildExpected(Translator:nodeValue())
 end
 
 -- /regression_tests/edit_result
 function regressions.core.editResult(Request) 
    local Translator = Request.post_params.t_guid
    if not checkGuid(Translator) then 
-      return {error = "Bad Translator GUID", code = 400}
+      error{error = "Bad Translator GUID", code = 400}
    end
    return regressions.core.changeExpected(Translator, Request.post_params.sd_idx, regressions.core.restoreLineEnds(Request.post_params.txt))
 end
@@ -153,34 +142,52 @@ end
 -- CHANNEL AND TRANSLATOR INFO TOOLS
 ------------
 
--- Exports a translator instance into an in-memory tree
-function regressions.core.loadTranslator(TGuid)
-   local Guid = tostring(TGuid)
-   local Config = net.http.post{url='localhost:' .. app.config.ig['web_config']['port'] .. '/export_project',
-                       auth={password = app.config.creds.pass, username = app.config.creds.user},
-                       parameters={guid=Guid, sample_data='true'}, 
-                       live=true}
-
-   local ZipFile = filter.base64.dec(Config)
-   regressions.TheTrans = filter.zip.inflate(ZipFile)
-   trace(regressions.TheTrans)
-   local MainScript = regressions.TheTrans[Guid]["main.lua"]
-   
-   MainScript = MainScript:gsub("function main", "function originalMain")
-   trace(MainScript) 
-   require = regressions.core.require
-   local MF = loadstring(MainScript)
-   MF()
+-- Takes a Zip-structure tree and returns a 
+-- simpler one in the format the spinner likes.
+function climbTree(Node) 
+   local Node = Node and Node or {}
+   local NewNode = {}
+   for Name, Val in pairs(Node) do 
+      trace(Name)
+      if type(Val) == 'table' then 
+         NewNode[Name] = climbTree(Val)
+      end
+      if type(Val) == 'string' and not Name:find('::') then 
+         NewNode[Name] = Val
+      end
+   end
+   return NewNode
 end
 
--- Pulls sample data out of the in-memory JSON string into a lua table
-function regressions.core.loadSample(TGuid)
+-- Makes a simplified list of sample data
+function trimSamples(Complex) 
+   local Simple = {}
+   for i = 1, #Complex do 
+      Simple[i] = Complex[i].Message
+   end
+   return Simple
+end
+
+function regressions.core.overloadTranslator(TGuid)
    local Guid = tostring(TGuid)
-   local SampleData = regressions.TheTrans[Guid]["samples.json"]
-   if not SampleData then 
-      return {}
-   end 
-   return json.parse{data=SampleData}.Samples or {}
+   local Config = spin.Iggy:exportProject{guid = Guid}
+   local ZipFile = filter.base64.dec(Config)
+   local Tree = filter.zip.inflate(ZipFile)
+   local Samples = json.parse{data = Tree[Guid]["samples.json"]}
+   local SimpleTree = {
+      ['main.lua'] = Tree[Guid]['main.lua'],
+      shared = climbTree(Tree.shared),
+      other =  climbTree(Tree.other)
+   }
+   trace(SimpleTree)
+   regressions.DataSet = json.parse(Tree[Guid]["samples.json"]).Samples
+   trace(regressions.DataSet)
+   return regressions.Trans:overload(SimpleTree)
+end
+
+-- Runs the current dataset through the overloaded translator.
+function regressions.core.getActuals()
+   return regressions.Trans:run(trimSamples(regressions.DataSet), {OneForOne = true})
 end
 
 -- Pulls expected results from disk
@@ -201,7 +208,7 @@ function regressions.core.loadChannel(ChannelGuid)
                  auth={password='password', username='admin'},
                 parameters={guid=ChannelGuid, compact=false}, live=true}
    if (ResponseCode ~= 200) then
-      return {error = Channel}
+      error{error = Channel, code = ResponseCode}
    end
    return xml.parse{data = Channel}
 end
@@ -215,7 +222,7 @@ function regressions.core.changeExpected(TGuid, SDidx, NewText)
    --trace(ExpectedFile)
    local Ex = io.open(ExpectedFile, 'r')
    if not Ex then 
-      return {error = "Could not open " .. ExpectedFile 
+      error{error = "Could not open " .. ExpectedFile 
                .. ", the file that should hold expected test results.", code = 500}
    end
    local ExText = Ex:read('*a')
@@ -225,37 +232,40 @@ function regressions.core.changeExpected(TGuid, SDidx, NewText)
    for Input, Tree in pairs(ExTree) do
       trace(Tree['i'])   
       if Tree['i'] == SDidx then
-         Tree['output'] = NewText
+         Tree['output']['data'] = NewText
          Ex = io.open(ExpectedFile, 'w+')
          Ex:write(json.serialize{data=ExTree})
          Ex:close()
          return {status="OK"}
       end
    end
-   return {error="Saving expected results to " 
+   error{error="Saving expected results to " 
            .. ExpectedFile .. " did not succeed.", code = 500}
 end
 
 -- Creates or overwrites an expected results file on disk
-function regressions.core.saveExpected(TGuid, Actual)  
+function regressions.core.saveExpected(TGuid, Expected)  
    local ExpectedFile = regressions.config.WorkTank .. TGuid .. '.json'
    trace(ExpectedFile)
    local F = io.open(ExpectedFile, 'w+')
-   F:write(json.serialize{data=Actual})
-   F:close()      
+   F:write(json.serialize{data=Expected})
+   F:close()
 end
 
 -- Makes a set of expected results by copying the actuals
 function regressions.core.buildExpected(TGuid)
-   regressions.core.loadTranslator(TGuid)
-   local Input = regressions.core.loadSample(TGuid)
-   queue.reset()
+   local Expected = {}
+   local Input = regressions.DataSet
+   local Actuals = regressions.Actuals
    for i=1, #Input do
-      queue.setCurrent(Input[i].Message, i, Input[i].Name)
-      originalMain(Input[i].Message)
+      Expected[Input[i].Message] = {
+         i = i,
+         name = Input[i].Name,
+         output = Actuals[i]
+      }
    end
-   regressions.core.saveExpected(TGuid, queue.results())
-   return {status="OK"}
+   regressions.core.saveExpected(TGuid, Expected)
+   return Expected
 end
 
 
@@ -267,45 +277,58 @@ end
 -- This is where most of the action happens. Takes a channel, finds the
 -- relevent translator, then runs the regression tests against that translator
 function regressions.core.load(ChannelGuid)
+   local OneTime = spin.findASandbox()
+   regressions.Trans = spin.getTranslator(OneTime)
+   regressions.TestingCGuid = ChannelGuid
+   regressions.DataSet = {}
+   regressions.Actuals = {}
+   regressions.Expected = {}
+   
    local TGuid = getTranslatorGuid(ChannelGuid)
    if TGuid then
-      regressions.core.loadTranslator(TGuid)
-      return regressions.core.testTranslator(TGuid)
+      regressions.TestingTGuid = TGuid:nodeValue()
+      local Success, Result = pcall(function()
+            regressions.core.overloadTranslator(TGuid) 
+         end)
+      if not Success then 
+         error{error = "Could not overload Sandbox Channel " .. ChannelGuid, code = 500} 
+      end
+      regressions.Actuals = regressions.core.getActuals()
+      regressions.Expected = regressions.core.loadExpected(TGuid)
+      return
    end
-   return {error = 'Channel ' .. tostring(C.channel.name) ..' does not use a translator filter so this regression test is of no use.', code = 400}
+   error{error = 'Channel ' .. tostring(C.channel.name) ..' does not use a translator filter so this regression test is of no use.', code = 400}
 end
 
 -- Pulls the actual and expected results together
 function regressions.core.testTranslator(TGuid)  
-   local Input = regressions.core.loadSample(TGuid)
-   queue.reset()
    local Expected = regressions.core.loadExpected(TGuid)
-   queue.setExpected(Expected)
-   for i=1, #Input do
-      queue.setCurrent(Input[i].Message, i, Input[i].Name)
-      originalMain(Input[i].Message)
-   end
-   local Actual = queue.results() 
    return regressions.core.compare(Expected, Actual)
 end
 
 -- Iterate through the results and evaulate each test
-function regressions.core.compare(Expected, Actual) 
+function regressions.core.compare()
+   local Data = regressions.DataSet
+   local Actuals = regressions.Actuals
+   local Expected = regressions.Expected
+   trace(Expected)
    local Result = {}
    if not next(Expected) then
-      return {error = "No expected test result set exists for this translator"}
+      error{error = "No expected test result set exists for this translator", code = 404}
    end
-   for Input, AOut in pairs(Actual) do
-      Result[AOut.i] = {r = 'Y', name = AOut.name, Act = regressions.core.hideLineEnds(AOut.output)}
+   for i = 1, #Data do
+      local Input = Data[i].Message
+      Result[i] = {r = 'Y', name = Data[i].name and Data[i].name or '', Act = regressions.core.hideLineEnds(Actuals[i].data)}
+      trace(Result)
       local EOut = Expected[Input]
-      trace(EOut)
+      trace(EOut.output.data)
       if EOut then 
-         Result[AOut.i]['Exp'] = regressions.core.hideLineEnds(EOut.output)
+         Result[i]['Exp'] = regressions.core.hideLineEnds(EOut.output.data)
       else 
-         Result[AOut.i]['Exp'] = 'NO EXPECTED RESULT EXISTS FOR THIS TEST'
+         Result[i]['Exp'] = 'NO EXPECTED RESULT EXISTS FOR THIS TEST'
       end
-      if EOut.output ~= AOut.output then
-         Result[AOut.i]['r'] = 'N'
+      if EOut.output.data ~= Actuals[i].data then
+         Result[i]['r'] = 'N'
       end
    end
    return Result
@@ -348,6 +371,9 @@ local LineEndings = {
 }
 
 function regressions.core.hideLineEnds(TheString) 
+   if not TheString then 
+      return nil 
+   end
    TheString = string.gsub(TheString, '\\', '\\\\')
    for Real, Fake in pairs(LineEndings) do
       TheString = string.gsub(TheString, Real, Fake)
@@ -357,6 +383,9 @@ function regressions.core.hideLineEnds(TheString)
 end
 
 function regressions.core.restoreLineEnds(TheString)
+   if not TheString then 
+      return nil 
+   end
    for Real, Fake in pairs(LineEndings) do
       TheString = string.gsub(TheString, Real, '')
       TheString = string.gsub(TheString, Fake, Real)
@@ -364,34 +393,6 @@ function regressions.core.restoreLineEnds(TheString)
    TheString = string.gsub(TheString, '\\\\', '\\')
    return TheString
 end
-
-
-
-------------
--- TOOLS SPECIFIC TO HL7 PARSING IN TESTED CHANNELS
-------------
-
-function regressions.core.findVmd(Node, Path)
-   local Pieces = Path:split('/')
-   for i = 1, #Pieces do
-      trace(Pieces[i])
-      Node = Node[Pieces[i]]
-   end
-   return Node
-end
-
-local originalHl7Parse = hl7.parse
-function hl7.parse(T)
-   T.vmd_definition = regressions.core.findVmd(regressions.TheTrans.other, T.vmd)
-   return originalHl7Parse(T)
-end
-
-local originalHl7Message = hl7.message
-function hl7.message(T)
-   T.vmd_definition = regressions.core.findVmd(regressions.TheTrans.other, T.vmd)
-   return originalHl7Message(T)
-end
-
 
 
 return app

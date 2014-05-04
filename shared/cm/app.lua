@@ -4,11 +4,13 @@ require 'iguana.channel'
 require 'node'
 require 'iguanaServer'
 
+-- A change
+
 cm = {}
 cm.config = {}
 
 -- Use posix file conventions.
-cm.config.channelExportPath = '~/community/iguana-web-apps/'
+cm.config.channelExportPath = '/Users/jsm/iguanarepo'
 cm.config.scratchDir = os.fs.tempDir()..'/channelmanager/'
 cm.app = {}
 
@@ -77,8 +79,7 @@ local function OnlyWriteChangedFile(FileName, Content)
       end
    end
    trace(FileName)
-   os.fs.writeFile(FileName, Content)
-   os.fs.chmod(FileName, 666)
+   os.fs.writeFile(FileName, Content, 666)
 end
 
 local function WriteFiles(Root, Tree)
