@@ -52,6 +52,7 @@ end
 local function BuildTransZip(RepoDir, ProjectDir, TargetGuid, ScratchDir)
    local Dir = {}
    local MainDir = RepoDir..'/'..ProjectDir..'/'
+   MainDir = os.fs.abspath(MainDir)
    for K,V in os.fs.glob(MainDir..'*') do
       local Content = os.fs.readFile(K)
       AddFile(Dir,TargetGuid..'/'..K:sub(#MainDir), Content)
