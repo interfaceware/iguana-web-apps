@@ -1,14 +1,15 @@
 
 require 'stringutil'
 
+local BasicAuth = {}
+
 local function getCreds(AuthHeader)
    local Auth64Str = AuthHeader:sub(#"Basic " + 1)
    local Creds = filter.base64.dec(Auth64Str):split(":")
    return Creds[1], Creds[2]   
 end
 
--- TODO - needs to use a module
-function isAuthorized(Request)
+function BasicAuth.isAuthorized(Request)
    local AuthHeader = Request.headers.Authorization
    if not AuthHeader then
       return false
@@ -16,7 +17,7 @@ function isAuthorized(Request)
 
    local Name, Pass = getCreds(AuthHeader)
    
-   -- Note that this requires Iguana 5.6.4 or above for this call
+   -- webInfo requires Iguana 5.6.4 or above
    local WebInfo = iguana.webInfo()
    local Status, Code = net.http.post{
       url=WebInfo.ip..":"..WebInfo.web_config.port.."/status",
@@ -30,9 +31,11 @@ function isAuthorized(Request)
    end   
 end
 
-function requireAuthorization()
+function BasicAuth.requireAuthorization()
    net.http.respond{
       code=401,
-      headers={["WWW-Authenticate"]='Basic realm=localhost:6547/auth'}, 
+      headers={["WWW-Authenticate"]='Basic realm=Protected'}, 
       body="Please Authenticate"}
 end
+
+return BasicAuth

@@ -1,11 +1,11 @@
-require 'basicauth'
+ba = require 'basicauth'
 
 function main(Data)
    local HttpMsg = net.http.parseRequest{data=Data}
    
-   if isAuthorized(HttpMsg) then
+   if ba.isAuthorized(HttpMsg) then
       net.http.respond{body='Welcome!'}
    else
-      requireAuthorization()
+      ba.requireAuthorization()
    end
 end
