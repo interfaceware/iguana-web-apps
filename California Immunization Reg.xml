@@ -1,0 +1,11 @@
+<channel name="California Immunization Reg" guid="C3B2A80338A1CA040F96397449931C28" description="" start_automatically="true" logging_level="1" use_message_filter="false">
+   <to_mapper guid="369F7AEE8876442AC4D96DD9187C8A0C" use_most_recent_milestone="true" milestone="">
+      <dequeue_list>
+         <dequeue source_name="self" dequeue_guid="B26728CDF61B109D747950EF17B7C619"></dequeue>
+      </dequeue_list>
+   </to_mapper>
+   <from_mapper guid="6CD374F92BAFB3524C3EF104C1CCEE41" use_most_recent_milestone="true" milestone="" poll_time="10000"></from_mapper>
+   <message_filter filter_after_logging="true" log_pre_post_filter_message="true" filter_vmd_path="" transformation_mode="0" scripted_transformation_configuration_name="default" incoming_configuration_name="" outgoing_configuration_name="" error_handling="0" use_translator_filter="true" translator_guid="00000000000000000000000000000000" translator_milestone="" translator_use_most_recent_milestone="true">
+      <ignored_message message_name=""></ignored_message>
+   </message_filter>
+</channel>

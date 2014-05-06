@@ -1,0 +1,9 @@
+{
+   "Name": "California Immunization Reg (To Translator)",
+   "LuaDependencies": [
+      "node"
+   ],
+   "OtherDependencies": [
+      "cair/vxu.vmd"
+   ]
+}
