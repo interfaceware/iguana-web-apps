@@ -7,6 +7,7 @@ local function getCreds(AuthHeader)
    return Creds[1], Creds[2]   
 end
 
+-- TODO - needs to use a module
 function isAuthorized(Request)
    local AuthHeader = Request.headers.Authorization
    if not AuthHeader then
@@ -15,6 +16,7 @@ function isAuthorized(Request)
 
    local Name, Pass = getCreds(AuthHeader)
    
+   -- Note that this requires Iguana 5.6.4 or above for this call
    local WebInfo = iguana.webInfo()
    local Status, Code = net.http.post{
       url=WebInfo.ip..":"..WebInfo.web_config.port.."/status",

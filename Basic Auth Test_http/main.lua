@@ -1,4 +1,3 @@
-
 require 'basicauth'
 
 function main(Data)
