@@ -11,7 +11,7 @@ cm.config = {}
 
 -- Use posix file conventions.
 cm.config.channelExportPath = '/Users/jsm/iguanarepo'
-cm.config.scratchDir = os.fs.tempDir()..'/channelmanager/'
+cm.config.scratchDir = os.fs.tempDir()..'/chanman2/'
 cm.app = {}
 
 require 'cm.app.listChannels'

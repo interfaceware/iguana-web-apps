@@ -3,6 +3,10 @@
       {
          "Message": "GET /chanman2/export_channel?name=CAIR HTTP/1.1\r\nHost: 192.168.0.187:6547\r\nAccept-Encoding: gzip, deflate\r\nUser-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.75.14 (KHTML, like Gecko) Version/7.0.3 Safari/537.75.14\r\nReferer: http://192.168.0.187:6547/chanman2/\r\nAccept-Language: en-us\r\nX-Requested-With: XMLHttpRequest\r\n\r\n",
          "Name": ""
+      },
+      {
+         "Message": "GET /chanman2/addChannel?name=CAIR&with=CAIR HTTP/1.1\r\nHost: 192.168.1.4:6544\r\nUser-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:29.0) Gecko/20100101 Firefox/29.0\r\nAccept: */*\r\nAccept-Language: en-US,en;q=0.5\r\nAccept-Encoding: gzip, deflate\r\nX-Requested-With: XMLHttpRequest\r\nReferer: http://192.168.1.4:6544/chanman2/\r\nCookie: version_notification_close_date=; Iguana-SessionID-8E438D5BADE9312DACC627BE3127C3A4-6543=830EF281ACE31B83E1C9B800C2AAAC99; EDTprojectPaneWidth=224px; EDTdockHeight=101px; Mapper-SessionId=830EF281ACE31B83E1C9B800C2AAAC99\r\nConnection: keep-alive\r\n\r\n",
+         "Name": ""
       }
    ]
 }

@@ -1,6 +1,7 @@
 {
    "Name": "Global dashboard (From HTTP)",
    "LuaDependencies": [
+      "basicauth",
       "cm.app",
       "cm.app.listChannels",
       "cm.config",
