@@ -1,0 +1,7 @@
+<channel name="test.file" guid="6B7827C09ED02CA98960C27D4D5DA0EF" description="" start_automatically="false" logging_level="1" use_message_filter="false">
+   <to_channel></to_channel>
+   <from_http type="mapper" guid="16DF40AFDFBD89F85B71451CA5D85734" use_most_recent_milestone="true" milestone="" mapper_url_path="file_unit_test" instance_count="1"></from_http>
+   <message_filter filter_after_logging="false" log_pre_post_filter_message="true" filter_vmd_path="" transformation_mode="0" scripted_transformation_configuration_name="default" incoming_configuration_name="" outgoing_configuration_name="" error_handling="0" use_translator_filter="true" translator_guid="00000000000000000000000000000000" translator_milestone="" translator_use_most_recent_milestone="true">
+      <ignored_message message_name=""></ignored_message>
+   </message_filter>
+</channel>

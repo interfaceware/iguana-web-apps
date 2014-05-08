@@ -1,0 +1,12 @@
+{
+   "Name": "File Unit Test (From HTTP)",
+   "LuaDependencies": [
+      "file",
+      "stringutil",
+      "test.file",
+      "unittest"
+   ],
+   "OtherDependencies": [
+      
+   ]
+}
