@@ -49,7 +49,7 @@ local function AddFile(Dir, File, Content)
    SubDir[Parts[#Parts]] = Content
 end
 
-local function BuildTransZip(RepoDir, ProjectDir, TargetGuid, ScratchDir)
+local function BuildTransZip(RepoDir, ProjectDir, TargetGuid)
    local Dir = {}
    local MainDir = RepoDir..'/'..ProjectDir..'/'
    MainDir = os.fs.abspath(MainDir)
@@ -78,7 +78,6 @@ function iguana.channel.add(T)
    local RepoDir = T.dir
    local Definition = T.definition
    local Api = T.api
-   local ScratchDir = T.scratch
    os.ts.time()
 
    local ChanDef = ChannelDefinition(RepoDir, Definition)
@@ -92,7 +91,7 @@ function iguana.channel.add(T)
    os.ts.time()
    for TransType,Guid in pairs(TranList) do
       local Start = os.ts.time()
-      local ZipData = BuildTransZip(RepoDir, Definition..'_'..TransType, Guid, ScratchDir)
+      local ZipData = BuildTransZip(RepoDir, Definition..'_'..TransType, Guid)
       local EndTime = os.ts.time()
       trace(EndTime-Start)
       os.ts.time()

@@ -1,12 +1,14 @@
 require 'cm.app'
 require 'lib.webserver'
-ba = require 'basicauth'
+basicauth = require 'basicauth'
 
 function main(Data)
    
    local HttpMsg = net.http.parseRequest{data=Data}
-   
-   if ba.isAuthorized(HttpMsg) then
+ 
+   if not basicauth.isAuthorized(HttpMsg) then
+      basicauth.requireAuthorization()
+   else
       local Server = lib.webserver.create{
          actions=cm.actions,
          default='app/cm/index.html',
@@ -29,7 +31,5 @@ function main(Data)
             net.http.respond{body=json.serialize{data=ErrObj}, entity_type='text/json'}
          end
       end
-   else
-      ba.requireAuthorization()
    end
 end

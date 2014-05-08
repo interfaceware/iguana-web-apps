@@ -3,25 +3,27 @@ require 'stringutil'
 
 local BasicAuth = {}
 
-local function getCreds(AuthHeader)
-   local Auth64Str = AuthHeader:sub(#"Basic " + 1)
+local function getCreds(Headers)
+   if not Headers.Authorization then
+      return false
+   end
+   
+   local Auth64Str = Headers.Authorization:sub(#"Basic " + 1)
    local Creds = filter.base64.dec(Auth64Str):split(":")
-   return Creds[1], Creds[2]   
+   return {username=Creds[1], password=Creds[2]}
 end
 
 function BasicAuth.isAuthorized(Request)
-   local AuthHeader = Request.headers.Authorization
-   if not AuthHeader then
+   local Credentials = getCreds(Request.headers)
+   if not Credentials then
       return false
    end
-
-   local Name, Pass = getCreds(AuthHeader)
    
    -- webInfo requires Iguana 5.6.4 or above
    local WebInfo = iguana.webInfo()
    local Status, Code = net.http.post{
       url=WebInfo.ip..":"..WebInfo.web_config.port.."/status",
-      auth={password=Pass,username=Name},
+      auth=Credentials,
       live=true}
    
    if Code == 200 then
@@ -34,8 +36,12 @@ end
 function BasicAuth.requireAuthorization()
    net.http.respond{
       code=401,
-      headers={["WWW-Authenticate"]='Basic realm=Protected'}, 
+      headers={["WWW-Authenticate"]='Basic realm=Channel Manager'}, 
       body="Please Authenticate"}
+end
+
+function BasicAuth.getCredentials(HttpMsg)
+   return getCreds(HttpMsg.headers)
 end
 
 return BasicAuth

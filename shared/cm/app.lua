@@ -3,26 +3,19 @@ require 'stringutil'
 require 'iguana.channel'
 require 'node'
 require 'iguanaServer'
+basicauth = require 'basicauth'
 
 -- A change
 
 cm = {}
 cm.config = {}
-
--- Use posix file conventions.
 cm.config.channelExportPath = '/Users/jsm/iguanarepo'
-cm.config.scratchDir = os.fs.tempDir()..'/chanman2/'
 cm.app = {}
 
 require 'cm.app.listChannels'
 require 'cm.config'
 
--- TODO - user should login to provide the user name and password
-
-cm.config.username = 'admin'
-cm.config.password = 'password'
-
-function cm.app.importList(R) 
+function cm.app.importList(R)
    local L = {}
    for K, V in os.fs.glob(cm.config.channelExportPath..'/*.xml') do
       local N = K:split("/")
@@ -42,11 +35,12 @@ end
 function cm.app.addChannel(R)
    local ChannelName = R.params.name
    local From = R.params.with
-   local Api = iguanaServer.connect{username=cm.config.username, 
-                     password=cm.config.password}
+   
+   local Credentials = basicauth.getCredentials(R)
+   local Api = iguanaServer.connect(Credentials)
 
    iguana.channel.add{dir=cm.config.channelExportPath, 
-      definition=ChannelName, api=Api, scratch=cm.config.scratchDir}
+      definition=ChannelName, api=Api}
    return {success=true}
 end
 
@@ -98,11 +92,11 @@ end
 
 function cm.app.export(R)
    local ChannelName = R.params.name
-   local Api = iguanaServer.connect{username=cm.config.username, 
-                     password=cm.config.password}
 
-   local D = iguana.channel.export{api=Api, 
-                         scratch=cm.config.scratchDir, name=ChannelName}
+   local Credentials = basicauth.getCredentials(R)
+   local Api = iguanaServer.connect(Credentials)
+
+   local D = iguana.channel.export{api=Api, name=ChannelName}
    
    WriteFiles(cm.config.channelExportPath, D)
    return D
