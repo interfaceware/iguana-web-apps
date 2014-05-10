@@ -1,6 +1,7 @@
 {
    "Name": "Global dashboard (From HTTP)",
    "LuaDependencies": [
+      "basicauth",
       "bedmonitor.app",
       "bedmonitor.app.listBeds",
       "bedmonitor.db",
