@@ -14,7 +14,7 @@ function main(Data)
          default='app/cm/index.html',
          -- If the test property is defined then static files are pulled from the sandbox 
          -- rather than from the mile-stoned versioned copies of the files.  In production
-         -- the test propery should be commmented out.
+         -- the test property should be commmnted out.
          -- test='admin'    
       }   
       
