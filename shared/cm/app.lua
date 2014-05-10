@@ -9,7 +9,8 @@ basicauth = require 'basicauth'
 
 cm = {}
 cm.config = {}
-cm.config.channelExportPath = '/Users/jsm/iguanarepo'
+-- Please be careful with what you commit to source control from here
+cm.config.channelExportPath = '~/community/iguana-web-apps'
 cm.app = {}
 
 require 'cm.app.listChannels'

@@ -3,6 +3,7 @@ if not lib then lib = {} end
 lib.webserver = {}
 
 require 'file'
+basicauth = require 'basicauth'
 
 local ws = lib.webserver
 
@@ -31,6 +32,7 @@ local function CalcBaseUrl()
 end
 
 function lib.webserver.create(T)
+   iguana.stopOnError(false) 
    T.baseUrl = CalcBaseUrl()
    T.baseUrlSize = #T.baseUrl +1
    setmetatable(T, webMT)  
@@ -125,12 +127,33 @@ local function ServeFile(Self, R)
    return false
 end
 
--- Find the method for the action.
-function ws.serveRequest(Self, P)
+local function ServeRequest(Self, P)
    local R = net.http.parseRequest{data=P.data}
+   
+   if Self.auth and not basicauth.isAuthorized(R) then
+      basicauth.requireAuthorization()
+      return
+   end
+   
    if DoJsonAction(Self, R) then return end
    if ServeFile(Self, R) then return end
-   net.http.respond{code=400,body='Bad request'}
+   net.http.respond{code=400,body='Bad request'}   
+end
+
+-- Find the method for the action.
+function ws.serveRequest(Self, P)
+   if iguana.isTest() then
+      ServeRequest(Self, P)
+   else
+      -- When running, push full stack error out to browser.
+      -- In the case of an internal error, log it.
+      local Stack = nil
+      local Success, ErrMsg = pcall(ServeRequest, Self, P)
+      if (not Success) then
+         local ErrObj = {error=ErrMsg}
+         net.http.respond{body=json.serialize{data=ErrObj}, entity_type='text/json'}
+      end
+   end
 end
 
 

@@ -1,35 +1,16 @@
 require 'cm.app'
 require 'lib.webserver'
-basicauth = require 'basicauth'
 
-function main(Data)
-   
-   local HttpMsg = net.http.parseRequest{data=Data}
- 
-   if not basicauth.isAuthorized(HttpMsg) then
-      basicauth.requireAuthorization()
-   else
-      local Server = lib.webserver.create{
-         actions=cm.actions,
-         default='app/cm/index.html',
-         -- If the test property is defined then static files are pulled from the sandbox 
-         -- rather than from the mile-stoned versioned copies of the files.  In production
-         -- the test property should be commented out.
-         -- test='admin'    
-      }   
-      
-      iguana.stopOnError(false) 
-      if iguana.isTest() then
-         Server:serveRequest{data=Data}
-      else
-         -- When running, push full stack error out to browser.
-         -- In the case of an internal error, log it.
-         local Stack = nil
-         local Success, ErrMsg = pcall(Server.serveRequest, Server, {data=Data})
-         if (not Success) then
-            local ErrObj = {error=ErrMsg}
-            net.http.respond{body=json.serialize{data=ErrObj}, entity_type='text/json'}
-         end
-      end
-   end
+local Server = lib.webserver.create{
+   actions=cm.actions,
+   auth=true, -- Requires basic authentication username/password from this Iguana instance
+   default='app/cm/index.html',
+   -- If the test property is defined then static files are pulled from the sandbox 
+   -- rather than from the mile-stoned versioned copies of the files.  In production
+   -- the test property should be commented out.
+   -- test='admin'    
+}
+
+function main(Data)   
+   Server:serveRequest{data=Data}
 end
