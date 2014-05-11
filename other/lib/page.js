@@ -4,6 +4,9 @@ if (!lib) {
 
 lib.page = {}
 
+// This is tiny little frame work that is used to drive Iguana apps with
+// a hash table that maps to different functions representing 'pages' in the application
+
 lib.page.init = function(PageTable){
    var m_LastHash = "INITIALIZED";
    // Controller/Router
