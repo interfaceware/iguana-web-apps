@@ -47,6 +47,8 @@ PAGE.listBeds = function() {
       };
    };
    
+   // TODO - we should change this over to use the same lib.ajax calls as the channel manager for consistency
+   // and getting standard error handling.
    setInterval(function() {
       $.ajax(Params);
    }, 3000);
