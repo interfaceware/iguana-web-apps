@@ -10,7 +10,8 @@ end
 
 
 -- Returns a "Translator" object
-function spin.getTranslator(ChannelGuid)
+function spin.getTranslator(ChannelGuid, OneIguana)
+   local Iggy = OneIguana or getIguana()
    trace(ChannelGuid)
    -- Private functions
    local function checkChannelName(Name) 
@@ -19,7 +20,7 @@ function spin.getTranslator(ChannelGuid)
    end
 
    local function getParamsHttps(Num)
-      local Conf = spin.Iggy:getDefaultConfig{
+      local Conf = Iggy:getDefaultConfig{
          source = iguanaServer.FROM_HTTPS,
          destination = iguanaServer.TO_CHANNEL
       }
@@ -57,13 +58,13 @@ function spin.getTranslator(ChannelGuid)
       -- Note: Project and Samples below are not currently used, but can be, if we should ever
       -- want to launch a sandbox translator preloaded with dependencies or sample data.
       local ReadyToGo = makeZip(Sandbox, MyMain, Project, Samples)
-      spin.Iggy:importProject{guid=Sandbox.channel.from_http.guid:nodeValue(), project=ReadyToGo, live=true}
+      Iggy:importProject{guid=Sandbox.channel.from_http.guid:nodeValue(), project=ReadyToGo, live=true}
       return
    end
    
    local function findSandbox(Guid)
       local Success, Result = pcall(function() 
-            return spin.Iggy:getChannelConfig{guid = Guid}
+            return Iggy:getChannelConfig{guid = Guid}
          end)
       return Success and Result or false
    end
@@ -72,13 +73,13 @@ function spin.getTranslator(ChannelGuid)
       local Success, Result = pcall(function()
             math.randomseed(os.ts.time())
             local Num = math.random(9999999)
-            local NewChannel = spin.Iggy:addChannel{config = getParamsHttps(Num), live = true}
+            local NewChannel = Iggy:addChannel{config = getParamsHttps(Num), live = true}
             trace(NewChannel)
             NewChannel.channel.name = NewChannel.channel.name:nodeValue():gsub(Num, NewChannel.channel.guid:nodeValue())
             NewChannel.channel.from_http.mapper_url_path = NewChannel.channel.from_http.mapper_url_path:nodeValue():gsub(Num, NewChannel.channel.guid:nodeValue())
-            spin.Iggy:updateChannel{config=NewChannel, live = true}
+            Iggy:updateChannel{config=NewChannel, live = true}
             setupTranslator(NewChannel)
-            spin.Iggy:saveProjectMilestone{guid = NewChannel.channel.from_http.guid:nodeValue(), milestone_name = "Remotely created by Spinner", live = true}
+            Iggy:saveProjectMilestone{guid = NewChannel.channel.from_http.guid:nodeValue(), milestone_name = "Remotely created by Spinner", live = true}
             return NewChannel
          end)
       if Success then 
@@ -102,10 +103,19 @@ function spin.getTranslator(ChannelGuid)
    local Sandbox = findOrMakeSandbox(ChannelGuid)
    trace(Sandbox)
 
-   
    -- Begin public API
-   function Obj:baseUrl() 
-      return spin.conf.ig.ip .. ':' .. spin.conf.ig.https_channel_server.port .. '/' .. Sandbox.channel.from_http.mapper_url_path .. '/'
+   function Obj:setUrl(Address, HttpsPort)
+      Obj.address = Address
+      Obj.httpsPort = HttpsPort
+   end
+   
+   function Obj:baseUrl()
+      if not Obj.address or not Obj.httpsPort then
+         error("The remote address and HTTPS port need to be set")
+         return
+      end
+      --return trace(spin.conf.ig.ip .. ':' .. spin.conf.ig.https_channel_server.port .. '/' .. Sandbox.channel.from_http.mapper_url_path .. '/')
+      return Obj.address .. ':' .. Obj.httpsPort .. '/' .. Sandbox.channel.from_http.mapper_url_path .. '/'
    end  
       
    function Obj:cGuid() 
@@ -117,16 +127,16 @@ function spin.getTranslator(ChannelGuid)
    end
    
    function Obj:start()
-      spin.Iggy:startChannel{guid=Sandbox.channel.guid:nodeValue(), live=true}
-      if (spin.Iggy:pollChannelStatus{guid=Sandbox.channel.guid:nodeValue(), channel_status='on'}) then 
+      Iggy:startChannel{guid=Sandbox.channel.guid:nodeValue(), live=true}
+      if (Iggy:pollChannelStatus{guid=Sandbox.channel.guid:nodeValue(), channel_status='on'}) then 
          return self 
       end
       error("Could not start sandbox channel '" .. Sandbox.channel.name:nodeValue())
    end
 
    function Obj:stop() 
-      spin.Iggy:stopChannel{guid=Sandbox.channel.guid:nodeValue(), live=true}
-            if (spin.Iggy:pollChannelStatus{guid=Sandbox.channel.guid:nodeValue(), channel_status='off'}) then 
+      Iggy:stopChannel{guid=Sandbox.channel.guid:nodeValue(), live=true}
+            if (Iggy:pollChannelStatus{guid=Sandbox.channel.guid:nodeValue(), channel_status='off'}) then 
          return self 
       end
       error("Could not stop sandbox channel '" .. Sandbox.channel.name:nodeValue())
@@ -143,7 +153,7 @@ function spin.getTranslator(ChannelGuid)
       local Url = Obj:baseUrl() .. 'overload'
       local Result, Code = net.http.post{url = Url, body=json.serialize{data=ZipTree, compact=true}, live=true}
       trace(Result)
-      if Code == 200 then 
+      if Code == 200 then
          return self
       end
       error("Overload failed.")
@@ -162,8 +172,8 @@ function spin.getTranslator(ChannelGuid)
    
    function Obj:quit() 
       if true then return {status = "OK"} end
-      spin.Iggy:stopChannel{guid = self:cGuid()}
-      spin.Iggy:removeChannel{guid = self:cGuid()}
+      Iggy:stopChannel{guid = self:cGuid()}
+      Iggy:removeChannel{guid = self:cGuid()}
       return true
    end
    -- End public API
@@ -174,28 +184,33 @@ end
 
 
 -- /clear
-function spin.clearSandboxes() 
+function spin.clearSandboxes(OneIguana) 
 --   if true then return {status = "OK"} end
-   local Conf = spin.Iggy:listChannels()
+   if not OneIguana then 
+      return {"Never mind."}
+   end
+   local Iggy = OneIguana
+   local Conf = Iggy:listChannels()
    for i = 1, Conf:child("IguanaStatus"):childCount("Channel") do
       local Channel = Conf.IguanaStatus:child("Channel", i)
       trace(spin.conf.params.sandbox_name)
       local Start, Finish = string.find(Channel.Name:nodeValue(), spin.conf.params.sandbox_name .. ' %x+')
       if (Start == 1 and Finish == 61) then
-         spin.Iggy:stopChannel{guid=Channel.Guid:nodeValue(), live=true}
-         spin.Iggy:removeChannel{guid=Channel.Guid:nodeValue(), live=true}
+         Iggy:stopChannel{guid=Channel.Guid:nodeValue(), live=true}
+         Iggy:removeChannel{guid=Channel.Guid:nodeValue(), live=true}
       end
       local Start, Finish = string.find(Channel.Name:nodeValue(), spin.conf.params.sandbox_name .. ' %d+')
       if (Start) then
-         spin.Iggy:stopChannel{guid=Channel.Guid:nodeValue(), live=true}
-         spin.Iggy:removeChannel{guid=Channel.Guid:nodeValue(), live=true}
+         Iggy:stopChannel{guid=Channel.Guid:nodeValue(), live=true}
+         Iggy:removeChannel{guid=Channel.Guid:nodeValue(), live=true}
       end
    end
    return {"Hi"}
 end
 
-function spin.findASandbox() 
-   local Conf = spin.Iggy:listChannels()
+function spin.findASandbox(OneIguana)
+   local Iggy = OneIguana or getIguana()
+   local Conf = Iggy:listChannels()
    for i = 1, Conf:child("IguanaStatus"):childCount("Channel")  do 
       local Channel = Conf.IguanaStatus:child("Channel", i)
       local Start, Finish = string.find(Channel.Name:nodeValue(), spin.conf.params.sandbox_name .. ' %x+')

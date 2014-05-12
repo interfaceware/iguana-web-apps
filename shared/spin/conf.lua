@@ -128,6 +128,9 @@ function go_PLACEHOLDER(Params)
    net.http.respond = doThisInstead
    queue.push = doThisInstead
    
+   table.insert(Results, 1, simulatedMain_PLACEHOLDER(DataSet[1]))
+   
+   --[[
    for i = 1, #DataSet do
       simulatedMain_PLACEHOLDER(DataSet[i])
       if Options.OneForOne then 
@@ -136,6 +139,7 @@ function go_PLACEHOLDER(Params)
          end
       end
    end
+   --]]
    
    net.http.respond = originalRespond_PLACEHOLDER
    queue.push = originalPush_PLACEHOLDER
