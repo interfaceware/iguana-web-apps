@@ -178,12 +178,9 @@ jQuery(document).ready(function($) {
       };
    
       // update every 30000
-      //(function fetchDetails() {
-      //DetailParams.complete = fetchDetails;
       TimeoutID = setInterval(function() {
          $.ajax(DetailParams);  
       }, 6000);
-      //})();
    }
    
    window.onhashchange = function() {
