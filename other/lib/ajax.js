@@ -20,8 +20,8 @@ lib.ajax.call = function(CallName, SuccessFunc){
        },
        error : function(Error, textStatus, errorThrown){
           console.log(Error);
-          if Error.responseJSON {
-             lib.ajax.errorFunc("Error: " +  Error.responseJSON.error}
+          if (Error.responseJSON) {
+             lib.ajax.errorFunc("Error: " +  Error.responseJSON.error);
           } else {
              lib.ajax.errorFunc("Call: '" + CallName + "' failed. " + textStatus + " " + errorThrown);
           }
