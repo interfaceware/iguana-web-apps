@@ -1,10 +1,12 @@
 {
    "Name": "Global dashboard (From HTTP)",
    "LuaDependencies": [
+      "basicauth",
       "dashboard.store",
       "file",
       "lib.webserver",
-      "node"
+      "node",
+      "stringutil"
    ],
    "OtherDependencies": [
       "app/monitor/dashboard.css",
