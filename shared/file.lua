@@ -1,5 +1,5 @@
 -- So one of the biggest headaches for us programming these modules is that half the time we're working
--- on POSIX/Unix style operating systems like Mac OS X and Linux and the rest of the time on Windows. 
+-- on POSIX/Unix style operating systems like Mac OS X and Linux and the rest of the time on Windows.
 -- The majority of our customers are on windows although we develop and test on all of them - and we have
 -- noticed a growing trend towards people using Linux lately.
 
@@ -13,6 +13,7 @@
 
 -- It greatly simplifies the code we have that deals with file paths.  Windows paths get expressed like this:
 -- 'D:/my repo/great stuff/here'
+
 
 local IsWindows = false
 

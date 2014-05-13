@@ -1,5 +1,5 @@
-local S = require 'selfmon'
+local agent = require 'monitor.agent'
 -- The main function is the first function called from Iguana.
 function main()
-   S.sendUpdate('St. Louie\'s')
+   agent.sendUpdate('St. Louie\'s')
 end
