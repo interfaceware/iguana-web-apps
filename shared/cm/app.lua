@@ -3,14 +3,19 @@ require 'stringutil'
 require 'iguana.channel'
 require 'node'
 require 'iguanaServer'
-basicauth = require 'basicauth'
 
--- A change
+-- Notice we carefully only do a local include of this module to avoid poluting the global namespace.
+local basicauth = require 'basicauth'
 
 cm = {}
 cm.config = {}
 -- Please be careful with what you commit to source control from here
-cm.config.channelExportPath = '~/community/iguana-web-apps'
+-- Even if you are using Windows you should only use forward slashes here - ala:
+-- cm.config.channelExportPath = 'C:/My repo/community/iguana-web-apps'
+-- This is because internally we use the shared/file.lua abstraction to
+-- store file paths.
+
+cm.config.channelExportPath = '~/iguana-web-apps'
 cm.app = {}
 
 require 'cm.app.listChannels'
