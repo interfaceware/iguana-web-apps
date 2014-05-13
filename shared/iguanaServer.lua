@@ -9,6 +9,9 @@
 -- in which it is used.
 --
 
+-- This module is a fork of the official one - it's basically a Lua wrapper over the
+-- top of the Iguana Channel API.
+
 --------------------------------------------------------------------------------
 -- Parameter checking.
 -- In all functions the parameter "Args" should be a table.

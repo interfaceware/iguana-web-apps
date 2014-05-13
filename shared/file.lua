@@ -1,3 +1,19 @@
+-- So one of the biggest headaches for us programming these modules is that half the time we're working
+-- on POSIX/Unix style operating systems like Mac OS X and Linux and the rest of the time on Windows. 
+-- The majority of our customers are on windows although we develop and test on all of them - and we have
+-- noticed a growing trend towards people using Linux lately.
+
+-- The problem is that Windows uses forward slashes \ and the rest of the world uses /.  It can make for a
+-- lot of ugly bug prone code if you scatter different checks for creating directory paths in the code - very very
+-- easy to make a new feature on one OS type and break the behavior on another OS type - ouch.
+
+-- So this module changes the behavior of the built in file handling functions.  Internally we convert everything to
+-- paths which use POSIX style / characters.  Then we convert at the last moment into form that is native for the
+-- actually operating system which we call the real underlying calls to the OS and when we display paths in the GUI.
+
+-- It greatly simplifies the code we have that deals with file paths.  Windows paths get expressed like this:
+-- 'D:/my repo/great stuff/here'
+
 local IsWindows = false
 
 os.fs.name = {}

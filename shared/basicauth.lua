@@ -4,6 +4,12 @@ require 'stringutil'
 -- When we use it within the code it is desirable to do:
 -- basicauth = require 'basicauth'
 -- Since this keeps the name of the module very consistent.
+
+-- Basic authentication is part of the HTTP protocol.  See this reference:
+-- http://en.wikipedia.org/wiki/Basic_access_authentication
+
+-- This module takes the user name and password from the user and validates the user id
+-- against the local Iguana user id.  If an invalid user name and password is given it won't be possilble to login.
 local basicauth = {}
 
 local function getCreds(Headers)
@@ -22,6 +28,9 @@ function basicauth.isAuthorized(Request)
    end
    -- webInfo requires Iguana 5.6.4 or above
    local WebInfo = iguana.webInfo()
+   -- TODO - it would be really nice if we could have a Lua API
+   -- to do this against the local Iguana instance - it would be
+   -- a tinsy winsy bit faster.
    local Status, Code = net.http.post{
       url=WebInfo.ip..":"..WebInfo.web_config.port.."/status",
       auth=Credentials,

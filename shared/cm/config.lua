@@ -1,9 +1,16 @@
+-- This is a partly implemented next step in the channel manager to
+-- make an object which can load and save a configuration file so that
+-- we don't need to edit the source code of the channel manager to show
+-- the configuration directory.
+
+-- We're using some fancy parts of Lua called metatables which give us
+-- the hooks to do object orientated programming in Lua.
+
 if not cm then cm = {} end
 if not cm.config then cm.config = {} end
 
 local function ConfigName()
-   return iguana.workingDir()..
-      iguana.channelGuid()..'.config'
+   return iguana.workingDir()..'/channelmanager.config'
 end
 
 local function ConfigDefault()
