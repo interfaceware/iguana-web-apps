@@ -2,10 +2,13 @@ if not lib then lib = {} end
 
 lib.webserver = {}
 
-require 'file'
-basicauth = require 'basicauth'
+-- This is a tiny back end Lua framework we use to serve the function of dispatching JSON
+-- web server requests and static files like Javascript/CSS/HTML etc.  This page in our wiki
+-- gives a good overview of how it works.
+-- http://help.interfaceware.com/kb/the-anatomy-of-an-iguana-app/2
 
-local ws = lib.webserver
+require 'file'
+local basicauth = require 'basicauth'
 
 local webMT = {__index=lib.webserver}
 
@@ -141,7 +144,7 @@ local function ServeRequest(Self, P)
 end
 
 -- Find the method for the action.
-function ws.serveRequest(Self, P)
+function lib.webserver.serveRequest(Self, P)
    if iguana.isTest() then
       ServeRequest(Self, P)
    else
@@ -151,7 +154,9 @@ function ws.serveRequest(Self, P)
       local Success, ErrMsg = pcall(ServeRequest, Self, P)
       if (not Success) then
          local ErrObj = {error=ErrMsg}
-         net.http.respond{body=json.serialize{data=ErrObj}, entity_type='text/json'}
+         net.http.respond{body=json.serialize{data=ErrObj}, 
+                          entity_type='text/json',
+                          code=500}
       end
    end
 end
