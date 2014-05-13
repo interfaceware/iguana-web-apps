@@ -51,10 +51,10 @@ local function replaceSummaryBtn(Channel)
    return Html
 end
 
+-- This web service generates the JSON required to populate the jQuery datatable that we
+-- show the channels in.
 function cm.app.listChannels(Request, App)
-   -- switch this to iguana.status once it's available
-   local StatusXml = iguana.status()
-   
+   local StatusXml = iguana.status()   
    local Conf = xml.parse{data=StatusXml}.IguanaStatus
    
    local Results = {aaData={}, aoColumns={}}
