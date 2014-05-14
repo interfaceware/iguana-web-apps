@@ -10,6 +10,8 @@
    ],
    "OtherDependencies": [
       "app/monitor/dashboard.css",
+      "app/monitor/detail.js",
+      "app/monitor/help.js",
       "app/monitor/index.html",
       "app/monitor/main.js",
       "arrow.gif",
@@ -20,6 +22,10 @@
       "icon_PLG-N.gif",
       "icon_QUE.gif",
       "icon_TRANS.gif",
+      "lib/ajax.js",
+      "lib/datatable.js",
+      "lib/iecompatability.js",
+      "lib/page.js",
       "status.vmd"
    ]
 }

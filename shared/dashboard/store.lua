@@ -35,7 +35,7 @@ end
 function ds.mapRequest(T, R)
    T.server_guid = R.guid
    T.ts = os.ts.time()
-   T.summary = R.summary
+   T.summary = R.status
    T.status = R.retcode
    T.name = R.name
    return T
@@ -63,7 +63,7 @@ function ds.summary()
       if (LastRefresh > ds.threshold) then
          Status = '<div class="status-red"></div>'
       end
-      Summary.aaData[i] = {'<a href="#Server=' .. S[i].server_guid:S() .. '">' .. S[i].name:S() .. '</a>', ds.timeago(LastRefresh), Status}
+      Summary.aaData[i] = {'<a href="#Page=detail&Server=' .. S[i].server_guid:S() .. '">' .. S[i].name:S() .. '</a>', ds.timeago(LastRefresh), Status}
       Summary.Guids[i] = S[i].server_guid:S()
    end
    Summary.Info = {Time=CurrentTime, AsString=os.ts.date("%c", CurrentTime)}
@@ -196,6 +196,10 @@ function ds.detail(Data)
       }
       Row = Row + 1
    end
+   
+   
+   
+   
    
    return Summary
 end
