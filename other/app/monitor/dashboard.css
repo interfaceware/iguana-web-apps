@@ -3,7 +3,7 @@
     width: 33.33%;
     float: left;
 }
-   
+ 
 body {
     background-color: #eff1e8;
     font-family: 'Open Sans',sans-serif;
@@ -17,6 +17,7 @@ h1 {
     font-weight: 700;
     text-align: center;
     padding: 35px 0px 25px 0px;
+    background-color: #a5db58;  /* This setting is for older browsers like IE that don't have gradient support */
     background: -webkit-linear-gradient(#a5db58, #7bc144) #a5db58;
     background: -o-linear-gradient(#a5db58, #7bc144) #a5db58;
     background: -moz-linear-gradient(#a5db58, #7bc144) #a5db58;
@@ -33,7 +34,6 @@ h1 {
     margin: 10px;
     padding: 20px;
 }
-
 #chart, #time {
     margin: 0px auto;
     display: block;
@@ -45,13 +45,15 @@ h1 {
    text-align: right;
 }
 
+
 #time span {
    font-weight: bold;
 }
+
 #detail {
-    display: none;
     padding: 30px;
 }
+
 div.dataTables_wrapper {
     background-color: #FFFFFF;
     border: 1px solid #DDDDDD;
@@ -60,7 +62,6 @@ div.dataTables_wrapper {
     overflow: hidden;
     padding: 15px 15px 10px 15px;
 }
-
 .dataTables_length label,
 .dataTables_filter label {
     color: #777777;
