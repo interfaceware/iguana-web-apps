@@ -2,9 +2,11 @@
    "Name": "Global dashboard (From HTTP)",
    "LuaDependencies": [
       "basicauth",
-      "dashboard.store",
       "file",
       "lib.webserver",
+      "monitor",
+      "monitor.detail",
+      "monitor.main",
       "node",
       "stringutil"
    ],
