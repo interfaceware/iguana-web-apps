@@ -1,20 +1,20 @@
 {
-   "Name": "Unit test example (From HTTP)",
+   "Name": "OK Regressions (From HTTP)",
    "LuaDependencies": [
+      "basicauth",
+      "file",
       "iguanaServer",
-      "regressions",
+      "lib.webserver",
+      "regressions.app",
       "regressions.config",
-      "regressions.core",
-      "regressions.presentation",
-      "server.simplewebserver",
-      "server.utils",
       "spin",
-      "spin.conf",
-      "spin.core",
       "stringutil",
       "zip"
    ],
    "OtherDependencies": [
-      
+      "app/regressions/index.html",
+      "app/regressions/scripts.js",
+      "app/regressions/style.css",
+      "libe/diff.js"
    ]
 }
