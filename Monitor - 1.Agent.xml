@@ -1,6 +1,6 @@
 <channel name="Monitor - 1.Agent" guid="29B38EABC2DA74865073353517120579" description="" start_automatically="true" logging_level="1" use_message_filter="false">
    <to_channel></to_channel>
-   <from_mapper guid="543AD52D6724A8F27D79C099B6741D46" use_most_recent_milestone="true" milestone="" poll_time="10000"></from_mapper>
+   <from_mapper guid="F9BFD446A3A6A0C6A2A46952022B3DE6" use_most_recent_milestone="true" milestone="" poll_time="10000"></from_mapper>
    <message_filter filter_after_logging="false" log_pre_post_filter_message="true" filter_vmd_path="" transformation_mode="0" scripted_transformation_configuration_name="default" incoming_configuration_name="" outgoing_configuration_name="" error_handling="0" use_translator_filter="true" translator_guid="00000000000000000000000000000000" translator_milestone="" translator_use_most_recent_milestone="true">
       <ignored_message message_name=""></ignored_message>
    </message_filter>

@@ -1,19 +1,18 @@
-local dash = require 'dashboard.store'
+require 'monitor'
 require 'lib.webserver'
 
--- The main function is the first function called from Iguana.
--- The Data argument will contain the message to be processed.
-dash.init()
+monitor.init()
 
 local Server = lib.webserver.create{
-   actions=dash.Actions,
+   actions=monitor.Actions,
    default='app/monitor/index.html',
    -- If the test property is defined then static files are pulled from the sandbox 
    -- rather than from the mile-stoned versioned copies of the files.  In production
    -- the test propery should be commmented out.
-   -- test='admin'    
+   test='admin'    
 }  
 
 function main(Data)
+   trace(monitor.Actions)
    Server:serveRequest{data=Data}
 end

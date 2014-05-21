@@ -1,14 +1,26 @@
 require 'stringutil'
-
-regressions.core = {}
+local Zip = require 'zip'
+regressions = {}
+regressions.config = require 'regressions.config'
+regressions.app = {}
+require 'iguanaServer'
+local spin = require 'spin'
+local Spinner = spin.getSpinner(regressions.config.hosts)
 
 ------------
 --
 -- Local "helpers"
 --
 
+regressions.ThisIggy = iguanaServer.connect{
+      url = iguana.webInfo().ip .. ':' .. iguana.webInfo().web_config.port,
+      username = regressions.config.hosts['local']['user'],
+      password = regressions.config.hosts['local']['pass']
+   }
+
 local function checkGuid(Guid) 
-   if Guid:match("%W") or Guid:len() ~= 32 then 
+ --  trace(regressions.ThisIggy:getChannelConfig{guid='6FA425840DAE168B25CE8AFBFED4245E'})
+      if Guid:match("%W") or Guid:len() ~= 32 then 
       return false
    end
    return true
@@ -16,7 +28,7 @@ end
 
 -- Given a channel Guid, looks up the guid for that channel's filter translator
 local function getTranslatorGuid(ChannelGuid) 
-   C = regressions.core.loadChannel(ChannelGuid)
+   C = regressions.app.loadChannel(ChannelGuid)
    if C.channel.use_message_filter:nodeValue() ~= 'false' then
       if tostring(C.channel.message_filter.translator_guid) == '00000000000000000000000000000000' then
          error{error = 'Channel ' .. tostring(C.channel.name) ..' does not have a filter with a saved milestone.', code = 400}
@@ -24,7 +36,7 @@ local function getTranslatorGuid(ChannelGuid)
       end
       return C.channel.message_filter.translator_guid
    end
-   return false   
+   return false
 end
 
 -- Returns a handle on the database for a given translator instance 
@@ -57,17 +69,23 @@ local GREENLIGHT = '<div class="status-green"></div>'
 -- REQUEST HANDLERS
 ------------
 
--- /regression_tests
+-- /regression_tests/
 function regressions.default()
    return regressions.presentation["/regression_tests/index.html"]
 end
 
 -- /regression_tests/channels
-function regressions.core.loadChannels()
+function regressions.app.loadChannels()
    local Channels = {}
    local Guids = {}
-   local Summary, Retcode = net.http.post{url='http://localhost:' .. app.config.ig['web_config']['port'] .. '/monitor_query', 
-      auth={username="admin", password="password"},parameters={Compact='T'}, live=true}
+   trace(regressions.config)
+
+   local Summary, Retcode = net.http.get{
+      url = 'http://localhost:' .. iguana.webInfo()['web_config']['port'] .. '/monitor_query',
+      auth = {username=regressions.config.hosts['local']['user'], password=regressions.config.hosts['local']['pass']},
+      parameters = {Compact='T'},
+      live = true
+   }
    if Retcode == 200 then
       local Xml = xml.parse(Summary).IguanaStatus
       local ChannelIndex = 1
@@ -78,7 +96,7 @@ function regressions.core.loadChannels()
             local TGuid = getTranslatorGuid(ThisChannel.Guid)
             trace(TGuid)
             if TGuid and hasSample(TGuid) then
-               local Expected = regressions.core.loadExpected(TGuid)
+               local Expected = regressions.app.loadExpected(TGuid)
                local HasExp = next(Expected) and true or false
                Channels[ChannelIndex] = {
                   '<a href="#Test=' .. tostring(ThisChannel.Guid) .. '">' 
@@ -104,7 +122,7 @@ function regressions.core.loadChannels()
 end
 
 -- /regression_tests/run_tests?channel={GUID}
-function regressions.core.runTests(Request)
+function regressions.app.runTests(Request)
    local Channel = Request.get_params.channel
    local ChannelName = Request.get_params.name or ''
    if not checkGuid(Channel) then 
@@ -112,29 +130,29 @@ function regressions.core.runTests(Request)
    end
    
    -- Actully run the tests
-   regressions.core.load(Channel)
-   local Results = regressions.core.compare()
-   return regressions.core.formatResults(Results, Channel, ChannelName)
+   regressions.app.load(Channel)
+   local Results = regressions.app.compare()
+   return regressions.app.formatResults(Results, Channel, ChannelName)
 end
 
 -- /regression_tests/build?channel={GUID}
-function regressions.core.build(Request) 
+function regressions.app.build(Request) 
    local Channel = Request.get_params.channel
    if not checkGuid(Channel) then 
       error{error = "Bad Channel GUID", code = 400}
    end
-   regressions.core.load(Channel)
+   regressions.app.load(Channel)
    local Translator = getTranslatorGuid(Channel) 
-   return regressions.core.buildExpected(Translator:nodeValue())
+   return regressions.app.buildExpected(Translator:nodeValue())
 end
 
 -- /regression_tests/edit_result
-function regressions.core.editResult(Request) 
+function regressions.app.editResult(Request) 
    local Translator = Request.post_params.t_guid
    if not checkGuid(Translator) then 
       error{error = "Bad Translator GUID", code = 400}
    end
-   return regressions.core.changeExpected(Translator, Request.post_params.sd_idx, regressions.core.restoreLineEnds(Request.post_params.txt))
+   return regressions.app.changeExpected(Translator, Request.post_params.sd_idx, regressions.app.restoreLineEnds(Request.post_params.txt))
 end
 
 
@@ -168,9 +186,9 @@ function trimSamples(Complex)
    return Simple
 end
 
-function regressions.core.overloadTranslator(TGuid)
+function regressions.app.overloadTranslator(TGuid)
    local Guid = tostring(TGuid)
-   local Config = spin.Iggy:exportProject{guid = Guid}
+   local Config = regressions.ThisIggy:exportProject{guid = Guid}
    local ZipFile = filter.base64.dec(Config)
    local Tree = filter.zip.inflate(ZipFile)
    local Samples = json.parse{data = Tree[Guid]["samples.json"]}
@@ -186,13 +204,13 @@ function regressions.core.overloadTranslator(TGuid)
 end
 
 -- Runs the current dataset through the overloaded translator.
-function regressions.core.getActuals()
+function regressions.app.getActuals()
    return regressions.Trans:run(trimSamples(regressions.DataSet), {OneForOne = true})
 end
 
 -- Pulls expected results from disk
-function regressions.core.loadExpected(Guid)
-   local ExpectedFile = app.config.WorkTank .. Guid .. '.json'
+function regressions.app.loadExpected(Guid)
+   local ExpectedFile = regressions.config.WorkTank .. Guid .. '.json'
    local F = io.open(ExpectedFile, "r")
    if (not F) then
       return {}
@@ -202,9 +220,9 @@ function regressions.core.loadExpected(Guid)
 end
 
 -- Fetches details about a channel using the channel API
-function regressions.core.loadChannel(ChannelGuid)
+function regressions.app.loadChannel(ChannelGuid)
    local ChannelGuid = tostring(ChannelGuid)
-   local Channel, ResponseCode = net.http.post{url='http://localhost:' .. app.config.ig.web_config.port .. '/get_channel_config', 
+   local Channel, ResponseCode = net.http.post{url='http://localhost:' .. iguana.webInfo().web_config.port .. '/get_channel_config', 
                  auth={password='password', username='admin'},
                 parameters={guid=ChannelGuid, compact=false}, live=true}
    if (ResponseCode ~= 200) then
@@ -214,7 +232,7 @@ function regressions.core.loadChannel(ChannelGuid)
 end
 
 -- Updates a single expected result on disk
-function regressions.core.changeExpected(TGuid, SDidx, NewText)
+function regressions.app.changeExpected(TGuid, SDidx, NewText)
    local SDidx = SDidx + 1
    local NewText = filter.uri.dec(NewText)
    --trace(NewText)
@@ -244,7 +262,7 @@ function regressions.core.changeExpected(TGuid, SDidx, NewText)
 end
 
 -- Creates or overwrites an expected results file on disk
-function regressions.core.saveExpected(TGuid, Expected)  
+function regressions.app.saveExpected(TGuid, Expected)  
    local ExpectedFile = regressions.config.WorkTank .. TGuid .. '.json'
    trace(ExpectedFile)
    local F = io.open(ExpectedFile, 'w+')
@@ -253,7 +271,7 @@ function regressions.core.saveExpected(TGuid, Expected)
 end
 
 -- Makes a set of expected results by copying the actuals
-function regressions.core.buildExpected(TGuid)
+function regressions.app.buildExpected(TGuid)
    local Expected = {}
    local Input = regressions.DataSet
    local Actuals = regressions.Actuals
@@ -264,7 +282,7 @@ function regressions.core.buildExpected(TGuid)
          output = Actuals[i]
       }
    end
-   regressions.core.saveExpected(TGuid, Expected)
+   regressions.app.saveExpected(TGuid, Expected)
    return Expected
 end
 
@@ -276,9 +294,8 @@ end
 
 -- This is where most of the action happens. Takes a channel, finds the
 -- relevent translator, then runs the regression tests against that translator
-function regressions.core.load(ChannelGuid)
-   local OneTime = spin.findASandbox()
-   regressions.Trans = spin.getTranslator(OneTime)
+function regressions.app.load(ChannelGuid)
+   regressions.Trans = Spinner:getTranslator()
    regressions.TestingCGuid = ChannelGuid
    regressions.DataSet = {}
    regressions.Actuals = {}
@@ -288,26 +305,27 @@ function regressions.core.load(ChannelGuid)
    if TGuid then
       regressions.TestingTGuid = TGuid:nodeValue()
       local Success, Result = pcall(function()
-            regressions.core.overloadTranslator(TGuid) 
+            regressions.app.overloadTranslator(TGuid) 
          end)
       if not Success then 
          error{error = "Could not overload Sandbox Channel " .. ChannelGuid, code = 500} 
       end
-      regressions.Actuals = regressions.core.getActuals()
-      regressions.Expected = regressions.core.loadExpected(TGuid)
+      regressions.Actuals = regressions.app.getActuals()
+      regressions.Expected = regressions.app.loadExpected(TGuid)
       return
    end
-   error{error = 'Channel ' .. tostring(C.channel.name) ..' does not use a translator filter so this regression test is of no use.', code = 400}
+   error{error = 'Channel ' .. tostring(C.channel.name) 
+      ..' does not use a translator filter so this regression test is of no use.', code = 400}
 end
 
 -- Pulls the actual and expected results together
-function regressions.core.testTranslator(TGuid)  
-   local Expected = regressions.core.loadExpected(TGuid)
-   return regressions.core.compare(Expected, Actual)
+function regressions.app.testTranslator(TGuid)  
+   local Expected = regressions.app.loadExpected(TGuid)
+   return regressions.app.compare(Expected, Actual)
 end
 
 -- Iterate through the results and evaulate each test
-function regressions.core.compare()
+function regressions.app.compare()
    local Data = regressions.DataSet
    local Actuals = regressions.Actuals
    local Expected = regressions.Expected
@@ -318,12 +336,12 @@ function regressions.core.compare()
    end
    for i = 1, #Data do
       local Input = Data[i].Message
-      Result[i] = {r = 'Y', name = Data[i].name and Data[i].name or '', Act = regressions.core.hideLineEnds(Actuals[i].data)}
+      Result[i] = {r = 'Y', name = Data[i].name and Data[i].name or '', Act = regressions.app.hideLineEnds(Actuals[i].data)}
       trace(Result)
       local EOut = Expected[Input]
       trace(EOut.output.data)
       if EOut then 
-         Result[i]['Exp'] = regressions.core.hideLineEnds(EOut.output.data)
+         Result[i]['Exp'] = regressions.app.hideLineEnds(EOut.output.data)
       else 
          Result[i]['Exp'] = 'NO EXPECTED RESULT EXISTS FOR THIS TEST'
       end
@@ -335,7 +353,7 @@ function regressions.core.compare()
 end
 
 -- Put a test result set into a DataTables structure
-function regressions.core.formatResults(Results, Channel, ChannelName) 
+function regressions.app.formatResults(Results, Channel, ChannelName) 
    local Cols = {
       {['sTitle'] = 'Test', ['sType'] = 'numeric'},
       {['sTitle'] = 'Name', ['sType'] = 'string'},
@@ -347,8 +365,8 @@ function regressions.core.formatResults(Results, Channel, ChannelName)
    for i = 1, #Results do
       local Light = Results[i]['r'] == 'Y' and GREENLIGHT or REDLIGHT
       local Link = '<a href="#Inspect=' .. i .. '&Test=' .. Channel .. '">Inspect</a>'
-      Results[i]['EditLink'] = '<a target="_blank" href="http://localhost:' .. regressions.config.ig.web_config.port 
-                               .. '/mapper/#User=' .. regressions.config.creds.user .. '&ComponentName=Filter&ChannelName='
+      Results[i]['EditLink'] = '<a target="_blank" href="http://localhost:' .. iguana.webInfo().web_config.port 
+                               .. '/mapper/#User=' .. regressions.config.hosts['local']['user'] .. '&ComponentName=Filter&ChannelName='
                                .. ChannelName .. '&ChannelGuid=' .. TGuid
                                .. '&ComponentType=Filter&Page=OpenEditor&Module=main&SDindex='
                                .. i .. '">See this sample data in the Iguana Translator</a>'
@@ -359,7 +377,10 @@ function regressions.core.formatResults(Results, Channel, ChannelName)
            ['bInfo'] = false, ['bPaginate'] = false, ['Guid'] = Channel}
 end
 
-
+function regressions.app.die()
+   spin.getSpinner(regressions.config.hosts):getNode('local'):reset()
+   return {['status'] = "Sandboxes removed"}
+end
 
 ------------
 -- TEXT UTILITIES
@@ -370,7 +391,7 @@ local LineEndings = {
    ['\r'] = '\\r'
 }
 
-function regressions.core.hideLineEnds(TheString) 
+function regressions.app.hideLineEnds(TheString) 
    if not TheString then 
       return nil 
    end
@@ -382,7 +403,7 @@ function regressions.core.hideLineEnds(TheString)
    return TheString
 end
 
-function regressions.core.restoreLineEnds(TheString)
+function regressions.app.restoreLineEnds(TheString)
    if not TheString then 
       return nil 
    end
@@ -394,5 +415,10 @@ function regressions.core.restoreLineEnds(TheString)
    return TheString
 end
 
-
-return app
+regressions.actions = {
+   ['channels'] = regressions.app.loadChannels,
+   ['run_tests'] = regressions.app.runTests,
+   ['build'] = regressions.app.build,
+   ['edit_result'] = regressions.app.editResult,
+   ['die'] = regressions.app.die
+}

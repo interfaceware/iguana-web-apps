@@ -1,25 +1,16 @@
-require 'regressions'
+require 'regressions.app'
+require 'lib.webserver'
 
-server = require 'server.simplewebserver'
+local Server = lib.webserver.create{
+   actions=regressions.actions,
+   auth=false, -- Requires basic authentication username/password from this Iguana instance
+   default='app/regressions/index.html',
+   -- If the test property is defined then static files are pulled from the sandbox 
+   -- rather than from the mile-stoned versioned copies of the files.  In production
+   -- the test property should be commented out.
+   --test='admin'    
+}
 
 function main(Data)
-   iguana.stopOnError(false)
-   
-   if iguana.isTest() then
-      server.serveRequest(Data)
-      
-   else
-      -- When running, push full stack error out to browser.
-      -- In the case of an internal error, log it.
-      local Stack = nil
-      local Success, ErrMsg = xpcall(
-         function()
-            server.serveRequest(Data)
-         end,
-         function(Error)
-            Stack = debug.traceback()
-            server.serveError(Error.error, Error.code, Stack, Data)
-         end)      
-   end
+   Server:serveRequest{data=Data}
 end
-
