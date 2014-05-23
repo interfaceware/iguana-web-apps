@@ -1,0 +1,33 @@
+{
+   "Desc": "Parses an HL7/EDI/X12 message and extracts Z segments which it returns in a Lua table. ",
+   "Returns": [
+      {
+         "Desc": "A lua table with the Z segments parsed out."
+      }
+   ],
+   "SummaryLine": "Parses an HL7/EDI/X12 message for Z-zegments without a vmd.",
+   "SeeAlso": [
+      {
+         "Title": "Parsing Z segments without a vmd.",
+         "Link": "http://help.interfaceware.com/"
+      }
+   ],
+   "Title": "hl7.zsegment.parse",
+   "Usage": "hl7.zsegment.parse{data=&#60;value&#62;, compact=&#60;true|false&#62;}",
+   "Parameters": [
+      {
+         "data": {
+            "Desc": "A message to be parsed <u>string</u>. "
+         }
+      },
+      {
+         "compact": {
+            "Desc": "If true then the parsed tree will push all data to the lowest level <u>boolean</u>. "
+         }
+      }
+   ],
+   "Examples": [
+      "<pre>local Msg = hl7.zsegment.parse{data=Data, compact=false}</pre>"
+   ],
+   "ParameterTable": true
+}

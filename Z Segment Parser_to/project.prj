@@ -1,0 +1,11 @@
+{
+   "Name": "Z Segment Parser (To Translator)",
+   "LuaDependencies": [
+      "file",
+      "hl7.zsegment",
+      "stringutil"
+   ],
+   "OtherDependencies": [
+      "hl7/zsegment/parse.json"
+   ]
+}
