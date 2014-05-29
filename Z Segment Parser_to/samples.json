@@ -1,0 +1,24 @@
+{
+   "Samples": [
+      {
+         "Message": "MSH|^~\\&|AcmeMed|Lab|Main HIS|St. Micheals|20110213144932||ADT^A03|9B38584D9903051F0D2B52CC0148965775D2D23FE4C51BE060B33B6ED27DA820|P|2.6|\rEVN||20110213144532||||20110213145902|\rPID|||4525285^^^ADT1||Smith^Tracy||19980210|F||Martian|86 Yonge St.^^ST. LOUIS^MO^51460|||||||10-346-6|284-517-569|\rNK1|1|Smith^Gary|Second Cousin|\rPV1||E||||||5101^Garland^Mary^F^^DR|||||||||||1318095^^^ADT1|||||||||||||||||||||||||20110213144956|\rOBX|||WT^WEIGHT||102|pounds|\rOBX|||HT^HEIGHT||32|cm|\rZID|3333|112434~Fred^Smith&Mr||232323|life^lane|\rZDS|2323^222&23233|||\rZK1|1|Smith^Mary|Second Cousin|\rZK1|1|Smith^Larry|Another Second Cousin|\r",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|AcmeMed|E\\T\\R|Main HIS|St. Micheals|20110213145021||ADT^A06|9B38584DA303F7ED07273FE10576A472B249E504F5954D8769AF13C14F650175|P|2.6|\rEVN||20110213144500||||20110213150105|\rPID|||5488754^^^ADT1||Smith^Fred||20041012|M||Martian|20 Delphi Cres.^^Chicago^IL^55037|||||||59-693-654|558-171-617|\rNK1|1|Smith^Gary|Second Cousin|\rNK1|2|Muir^Sabrina|Sibling|\rPV1||E||||||5101^Muir^Sabrina^F^^DR|||||||||||9997558^^^ADT1|||||||||||||||||||||||||20110213145237|\rOBX|||WT^WEIGHT||59|pounds|\rOBX|||HT^HEIGHT||45|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20110213150118||ADT^A08|9B38584DA303DF33647A484391DBB88EF81C297217D5FFD937D52A404A797184|P|2.6|\rEVN||20110213144526||||20110213145620|\rPID|||9639271^^^ADT1||WHITE^Tracy||19860510|F||Martian|567 Miller Lane^^Chicago^IL^68230|||||||48-57-466|571-349-734|\rNK1|1|Smith^Tracy|Grandchild|\rNK1|2|Smith^Fred|Second Cousin|\rNK1|3|Fitzgerald^Gary|Sibling|\rPV1||E||||||5101^WHITE^Tracy^F^^DR|||||||||||5611438^^^ADT1|||||||||||||||||||||||||20110213144706|\rOBX|||WT^WEIGHT||80|pounds|\rOBX|||HT^HEIGHT||77|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|MedPoke|Lab|Main HIS|St. Micheals|20110213144631||ADT^A06|9B38584DA303E1BFC835DAF99C35E4159E68D5DA5D4660A7DEBC1FFC563F790E|P|2.6|\rEVN||20110213144530||||20110213145241|\rPID|||2668844^^^ADT1||Fitzgerald^Gary||19800204|M||Mixed|16 Miller Lane^^LA^CA^49770|||||||38-322-557|957-321-126|\rNK1|1|Meade^Tracy|Grandchild|\rNK1|2|Garland^Fred|Parent|\rNK1|3|Muir^Fred|Sibling|\rNK1|4|Meade^Jim|Grandchild|\rPV1||E||||||5101^Meade^Tracy^F^^DR|||||||||||7958006^^^ADT1|||||||||||||||||||||||||20110213144638|\rOBX|||WT^WEIGHT||86|pounds|\rOBX|||HT^HEIGHT||97|cm|\r\n",
+         "Name": ""
+      },
+      {
+         "Message": "MSH|^~\\&|CowZing|Lab|Main HIS|St. Micheals|20110213145719||ADT^A08|9B38584DA3039AB797D5F679CB5E6C52CAE1D02603C4FCB4C26F7B93B843DAF1|P|2.6|\rEVN||20110213145429||||20110213145543|\rPID|||9229102^^^ADT1||Fitzgerald^Tracy||19940715|F||Mixed|6 Yonge St.^^ST. LOUIS^MO^85360|||||||89-124-504|223-15-522|\rNK1|1|Muir^Fred|Second Cousin|\rPV1||E||||||5101^Smith^Mary^F^^DR|||||||||||5798822^^^ADT1|||||||||||||||||||||||||20110213145855|\rOBX|||WT^WEIGHT||105|pounds|\rOBX|||HT^HEIGHT||26|cm|\r\n",
+         "Name": ""
+      }
+   ]
+}
