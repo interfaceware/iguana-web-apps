@@ -1,0 +1,30 @@
+{
+   "Name": "Api Endpoint (From HTTP)",
+   "LuaDependencies": [
+      "basicauth",
+      "file",
+      "lib.webserver",
+      "stringutil"
+   ],
+   "OtherDependencies": [
+      "app/webservice/help.js",
+      "app/webservice/index.html",
+      "app/webservice/page.js",
+      "app/webservice/style.css",
+      "lib/ajax.js",
+      "lib/help.css",
+      "lib/help.js",
+      "lib/page.js",
+      "lib/tree/images/arrow-contractable.gif",
+      "lib/tree/images/folder-closed.gif",
+      "lib/tree/images/folder-open.gif",
+      "lib/tree/tree.css",
+      "lib/tree/tree.js",
+      "libe/jquery/2.1.0/jquery.min.js",
+      "libe/prettify/prettify.css",
+      "libe/prettify/prettify.js",
+      "trans.js",
+      "treeview/images/arrow-contractable.gif",
+      "treeview/images/arrow-expandable.gif"
+   ]
+}

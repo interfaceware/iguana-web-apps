@@ -1,0 +1,153 @@
+body {
+   background-color: #eff1e8;
+   font-family: 'Open Sans',sans-serif;
+   font-size: 12pt;
+   padding: 0px;
+   margin: 0px;
+}
+   
+h1 {
+   font-size: 2.8em;
+   font-weight: 700;
+   text-align: center;
+   padding: 35px 0px 25px 0px;
+   background: -webkit-linear-gradient(#a5db58, #7bc144) #a5db58;
+   background: -o-linear-gradient(#a5db58, #7bc144) #a5db58;
+   background: -moz-linear-gradient(#a5db58, #7bc144) #a5db58;
+   background: linear-gradient(#a5db58, #7bc144) #a5db58;
+   color: #FFFFFF;
+   text-shadow: #264504 0px 1px 2px;
+   box-shadow: #888888 0px 1px 1px;
+   margin: 0px;
+}
+   
+#global, #channels_list {
+   background: none repeat scroll 0 0 #FCFCFC;
+   border-radius: 5px;
+   padding: 20px;
+}
+
+#global {
+   border-radius: 0;  
+}
+   
+.status-green {
+   width:10px;
+   height:10px;
+   border-radius:50px;
+   background:linear-gradient(to bottom, #a6e182, #54c600);
+   border: 2px solid #FFFFFF;
+   margin: 0px auto;
+}
+   
+.status-red {
+   width:10px;
+   height:10px;
+   border-radius:50px;
+   background:linear-gradient(to bottom, #f5896e, #da2300);
+   border: 2px solid #FFFFFF;
+   margin: 0px auto;
+}
+   
+.status-grey {
+   width:10px;
+   height:10px;
+   border-radius:50px;
+   background:linear-gradient(to bottom, #C1C1C1, #B2B2B2);
+   border: 2px solid #FFFFFF;
+   margin: 0px auto;
+}
+   
+.status-yellow {
+   width: 10px;
+   height: 10px;
+   border-radius: 50px;
+   background: linear-gradient(to bottom, #FFF159, #E9DC51);
+   border: 2px solid #FFFFFF;
+   margin: 0px auto;
+}
+
+table.dataTable {
+    border-color: #DDDDDD;
+    border-image: none;
+    border-style: solid solid solid none;
+   border-width: 1px 1px 1px 0px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+thead {
+    background-color: #FAFAFA !important;
+    background-image: linear-gradient(to bottom, #FAFAFA, #EFEFEF) !important;
+    box-shadow: none;
+    height: 46px;
+    overflow: hidden;
+    color: #444444;
+}
+
+th {
+    font-size: 0.75em;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    border-left: 1px solid #DDDDDD;
+    border-bottom: 1px solid #CCCCCC !important;
+}
+
+td {
+    font-size: 0.9em;
+    font-weight: 300;
+    border-top: 1px solid #DDDDDD;
+    border-left: 1px solid #DDDDDD;
+}
+
+table.dataTable td {
+    padding: 5px 10px;
+}
+
+table.dataTable tr.odd {
+    background-color: #FFFFFF;
+}
+
+table.dataTable tr.even {
+    background-color: #F9F9F9;
+}
+
+table.dataTable tr.odd td.sorting_1 {
+    background-color: #f3fafc;
+}
+
+table.dataTable tr.even td.sorting_1 {
+    background-color: #e7f4f9;
+}
+
+/* Some of this CSS might need to factored out into library CSS for datatables */
+   
+table.dataTable td {
+   padding: 5px 10px;
+}
+   
+   
+div.dataTables_wrapper {
+   background-color: #FFFFFF;
+   border: 1px solid #DDDDDD;
+   border-radius: 5px;
+   box-shadow: none;
+   overflow: hidden;
+   padding: 15px 15px 10px 15px;
+}
+   
+.dataTables_length label,
+.dataTables_filter label {
+   color: #777777;
+   letter-spacing: 0.05em;
+   font-size: 0.85em;
+   text-transform: uppercase;
+   font-weight: 600;
+}
+   
+input {
+   border: 1px solid #DDDDDD;
+   height: 20px;
+}
+
