@@ -10,10 +10,6 @@ webservice.page = {}
    
 PAGE = webservice.page;
    
-PAGE.default = function(Params) {
-   $('body').html(webservice.help.header() + "Hello world!" + webservice.help.footer());
-}
-   
 PAGE.functionHelp = function(Params){
    if (Params.call === undefined){
       webservice.help.showError("Please supply call &lt;function name&gt;")
@@ -31,8 +27,7 @@ var Tree2;
  var Edit  = $('<button/>', 
       {
          class: 'Edit',
-         text: 'Edit',
-         click: ChangeFormat()
+         text: 'Edit'
       });
 
 webservice.onBrowseTreeClick = function(Node){
@@ -42,11 +37,9 @@ webservice.onBrowseTreeClick = function(Node){
       while (Node.m_Parent.m_Parent !== null) {
          Call = Node.m_Parent.m_Label + "." + Call;
          Node = Node.m_Parent;
-         console.log(Call);
       }
       lib.ajax.call('helpdata?call=' + Call, function(D){
          for (var key in D){
-            console.log(key);
             if (key == 3) {
                $('#helpdata').html(lib.help.render(D[key]));
                $('#helpdata').ready(function(){
@@ -78,6 +71,8 @@ PAGE.browse = function(Params) {
    });
 }
 
+PAGE.default = PAGE.browse
+   
 function ChangeFormat() {
 }
 
