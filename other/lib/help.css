@@ -20,6 +20,7 @@ button.Edit {
    position: fixed;
    top: 1%;
    right: 2%;
+   font-size: 150%;
 }
 
 div.intellisenseHelpData h1 {
