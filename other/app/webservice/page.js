@@ -69,7 +69,7 @@ webservice.onBrowseTreeClick = function(Node){
 PAGE.browse = function(Params) {
    lib.ajax.call('helpsummary', function(D){
       console.log(D);
-      $('body').html("<div id='browser'></div><div id='helpdata'></div><div id=Edit></div>");
+      $('body').html("<div id='browser'></div><div id='helpdata'></div>");
       Tree2 = new Tree22("List of Functions", "tree");
       myRender(D, Tree2);
       Tree2.render($("#browser"));
