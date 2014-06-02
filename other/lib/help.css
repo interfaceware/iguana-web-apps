@@ -16,6 +16,12 @@ body, html{
    overflow: scroll;
 }
 
+button.Edit {
+   position: fixed;
+   top: 1%;
+   right: 2%;
+}
+
 div.intellisenseHelpData h1 {
    color: #1f79ba;
    font-weight: normal;
