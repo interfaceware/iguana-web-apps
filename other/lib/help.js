@@ -8,7 +8,7 @@ lib.help.render=function(D){
    console.log(D);
    var H = []; 
    H.push("<div class=intellisenseHelpData>");
-   H.push ("<h1>" + D.Title + "</h1>");
+   H.push("<h1>" + D.Title + "</h1>");
    H.push("<h2> Usage: </h2>");
    H.push("<div class=\"codeExample\"> <pre class=\"prettyPrint\">" + D.Usage + "</pre>" + "</div>");
    H.push("<p>" + D.Desc + "</p>");
@@ -17,7 +17,11 @@ lib.help.render=function(D){
    $.each(D.Parameters, function(key, value){
       for (var key2 in value){
          if (key2 != "Desc"){
-            strBuffer += "<tr><td><b>" + key2 + "</b></td><td>" + value[key2]["Desc"] + "</td></tr>";
+            var key = key2;
+            if (value[key2].hasOwnProperty('Opt')) {
+               key += " [Optional]";
+            }
+            strBuffer += "<tr><td><b>" + key + "</b></td><td>" + value[key2]["Desc"] + "</td></tr>";
          };
       };
    });
