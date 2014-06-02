@@ -7,8 +7,8 @@ lib.help = {}
 lib.help.render=function(D){
    console.log(D);
    var H = []; 
-   H.push ("<h1>" + D.Title + "</h1>");
    H.push("<div class=intellisenseHelpData>");
+   H.push ("<h1>" + D.Title + "</h1>");
    H.push("<h2> Usage: </h2>");
    H.push("<div class=\"codeExample\"> <pre class=\"prettyPrint\">" + D.Usage + "</pre>" + "</div>");
    H.push("<p>" + D.Desc + "</p>");
