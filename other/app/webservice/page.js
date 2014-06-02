@@ -9,7 +9,11 @@ if (webservice === undefined) { var webservice = {}; }
 webservice.page = {}
    
 PAGE = webservice.page;
-      
+   
+PAGE.default = function(Params) {
+   $('body').html(webservice.help.header() + "Hello world!" + webservice.help.footer());
+}
+   
 PAGE.functionHelp = function(Params){
    if (Params.call === undefined){
       webservice.help.showError("Please supply call &lt;function name&gt;")
@@ -23,6 +27,13 @@ PAGE.functionHelp = function(Params){
 
 // HACK FOR DEVELOPMENT
 var Tree2;
+
+ var Edit  = $('<button/>', 
+      {
+         class: 'Edit',
+         text: 'Edit',
+         click: ChangeFormat()
+      });
 
 webservice.onBrowseTreeClick = function(Node){
    if (!Node.m_Children.length) {
@@ -38,7 +49,8 @@ webservice.onBrowseTreeClick = function(Node){
             console.log(key);
             if (key == 3) {
                $('#helpdata').html(lib.help.render(D[key]));
-               $(document).ready(function(){
+               $('#helpdata').ready(function(){
+                  $('#helpdata').find('h1').first().before(Edit);
                   $('#helpdata').find('pre').addClass('prettyprint'); 
                   prettyPrint();
                }); 
@@ -57,19 +69,18 @@ webservice.onBrowseTreeClick = function(Node){
 PAGE.browse = function(Params) {
    lib.ajax.call('helpsummary', function(D){
       console.log(D);
-      $('body').html("<div id='browser'></div><div id='helpdata'></div>");
+      $('body').html("<div id='browser'></div><div id='helpdata'></div><div id=Edit></div>");
       Tree2 = new Tree22("List of Functions", "tree");
       myRender(D, Tree2);
       Tree2.render($("#browser"));
-
       Tree2.setOnClick(webservice.onBrowseTreeClick);
       Tree2.open();
    });
 }
 
-PAGE.default = PAGE.browse;   
-   
-//myRender: Object, Tree22 
+function ChangeFormat() {
+}
+
 function myRender(D, tree){
   $.each(D, function(key, value){
    if (!tree.IsOpen){
