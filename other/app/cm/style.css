@@ -30,7 +30,17 @@ h1 {
 #global {
    border-radius: 0;  
 }
-   
+
+/* Padding for edit repo boxes */
+.repoEdit{
+   padding : 4px;     
+}
+
+/* Float the repositories link over the right */
+.settings{
+   float : right;
+}
+
 .status-green {
    width:10px;
    height:10px;

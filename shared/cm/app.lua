@@ -8,14 +8,7 @@ require 'iguanaServer'
 local basicauth = require 'basicauth'
 
 cm = {}
-cm.config = {}
--- Please be careful with what you commit to source control from here
--- Even if you are using Windows you should only use forward slashes here - ala:
--- cm.config.channelExportPath = 'C:/My repo/community/iguana-web-apps'
--- This is because internally we use the shared/file.lua abstraction to
--- store file paths.
 
-cm.config.channelExportPath = '~/iguana-web-apps'
 cm.app = {}
 
 require 'cm.app.listChannels'
@@ -23,29 +16,42 @@ require 'cm.config'
 
 function cm.app.importList(R)
    local L = {}
-   for K, V in os.fs.glob(cm.config.channelExportPath..'/*.xml') do
+   local Config = cm.config.open()
+   if #Config.config.repo == 0 then
+      return {dir="<none defined>", err='Repository does not exist'}
+   end
+   local RepoIndex = R.params.repository +1
+   if RepoIndex > #Config.config.repo then  
+      RepoIndex = 1
+   end  
+   
+   local Repository = Config.config.repo[RepoIndex];
+  
+   if not os.fs.dirExists(Repository) then
+      return {dir=os.fs.name.toNative(Repository), err='Repository does not exist'}
+   end
+   
+   for K, V in os.fs.glob(Repository..'/*.xml') do
       local N = K:split("/")
       N = N[#N]
       N = N:sub(1, #N-4)
       L[#L+1] = N
    end
-   return L
-end
-
--- Only returning the information on the export path
--- It's important that we make the web api of this application modular and orthonal
-function cm.app.configInfo(Request)
-   return {ExportPath = os.fs.name.toNative(cm.config.channelExportPath)}
+   return {repository=Config:repoList(), list=L}
 end
 
 function cm.app.addChannel(R)
    local ChannelName = R.params.name
    local From = R.params.with
+   local RepoIndex = R.params.repository
+   
+   local Config = cm.config.open()
+   local Dir = Config.config.repo[RepoIndex+1]
    
    local Credentials = basicauth.getCredentials(R)
    local Api = iguanaServer.connect(Credentials)
 
-   iguana.channel.add{dir=cm.config.channelExportPath, 
+   iguana.channel.add{dir=Dir, 
       definition=ChannelName, api=Api}
    return {success=true}
 end
@@ -98,19 +104,38 @@ end
 
 function cm.app.export(R)
    local ChannelName = R.params.name
+   local RepoIndex = R.params.repository
 
    local Credentials = basicauth.getCredentials(R)
    local Api = iguanaServer.connect(Credentials)
 
    local D = iguana.channel.export{api=Api, name=ChannelName}
+   local Config = cm.config.open()
    
-   WriteFiles(cm.config.channelExportPath, D)
+   WriteFiles(Config.config.repo[RepoIndex+1], D)
    return D
 end
 
 function cm.app.listRepo(R,App)
-   
-   return App.config.config.repo
+   local Config = cm.config.open()
+   return Config:repoList()
+end
+
+-- We try and eliminate repositories which do not exist
+function cm.app.saveRepo(R,App)
+   local Info = json.parse{data=R.body}
+   local List = {}
+   for i=1, #Info do
+      local Repo = os.fs.name.fromNative(Info[i])
+      Repo = Repo:trimWS()
+      if (#Repo > 0) then
+         List[#List+1] = Repo
+      end
+   end
+   local Config = cm.config.open()
+   Config.config.repo = List
+   Config:save()
+   return {status='ok'}
 end
 
 function cm.app.create()
@@ -125,5 +150,6 @@ cm.actions = {
    ['export_channel'] = cm.app.export,
    ['importList'] = cm.app.importList,
    ['addChannel']= cm.app.addChannel,
-   ['listRepo'] = cm.app.listRepo
+   ['listRepo'] = cm.app.listRepo,
+   ['saveRepo'] = cm.app.saveRepo
 }
