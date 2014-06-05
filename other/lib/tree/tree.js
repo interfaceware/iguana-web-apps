@@ -118,7 +118,6 @@ Tree22.prototype = {
       }
       var Self = this;
       $(Node).children('div').click(function() {
-         console.log(Self);
          var Parent = Self;
          while (Parent.m_Parent !== null) { Parent = Parent.m_Parent; }
          if (Parent.m_OnClick !== null){
@@ -140,7 +139,6 @@ Tree22.prototype = {
             });
          })(Key, Payload[Key]);
       }
-      console.log(this);
       return this;
    },
    setOnClick: function(OnClickCallback){
