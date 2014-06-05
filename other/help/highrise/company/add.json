@@ -1,0 +1,28 @@
+{
+   "SummaryLine": "Hello",
+   "Returns": [
+      {
+         "Desc": ""
+      }
+   ],
+   "Desc": "This is a summary",
+   "call": "company.add",
+   "Title": "company.add",
+   "Usage": " Maybe it works",
+   "SeeAlso": [
+      
+   ],
+   "ParameterTable": true,
+   "Examples": [ 
+      {
+         "1" : "Maybe it doesn't"
+      }
+   ],
+   "Parameters": [
+      {
+         "": {
+            "Desc": ""
+         }
+      }
+   ]
+}

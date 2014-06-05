@@ -1,0 +1,12 @@
+{
+   "call": "contact.delete",
+   "Title": "contact.delete",
+   "ParameterTable": true,
+   "SeeAlso": [
+      {
+         "Title": "I hear google is a good resource",
+         "Link": "http://google.com"
+      }
+   ],
+   "Usage": "I'm mandatory! watchout, I got some mean tags"
+}
