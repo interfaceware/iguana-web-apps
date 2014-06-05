@@ -6,13 +6,15 @@ PAGE.listChannels = function() {
    H += '<div id="channels_list">'
    H += '<div id="message"></div>'
    H += '<table id="channels_list_table" cellpadding="0" cellspacing="0" border="0"></table>'
-   H += "</div><p><a href='#Page=addChannel'>Add Channel</a>" + cm.help.footer();
+      H += "<div>&nbsp;</div><div style='float:right;'><a href='#Page=addChannel'><img src='app/cm/button-addchannel.gif'/></a></div></div>" + cm.help.footer();
    $('body').html(H);
 
    $.post(
       "list-channels",
       function(Data) {
+        console.log(Data); 
         Results = Data;
+        lib.datatable.addSearchHighlight(Results);  
         $("#channels_list_table").dataTable(Results);
       }
    );
