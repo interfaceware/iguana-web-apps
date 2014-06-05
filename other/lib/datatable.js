@@ -24,7 +24,7 @@ lib.datatable.hideNavigationArrows = function(GridControl, GridData){
 // It looks complicated but the beautiful thing is that you can have this
 // nice behavior by adding one line of code:
 // lib.datatable.addSearchHighlight(Grid);
-
+// And make sure you also have a CSS style defined like span.filterMatches{background-color : yellow; }
 lib.datatable.addSearchHighlight = function(GridData){
    function searchHighlight(nRow, aData, iDisplayIndex, iDisplayIndexFull) {
       var searchStrings = [];

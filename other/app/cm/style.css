@@ -41,6 +41,11 @@ h1 {
    float : right;
 }
 
+/* This is the highlight color used for the search highlighting */
+span.filterMatches{
+   background-color : yellow;  
+}
+
 .status-green {
    width:10px;
    height:10px;
