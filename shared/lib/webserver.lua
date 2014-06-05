@@ -34,10 +34,57 @@ local function CalcBaseUrl()
    return BaseUrl
 end
 
+local function MakeJsonTree(FT, Seen)
+   if not Seen then 
+      Seen = {} 
+      Seen._G = true
+      if (not loaded) then loaded = {} end
+      Seen.loaded = true
+   end
+   local Out = {}
+   trace(Seen)
+   for K,V in pairs(FT) do
+      trace(K)
+      if (not Seen[V]) then
+         if (type(V) == 'table') then
+            if(not Seen[K]) then 
+               trace(K)
+               trace (Seen)
+               Seen[V] = true
+               Out[K] = MakeJsonTree(V, Seen)
+            end
+         else 
+            Out[K] = 1
+         end
+      end
+   end
+   return Out
+end
+
+local function Filter(Table)
+   local T = Table
+   for K,V in pairs(T) do
+      trace(K)
+      if type(V) == "table" then
+         Filter(V)
+      elseif (not help.get(K)) then
+         V = nil
+      end
+   end
+   help.get(package.loaders[1])
+   return T
+end
+
 function lib.webserver.create(T)
    iguana.stopOnError(false) 
    T.baseUrl = CalcBaseUrl()
    T.baseUrlSize = #T.baseUrl +1
+   if T.default == nil then
+      error('Need default argument.', 2)
+   end
+   if T.methods then
+      T.methodSummary = json.serialize{alphasort=true,data=Filter(MakeJsonTree(T.methods))}
+   end
    setmetatable(T, webMT)  
    return T
 end
@@ -130,6 +177,40 @@ local function ServeFile(Self, R)
    return false
 end
 
+local function FindHelp(Method, Path)
+   local Address = Path:split('%.')  
+   local Result = {}
+   for i =1, #Address do
+      Method = Method[Address[i]]
+   end
+   if (not Method) then
+      Result = { ["1"] = "Function does not exist in database"}
+      return Result
+   end
+   trace(Method)
+   local Help = help.get(Method)
+   if (not Help) then
+      Result = { ["2"] = "Help does not exist for this function yet"}
+      return Result
+   end
+   Result = {["3"] = Help}
+   return Result
+end
+
+local function HelpAction(Self, R)
+   local Action = R.location:sub(Self.baseUrlSize)
+   if (Action == 'helpsummary') then
+      net.http.respond{body=Self.methodSummary, entity_type='text/json'} 
+      return true
+   end
+  
+   if (Action == 'helpdata') then
+      local Help = FindHelp(Self.methods, R.params.call)
+      net.http.respond{body=json.serialize{data = Help}, entity_type='text/json'}   
+      return true
+   end
+end
+
 local function ServeRequest(Self, P)
    local R = net.http.parseRequest{data=P.data}
    
@@ -138,9 +219,11 @@ local function ServeRequest(Self, P)
       return
    end
    
-   if DoJsonAction(Self, R) then return end
-   if ServeFile(Self, R) then return end
+   if DoJsonAction(Self, R) then return 'Served Json' end
+   if ServeFile(Self, R) then return 'Served file' end
+   if HelpAction(Self, R) then return 'Help action' end
    net.http.respond{code=400,body='Bad request'}   
+   return 'Bad request'
 end
 
 -- Find the method for the action.

@@ -1,0 +1,177 @@
+body, html{
+   height: 100%;
+}
+
+#browser {
+   width: auto;
+   max-width: 20%;
+   float: left;
+   height: 100%;
+   overflow: scroll;
+   padding: 10px 10px 0px 10px;
+}
+
+#helpdata {
+   height: 100%;
+   overflow: scroll;
+}
+
+div.intellisenseHelpData h1 {
+   color: #1f79ba;
+   font-weight: normal;
+   font-size: 20px;
+   margin-top: 5px;
+}
+
+h1 {
+   display: block;
+   -webkit-margin-before: 0.67em;
+   -webkit-margin-after: 0.67em;
+   -webkit-margin-start: 0px;
+   -webkit-margin-end: 0px;
+}
+
+div.intellisenseHelpData {
+   white-space: normal;
+   font-family: "Trebuchet MS",Tahoma,Verdana,Arial,sans-serif;
+   font-size: 12px;
+   margin: 5px;
+   color: #333;
+}
+
+div.intellisenseHelpData h2 {
+   color: #76b73d;
+   font-size: 10pt;
+   margin: 15px 0px 10px 0px;
+}
+
+h2 {
+   display: block;
+   -webkit-margin-before: 0.83em;
+   -webkit-margin-after: 0.83em;
+   -webkit-margin-start: 0px;
+   -webkit-margin-end: 0px;
+   font-weight: bold;
+}
+
+p {
+   display: block;
+   -webkit-margin-before: 1em;
+   -webkit-margin-after: 1em;
+   -webkit-margin-start: 0px;
+   -webkit-margin-end: 0px;
+}
+
+div.intellisenseHelpData div.codeExample {
+   border: solid #ccc 1px;
+   border-radius: 5px;
+   background-color: #FCFCFC;
+   padding: 0px 10px;
+   color: #666;
+   display: table;
+}
+
+
+pre.prettyprint{
+   border: none !important;
+   padding: 2px;
+   border: 1px solid #888;
+}
+
+pre {
+   display: block;
+   font-family: monospace;
+   white-space: pre;
+   margin: 1em 0px;
+}
+
+table.Basic {
+   border-collapse: collapse;
+   border-spacing: 0;
+   font-size: 11px;
+   empty-cells: show;
+   border: solid #ccc 1px;
+   border-radius: 5px;
+}
+
+table {
+   display: table;
+   border-spacing: 2px;
+   border-color: gray;
+}
+
+tbody {
+   display: table-row-group;
+   vertical-align: middle;
+   border-color: inherit;
+}
+
+table.Basic th:first-child {
+   border-radius: 5px 0 0 0;
+}
+
+table.Basic td:first-child, table.Basic th:first-child{
+   border-left:none;
+}
+
+table.Basic th{
+   background-color: #CFCFCF;
+   background-image: -webkit-linear-gradient(top, #E5E5E5, #CFCFCF);
+   box-shadow: 0 1px 0 rgbe(255,255,255,.8) inset;
+   border-top: none;
+   color: #6C6C6C;
+   font-size: 10px;
+   text-shadow: 0 1px #DDDDDD;
+   font-weight: bold;
+   text-transform: uppercase;
+   letter-spacing: 0.05em;
+}
+
+table.Basic td, table.Basic th {
+   padding: 8px 12px;
+   text-align: left;
+   border-top: 1px solid #ccc;
+   border-left: 1px solid #ccc;
+}
+
+td, th{
+   display: table-cell;
+   vertical-align: inherit;
+}
+
+table.Basic tr {
+   background:#F2F2F2;
+}
+
+tr {
+   display: table-row;
+   vertical-align: inherit;
+   border-color: inherit;
+}
+
+table.Basic tr:nth-child(2n) {
+   background: none repeat scroll 0 0 #FCFCFC;
+}
+
+b {
+   font-weight: bold;
+}
+
+ol {
+   display: block;
+   list-style-type: decimal;
+   -webkit-margin-before: 1em;
+   -webkit-margin-after: 1em;
+   -webkit-margin-start: 0px;
+   -webkit-margin-end: 0px;
+   -webkit-padding-start: 40px;
+}
+
+li {
+   display: list-item;
+   text-align: -webkit-match-parent;
+}
+
+div.intellisenseHelpData a{
+   color: #215FA3;
+}
