@@ -110,7 +110,7 @@ local function DoJsonAction(Self, R)
    local Func = Self.actions[Action]
    trace(Func)
    if (Func) then
-      local Result = Func(R, Self.app)
+      local Result = Func(R, Self)
       if Result.error then 
          ServeError(Result.error, Result.code)
          return false
@@ -177,7 +177,7 @@ local function ServeFile(Self, R)
    return false
 end
 
-local function FindHelp(Method, Path)
+local function FindHelp(Method, Path, root)
    local Address = Path:split('%.')  
    local Result = {}
    for i =1, #Address do
@@ -188,24 +188,36 @@ local function FindHelp(Method, Path)
       return Result
    end
    trace(Method)
+   local Files = iguana.project.files()
    local Help = help.get(Method)
+   trace('other/help/'.. root .. '/' ..Path:gsub("%.", "/")..'.json')
    if (not Help) then
-      Result = { ["2"] = "Help does not exist for this function yet"}
-      return Result
+      for k,v in pairs(Files) do
+         if (k == 'other/help/'.. root .. '/' ..Path:gsub("%.", "/")..'.json') then
+            Help = json.parse{data=os.fs.readFile(v)}
+         end
+      end
    end
-   Result = {["3"] = Help}
+   if (not Help) then
+      Result = { ["3"] = {["Title"] = Path}}
+      return Result
+   else Result = {["3"] = Help}
+   end
    return Result
 end
 
 local function HelpAction(Self, R)
    local Action = R.location:sub(Self.baseUrlSize)
    if (Action == 'helpsummary') then
-      net.http.respond{body=Self.methodSummary, entity_type='text/json'} 
+      local T = {}
+      T[Self.root] = Self.methods
+      local Body = json.serialize{data=MakeJsonTree(T)}
+      net.http.respond{body=Body, entity_type='text/json'} 
       return true
    end
   
    if (Action == 'helpdata') then
-      local Help = FindHelp(Self.methods, R.params.call)
+      local Help = FindHelp(Self.methods, R.params.call, Self.root)
       net.http.respond{body=json.serialize{data = Help}, entity_type='text/json'}   
       return true
    end
