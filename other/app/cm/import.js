@@ -1,14 +1,26 @@
 // Javascript pertaining to importing channels   
 app.cm.addChannelListRender = function(Data){
-   var H = cm.help.header() + cm.help.breadCrumb('Add Channel') + "Add Channel from " + app.cm.repo.fillSelect(Data.repository) + "<ol>" ; 
+   var H = cm.help.header() + cm.help.breadCrumb('Add Channel') + "Add Channel from " + app.cm.repo.fillSelect(Data.repository); 
+   H += "<table id='listChannels' cellpadding='0' cellspacing='0' border='0'></table>" + cm.help.footer();
+   $('body').html(H);
+   
+   // We take plainly formatted JSON data from the server and reformat it into the form liked by the jQuery datatable.
+   var TD= {}
+   TD.aoColumns = [];
+   TD.aoColumns = [ {"sTitle" : "Channel Name" }, 
+                    {"sTitle" : "Description"},
+                    {"sTitle" : "Import"}]
+   TD.aaData    = [];
    List = Data.list;
+   TD.aaData = [];
    for (var i = 0; i < List.length; i++){
-      H += "<li><a href='#Page=confirmAddChannel&With=" + List[i] + "'>" + List[i] + "</a></li>";
+      TD.aaData[i] = [ List[i][0], List[i][1],"<a href='#Page=confirmAddChannel&With=" + List[i][0] +"'>Import</a>" ];
    }
-   H += "</ol>" + cm.help.footer();
-   return H;
-}
-
+   console.log(TD);
+   lib.datatable.addSearchHighlight(TD);
+   $("#listChannels").dataTable(TD); 
+}   
+   
 PAGE.addChannel = function(Params) {
    $.post("importList",
       {'repository': cm.settings.repository },
@@ -22,8 +34,7 @@ PAGE.addChannel = function(Params) {
             $('body').html(H);
             return;
          }
-         var H = app.cm.addChannelListRender(Data);
-         $('body').html(H)
+         app.cm.addChannelListRender(Data);
             
          $('.repolist').change(".repolist", function(E){
             // TODO we might want to use a 'proper' MVC framework later.
@@ -37,7 +48,7 @@ PAGE.addChannel = function(Params) {
 
 
 PAGE.confirmAddChannel = function(Params) {
-   var H = cm.help.header() + cm.help.breadCrumb('Confirm Add Channel') + "Add Channel " + Params.With + " with definition from " + Params.With + "?";
+   var H = cm.help.header() + cm.help.breadCrumb('Confirm Add Channel') + "Add Channel " + Params.With + "?";
    H += "<p><a href='#Page=executeAddChannel&Name=" + Params.With + "&With=" + Params.With + "'>Do it!</a>"; 
    H += cm.help.footer();
    $('body').html(H);     
@@ -52,7 +63,7 @@ PAGE.executeAddChannel = function(Params) {
 }
    
 PAGE.addChannelComplete = function(Params) {
-   $('body').html(cm.help.header() + cm.help.breadCrumb('Added Channel') + "Added " + Params.Name + " successfully with definition from " + Params.With + ".<p><a href='#'>Return to dashboard</a>" + cm.help.footer())   
+   $('body').html(cm.help.header() + cm.help.breadCrumb('Added Channel') + "Added " + Params.Name + " successfully.<p><a href='#'>Return to dashboard</a>" + cm.help.footer())   
 }
 
 /*
