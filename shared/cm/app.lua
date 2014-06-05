@@ -28,14 +28,14 @@ function cm.app.importList(R)
    local Repository = Config.config.repo[RepoIndex];
   
    if not os.fs.dirExists(Repository) then
-      return {dir=os.fs.name.toNative(Repository), err='Repository does not exist'}
+      return {dir=os.fs.name.toNative(Repository), 
+               err='Repository does not exist'}
    end
    
    for K, V in os.fs.glob(Repository..'/*.xml') do
-      local N = K:split("/")
-      N = N[#N]
-      N = N:sub(1, #N-4)
-      L[#L+1] = N
+      local CD = os.fs.readFile(K)
+      local X = xml.parse{data=CD}
+      L[#L+1] = {X.channel.name:nodeValue(), X.channel.description:nodeValue()}
    end
    return {repository=Config:repoList(), list=L}
 end
