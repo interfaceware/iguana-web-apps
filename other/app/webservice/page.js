@@ -21,30 +21,42 @@ PAGE.functionHelp = function(Params){
    });
 }
 
+   // lib.ajax.call('setHelp', Data, function(D){});
+
 // HACK FOR DEVELOPMENT
 var Tree2;
 
- var Edit  = $('<button/>', 
-      {
-         class: 'Edit',
-         text: 'Edit'
-      });
+webservice.state = {}
 
 webservice.onBrowseTreeClick = function(Node){
    if (!Node.m_Children.length) {
-      console.log(Node);
+      //Returns the full node path
       var Call = Node.m_Label;
       while (Node.m_Parent.m_Parent !== null) {
          Call = Node.m_Parent.m_Label + "." + Call;
          Node = Node.m_Parent;
       }
+      webservice.state.call = Call;
+      // Makes the Ajax call
       lib.ajax.call('helpdata?call=' + Call, function(D){
+         console.log(D);
          for (var key in D){
+            /* Key 1 = No function exists
+               Key 2 = No help for function exists
+               Key 3 = Help data returned
+            */
             if (key == 3) {
-               $('#helpdata').html(lib.help.render(D[key]));
+               $('#helpdata').html(lib.help.render(D[key], Call));
                $('#helpdata').ready(function(){
-                  $('#helpdata').find('h1').first().before(Edit);
-                  $('#helpdata').find('pre').addClass('prettyprint'); 
+                  //Creates the help button
+                  $('#helpdata').find('h1').first().before(
+                     $('<button/>', {
+                        class: 'Edit',
+                        text: 'Edit',
+                        onClick: 'lib.help.togglemode(this)'
+                  }));
+                  //Applies classes to decorate code
+                  $('#helpdata').find('pre').addClass('prettyprint lang-lua editable'); 
                   prettyPrint();
                }); 
             }
@@ -63,8 +75,11 @@ PAGE.browse = function(Params) {
    lib.ajax.call('helpsummary', function(D){
       console.log(D);
       $('body').html("<div id='browser'></div><div id='helpdata'></div>");
-      Tree2 = new Tree22("List of Functions", "tree");
-      myRender(D, Tree2);
+      $.each(D, function(key,value){
+         console.log(value);
+         Tree2 = new Tree22(key, "tree");
+         myRender(value, Tree2);
+      });
       Tree2.render($("#browser"));
       Tree2.setOnClick(webservice.onBrowseTreeClick);
       Tree2.open();
@@ -73,9 +88,6 @@ PAGE.browse = function(Params) {
 
 PAGE.default = PAGE.browse
    
-function ChangeFormat() {
-}
-
 function myRender(D, tree){
   $.each(D, function(key, value){
    if (!tree.IsOpen){
@@ -87,5 +99,4 @@ function myRender(D, tree){
    else {
       tree.add(key, "tree");
    };
-   
 })};
