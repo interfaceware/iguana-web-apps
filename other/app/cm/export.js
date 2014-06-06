@@ -3,6 +3,12 @@ PAGE.exportSummary = function(Params) {
    $.post(
       "listRepo",
       function (Data) {
+         if (Data.length == 0){
+            var H =cm.help.header() + cm.help.breadCrumb('Export Channel') 
+              + "You do not have any repositories defined.  No problem, <a href='#Page=viewRepo'>just go and configure some.</a>" + cm.help.footer();  
+            $('body').html(H);
+            return;
+         }
          console.log(Data);
          var H =cm.help.header() + cm.help.breadCrumb('Export Channel') 
               + "Export Channel <b>" + Params.Name + "</b> into <i>" 
