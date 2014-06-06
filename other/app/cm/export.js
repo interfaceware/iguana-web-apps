@@ -6,8 +6,8 @@ PAGE.exportSummary = function(Params) {
          console.log(Data);
          var H =cm.help.header() + cm.help.breadCrumb('Export Channel') 
               + "Export Channel <b>" + Params.Name + "</b> into <i>" 
-              + app.cm.repo.fillSelect(Data) + "</i>?<br><a href='#Page=executeExportChannel&Name="
-              + Params.Name + "'>Yes</a> <a href='#'>Cancel</a>" + cm.help.footer();  
+              + app.cm.repo.fillSelect(Data) + "</i>?<p><span class='button'><a href='#Page=executeExportChannel&Name="
+              + Params.Name + "'>Yes</a></span> <span class='button'><a href='#'>Cancel</a></span>" + cm.help.footer();  
          $('body').html(H);
       }
    );
