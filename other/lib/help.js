@@ -8,49 +8,8 @@ if (!Array.prototype.last){
     };
 };
 
-lib.help = {}
-
-/* 
-The following is an imcompleted implementation of table control that automatically creates new rows
-var newline = $('<tr/>',
-   {
-      html: '<td class="editable b" contenteditable="true"></td><td class="editable" contenteditable="true"></td><td/>',
-      onkeydown: 'addline(this)',
-      class: 'empty'
-   });
-
-var cross = $('<img/>', 
-      {  
-         class: 'cross',
-         src: 'lib/tree/images/arrow-contractable.gif',
-         onclick: 'deleteline(this)'
-   });
-
-function deleteline(caller){
-   console.log($(caller).closest("tbody").children());
-  if ($(caller).closest("tbody").children().length != 1) {
-      $(caller).closest("tr").remove();
-}}
-
-
-function addline(caller){
-   $(caller).focusout(function(){
-      var table = $(this).parent();
-      if (($(this).filter(':first').text() == "") &&($(this).filter(':eq(2)').text() == "")){
-         $(this).addClass('empty');
-         $(this).siblings('.empty').remove();   
-         }
-      }
-   );
-   var table = $(caller).parent();
-   if ($(caller).hasClass('empty')){
-      $(caller).removeClass('empty');
-      table.append(newline.clone());
-      table.filter(':last').children(':last').append(cross.clone());
-   }
-}
-*/
-
+lib.help = {};
+// Main function to render the help data
 function textHelper(type, D){
    var rtn = $('<div/>', {
       class: 'help' + type + ' hidden',
@@ -58,7 +17,7 @@ function textHelper(type, D){
       });
    var strBuffer = "";
 
-   // Handles description and usage
+   // Handles description, usage, and summaryline
    if(type == 'Desc' || type == 'Usage' || type == 'SummaryLine'){
       if (D.hasOwnProperty(type)){
          strBuffer = D[type];
@@ -84,6 +43,7 @@ function textHelper(type, D){
       }
       rtn.append('<table class="Basic"> <tbody> <tr> <th>Name</th><th>Description</th></tr>' + strBuffer + '</tbody></table>');
       }
+   //Handles returns
    else if(type == 'Returns'){
       if(D.hasOwnProperty(type)){
           $.each(D.Returns, function(key, value){
@@ -104,6 +64,7 @@ function textHelper(type, D){
       }
       rtn.append('<div class="codeExample">' + strBuffer + '</div>');
    }
+   //Handles the see also links
    else if(type == 'SeeAlso'){
       if(D.hasOwnProperty(type)){
          $.each(D.SeeAlso, function(key, value){
@@ -115,7 +76,16 @@ function textHelper(type, D){
    }
    return rtn;
 }
-
+/* The way the help data information is handled is as follows:
+      An array, H, holds all the DOM that is 1 level down from body
+      The title is generated first, and it's not editable in edit view
+      All the other fields are of the JSON object D is passed into textHelper, 
+       which returns a corresponding div for each section. The textHelper does the following:
+         1. Determines if no data is provided. If no data, the class 'Hidden' is applied to the div and pushed to H.
+         2. Depending on the section, it generates the corresponding html, wrappes it in a 'Editable' class, and utilises strBuffer to maintain the data.
+         3. The heading of each section is added on, and the finished html is pushed to H.
+      
+*/
 lib.help.render=function(D, title){
    var H = [];
    H.push($('<h1/>', {
@@ -131,13 +101,14 @@ lib.help.render=function(D, title){
    var rtn = $('<div/>', {
       class: 'intellisenseHelpData'
    });
+   // I recall that there was code to concatenate an array of strings, and I think it can be applied here.
    var arrayLength = H.length;
    for (var i = 0; i < H.length; i++){
       rtn.append(H[i]);
    }
    return rtn;
 }
-
+//Handles the changing of the edit button and calls the appropiate functions.
 lib.help.togglemode=function(Event){
    if (Event.textContent == 'Edit'){
       Event.textContent = 'Save';
@@ -149,68 +120,20 @@ lib.help.togglemode=function(Event){
    }
 }
 
-var pnewline = $('<tr/>',
-   {
-      html: '<td class="editable b" contenteditable="true"></td><td class="editable" contenteditable="true"></td><td><input type="checkbox"></td>',
-      
-   });
-var rnewline = $('<tr/>',
-   {
-      html: '<td/><td contenteditable="true"></td>'
-   });
-
-var snewline = $('<li/>',
-   {
-      html: '<input type="text" class="linkLabel" placeholder="Link label"><input type="text" class="linkAdd" placeholder="Link address"><img src="lib/tree/images/folder-open.gif" onclick="$(this).parent().remove()"></img>'
-   });
-var cross = $('<img/>', 
-   {  
-      class: 'cross',
-      src: 'lib/tree/images/folder-open.gif',
-      onclick: 'var table = $(this).parents("tbody"); $(this).parent().remove(); if (table.parents("div").hasClass("helpReturns")){renumber(table);}' 
-   });
-var padd = $('<img/>',
-   {
-      class: 'add',
-      src: 'lib/tree/images/folder-open.gif',
-      onclick: 'var table = $(this).siblings("table").find("tbody"); table.append(pnewline.clone()); table.children(":last").append(cross.clone())'
-   });
-
+//Renumbers the return table whenever an adujstment is made to the returns table.
 function renumber(table){
    $(table).find('tr:gt(0)').each(function(idx){
       $(this).children().first().html(idx + 1);
    });
 }
-
-var radd = $('<img/>',
-   {
-      class: 'add',
-      src: 'lib/tree/images/folder-open.gif',
-      onclick: 'var table = $(this).siblings("table").find("tbody"); table.append(rnewline.clone()); table.children(":last").append(cross.clone()); renumber(table)'
-   });
-
-var ecross = $('<img/>',
-   {  
-      // class: 'cross',
-      src: 'lib/tree/images/folder-open.gif',
-      float: 'right',
-      onclick: 'var table = $(this).parents("tbody"); $(this).parent().remove(); if (table.parents("div").hasClass("helpReturns")){renumber(table);}' 
-   });
-
-var sadd = $('<img/>',
-   {
-      class: 'add',
-      src: 'lib/tree/images/folder-open.gif',
-      onclick: '$(this).siblings("ol").append(snewline.clone())'
-   });
-
+//Removes all tags left behind by google-prettify   <script type="text/javascript" src="lib/assets.js"></script>
 function striptags(toplevel){
    $(toplevel).find('span').contents().unwrap();
    $(toplevel).find('pre').contents().unwrap();
    console.log($(toplevel));
    $(toplevel).wrapInner('<pre contenteditable = "true" class="editable"></pre>');
 }
-
+//Converts the links from a tags into two input boxes
 function convertlinks(list){
    while(($(list).children().length > 0) && ($(list).find('li:first').children().is('a'))){
       $(list).append(snewline.clone());
@@ -219,7 +142,7 @@ function convertlinks(list){
       $(list).children(':first').remove();
    }
 }
-
+// Finds parameters that have the optional tag, deletes the tag, and checks the corresponding 'optional box'
 function fixparams(table){
    $(table).children(':gt(0)').each(function(key, val){
       var name = $(val).children(':eq(0)');
@@ -230,49 +153,45 @@ function fixparams(table){
          $(val).find('input').attr('checked', 'true');
       }});
 }
-
+// Main function called to make the page editable
 function changetoform(){
-   var objFields = {}
    var home = $('#helpdata');
+   //Removes the google-prettify tags.
    striptags($('.codeExample').find('.helpUsage'));
    striptags($('.helpExamples').find('.codeExample'));
+   //Make all DOM objects that have the editable tag actually editable.
    $('.editable').attr('contenteditable', 'true');
-   home.find('tbody').addClass('newline');
    //Adding optional column for Parameters Table
    var ptable = home.find('.helpParameters').find('tbody');
    ptable.find('tr:first').append("<th>Optional</th>");
    ptable.find('tr:gt(0)').append('<td><input type="checkbox"></td>');
    fixparams(ptable);
-   $('.helpParameters').append(padd);
-   $('.helpParameters').find('tr:gt(0)').find('td:gt(1)').after(cross);
+   $('.helpParameters').append(assets.add.parameter);
+   $('.helpParameters').find('tr:gt(0)').find('td:gt(1)').after(assets.del);
    //Adding controls for Returns Table
-   console.log($('.helpReturns').find('tr:gt(0)').find('td:gt(0)').html());
-   $('.helpReturns').find('tr:gt(0)').find('td:gt(0)').after(cross.clone());
-   $('.helpReturns').append(radd);
+   $('.helpReturns').find('tr:gt(0)').find('td:gt(0)').after(assets.del.clone());
+   $('.helpReturns').append(assets.add.returns);
    //Stripes example box into a plain <p>
-   $('.helpSeeAlso').append(sadd);
+   $('.helpSeeAlso').append(assets.add.seealso);
    convertlinks($('.helpSeeAlso').find('ol'));
-   /*Pretty text
-   $('.codeExample').focusin(function(){
-      $(this).find('span').contents().unwrap();
-      $(this).find('.prettyprinted').removeClass('prettyprinted');
-   });
-   $('.codeExample').focusout(function(){
-      prettyPrint();
-   });
-   */
+   //Prevents firefox from allowing users to manipulate tables
    document.execCommand("enableInlineTableEditing", null, false);
    //Change CSS and Add animations
     //home.find('h1').siblings('div').css('opacity', '0.8');
    $(".hidden").fadeIn('slow');
+   //Incomplete animation that activates when the corresponding div is mousedover
    home.find('h1').siblings('div').hover(function(){
       $(this).addClass('mouseon');
    }, function(){
       $(this).removeClass('mouseon');
    });
-  $(".editable").css({'border':'1px dashed gray', 'min-height':'10px'} );
+   //Borders the DOM objects so the users knows when an object is editable. Will be supplemented by the above function.
+   $(".editable").css({'border':'1px dashed gray', 'min-height':'10px'} );
 }
+//The following code is to send data back to the server
+//Keep in mind that there is no controls or error checking, so the user can enter anything. Implement future controls here
 
+// Iterates through the tables of Parameters and Returns, creating an array of objects.
 function iterate (table){
    var rtn = [];
    $(table).children(':gt(0)').each(function(index, value){
@@ -293,7 +212,7 @@ function iterate (table){
    });
    return rtn;
 }  
-
+// Only iterates through the see also table, pulling out the links.
 function iterate2 (structures){
    var rtn = [];
    $(structures).children().each(function(index, value){
@@ -306,39 +225,48 @@ function iterate2 (structures){
    });
    return rtn;
 }   
-
+// Main function called to send data back to the server
 function changetoview(){
+   //Removes white space from the front and the back of the data
    $('.editable').each(function(key, val){
       $(this).html($.trim($(val).text()));
    });
    $('input[type=text]').each(function(key, val){
       $(this).html($.trim($(val).text()));
    }); 
+   //Initializes the data object, and fills it with information.
    var d = {};
    d["Desc"] = $('.helpDesc').find('p').text();
-   d["Examples"] = { 0 : $('.helpExamples').find('.codeExample').children().text()};
+   d["Examples"] = [$('.helpExamples').find('.codeExample').children().text()];
    if ($('.helpParameters').find('tr:gt(0)')){
       d["ParameterTable"] = true;
       d["Parameters"] = iterate($('.helpParameters').find('tbody'));
    }
-   else{d["ParameterTable"] = true;}
    d["Returns"] = iterate($('.helpReturns').find('tbody'));
    d["SeeAlso"] = iterate2($('.helpSeeAlso').find('ol'));
    d["SummaryLine"] =  $(".helpSummaryLine").find('p').text();
    d["Title"] = $(".intellisenseHelpData").find('h1').text();
    d["Usage"] = $('.helpUsage').find('.codeExample').children().text();
+   //Looks through data, and deletes empty sections.
    for (var prop in d){
       if (typeof(d[prop]) == "string" && d[prop] == ""){
          delete d[prop];
          continue;
       }
-      else if ($.isArray(d[prop]) && d[prop].length < 1){
+      else if ($.isArray(d[prop]) && (d[prop].length < 1 || d[prop][0]=="")){
          delete d[prop];
          continue;
       }
    }
    console.log(d);
    d.call = webservice.state.call;
-   lib.ajax.call('setHelp', d, function(Result){ });
+   //Sends the data back to the server
+   lib.ajax.call('setHelp', d, function(Result){
+   if (Result.hasOwnProperty('status') && Result['status'] == "ok"){
+      alert('Function stored!');
+   }
+   else{ alert('Error');}
+   //Re-renders the help data page
+   renderdatapage(d.call);
+   });
 }
-
