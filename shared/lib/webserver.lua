@@ -209,9 +209,8 @@ end
 local function HelpAction(Self, R)
    local Action = R.location:sub(Self.baseUrlSize)
    if (Action == 'helpsummary') then
-      local T = {}
-      T[Self.root] = Self.methods
-      local Body = json.serialize{data=MakeJsonTree(T)}
+
+      local Body = Self.methodSummary
       net.http.respond{body=Body, entity_type='text/json'} 
       return true
    end
@@ -221,6 +220,25 @@ local function HelpAction(Self, R)
       net.http.respond{body=json.serialize{data = Help}, entity_type='text/json'}   
       return true
    end
+   return false
+end
+
+local function FindApi (Self, D, Call)
+   local Address =Call:split('%.')  
+   local methods = Self.methods
+   for i =1, #Address do
+      methods = methods[Address[i]]
+   end
+   return methods(json.parse{data=D})
+end
+
+local function CallApi(Self, R)
+   local Action = R.location:sub(Self.baseUrlSize)
+   if (Action == 'callapi') then
+      net.http.respond{body=FindApi(Self, R.body, R.params.call), entity_type='text/json'}
+      return true
+   end
+   return false
 end
 
 local function ServeRequest(Self, P)
@@ -234,6 +252,7 @@ local function ServeRequest(Self, P)
    if DoJsonAction(Self, R) then return 'Served Json' end
    if ServeFile(Self, R) then return 'Served file' end
    if HelpAction(Self, R) then return 'Help action' end
+   if CallApi(Self, R) then return 'API called' end
    net.http.respond{code=400,body='Bad request'}   
    return 'Bad request'
 end
