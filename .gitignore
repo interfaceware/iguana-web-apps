@@ -9,3 +9,23 @@
 # Files that might appear on external disk
 .Spotlight-V100
 .Trashes
+
+*.json
+
+1.Service - Self Describing_http/samples.json
+
+2. Webservice - Client.xml
+
+2. Webservice - Client_to/project.prj
+
+other/help/highrise/company/add.json
+
+other/help/highrise/contact/add.json
+
+other/help/highrise/contact/delete.json
+
+other/help/highrise/contact/update.json
+
+1.Service - Self Describing_http/main.lua
+
+1.Service - Self Describing.xml
