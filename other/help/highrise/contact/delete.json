@@ -1,12 +1,20 @@
 {
    "call": "contact.delete",
    "Title": "contact.delete",
+   "SummaryLine": "Hello",
+   "Parameters": [
+      {
+         "ID": {
+            "Desc": "The ID of the person you wish to delete"
+         }
+      }
+   ],
    "ParameterTable": true,
    "SeeAlso": [
       {
-         "Title": "I hear google is a good resource",
-         "Link": "http://google.com"
+         "Title": "Google",
+         "Link": "google.com"
       }
    ],
-   "Usage": "I'm mandatory! watchout, I got some mean tags"
+   "Desc": "Deletes a contact"
 }

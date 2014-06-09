@@ -1,9 +1,0 @@
-{
-   "call": "contact.update",
-   "Title": "contact.update",
-   "ParameterTable": true,
-   "Examples": {
-      "0": "Here is an example"
-   },
-   "Usage": "Dis is mandatory"
-}
