@@ -13,6 +13,7 @@
       "stringutil"
    ],
    "OtherDependencies": [
+      "app/cm/button-addchannel.gif",
       "app/cm/dashboard.js",
       "app/cm/export.js",
       "app/cm/help.js",
@@ -30,6 +31,7 @@
       "icon_PLG-N.gif",
       "icon_QUE.gif",
       "icon_TRANS.gif",
+      "lib/datatable.js",
       "lib/page.js",
       "libe/jquery.dataTables/1.9.4/jquery.dataTables.css",
       "libe/jquery.dataTables/1.9.4/jquery.dataTables.min.js",
