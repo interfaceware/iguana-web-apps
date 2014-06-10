@@ -2,8 +2,22 @@ body, html{
    height: 100%;
 }
 
+.mouseone{
+   box-shadow: 0 0 10px #6EA2DE;
+   border-color: #6EA2DE;
+}
 .hidden{
    display: none;
+}
+
+img.cross {
+    float: right;
+    margin-right: -2.5em;
+}
+
+div.codeExample {
+   width: 80%;
+   overflow: wrap;
 }
 
 #browser {
@@ -18,13 +32,15 @@ body, html{
 #helpdata {
    height: 100%;
    overflow: scroll;
+   conteneditable: true;
 }
 
-button.Edit {
+span.edit {
    position: fixed;
    top: 1%;
    right: 2%;
    font-size: 150%;
+   border : 1px;
 }
 
 div.intellisenseHelpData h1 {
