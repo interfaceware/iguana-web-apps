@@ -8,88 +8,88 @@ if (!Array.prototype.last){
     };
 };
 
-lib.help = {}
+lib.help = {};
+lib.help.render = {};
 
-function textHelper(type, D){
-   var rtn = $('<div/>', {
-      class: 'help' + type + ' hidden',
-      html: '<h2>' + type + ':</h2>'
-      });
-   var strBuffer = "";
-
-   // Handles description and usage
-   if(type == 'Desc' || type == 'Usage'){
-      if (D.hasOwnProperty(type)){
-         strBuffer = D[type];
-         rtn.removeClass('hidden');
-      };
-      if (type == 'Desc') {rtn.html('<h2>Description:</h2><p>' + strBuffer + '</p>');}
-      else {rtn.append('<div class=\"codeExample\"> <pre class=\"prettyPrint\">' + strBuffer + "</pre>" + "</div>"); }
-   }
-   // Handles parameters
-   else if(type == 'Parameters'){
-      if(D.hasOwnProperty(type)){
-         $.each(D.Parameters, function(key, value){
-            for (var key2 in value){
-               if (key2 != "Desc"){
-               var key = key2;
-               if (value[key2].hasOwnProperty('Opt')) {
-                  key += " [Optional]";
-               }
-               strBuffer += "<tr><td><b>" + key + "</b></td><td>" + value[key2]["Desc"] + "</td></tr>"
-         ;};};});
-         rtn.removeClass('hidden');
-      }
-      rtn.append('<table class="Basic"> <tbody> <tr> <th>Name</th><th>Description</th></tr>' + strBuffer + '</tbody></table>');
-      }
-   else if(type == 'Returns'){
-      if(D.hasOwnProperty(type)){
-          $.each(D.Returns, function(key, value){
-            strBuffer += "<tr><td>" + (key + 1) + "</td><td>"+ value["Desc"] + "</td></tr>";
-          });
-          rtn.removeClass('hidden');
-      }
-      rtn.append('<table class="Basic"> <tbody> <tr> <th>Number</th> <th>Description</th></tr>' + strBuffer +
-          '</tbody></table>');
-   }
-   else if(type == 'Examples'){
-      if(D.hasOwnProperty(type)){
-         $.each(D.Examples, function(key, value){
-         strBuffer = strBuffer + value;
-         });
-         rtn.removeClass('hidden');
-      }
-      rtn.append('<div class="codeExample">' + strBuffer + '</div>');
-   }
-   else if(type == 'SeeAlso'){
-      if(D.hasOwnProperty(type)){
-         $.each(D.SeeAlso, function(key, value){
-            strBuffer += "<li><a target=\"_blank\" href=\"" + value["Link"] + "\">" + value["Title"]+ "</a></li>";
-         });
-         rtn.removeClass('hidden');
-      }
-      rtn.append('<ol>' + strBuffer + '</ol>');
-   }
-   return rtn;
-}
-
-lib.help.render=function(D){
+lib.help.render.all=function(D, Title){
+   console.log(D);
    var H = [];
-   H.push($('<h1/>', {
-      html: D.Title
-   }));
-   H.push(textHelper('Desc', D));
-   H.push(textHelper('Usage', D));
-   H.push(textHelper('Parameters', D));
-   H.push(textHelper('Returns', D));
-   H.push(textHelper('Examples',D));
-   H.push(textHelper('SeeAlso', D));
-   var rtn = $('<div/>', {
-      class: 'intellisenseHelpData'
-   });
-   var arrayLength = H.length;
-   for (var i = 0; i < H.length; i++){
-      rtn.append(H[i]);
+   H.push("<div class='intellisenseHelpData'>");
+   H.push('<h1>' + Title.replace("/", ".") + '</h1>');
+   if (D.hasOwnProperty('SummaryLine')){
+      H.push('<h2>Summary Line</h2><p>' + D.SummaryLine + "</p>");
    }
-   return rtn;
+   if (D.hasOwnProperty('Desc')){
+      H.push('<h2>Description</h2><p>' + D.Desc + "</p>");
+   }
+   if (D.hasOwnProperty('Usage')){
+      H.push('<h2>Usage</h2><div class="codeExample"><pre>' + D.Usage + '</pre></div>');
+   }
+   if (D.hasOwnProperty('Parameters')){
+      H.push('<h2>Parameters</h2><table class="Basic"> <tbody> <tr> <th>Name</th><th>Description</th></tr>');
+      for (var i =0; i < D.Parameters.length; i++){
+         var Param = D.Parameters[i];
+         for (K in Param){
+            H.push('<tr><td><b>' + K) 
+            if(Param[K].hasOwnProperty('Optional')){
+               H.push(' Optional');
+            }
+            H.push('</b></td><td>' + Param[K]["Desc"] + "</td></tr>");
+         }
+      }
+      H.push('</table>');
+   }
+   if (D.hasOwnProperty('Returns')){
+      H.push("<h2>Returns:</h2><table class='Basic'><tbody><tr><th>Number></th><th>Description</th></tr>");
+      for (var i = 0; i < D.Returns.length; i++) {
+         H.push( "<tr><td>" + (i + 1) + "</td><td>"+ D.Returns[i]["Desc"] + "</td></tr>");
+      };
+      H.push("</tbody></table>");
+   }
+   if (D.hasOwnProperty('Examples')){
+      H.push("<h2>Examples:</h2><div class='codeExample'>");
+      for (var i = 0; i < D.Examples.length; i++){
+         H.push(D.Examples[i]);
+      };
+   }
+   if (D.hasOwnProperty('SeeAlso')){
+      H.push("<h2>See Also:</h2><ol>");
+      for (var i = 0; i < D.SeeAlso.length;i++){
+         H.push("<li><a target='_blank' href='" + D.SeeAlso[i]["Link"] + "'>" +  D.SeeAlso[i]["Title"]+ "</a></li>");
+      };
+      H.push("</ol></div>");
+   }
+   return H.join('');
 }
+   
+lib.help.render.edit=function(D){
+   var H = [];
+   
+   H.push('Hello world');
+   return H.join('');
+}
+   
+//The following code is to send data back to the server
+//Keep in mind that there is no controls or error checking, so the user can enter anything. Implement future controls here
+
+// Iterates through the tables of Parameters and Returns, creating an array of objects.
+function iterate (table){
+   var rtn = [];
+   $(table).children(':gt(0)').each(function(index, value){
+      var obj = {};
+      if ($(table).parents('div').hasClass('helpParameters')){
+         var name = $(value).children(':eq(0)').text();
+         if (name == ""){return}
+         obj[name] = {Desc : $(value).children(':eq(1)').text()};
+         if ($(value).find('input').is(':checked')) {
+            obj[name]["Optional"] = 'true';
+         }
+      }
+      else {
+         if(name == ""){return}
+         obj.Desc = $(value).children(':eq(1)').text()
+      }
+      rtn[index] = obj;
+   });
+   return rtn;
+}  
