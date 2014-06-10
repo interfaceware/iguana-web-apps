@@ -24,12 +24,19 @@ PAGE.functionHelp = function(Params){
    
 PAGE.editHelp = function(P){
    webservice.initBrowseTree();
-   $('#helpdata').html("Edit " + P.path);      
+   $('#helpdata').html("Edit " + P.path);  
+   var Call = P.path;
    lib.ajax.call('helpdata?call=' + Call, function(D){
       console.log(D);
-      var H = lib.help.render.edit(D,Call);
+      var H = lib.help.render.edit(D,Call) + '<span class="edit">Save</span>';
       console.log(H);
       $('#helpdata').html(H);
+      $('.editable').attr('contenteditable', 'true');
+      
+      $('.edit').click(function(E){
+         var D = lib.help.savedata();
+         console.log(D);
+      });
    });
 }
    
@@ -41,7 +48,7 @@ PAGE.viewHelp = function(P){
    // TODO swap over to jQuery standard
    lib.ajax.call('helpdata?call=' + Call, function(D){
       console.log(D);
-      var H = lib.help.render.all(D,Call); // + "<a href='#Page=editHelp&path=" + Call + "'><span class='edit'>Edit</span>";
+      var H = lib.help.render.all(D,Call);// + "<a href='#Page=editHelp&path=" + Call + "'><span class='edit'>Edit</span></a>";
       console.log(H);
       $('#helpdata').html(H);
       //Applies the google-prettify to the appropriate fields (Usage and Examples)
