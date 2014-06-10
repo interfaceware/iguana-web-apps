@@ -1,8 +1,12 @@
 {
    "Name": "Api Endpoint (From HTTP)",
    "LuaDependencies": [
+      "app.webservice.main",
       "basicauth",
       "file",
+      "highrise.company",
+      "highrise.contact",
+      "highrise.main",
       "lib.webserver",
       "stringutil"
    ],
@@ -11,6 +15,10 @@
       "app/webservice/index.html",
       "app/webservice/page.js",
       "app/webservice/style.css",
+      "help/highrise/company/add.json",
+      "help/highrise/company/delete.json",
+      "help/highrise/contact/add.json",
+      "help/highrise/contact/delete.json",
       "lib/ajax.js",
       "lib/help.css",
       "lib/help.js",
