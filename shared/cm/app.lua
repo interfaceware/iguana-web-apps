@@ -51,6 +51,11 @@ function cm.app.addChannel(R)
    local Credentials = basicauth.getCredentials(R)
    local Api = iguanaServer.connect(Credentials)
 
+   if (iguana.channel.exists(ChannelName)) then
+      Api:stopChannel{name=ChannelName}
+      Api:removeChannel{name=ChannelName}
+   end
+   
    iguana.channel.add{dir=Dir, 
       definition=ChannelName, api=Api}
    return {success=true}
