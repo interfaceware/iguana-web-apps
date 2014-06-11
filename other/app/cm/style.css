@@ -74,6 +74,13 @@ input.repodir{
    width : 90%;
 }
 
+span.warning{
+   display: table;
+   border: red;
+   border-style: solid;
+   padding: 10px;
+}
+
 span.button{
    background : #e7f4f9;
    padding : 2px;
