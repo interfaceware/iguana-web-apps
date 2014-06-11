@@ -156,6 +156,31 @@ local function ExpandTranslatorZip(Result, Guid, Name, ZipContent)
    end
 end
 
+-- GUIDs are noisy sources of spurious changes - we change them
+local ZeroGuid = '00000000000000000000000000000000'
+
+local function RemoveGuids(ChanConfig)
+   local C = ChanConfig.channel;
+   C.guid = ZeroGuid
+   if C.to_mapper then
+      C.to_mapper.guid = ZeroGuid
+   end
+   if C.from_mapper then
+      C.from_mapper.guid = ZeroGuid
+   end
+   if C.use_message_filter:nodeValue() == 'true' and C.message_filter and
+        C.message_filter.use_translator_filter and
+        C.message_filter.translator_guid then
+      C.message_filter.translator_guid = ZeroGuid
+   end
+   if C.from_llp_listener and C.from_llp_listener.ack_script then
+      C.from_llp_listener.ack_script = ZeroGuid
+   end
+   if C.from_http and C.from_http.guid then
+      C.from_http.guid = ZeroGuid
+   end   
+end
+
 -- iguana.channel.export{api=ChannelApiObject, name='Channel Name'}
 -- This function will export a channel with the given name using the Channel API object you pass it.
 -- The data is returned in a Lua table with all the files in nested format - it's up to the caller to do something
@@ -169,12 +194,13 @@ function iguana.channel.export(T)
    local Api = T.api
    local ChannelName = T.name
    local ChanDef = Api:getChannelConfig{name=ChannelName, live=true}
-   Result[ChannelName..'.xml'] = tostring(ChanDef) 
    local TranList = iguana.channel.getTranslators(ChanDef)
    for TranType,GUID in pairs(TranList) do 
       local ZipContent = Api:exportProject{guid=GUID, live=true}
       ExpandTranslatorZip(Result, GUID, ChannelName.."_"..TranType, ZipContent)
    end
+   RemoveGuids(ChanDef)
+   Result[ChannelName..'.xml'] = tostring(ChanDef) 
    return Result
 end
 
