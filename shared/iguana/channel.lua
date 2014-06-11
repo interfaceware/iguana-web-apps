@@ -196,7 +196,7 @@ function iguana.channel.export(T)
    local ChanDef = Api:getChannelConfig{name=ChannelName, live=true}
    local TranList = iguana.channel.getTranslators(ChanDef)
    for TranType,GUID in pairs(TranList) do 
-      local ZipContent = Api:exportProject{guid=GUID, live=true}
+      local ZipContent = Api:exportProject{guid=GUID, live=true,sample_data=T.sample_data}
       ExpandTranslatorZip(Result, GUID, ChannelName.."_"..TranType, ZipContent)
    end
    RemoveGuids(ChanDef)

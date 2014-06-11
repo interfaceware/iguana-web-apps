@@ -11,22 +11,22 @@ PAGE.exportSummary = function(Params) {
          }
          console.log(Data);
          var H =cm.help.header() + cm.help.breadCrumb('Export Channel') 
-              + "Export Channel <b>" + Params.Name + "</b> into <i>" 
-              + app.cm.repo.fillSelect(Data) + "</i>?<p><span class='button'><a href='#Page=executeExportChannel&Name="
-              + Params.Name + "'>Yes</a></span> <span class='button'><a href='#'>Cancel</a></span>" + cm.help.footer();  
-         $('body').html(H);
+              + "<p>Export Channel <b>" + Params.Name + "</b> into <i>" 
+              + app.cm.repo.fillSelect(Data) + "</i>?</p>"
+              + "<p><span class='label'>Export sample data?</span><input id='sample_data' type='checkbox' value='unchecked'></p>"
+              + "<p><span id='submit' class='button'>Yes</a></span> <span class='button'><a href='#'>Cancel</a></span>" + cm.help.footer();  
+            $('body').html(H);
+            $("#submit").click(function(E){
+            $.post("export_channel", {'name' : Params.Name, 'repository' : cm.settings.repository, 'sample_data' : $('#sample_data').val()},
+               function (Data) {
+                  document.location.hash = "#Page=exportChannelComplete&Name=" + Params.Name;
+               }   
+            );
+         });
       }
    );
 }
-
-PAGE.executeExportChannel = function(Params){
-   $.post("export_channel", {'name' : Params.Name, 'repository' : cm.settings.repository},
-       function (Data) {
-          document.location.hash = "#Page=exportChannelComplete&Name=" + Params.Name;
-       }
-   );
-}
-
+   
 PAGE.exportChannelComplete = function(Params){
    $('body').html(cm.help.header() + cm.help.breadCrumb('Export Channel') + "Exported " + Params.Name + " successfully.<p><a href='#'>Return to dashboard</a>" + cm.help.footer()) 
 }

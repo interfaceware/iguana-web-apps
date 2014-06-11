@@ -114,7 +114,7 @@ function cm.app.export(R)
    local Credentials = basicauth.getCredentials(R)
    local Api = iguanaServer.connect(Credentials)
 
-   local D = iguana.channel.export{api=Api, name=ChannelName}
+   local D = iguana.channel.export{api=Api, name=ChannelName, sample_data=(R.params.sample_data == 'checked')}
    local Config = cm.config.open()
    
    WriteFiles(Config.config.repo[RepoIndex+1], D)
