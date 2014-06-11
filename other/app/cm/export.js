@@ -3,11 +3,17 @@ PAGE.exportSummary = function(Params) {
    $.post(
       "listRepo",
       function (Data) {
+         if (Data.length == 0){
+            var H =cm.help.header() + cm.help.breadCrumb('Export Channel') 
+              + "You do not have any repositories defined.  No problem, <a href='#Page=viewRepo'>just go and configure some.</a>" + cm.help.footer();  
+            $('body').html(H);
+            return;
+         }
          console.log(Data);
          var H =cm.help.header() + cm.help.breadCrumb('Export Channel') 
               + "Export Channel <b>" + Params.Name + "</b> into <i>" 
-              + app.cm.repo.fillSelect(Data) + "</i>?<br><a href='#Page=executeExportChannel&Name="
-              + Params.Name + "'>Yes</a> <a href='#'>Cancel</a>" + cm.help.footer();  
+              + app.cm.repo.fillSelect(Data) + "</i>?<p><span class='button'><a href='#Page=executeExportChannel&Name="
+              + Params.Name + "'>Yes</a></span> <span class='button'><a href='#'>Cancel</a></span>" + cm.help.footer();  
          $('body').html(H);
       }
    );

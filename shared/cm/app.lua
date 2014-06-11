@@ -15,7 +15,6 @@ require 'cm.app.listChannels'
 require 'cm.config'
 
 function cm.app.importList(R)
-   local L = {}
    local Config = cm.config.open()
    if #Config.config.repo == 0 then
       return {dir="<none defined>", err='Repository does not exist'}
@@ -28,14 +27,15 @@ function cm.app.importList(R)
    local Repository = Config.config.repo[RepoIndex];
   
    if not os.fs.dirExists(Repository) then
-      return {dir=os.fs.name.toNative(Repository), err='Repository does not exist'}
+      return {dir=os.fs.name.toNative(Repository), 
+               err='Repository does not exist'}
    end
-   
+   local L = {name={}, description={}} 
    for K, V in os.fs.glob(Repository..'/*.xml') do
-      local N = K:split("/")
-      N = N[#N]
-      N = N:sub(1, #N-4)
-      L[#L+1] = N
+      local CD = os.fs.readFile(K)
+      local X = xml.parse{data=CD}
+      L.name[#L.name+1] = X.channel.name:nodeValue();
+      L.description[#L.description+1] = X.channel.description:nodeValue();
    end
    return {repository=Config:repoList(), list=L}
 end
