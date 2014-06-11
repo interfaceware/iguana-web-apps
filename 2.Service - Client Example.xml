@@ -1,0 +1,11 @@
+<channel name="2.Service - Client Example" guid="FF685E00D3E6AADA770A3185FA0B7AD2" description="This shows an example of connecting a Lua client to the server." start_automatically="false" logging_level="1" use_message_filter="false">
+   <to_mapper guid="BBEDE80105AFC447BBB2C16223B27BB2" use_most_recent_milestone="true" milestone="">
+      <dequeue_list>
+         <dequeue source_name="self" dequeue_guid="8F7BEE806FC2122E56597756BB5B4608"></dequeue>
+      </dequeue_list>
+   </to_mapper>
+   <from_llp_listener ack_vmd_path="${iguana_dir}/autoack.vmd" nack_vmd_path="autonack.vmd" port="5147" nack_all_errors="false" connection_timeout="30" unlimited_connection_timeout="false" ack_style="fast" check_remote_host="false" remote_host="" alternate_remote_host="" message_encoding="" escape_8bit="false" escape_char="" use_ssl="false" ssl_certificate_file="" ssl_private_key_file="" ssl_verify_peer="true" ssl_certificate_authority="" ipv6_support="false" llp_start="\x0B" llp_end="\x1C\x0D"></from_llp_listener>
+   <message_filter filter_after_logging="true" log_pre_post_filter_message="true" filter_vmd_path="" transformation_mode="0" scripted_transformation_configuration_name="default" incoming_configuration_name="" outgoing_configuration_name="" error_handling="0" use_translator_filter="true" translator_guid="00000000000000000000000000000000" translator_milestone="" translator_use_most_recent_milestone="true">
+      <ignored_message message_name=""></ignored_message>
+   </message_filter>
+</channel>
