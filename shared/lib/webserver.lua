@@ -8,6 +8,8 @@ lib.webserver = {}
 -- http://help.interfaceware.com/kb/the-anatomy-of-an-iguana-app/2
 
 require 'file'
+require 'json'  --JSON wrapper means that it's easier to make JSON objects.
+
 local basicauth = require 'basicauth'
 
 local webMT = {__index=lib.webserver}
@@ -221,22 +223,37 @@ local function HelpAction(Self, R)
    return false
 end
 
-local function FindApi (Self, D, Call)
-   local Address = Call:split('%.')  
+local function FindApi(Self, D, Call)
+   local Address = Call:split('/')  
    local Methods = Self.methods
    for i =1, #Address do
       Methods = Methods[Address[i]]
    end
-   
-   
 
    return Methods(json.parse{data=D})
 end
 
+local function FindApi(Self, Call)
+   local Address = Call:split('/')  
+   local Func = Self.methods
+   for i =1, #Address do
+      Func = Func[Address[i]]
+   end
+   return Func
+end
+
+
 local function CallApi(Self, R)
    local Action = R.location:sub(Self.baseUrlSize)
+   local Func = FindApi(Self, Action)
+   if (Func) then
+      local Result = Func(R.params)
+      local Body = json.serialize{data=Result}
+      net.http.respond{body=Body, entity_type='text/json'}
+      return true    
+   end
    if (Action == 'callapi') then
-
+      
       net.http.respond{body=FindApi(Self, R.body, R.params.call), entity_type='text/json'}
       return true
    end
