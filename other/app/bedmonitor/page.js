@@ -1,6 +1,7 @@
 $(document).ready(function($) {
    console.log('Load page handling framework.');
    lib.page.init(app.cm.page);
+   // Switch over to straight jQuery for AJAX
    lib.ajax.errorFunc = cm.help.showError;
 });
 
@@ -47,8 +48,6 @@ PAGE.listBeds = function() {
       };
    };
    
-   // TODO - we should change this over to use the same lib.ajax calls as the channel manager for consistency
-   // and getting standard error handling.
    setInterval(function() {
       $.ajax(Params);
    }, 3000);
