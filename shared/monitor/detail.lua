@@ -19,12 +19,15 @@ local function ConvertXmlToLua(Xml)
       if MT[i]:nodeType() == 'attribute' then
          S[MT[i]:nodeName()] = MT[i]:nodeValue()
       else
-         local C = MT[i]
-         local Cvars = {}
-         for j = 1, #C do
-            Cvars[C[j]:nodeName()] = C[j]:nodeValue()     
+         -- We have to check that we have a channel node
+         if (MT[i]:nodeName() == 'Channel') then   
+            local C = MT[i]
+            local Cvars = {}
+            for j = 1, #C do
+               Cvars[C[j]:nodeName()] = C[j]:nodeValue()     
+            end  
+            Ch[C.Guid:S()] = Cvars
          end
-         Ch[C.Guid:S()] = Cvars
       end
       
    end
