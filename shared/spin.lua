@@ -500,19 +500,21 @@ function go_PLACEHOLDER(Params)
    local DataSet = Payload.DataSet
    local Options = Payload.Options
    
-   local Results = {}
+   local Results = {['tests'] = {}, ['messages'] = {}}
 
    local doThisInstead = function(Args)
-      table.insert(Results, catch_PLACEHOLDER(Args))
+      table.insert(Results['messages'], catch_PLACEHOLDER(Args))
    end
    
    net.http.respond = doThisInstead
    queue.push = doThisInstead
    
+   Results['tests'] = simulatedMain_PLACEHOLDER(DataSet[i])
+   
    for i = 1, #DataSet do
       simulatedMain_PLACEHOLDER(DataSet[i])
       if Options.OneForOne then 
-         if #Results < i then 
+         if #Results['messages'] < i then 
             doThisInstead({})
          end
       end
