@@ -91,7 +91,7 @@ function testrunner.app.runTest()
    for NodeKey, Node in pairs(SpinnerNodes) do
       local DB = testrunner.db.connect()
       local Translator = Node:getTranslator()
-      local TGuid = xml.parse{data=iguana.channelConfig{guid=testrunner.ini.testSuiteGuid}}.channel.message_filter.translator_guid:S()
+      local TGuid = xml.parse{data=iguana.channelConfig{name=testrunner.ini.testSuiteName}}.channel.message_filter.translator_guid:S()
       local ZipTree, TestData = getTestSuite(TGuid)
       Translator:overload(ZipTree)
       local TestResultTable = Translator:run(TestData)

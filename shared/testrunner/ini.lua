@@ -14,6 +14,5 @@ ini['account'] = {
 -- expanded Web API (link to which is found on the Iguana
 -- dashboard)
 -- ##########
-ini['testSuiteGuid'] = 'E38B897A2F020B88C2D3DB929C66D4BD'
-
+ini.testSuiteName = '2.Unit Test - Suite'
 return ini
