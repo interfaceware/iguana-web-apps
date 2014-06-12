@@ -34,8 +34,8 @@ function cm.app.importList(R)
    for K, V in os.fs.glob(Repository..'/*.xml') do
       local CD = os.fs.readFile(K)
       local X = xml.parse{data=CD}
-      L.name[#L.name+1] = X.channel.name:nodeValue();
-      L.description[#L.description+1] = X.channel.description:nodeValue();
+      L.name[#L.name+1] = X.channel.name
+      L.description[#L.description+1] = X.channel.description
    end
    return {repository=Config:repoList(), list=L}
 end
