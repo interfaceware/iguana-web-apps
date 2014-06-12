@@ -15,7 +15,6 @@
       "testrunner.ini"
    ],
    "OtherDependencies": [
-      "app/testrunner/config.html",
       "app/testrunner/help.js",
       "app/testrunner/index.html",
       "app/testrunner/page.js",
