@@ -4,7 +4,7 @@ if (!app.cm) { app.cm = {}; }
 app.cm.help = {};
    
 cm.help.header = function(){
-   return '<h1>Channel Manager App</h1><div id="global">';
+   return '<h1>Channel Manager</h1><div id="global">';
 } 
    
 cm.help.footer = function(){

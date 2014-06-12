@@ -22,8 +22,8 @@ function cm.app.listChannels(Request, App)
    local T = {name={}, status={}, source={}, destination={}}
    for i=1, Conf:childCount('Channel') do
       local Ch = Conf:child('Channel', i)
-      T.name[#T.name+1] = Ch.Name:nodeValue();
-      T.status[#T.status+1] = Ch.Status:nodeValue();     
+      T.name[#T.name+1] = Ch.Name
+      T.status[#T.status+1] = Ch.Status     
       T.source[#T.source+1] = Components[Ch.Source:nodeValue()];
       T.destination[#T.destination+1] = Components[Ch.Destination:nodeValue()];
    end

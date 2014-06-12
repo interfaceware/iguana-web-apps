@@ -1,0 +1,20 @@
+{
+   "call": "contact.delete",
+   "Title": "contact.delete",
+   "SummaryLine": "Hello",
+   "Parameters": [
+      {
+         "ID": {
+            "Desc": "The ID of the person you wish to delete"
+         }
+      }
+   ],
+   "ParameterTable": true,
+   "SeeAlso": [
+      {
+         "Title": "Google",
+         "Link": "google.com"
+      }
+   ],
+   "Desc": "Deletes a contact"
+}

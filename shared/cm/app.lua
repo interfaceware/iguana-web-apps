@@ -34,8 +34,8 @@ function cm.app.importList(R)
    for K, V in os.fs.glob(Repository..'/*.xml') do
       local CD = os.fs.readFile(K)
       local X = xml.parse{data=CD}
-      L.name[#L.name+1] = X.channel.name:nodeValue();
-      L.description[#L.description+1] = X.channel.description:nodeValue();
+      L.name[#L.name+1] = X.channel.name
+      L.description[#L.description+1] = X.channel.description
    end
    return {repository=Config:repoList(), list=L}
 end
@@ -51,6 +51,11 @@ function cm.app.addChannel(R)
    local Credentials = basicauth.getCredentials(R)
    local Api = iguanaServer.connect(Credentials)
 
+   if (iguana.channel.exists(ChannelName)) then
+      Api:stopChannel{name=ChannelName}
+      Api:removeChannel{name=ChannelName}
+   end
+   
    iguana.channel.add{dir=Dir, 
       definition=ChannelName, api=Api}
    return {success=true}
@@ -109,7 +114,7 @@ function cm.app.export(R)
    local Credentials = basicauth.getCredentials(R)
    local Api = iguanaServer.connect(Credentials)
 
-   local D = iguana.channel.export{api=Api, name=ChannelName}
+   local D = iguana.channel.export{api=Api, name=ChannelName, sample_data=(R.params.sample_data == 'checked')}
    local Config = cm.config.open()
    
    WriteFiles(Config.config.repo[RepoIndex+1], D)

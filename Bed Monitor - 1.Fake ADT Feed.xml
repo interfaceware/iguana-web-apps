@@ -1,10 +1,10 @@
-<channel name="Bed Monitor - 1.Fake ADT Feed" guid="FB4B76317D0D94624212CD0F76142172" description="Generates random ADT messages for example purposes of showing the bed monitor application." start_automatically="false" logging_level="1" use_message_filter="false">
+<channel name="Bed Monitor - 1.Fake ADT Feed" guid="00000000000000000000000000000000" description="Generates random ADT messages for example purposes of showing the bed monitor application." start_automatically="false" logging_level="1" use_message_filter="false">
    <to_llp_client remote_host="localhost" remote_port="7823" wait_for_ack="true" ack_timeout="10000" ack_verification_type="0" ack_vmd_path="${iguana_dir}/ack_verify.vmd" retry_on_ack_timeout="true" retry_on_ack_verification_failed="false" unlimited_count_of_retry="false" count_of_retry="5" disconnect_between_retries="true" ack_reconnect_interval="10000" ack_error_handling="1" persistent_connection="true" connection_timeout="10000" unlimited_max_count_of_reconnect="false" max_count_of_reconnect="60" connection_lost_reconnect_interval="10000" message_encoding="" escape_8bit="false" escape_char="" use_ssl="false" ssl_certificate_file="" ssl_private_key_file="" ssl_verify_peer="true" ssl_certificate_authority="" llp_start="\x0B" llp_end="\x1C\x0D">
       <dequeue_list>
          <dequeue source_name="self" dequeue_guid="A278878EF328DE6C7391FE46C1287B38"></dequeue>
       </dequeue_list>
    </to_llp_client>
-   <from_mapper guid="132C21C8BA4571CE46D4FF5BFF220C68" use_most_recent_milestone="true" milestone="" poll_time="10000"></from_mapper>
+   <from_mapper guid="00000000000000000000000000000000" use_most_recent_milestone="true" milestone="" poll_time="10000"></from_mapper>
    <message_filter filter_after_logging="true" log_pre_post_filter_message="true" filter_vmd_path="" transformation_mode="0" scripted_transformation_configuration_name="default" incoming_configuration_name="" outgoing_configuration_name="" error_handling="0" use_translator_filter="true" translator_guid="00000000000000000000000000000000" translator_milestone="" translator_use_most_recent_milestone="true">
       <ignored_message message_name=""></ignored_message>
    </message_filter>

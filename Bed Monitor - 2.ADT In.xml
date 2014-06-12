@@ -1,5 +1,5 @@
-<channel name="Bed Monitor - 2.ADT In" guid="182EEA9431DF46B9209BD577C51E1ABC" description="This bed monitor ADT feed populates a SQLite database which handles powers the bed monitor." start_automatically="false" logging_level="1" use_message_filter="false">
-   <to_mapper guid="0C20F43C8E208F3DACE43CB15B266285" use_most_recent_milestone="true" milestone="">
+<channel name="Bed Monitor - 2.ADT In" guid="00000000000000000000000000000000" description="This bed monitor ADT feed populates a SQLite database which handles powers the bed monitor." start_automatically="false" logging_level="1" use_message_filter="false">
+   <to_mapper guid="00000000000000000000000000000000" use_most_recent_milestone="true" milestone="">
       <dequeue_list>
          <dequeue source_name="self" dequeue_guid="A39CC5F3996D43A4A62132CEEDE45D53"></dequeue>
       </dequeue_list>

@@ -1,0 +1,43 @@
+{
+   "Desc": "Adds a new company record to Highrise.",
+   "call": "company.add",
+   "Returns": [
+      {
+         "Desc": "String"
+      }
+   ],
+   "SummaryLine": "Add a new company record to highrise.",
+   "SeeAlso": [
+      [
+         
+      ]
+   ],
+   "Title": "company.add",
+   "Usage": "local Id = highrise.company.add{name=\"Acme Co.\", background=\"Met this company at a tradeshow\"}",
+   "Parameters": [
+      {
+         "name": {
+            "Desc": "Name of the company"
+         }
+      },
+      {
+         "background": {
+            "Desc": "Background information about this company"
+         }
+      },
+      {
+         "address": {
+            "Desc": "Email address of the company"
+         }
+      },
+      {
+         "number": {
+            "Desc": "Phone number of the company"
+         }
+      }
+   ],
+   "Examples": [
+      "local Id = highrise.company.add{name=\"Acme Co.\", background=\"Met this company at a tradeshow\"}"
+   ],
+   "ParameterTable": true
+}

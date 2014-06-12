@@ -48,10 +48,25 @@ PAGE.addChannel = function(Params) {
 
 
 PAGE.confirmAddChannel = function(Params) {
-   var H = cm.help.header() + cm.help.breadCrumb('Confirm Add Channel') + "Add Channel " + Params.With + "?";
-   H += "<p><a href='#Page=executeAddChannel&Name=" + Params.With + "&With=" + Params.With + "'><span class='button'>Execute</span></a>"; 
-   H += cm.help.footer();
-   $('body').html(H);     
+   $.post(
+      "list-channels",
+      function(D){
+         console.log(D);
+         var ChannelExists = false;
+         for (var i=0;i < D.name.length; i++){
+            if (D.name[i] === Params.With){
+               ChannelExists = true; 
+            }
+         }
+         var H = cm.help.header() + cm.help.breadCrumb('Confirm Add Channel') + "Add Channel " + Params.With + "?";
+         if (ChannelExists){
+            H += "<span class='warning'>This will result in replacing the existing channel by the same name.</span>";  
+         }
+         
+         H += "<p><a href='#Page=executeAddChannel&Name=" + Params.With + "&With=" + Params.With + "'><span class='button'>Execute</span></a>"; 
+         H += cm.help.footer();
+         $('body').html(H);       
+   });     
 }
    
 PAGE.executeAddChannel = function(Params) {

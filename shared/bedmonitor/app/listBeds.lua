@@ -13,17 +13,18 @@ function bedmonitor.app.listBeds(Request)
       local Row = Data[i]
       local Name = getName(Row)
       local Condition = getCondition(Row)
-      Results.aaData[i] = {Row.bed_name:S(), Name, Condition}
+      Results.aaData[i] = {Row.bed_name, Name, Condition}
       json.serialize{data=Results.aaData[i],compact=true}
    end
    return Results
 end
 
+
 function getName(Row)
    if Row.patient_last_name:S() == "" then
       return "Unoccupied"
    else
-      return Row.patient_last_name:S()..", "..Row.patient_first_name:S()
+      return Row.patient_last_name..", "..Row.patient_first_name
    end
 end
 
