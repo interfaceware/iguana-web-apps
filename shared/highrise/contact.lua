@@ -56,7 +56,7 @@ function highrise.contact.add(D)
       auth={username='47ae105b9a78b02af4ee12e4aad576bc', password = 'X'}, live=true, body=tostring(X)}
    local Config = xml.parse{data=result}
    
-   return Config.person.id[2], result
+   return {Config.person.id[2], result}
 end
 
 function highrise.contact.delete(D)

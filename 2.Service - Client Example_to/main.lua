@@ -1,11 +1,16 @@
--- The main function is the first function called from Iguana.
--- The Data argument will contain the message to be processed.
+-- This example is just showing the beginning of how this could work.
+-- We connect to the web service and construct the API on the fly to talk to highrise.
+
 local webservice = require 'webservice.client'
 
 function main(Data)
-   local Highrise = webservice.client.connect{url='http://localhost:6544/webservice/', username='admin', password='password'}
-   Result = Highrise.contact.add{firstname = "Hi", lastname = "Bye" , title = "Sir"}
-   Highrise.contact.delete{ID=209113181}
-   Highrise.company.add{name="hello",  background="A greetings company"}
-   Highrise.company.delete{ID="12345"}
+   local WebInfo = iguana.webInfo()
+   local Url = 'http://localhost:'..WebInfo.https_channel_server.port..'/webservice/'
+   -- We connect to the server to get our API
+   local Highrise = webservice.client.connect{url=Url, 
+                username='admin', password='password'}
+   -- We add in Jim Smith and remove him.
+   local Id, ContactXml = 
+      Highrise.contact.add{firstname="Jim", lastname="Smith", title="Mr"}
+   Highrise.company.delete{id=Id}
 end

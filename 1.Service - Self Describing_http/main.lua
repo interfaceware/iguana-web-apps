@@ -9,7 +9,7 @@ require 'highrise.main'
 -- This first stage shows how we can serve up the help information for
 -- a group of functions that are in the core API.
 
-function main(Data)
+function main(Data)  
    local Server = lib.webserver.create{
       actions=app.webservice.actions,
       root='highrise',
@@ -18,6 +18,6 @@ function main(Data)
       default='app/webservice/index.html',
       test='admin'
    }
-   
+  
    Server:serveRequest{data=Data}
 end
