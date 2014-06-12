@@ -61,6 +61,20 @@ h1 {
    margin: 0px auto;
 }
 
+table#hosts {
+   border-collapse: collapse;
+}
+
+table#hosts td {
+   padding: 10px;
+   text-align: center;
+   border-top: 1px solid black;
+}
+
+table#hosts th {
+   padding: 10px;
+   text-align: center;
+}
 
 table.dataTable {
     border-color: #DDDDDD;
@@ -71,7 +85,7 @@ table.dataTable {
     margin-bottom: 10px;
 }
 
-thead {
+table.dataTable thead {
     background-color: #FAFAFA !important;
     background-image: linear-gradient(to bottom, #FAFAFA, #EFEFEF) !important;
     box-shadow: none;
@@ -80,7 +94,7 @@ thead {
     color: #444444;
 }
 
-th {
+table.dataTable th {
     font-size: 0.75em;
     font-weight: 600 !important;
     text-transform: uppercase;
@@ -89,7 +103,7 @@ th {
     border-bottom: 1px solid #CCCCCC !important;
 }
 
-td {
+table.dataTable td {
     font-size: 0.9em;
     font-weight: 300;
     border-top: 1px solid #DDDDDD;
@@ -128,7 +142,7 @@ div.dataTables_wrapper {
    border: 1px solid #DDDDDD;
    border-radius: 5px;
    box-shadow: none;
-   padding: 15px 15px 10px 15px;
+   padding: 15px 15px 35px 15px;
    margin: 30px;
 }
    
