@@ -1,5 +1,5 @@
-<channel name="2.Service - Client Example" guid="FF685E00D3E6AADA770A3185FA0B7AD2" description="This shows an example of connecting a Lua client to the server." start_automatically="false" logging_level="1" use_message_filter="false">
-   <to_mapper guid="BBEDE80105AFC447BBB2C16223B27BB2" use_most_recent_milestone="true" milestone="">
+<channel name="2.Service - Client Example" guid="00000000000000000000000000000000" description="This shows an example of connecting a Lua client to the self describing webservice.&#xD;&#xA;&#xD;&#xA;It&apos;s a work in progress...&#xD;&#xA;&#xD;&#xA;See:&#xD;&#xA;&#xD;&#xA;http://help.interfaceware.com/kb/self-describing-web-service" start_automatically="false" logging_level="1" use_message_filter="false">
+   <to_mapper guid="00000000000000000000000000000000" use_most_recent_milestone="true" milestone="">
       <dequeue_list>
          <dequeue source_name="self" dequeue_guid="8F7BEE806FC2122E56597756BB5B4608"></dequeue>
       </dequeue_list>
