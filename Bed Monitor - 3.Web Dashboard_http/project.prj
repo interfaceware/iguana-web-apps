@@ -6,6 +6,7 @@
       "bedmonitor.app.listBeds",
       "bedmonitor.db",
       "file",
+      "json",
       "lib.webserver",
       "node",
       "stringutil"
