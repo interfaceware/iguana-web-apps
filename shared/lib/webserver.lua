@@ -223,16 +223,6 @@ local function HelpAction(Self, R)
    return false
 end
 
-local function FindApi(Self, D, Call)
-   local Address = Call:split('/')  
-   local Methods = Self.methods
-   for i =1, #Address do
-      Methods = Methods[Address[i]]
-   end
-
-   return Methods(json.parse{data=D})
-end
-
 local function FindApi(Self, Call)
    local Address = Call:split('/')  
    local Func = Self.methods
@@ -241,7 +231,6 @@ local function FindApi(Self, Call)
    end
    return Func
 end
-
 
 local function CallApi(Self, R)
    local Action = R.location:sub(Self.baseUrlSize)
@@ -253,7 +242,6 @@ local function CallApi(Self, R)
       return true    
    end
    if (Action == 'callapi') then
-      
       net.http.respond{body=FindApi(Self, R.body, R.params.call), entity_type='text/json'}
       return true
    end

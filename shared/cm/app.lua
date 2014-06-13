@@ -16,15 +16,15 @@ require 'cm.config'
 
 function cm.app.importList(R)
    local Config = cm.config.open()
-   if #Config.config.repo == 0 then
+   if #Config.config.locations == 0 then
       return {dir="<none defined>", err='Repository does not exist'}
    end
    local RepoIndex = R.params.repository +1
-   if RepoIndex > #Config.config.repo then  
+   if RepoIndex > #Config.config.locations then  
       RepoIndex = 1
    end  
    
-   local Repository = Config.config.repo[RepoIndex];
+   local Repository = Config.config.locations[RepoIndex].Dir;
   
    if not os.fs.dirExists(Repository) then
       return {dir=os.fs.name.toNative(Repository), 
@@ -46,7 +46,7 @@ function cm.app.addChannel(R)
    local RepoIndex = R.params.repository
    
    local Config = cm.config.open()
-   local Dir = Config.config.repo[RepoIndex+1]
+   local Dir = Config.config.locations[RepoIndex+1].Dir
    
    local Credentials = basicauth.getCredentials(R)
    local Api = iguanaServer.connect(Credentials)
@@ -117,7 +117,7 @@ function cm.app.export(R)
    local D = iguana.channel.export{api=Api, name=ChannelName, sample_data=(R.params.sample_data == 'checked')}
    local Config = cm.config.open()
    
-   WriteFiles(Config.config.repo[RepoIndex+1], D)
+   WriteFiles(Config.config.locations[RepoIndex+1].Dir, D)
    return D
 end
 
@@ -131,14 +131,18 @@ function cm.app.saveRepo(R,App)
    local Info = json.parse{data=R.body}
    local List = {}
    for i=1, #Info do
-      local Repo = os.fs.name.fromNative(Info[i])
+      local Repo = os.fs.name.fromNative(Info[i].Dir)
       Repo = Repo:trimWS()
+      local temp = {};
       if (#Repo > 0) then
-         List[#List+1] = Repo
+         temp.Name = Info[i].Name
+         temp.Dir = Repo
+         List[i] = temp
       end
    end
    local Config = cm.config.open()
-   Config.config.repo = List
+   Config.config.locations = List
+   Config.config.repo = nil
    Config:save()
    return {status='ok'}
 end

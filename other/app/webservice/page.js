@@ -3,9 +3,7 @@ $(document).ready(function($) {
    lib.page.init(webservice.page);
    lib.ajax.errorFunc = webservice.help.showError;
 });
-
 if (webservice === undefined) { var webservice = {}; }
-
 webservice.page = {}
    
 PAGE = webservice.page;
@@ -28,14 +26,28 @@ PAGE.editHelp = function(P){
    var Call = P.path;
    lib.ajax.call('helpdata?call=' + Call, function(D){
       console.log(D);
-      var H = lib.help.render.edit(D,Call) + '<span class="edit">Save</span>';
+      var H = lib.help.render.edit(lib.help.render.adapter(D),Call) + '<span class="edit">Save</span>';
       console.log(H);
       $('#helpdata').html(H);
       $('.editable').attr('contenteditable', 'true');
-      
+      $('body').on("click", '.deletebtn', function(){ 
+         $(this).parent().remove();
+      });
+      $('.add').attr('tabIndex', '0');
+      $('.add').click(function(){lib.help.addrow($(this));});
+      $('.add').keypress(function (E){
+         var keycode = (E.keyCode ? E.keyCode : E.which);
+         if(keycode == '13'){
+            lib.help.addrow($(this)); 
+         }
+      });
       $('.edit').click(function(E){
          var D = lib.help.savedata();
          console.log(D);
+         if (!D) {return;}
+         lib.ajax.call('setHelp?call=' + D.Title, lib.help.getdata.adapter(D), function(E){
+            document.location.hash = "#Page=viewHelp&path=" + Call; 
+         });
       });
    });
 }
@@ -48,15 +60,14 @@ PAGE.viewHelp = function(P){
    // TODO swap over to jQuery standard
    lib.ajax.call('helpdata?call=' + Call, function(D){
       console.log(D);
-      var H = lib.help.render.all(D,Call);// + "<a href='#Page=editHelp&path=" + Call + "'><span class='edit'>Edit</span></a>";
+      var H = lib.help.render.all(lib.help.render.adapter(D),Call) + "<a href='#Page=editHelp&path=" + Call + "'><span class='edit'>Edit</span>";
       console.log(H);
       $('#helpdata').html(H);
       //Applies the google-prettify to the appropriate fields (Usage and Examples)
-      $('#helpdata').find('pre').addClass('prettyprint lang-lua editable'); 
+      $('#helpdata').find('pre').addClass('prettyprint lang-lua'); 
       prettyPrint(); // called in the prettify library.
    });
 }
-
 webservice.onBrowseTreeClick = function(Node){
    //If the node clicked is a leaf and not a branch
    if (!Node.m_Children.length) { //Returns the full path of the function
@@ -89,13 +100,10 @@ webservice.initBrowseTree = function(){
       console.log("Browse tree initialized");
    }
 }
-
 PAGE.browse = function(Params) {
    webservice.initBrowseTree();
 }
-
 PAGE.default = PAGE.browse
-
 // This function can be put into page.js as a method of the Tree22 object   
 function myRender(D, tree){
   $.each(D, function(key, value){
