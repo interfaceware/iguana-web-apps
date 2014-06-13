@@ -1,8 +1,0 @@
-{
-   "call": "company.update",
-   "ParameterTable": true,
-   "Examples": {
-      "0": ""
-   },
-   "Title": "company.update"
-}
