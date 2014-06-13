@@ -146,6 +146,7 @@ lib.help.getdata.adapter = function (D){
    if (D.hasOwnProperty('Examples')){
       var temp = [];
       temp[0] = ('<pre>' + D.Examples + '</pre>');
+      D.Examples = temp;
    }
    return D;
 }   
