@@ -4,6 +4,7 @@
       "basicauth",
       "file",
       "iguanaServer",
+      "json",
       "lib.webserver",
       "regressions.app",
       "regressions.config",

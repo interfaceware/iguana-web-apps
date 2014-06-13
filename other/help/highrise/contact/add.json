@@ -1,0 +1,48 @@
+{
+   "Desc": "Adds a new contact to Highrise",
+   "call": "contact/add",
+   "Title": "contact.add",
+   "Usage": "highrise.contact.add{firstname = \"John\", lastname = \"Doe\"}",
+   "SummaryLine": "Adds a new contact to Highrise",
+   "Parameters": [
+      {
+         "firstname": {
+            "Desc": "First name of person"
+         }
+      },
+      {
+         "lastname": {
+            "Desc": "Last name of person"
+         }
+      },
+      {
+         "title": {
+            "Desc": "Title of person"
+         }
+      },
+      {
+         "companyname": {
+            "Desc": "Company the person works for"
+         }
+      },
+      {
+         "background": {
+            "Desc": "Some background information"
+         }
+      },
+      {
+         "address": {
+            "Desc": "Email address of person"
+         }
+      },
+      {
+         "number": {
+            "Desc": "Home phone number of the person"
+         }
+      }
+   ],
+   "Examples": [
+      "This is an example"
+   ],
+   "ParameterTable": true
+}

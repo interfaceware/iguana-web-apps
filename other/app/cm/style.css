@@ -30,8 +30,86 @@ h1 {
 #global {
    border-radius: 0;  
 }
-   
-.status-green {
+
+.label{
+  font-weight : bold;  
+}
+
+/* Padding for edit repo boxes */
+.repoEdit{
+   padding : 4px;     
+}
+
+/* Float the repositories link over the right */
+.settings{
+   float : right;
+}
+
+span#add-channel{
+   background-image:url('button-addchannel.gif');  
+   float: right;
+   width : 194px;
+   height : 26px;
+   margin : 10px;
+}
+
+/* This is the highlight color used for the search highlighting */
+span.filterMatches{
+   background-color : yellow;  
+}
+
+span.button-repositories{
+   visibility : none;  
+} 
+
+#repositories{
+   float : right;
+}
+
+#add-channel{
+   float : right;  
+}
+
+#edit {
+   float : right;
+}
+
+input.repodir{
+   width : 90%;
+}
+
+span.warning{
+   display: table;
+   border: red;
+   border-style: solid;
+   padding: 10px;
+}
+
+span.button{
+   background : #e7f4f9;
+   padding : 2px;
+   border-radius:4px;
+   border: 2px solid lightblue;   
+   box-shadow: 2px 2px 2px #888888;
+}
+
+span.button-delete{
+   visibility : none;     
+}
+
+span.button-delete:after{
+   content : "Delete";
+   width : 69px;
+   height : 20px;
+   text-align : center;
+   background : #e7f4f9;
+   border: 2px solid lightblue;
+   visibility: visible;
+   float : right;
+   border-radius:4px;
+}
+
+div.chan-on {
    width:10px;
    height:10px;
    border-radius:50px;
@@ -40,7 +118,7 @@ h1 {
    margin: 0px auto;
 }
    
-.status-red {
+div.chan-error {
    width:10px;
    height:10px;
    border-radius:50px;
@@ -49,7 +127,7 @@ h1 {
    margin: 0px auto;
 }
    
-.status-grey {
+div.chan-off {
    width:10px;
    height:10px;
    border-radius:50px;
@@ -58,13 +136,59 @@ h1 {
    margin: 0px auto;
 }
    
-.status-yellow {
+div.chan-transition {
    width: 10px;
    height: 10px;
    border-radius: 50px;
    background: linear-gradient(to bottom, #FFF159, #E9DC51);
    border: 2px solid #FFFFFF;
    margin: 0px auto;
+}
+
+div.TRANS {
+   width: 38px;
+   height: 16px;
+   background-image:url('../../icon_TRANS.gif');
+}
+
+div.HTTPS {
+   width: 38px;
+   height: 16px;
+   background-image:url('../../icon_HTTPS.gif');
+}
+
+div.QUE {
+   width: 38px;
+   height: 16px;
+   background-image:url('../../icon_QUE.gif');
+}
+
+div.FILE {
+   width: 38px;
+   height: 16px;
+   background-image:url('../../icon_FILE.gif');
+}
+
+div.LLP {
+   width: 38px;
+   height: 16px;
+   background-image:url('../../icon_LLP.gif');
+}
+
+div.PLG_N {
+   width: 38px;
+   height: 16px;
+   background-image:url('../../icon_PLG-N.gif');
+}
+
+div.FILTER {
+   width: 11px;
+   height: 16px;
+   background-image:url('../../arrow.gif');
+}
+
+div.chan-type{
+   display: inline-flex;  
 }
 
 table.dataTable {

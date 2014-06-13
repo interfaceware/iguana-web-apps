@@ -9,9 +9,15 @@ function app.webservice.main.initHelp()
    
 end
 
+<<<<<<< HEAD
 local function ExistsInTable(val, t)
    for i=1,#t do
       if t[i] == val then
+=======
+local function ExistsInTable(Value,T)
+   for i=1,#T do
+      if T[i] == Value then
+>>>>>>> 27fc8cafe56e6656ff3e32f02258f341842c4272
          return true
       end
    end
@@ -25,8 +31,13 @@ end
 function app.webservice.actions.setHelp(R, App)
    local HelpData = R.body
    local T = json.parse{data=HelpData}
+<<<<<<< HEAD
    local CallName = App.root .. "."..T.call
    FilePath = 'help/'..CallName:gsub("%.", "/")..'.json'
+=======
+   local CallName = App.root .. "/"..T.call
+   FilePath = 'help/'..CallName..'.json'
+>>>>>>> 27fc8cafe56e6656ff3e32f02258f341842c4272
    local UserName = basicauth.getCredentials(R).username;
    local FileName = iguana.workingDir()..'edit/'..UserName..'/other/'..FilePath
    trace(FileName)
@@ -46,7 +57,11 @@ function app.webservice.actions.setHelp(R, App)
       os.fs.writeFile(ProjectPath, json.serialize{data=Project})
    end
    os.fs.writeFile(FileName, json.serialize{data=T})
+<<<<<<< HEAD
    CallName = CallName:split("%.")
+=======
+   CallName = CallName:split("/")
+>>>>>>> 27fc8cafe56e6656ff3e32f02258f341842c4272
    trace(CallName)
    local location = _G
    for i =1, #CallName do

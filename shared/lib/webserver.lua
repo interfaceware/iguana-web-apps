@@ -8,6 +8,8 @@ lib.webserver = {}
 -- http://help.interfaceware.com/kb/the-anatomy-of-an-iguana-app/2
 
 require 'file'
+require 'json'  --JSON wrapper means that it's easier to make JSON objects.
+
 local basicauth = require 'basicauth'
 
 local webMT = {__index=lib.webserver}
@@ -177,33 +179,31 @@ local function ServeFile(Self, R)
    return false
 end
 
-local function FindHelp(Method, Path, root)
-   local Address = Path:split('%.')  
+local function FindHelp(Method, Path, Root)
+   local Address = Path:split('/')  
    local Result = {}
    for i =1, #Address do
       Method = Method[Address[i]]
    end
    if (not Method) then
-      Result = { ["1"] = "Function does not exist in database"}
-      return Result
+      error("Function does not exist in database");
    end
    trace(Method)
    local Files = iguana.project.files()
    local Help = help.get(Method)
-   trace('other/help/'.. root .. '/' ..Path:gsub("%.", "/")..'.json')
+   trace('other/help/'..Root..'/'..Path..'.json')
    if (not Help) then
-      for k,v in pairs(Files) do
-         if (k == 'other/help/'.. root .. '/' ..Path:gsub("%.", "/")..'.json') then
-            Help = json.parse{data=os.fs.readFile(v)}
+      for K,V in pairs(Files) do
+         if (K == 'other/help/'..Root..'/'..Path..'.json') then
+            Help = json.parse{data=os.fs.readFile(V)}
          end
       end
    end
    if (not Help) then
-      Result = { ["3"] = {["Title"] = Path}}
-      return Result
-   else Result = {["3"] = Help}
+      return {["Title"] = Path:gsub("/", "%.")}
+   else 
+      return Help
    end
-   return Result
 end
 
 local function HelpAction(Self, R)
@@ -223,17 +223,24 @@ local function HelpAction(Self, R)
    return false
 end
 
-local function FindApi (Self, D, Call)
-   local Address =Call:split('%.')  
-   local methods = Self.methods
+local function FindApi(Self, Call)
+   local Address = Call:split('/')  
+   local Func = Self.methods
    for i =1, #Address do
-      methods = methods[Address[i]]
+      Func = Func[Address[i]]
    end
-   return methods(json.parse{data=D})
+   return Func
 end
 
 local function CallApi(Self, R)
    local Action = R.location:sub(Self.baseUrlSize)
+   local Func = FindApi(Self, Action)
+   if (Func) then
+      local Result = Func(R.params)
+      local Body = json.serialize{data=Result}
+      net.http.respond{body=Body, entity_type='text/json'}
+      return true    
+   end
    if (Action == 'callapi') then
       net.http.respond{body=FindApi(Self, R.body, R.params.call), entity_type='text/json'}
       return true

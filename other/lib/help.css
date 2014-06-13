@@ -35,11 +35,12 @@ div.codeExample {
    conteneditable: true;
 }
 
-button.Edit {
+span.edit {
    position: fixed;
    top: 1%;
    right: 2%;
    font-size: 150%;
+   border : 1px;
 }
 
 div.intellisenseHelpData h1 {

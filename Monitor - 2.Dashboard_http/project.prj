@@ -3,6 +3,7 @@
    "LuaDependencies": [
       "basicauth",
       "file",
+      "json",
       "lib.webserver",
       "monitor",
       "monitor.detail",

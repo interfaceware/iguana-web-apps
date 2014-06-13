@@ -1,0 +1,13 @@
+{
+   "Desc": "Removes a company record from Highrise.",
+   "call": "company.delete",
+   "Parameters": [
+      {
+         "id": {
+            "Desc": "ID of the company you wish to delete"
+         }
+      }
+   ],
+   "ParameterTable": true,
+   "Title": "company.delete"
+}

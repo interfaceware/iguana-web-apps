@@ -21,75 +21,77 @@ PAGE.functionHelp = function(Params){
       $('body').html(H);
    });
 }
-
-webservice.state = {}
-
-function renderdatapage (Call){
+   
+PAGE.editHelp = function(P){
+   webservice.initBrowseTree();
+   $('#helpdata').html("Edit " + P.path);  
+   var Call = P.path;
    lib.ajax.call('helpdata?call=' + Call, function(D){
-   console.log(D);
-   for (var key in D){
-      /* Key 1 = No function exists
-         Key 2 = No help for function exists
-         Key 3 = Help data returned
-      */
-      /* Currently, I coded it so that if no help for a function exists, it returns Key 3 with an empty JSON table .
-         However, since the helpsummary tree is built from a list of functions, the function is guranteed to exist
-         when called by helpdata, making Key 1 redundant. We may end up removing this whole Key system in the end.
-      */
-      if (key == 3) {
-         $('#helpdata').html(lib.help.render(D[key], Call));
-         $('#helpdata').ready(function(){
-            //Creates the help button
-            $('#helpdata').find('h1').first().before(
-               $('<button/>', {
-                  class: 'Edit',
-                  text: 'Edit',
-                  onClick: 'lib.help.togglemode(this)'
-            }));
-            //Applies the google-prettify to the appropriate fields (Usage and Examples)
-            $('#helpdata').find('pre').addClass('prettyprint lang-lua editable'); 
-            prettyPrint();
-         }); 
-      }
-      else {
-         //Returns error message (Currently it is impossible to get to this branch of the conditional statement unless
-         //the user decides to type in the URL directly.
-         $('#helpdata').html(webservice.help.header() + "<p>" + D[key] + "</p>" + webservice.help.footer());
-      }
-   }});
+      console.log(D);
+      var H = lib.help.render.edit(D,Call) + '<span class="edit">Save</span>';
+      console.log(H);
+      $('#helpdata').html(H);
+      $('.editable').attr('contenteditable', 'true');
+      
+      $('.edit').click(function(E){
+         var D = lib.help.savedata();
+         console.log(D);
+      });
+   });
 }
-
+   
+PAGE.viewHelp = function(P){
+   console.log('View Help');
+   console.log(P);
+   webservice.initBrowseTree();
+   var Call = P.path;
+   // TODO swap over to jQuery standard
+   lib.ajax.call('helpdata?call=' + Call, function(D){
+      console.log(D);
+      var H = lib.help.render.all(D,Call);// + "<a href='#Page=editHelp&path=" + Call + "'><span class='edit'>Edit</span></a>";
+      console.log(H);
+      $('#helpdata').html(H);
+      //Applies the google-prettify to the appropriate fields (Usage and Examples)
+      $('#helpdata').find('pre').addClass('prettyprint lang-lua editable'); 
+      prettyPrint(); // called in the prettify library.
+   });
+}
 
 webservice.onBrowseTreeClick = function(Node){
    //If the node clicked is a leaf and not a branch
-   if (!Node.m_Children.length) {
-      //Returns the full path of the function
+   if (!Node.m_Children.length) { //Returns the full path of the function
       var Call = Node.m_Label;
       while (Node.m_Parent.m_Parent !== null) {
-         Call = Node.m_Parent.m_Label + "." + Call;
+         Call = Node.m_Parent.m_Label + "/" + Call;
          Node = Node.m_Parent;
       }
-      webservice.state.call = Call;
-      // Makes the Ajax call
-      renderdatapage(Call);
-   }
-   //If the node clicked is a branch
-   else{
+      document.location.hash = '#Page=viewHelp&path=' + Call;
+   } else {   //If the node clicked is a branch
       Node.toggle();
+   }
+}
+   
+webservice.initBrowseTree = function(){
+   if (null === document.getElementById('browser')){
+      $('body').html("<div id='browser'></div><div id='helpdata'></div>");  
+      // TODO - use standard jQuery
+      lib.ajax.call('helpsummary', function(D){
+         console.log(D);      
+         var Tree2 = new Tree22('highrise', "tree");
+         // TODO myRender should be in a nsmespace - probably only need to expand the first node and we probably
+         // should select the first function in the tree etc.
+         myRender(D, Tree2);
+         Tree2.render($("#browser"));
+         Tree2.setOnClick(webservice.onBrowseTreeClick);
+         Tree2.open();
+      });
+   } else {
+      console.log("Browse tree initialized");
    }
 }
 
 PAGE.browse = function(Params) {
-   lib.ajax.call('helpsummary', function(D){
-      console.log(D);
-      $('body').html("<div id='browser'></div><div id='helpdata'></div>");
-      
-      var Tree2 = new Tree22('highrise', "tree");
-      myRender(D, Tree2);
-      Tree2.render($("#browser"));
-      Tree2.setOnClick(webservice.onBrowseTreeClick);
-      Tree2.open();
-   });
+   webservice.initBrowseTree();
 }
 
 PAGE.default = PAGE.browse
