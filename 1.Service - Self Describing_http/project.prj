@@ -21,6 +21,7 @@
       "help/highrise/contact/add.json",
       "help/highrise/contact/delete.json",
       "lib/ajax.js",
+      "lib/assets.js",
       "lib/help.css",
       "lib/help.js",
       "lib/page.js",

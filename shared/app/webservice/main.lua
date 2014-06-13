@@ -25,7 +25,7 @@ end
 function app.webservice.actions.setHelp(R, App)
    local HelpData = R.body
    local T = json.parse{data=HelpData}
-   local CallName = App.root .. "/"..T.call
+   local CallName = App.root .. "/"..T.Title
    FilePath = 'help/'..CallName..'.json'
    local UserName = basicauth.getCredentials(R).username;
    local FileName = iguana.workingDir()..'edit/'..UserName..'/other/'..FilePath

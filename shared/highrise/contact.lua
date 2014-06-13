@@ -63,4 +63,3 @@ function highrise.contact.delete(D)
    local result = net.http.delete{url='https://interfaceware2.highrisehq.com/people/#' .. D.id .. '.xml'}
    return result
 end
-   
