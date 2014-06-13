@@ -150,7 +150,10 @@ lib.help.getdata.adapter = function (D){
    return D;
 }   
    
-// Iterates through the tables of Parameters and Returns, creating an array of objects.
+/* Iterates throgh a table made up of <div>, and creates an array of objects, 
+   where each entry in the array correspondes to each row.
+   Each array entry has a collection of parameters in the form {id : data}, 
+   where id is the value for 'data-param', and data is text within the cell.*/
 lib.help.getdata.table = function (table){
    var rtn = [];
    var tableid = $(table).attr('data-id');
@@ -164,7 +167,8 @@ lib.help.getdata.table = function (table){
    });
    return rtn;
 }
-   
+/* Finds all tags with the attribute 'data-id', and stores the text within that 
+   tag in an object with parameter name being the value of 'data-id'*/
 lib.help.getdata.all = function (heading, d){
    $(heading).each(function(key, value){
       var id = $(value).attr('data-id');
@@ -227,16 +231,6 @@ lib.help.savedata=function(){
    var d = {};
    lib.help.getdata.all('.data', d);
    d["Title"] = $(".intellisenseHelpData").find('h1').text().replace('.','/');
-   
- 
- 
- 
- 
- 
- 
- 
- 
- 
    //Looks through data, and deletes empty sections.
    for (var prop in d){
       if (typeof(d[prop]) == "string" && d[prop] == ""){
