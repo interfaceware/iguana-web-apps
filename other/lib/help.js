@@ -1,11 +1,13 @@
 if (lib===undefined){
    var lib = {};  
 }
+
 if (!Array.prototype.last){
     Array.prototype.last = function(){
         return this[this.length - 1];
     };
 };
+
 lib.help = {};
 lib.help.render = {};
 lib.help.getdata = {};
@@ -33,6 +35,7 @@ lib.help.render.adapter = function(D){
    }
    return D;
 }
+   
 lib.help.render.all=function(D, Title){
    console.log(D);
    var H = [];
@@ -123,9 +126,10 @@ lib.help.render.edit=function(D){
    return H.join('');
 }
    
-//The following code is to send data back to the server
-//Keep in mind that there is no controls or error checking, so the user can enter anything. Implement future controls here
-//Converts JSON to old format
+// The following code is to send data back to the server
+// Keep in mind that there is no controls or error checking, so the user can enter anything. 
+// Implement future controls here
+// Converts JSON to old format
 lib.help.getdata.adapter = function (D){
    if (D.hasOwnProperty('Parameters')){
       var temp = [];
@@ -151,33 +155,34 @@ lib.help.getdata.adapter = function (D){
    return D;
 }   
    
-/* Iterates throgh a table made up of <div>, and creates an array of objects, 
+/* Iterates through a table made up of <div>, and creates an array of objects, 
    where each entry in the array correspondes to each row.
    Each array entry has a collection of parameters in the form {id : data}, 
    where id is the value for 'data-param', and data is text within the cell.*/
-lib.help.getdata.table = function (table){
-   var rtn = [];
-   var tableid = $(table).attr('data-id');
+lib.help.getdata.table = function(Table){
+   var Return = [];
+   var tableid = $(Table).attr('data-id');
  
-   $(table).find('.row').each(function (index, val){
+   $(Table).find('.row').each(function (index, val){
       var obj = {};
       $(val).find('div').each(function (i, v){
          obj[$(v).attr('data-param')] = $(v).text();
       });
-      rtn[index] = obj;    
+      Return[index] = obj;    
    });
-   return rtn;
+   return Return;
 }
+
 /* Finds all tags with the attribute 'data-id', and stores the text within that 
    tag in an object with parameter name being the value of 'data-id'*/
-lib.help.getdata.all = function (heading, d){
-   $(heading).each(function(key, value){
+lib.help.getdata.all = function (Heading, D){
+   $(Heading).each(function(key, value){
       var id = $(value).attr('data-id');
       if ($(value).hasClass('table')){      
-         d[id] = lib.help.getdata.table(value);
+         D[id] = lib.help.getdata.table(value);
       }
       else {
-         d[id] = $(value).text();
+         D[id] = $(value).text();
       }
    });
 }
@@ -200,6 +205,7 @@ lib.help.addrow = function (caller){
    var table = $(caller).prev();
    $(table).append(list[$(table).attr('data-id')].clone()); 
 }
+   
 lib.help.savedata=function(){    
    //Removes white space from the front and the back of the data
    $('.editable').each(function(key, val){
@@ -220,12 +226,11 @@ lib.help.savedata=function(){
    $('div[data-param|="Optional"]').each(function(key, val){
       if ($(val).children().is(':checked')){
          $(val).html('true');
-      }
-      else
+      } else{
          $(val).html('false');
+      }
    });
    console.log($('[data-param|="Optional"]'));
-   
    //Removes delete button
    $('.deletebtn').remove();
    //Initializes the data object, and fills it with information.
