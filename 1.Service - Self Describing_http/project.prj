@@ -21,7 +21,6 @@
       "help/highrise/contact/add.json",
       "help/highrise/contact/delete.json",
       "lib/ajax.js",
-      "lib/assets.js",
       "lib/help.css",
       "lib/help.js",
       "lib/page.js",
@@ -33,7 +32,6 @@
       "libe/jquery/2.1.0/jquery.min.js",
       "libe/prettify/prettify.css",
       "libe/prettify/prettify.js",
-      "trans.js",
       "treeview/images/arrow-contractable.gif",
       "treeview/images/arrow-expandable.gif"
    ]
