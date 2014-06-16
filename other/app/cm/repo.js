@@ -9,7 +9,7 @@ app.cm.repo.render = function(RepoList){
 };
 
 app.cm.repo.renderRow = function(Name, Addr){
-   return "<div class='repoEdit'><input placeholder = 'Name' type = 'edit' class='reponame' value ='"+ Name +"'><input placeholder = 'Location' type='edit' class='repodir' value='" + Addr + "'><span class='button' id='delete'>Delete</span></div>";
+   return "<div class='repoEdit'> <input placeholder = 'Name' type = 'edit' class='reponame' value ='"+ Name +"'><input placeholder = 'Location' type='edit' class='repodir' value='" + Addr + "'> <span class='button' id='delete'>Delete</span></div>";
 };
 
 app.cm.repo.model = function(){
@@ -54,7 +54,7 @@ PAGE.viewRepo = function(Params){
          if (D[i].name != ""){
             D[i].name += " : ";
          }
-         H+="<div>" + D[i].Name + D[i].Dir + "</div>";
+         H+="<div><span class='reponame'>" + D[i].Name + "</span> " + D[i].Dir + "</div>";
       }
       H += "</div>" + cm.help.footer();
       $('body').html(H);       
