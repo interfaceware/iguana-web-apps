@@ -95,7 +95,8 @@ lib.help.render.edit=function(D){
    H.push('<h2>Usage</h2><div class="codeExample"><p class ="editable data" data-id="Usage">' + D.Usage + '</p></div>');
    H.push('<h2>Parameters</h2><div class="table data" data-id="Parameters"> <div class="heading"><div class="cell">Name</div><div class="cell">Description</div><div class="cell">Optional</div></div>');
    for (var i =0; i < D.Parameters.length; i++){
-      H.push('<div class="row"><div class="cell editable essential" data-param="Name">' + D.Parameters[i].Name + '</div><div class="cell editable" data-param="Desc">' + D.Parameters[i].Desc + '</div><div class="cell" data-param="Optional">');
+      H.push('<div class="row"><div class="cell"><div class="editable essential input" data-param="Name">' + D.Parameters[i].Name + '</div></div>');
+      H.push('<div class="cell"><div class="editable input" data-param="Desc">' + D.Parameters[i].Desc + '</div></div><div class="cell" data-param="Optional">');
       if (D.Parameters[i].Optional == 'true'){
          H.push('<input type="checkbox" checked>');
       }
@@ -107,7 +108,7 @@ lib.help.render.edit=function(D){
    H.push('</div><div class="add">Add</div>');
    H.push('<h2>Returns:</h2><div class="data table" data-id="Returns"><div class="heading"><div class="cell">Description</div></div>');
    for (var i = 0; i < D.Returns.length; i++) {
-         H.push('<div class="row"><div class="cell editable essential" data-param="Desc">'+ D.Returns[i]["Desc"] + '</div><div class="deletebtn">Delete</div></div>');
+         H.push('<div class="row"><div class="cell"> <div class ="editable essential input" data-param="Desc">'+ D.Returns[i]["Desc"] + '</div></div><div class="deletebtn">Delete</div></div>');
    };
    H.push('</div><div class="add")">Add</div>');
    H.push("<h2>Examples:</h2><div class='codeExample'><p class='editable data' data-id='Examples'>");
@@ -117,7 +118,8 @@ lib.help.render.edit=function(D){
    H.push('</p></div>');
    H.push('<h2>See Also:</h2><div data-id="SeeAlso" class="table data"><div class="heading"><div class="cell">Label</div><div class="cell">Address</div></div>');
    for (var i = 0; i < D.SeeAlso.length;i++){
-      H.push('<div class="row"><div class="cell editable essential" data-param="Title">' + D.SeeAlso[i].Title + '</div><div class="cell editable" data-param="Link">' + D.SeeAlso[i].Link + '</div><div class="deletebtn">Delete</div></div>');
+      H.push('<div class="row"><div class="cell"><div class ="editable essential input" data-param="Title">' + D.SeeAlso[i].Title + '</div></div>');
+      H.push('<div class="cell"><div class="editable input" data-param="Link">' + D.SeeAlso[i].Link + '</div></div><div class="deletebtn">Delete</div></div>');
    };
    H.push('</div><div class="add">Add</div>');
    return H.join('');
@@ -186,16 +188,17 @@ lib.help.addrow = function (caller){
    var list={
       Parameters : $('<div>', {
          class : 'row',
-         html : '<div class="cell editable essential" data-param="Name" contenteditable="true">' + 
-               '</div><div class="cell editable" data-param="Desc" contenteditable="true"></div><div class="cell" data-param="Optional"><input type="checkbox"></div><div class="deletebtn">Delete</div>'
+         html : '<div class="cell"><div class="editable essential input" contenteditable = "true" data-param="Name"></div></div>' + 
+                '</div><div class="cell"><div class="input editable" data-param="Desc" contenteditable = "true"></div></div><div class="cell" data-param="Optional"><input type="checkbox"></div><div class="deletebtn">Delete</div>'
       }),
       Returns : $('<div>', {
          class : 'row',
-         html : '<div class="cell editable essential" data-param="Desc" contenteditable="true"></div><div class="deletebtn">Delete</div>'
+         html : '<div class="cell"><div class="input editable essential" data-param="Desc" contenteditable="true"></div></div><div class="deletebtn">Delete</div>'
       }),
       SeeAlso : $('<div>', {
          class : 'row',
-         html : '<div class="cell editable essential" data-param="Title" contenteditable="true"></div><div class="cell editable" data-param="Link" contenteditable="true"></div><div class="deletebtn">Delete</div>'
+         html : '<div class="cell"><div class="input editable essential" data-param="Title" contenteditable="true"></div></div>'+
+                '<div class="cell"><div class="input editable" data-param="Link" contenteditable="true"></div></div><div class="deletebtn">Delete</div>'
       })};
    var table = $(caller).prev();
    $(table).append(list[$(table).attr('data-id')].clone()); 
@@ -209,11 +212,11 @@ lib.help.savedata=function(){
    console.log($('.essential:empty'));
    $('.essential:empty').each(function(key, val) {
       console.log(val);
-      if($(val).next().text() != ""){
+      if($(val).parent().next().text() != ""){
          $(val).text('undefined');
       }
       else {
-         $(val).parent().remove();
+         $(val).parent().parent().remove();
       }
    });
    //Changes the inputboxes into text form
