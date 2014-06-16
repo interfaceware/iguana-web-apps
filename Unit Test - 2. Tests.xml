@@ -1,7 +1,7 @@
-<channel name="2.Unit Test - Suite" guid="00000000000000000000000000000000" description="" start_automatically="false" logging_level="1" use_message_filter="true">
+<channel name="Unit Test - 2. Tests" guid="00000000000000000000000000000000" description="" start_automatically="false" logging_level="1" use_message_filter="true">
    <to_channel>
       <dequeue_list>
-         <dequeue source_name="1.Unit Test - GUI" dequeue_guid="BD9D959878660D18A5F52EDC65440BAB"></dequeue>
+         <dequeue source_name="Unit Test - 1. GUI" dequeue_guid="BD9D959878660D18A5F52EDC65440BAB"></dequeue>
       </dequeue_list>
    </to_channel>
    <from_channel></from_channel>
