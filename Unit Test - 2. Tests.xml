@@ -1,4 +1,4 @@
-<channel name="Unit Test - 2. Tests" guid="00000000000000000000000000000000" description="" start_automatically="false" logging_level="1" use_message_filter="true">
+<channel name="Unit Test - 2. Tests" guid="00000000000000000000000000000000" description="This channel has some unit tests run by the unit test GUI.&#xD;&#xA;&#xD;&#xA;See:&#xD;&#xA;&#xD;&#xA;http://help.interfaceware.com/kb/regression-testing-round-ii-ding-ding" start_automatically="false" logging_level="1" use_message_filter="true">
    <to_channel>
       <dequeue_list>
          <dequeue source_name="Unit Test - 1. GUI" dequeue_guid="BD9D959878660D18A5F52EDC65440BAB"></dequeue>
