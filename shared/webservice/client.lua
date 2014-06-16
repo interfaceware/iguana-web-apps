@@ -20,6 +20,7 @@ local function MarshallTransaction(T, Connect, path)
    return R
 end
 
+
 local function AddFuncDef(T, Connect, path)
    for K,V in pairs(T) do
       trace(V)
@@ -41,7 +42,7 @@ function webservice.client.connect(T)
       D =json.parse{data=D}
    else
       return D
-   end
+   end      
    AddFuncDef(D, T, "")
    return D
 end
