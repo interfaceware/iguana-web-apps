@@ -41,6 +41,6 @@ function highrise.company.add(D)
 end
 
 function highrise.company.delete(D)
-   local result = net.http.delete{url='https://interfaceware2.highrisehq.com/company/#' .. D.Id .. '.xml'}
+   local result = net.http.delete{url='https://interfaceware2.highrisehq.com/company/#' .. D.id .. '.xml'}
    return result
 end

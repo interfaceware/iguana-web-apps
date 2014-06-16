@@ -68,6 +68,7 @@ PAGE.viewHelp = function(P){
       prettyPrint(); // called in the prettify library.
    });
 }
+   
 webservice.onBrowseTreeClick = function(Node){
    //If the node clicked is a leaf and not a branch
    if (!Node.m_Children.length) { //Returns the full path of the function
@@ -100,20 +101,21 @@ webservice.initBrowseTree = function(){
       console.log("Browse tree initialized");
    }
 }
+   
 PAGE.browse = function(Params) {
    webservice.initBrowseTree();
 }
+   
 PAGE.default = PAGE.browse
 // This function can be put into page.js as a method of the Tree22 object   
 function myRender(D, tree){
   $.each(D, function(key, value){
    if (!tree.IsOpen){
       tree.open();
-      }
-   if(typeof value == "object"){
-      myRender(value, tree.add(key, "tree"));
    }
-   else {
+   if (typeof value == "object"){
+      myRender(value, tree.add(key, "tree"));
+   } else {
       tree.add(key, "tree");
    };
 })};

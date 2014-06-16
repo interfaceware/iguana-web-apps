@@ -1,13 +1,14 @@
 {
-   "Desc": "Removes a company record from Highrise.",
-   "call": "company.delete",
+   "Desc": "Deletes a company record from Highrise.",
+   "Usage": "highrise.company.delete{id='23242342'}",
+   "ParameterTable": true,
    "Parameters": [
       {
          "id": {
-            "Desc": "ID of the company you wish to delete"
+            "Desc": "ID of the company you wish to delete (string)"
          }
       }
    ],
-   "ParameterTable": true,
-   "Title": "company.delete"
+   "SummaryLine": "Deletes a company record from Highrise.",
+   "Title": "company/delete"
 }

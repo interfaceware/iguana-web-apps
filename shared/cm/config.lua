@@ -28,6 +28,19 @@ end
 local method = {}
 local meta={__index=method} 
 
+local function ConvertOldFormat(S)
+   if(S.config.repo)then
+      for i=1, #S.config.repo do
+         local Temp = {}
+         Temp.Name = "Repository "..i
+         Temp.Dir = os.fs.name.toNative(S.config.repo[i])
+         S.config.locations[#S.config.locations +1] = Temp
+      end
+      S.config.repo = nil
+   end
+   return S
+end
+
 function method.load(S)
    local Name = ConfigName()
    if not os.fs.access(Name) then
@@ -40,6 +53,10 @@ function method.load(S)
       return
    end
    S.config = json.parse{data=Json}
+   if not S.config.locations then
+      S.config.locations = {}
+   end
+   ConvertOldFormat(S)
 end
 
 function method.addRepo(S, Name, Path)
@@ -56,18 +73,6 @@ function method.clear(S)
 end
 
 function method.repoList(S)
-   if not S.config.locations then
-      S.config.locations = {}
-   end
-   local Result = S.config.locations
-   if(S.config.repo)then
-      for i=1, #S.config.repo do
-         local Temp = {}
-         Temp.Name = ""
-         Temp.Dir = os.fs.name.toNative(S.config.repo[i])
-         Result.locations[i + #S.config.locations] = Temp
-      end
-   end
    return S.config.locations 
 end
 
