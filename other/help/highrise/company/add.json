@@ -26,10 +26,13 @@
    "SummaryLine": "Add a new company record to highrise.",
    "Returns": [
       {
-         "Desc": "String"
+         "Desc": "String",
+         "undefined": " String"
       }
    ],
    "Usage": "local Id = highrise.company.add{name=\"Acme Co.\", background=\"Met this company at a tradeshow\"}",
-   "Examples": "Id = highrise.company.add{name=\"Acme Co.\", background=\"Met this company at a trade",
+   "Examples": [
+      "<pre>Id = highrise.company.add{name=\"Acme Co.\", background=\"Met this company at a tradeshow\"}</pre>"
+   ],
    "Desc": "Adds a new company record to Highrise."
 }

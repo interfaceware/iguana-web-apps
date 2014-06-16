@@ -1,13 +1,12 @@
 {
-   "Title": "contact/delete",
-   "SummaryLine": "Hello",
-   "ParameterTable": true,
-   "Desc": "Deletes a contact",
    "Parameters": [
       {
          "ID": {
             "Desc": "The ID of the person you wish to delete"
          }
       }
-   ]
+   ],
+   "ParameterTable": true,
+   "Title": "contact/delete",
+   "Desc": "Deletes a contact"
 }
