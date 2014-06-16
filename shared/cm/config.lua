@@ -43,7 +43,7 @@ function method.load(S)
 end
 
 function method.addRepo(S, Name, Path)
-   S.config.repo[#S.config.repo+1] = {name=Name, path=Path}
+   S.config.repo[#S.config.locations+1] = {name=Name, path=Path}
 end
 
 function method.save(S)
@@ -52,15 +52,23 @@ function method.save(S)
 end
 
 function method.clear(S)
-   S.config.repo = {}
+   S.config.locations = {}
 end
 
 function method.repoList(S)
-   local Result = {}
-   for i=1, #S.config.repo do
-      Result[i] = os.fs.name.toNative(S.config.repo[i])
+   if not S.config.locations then
+      S.config.locations = {}
    end
-   return Result
+   local Result = S.config.locations
+   if(S.config.repo)then
+      for i=1, #S.config.repo do
+         local Temp = {}
+         Temp.Name = ""
+         Temp.Dir = os.fs.name.toNative(S.config.repo[i])
+         Result.locations[i + #S.config.locations] = Temp
+      end
+   end
+   return S.config.locations 
 end
 
 function cm.config.open()

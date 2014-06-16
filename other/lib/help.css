@@ -1,38 +1,74 @@
 body, html{
    height: 100%;
 }
-
-.mouseone{
-   box-shadow: 0 0 10px #6EA2DE;
-   border-color: #6EA2DE;
+.input{
+   padding: 6px 4px;
+   background-color: #FFFFFF;
+   display: inline-block;
+   min-width: 96%;
+}
+input[type="checkbox"] {
+   margin: auto auto;
+   display: block;
+}
+.heading{
+   display: table-row;
+   background-color: #BAE8FF;
+}
+.row{
+   display: table-row;
+}
+.cell{
+   display: table-cell;
+   border: 1px solid #ccc;
+}
+.nodeText{
+   cursor: pointer;
+}
+p.editable{
+   display: inline-block;
+   padding: 5px;  
+   min-width: 200px;
+   margin: 0px 0px;
+   background-color: #FFFFFF;
+}
+.editable{
+   border: 1px inset #A3C8FF;
 }
 .hidden{
    display: none;
 }
-
 img.cross {
     float: right;
     margin-right: -2.5em;
 }
-
 div.codeExample {
-   width: 80%;
    overflow: wrap;
 }
-
+div.codeExample p{
+   min-height: 25px;  
+}
+.deletebtn {
+   padding: 12px;
+   display: table-cell;
+   vertical-align: middle;
+}
 #browser {
-   width: auto;
-   max-width: 20%;
+   width: 20%;
+   min-width: 100px;
    float: left;
    height: 100%;
    overflow: scroll;
    padding: 10px 10px 0px 10px;
 }
-
+.deletebtn, .add, .edit{
+   text-decoration: underline;
+   color: #0000FF;
+   cursor: pointer;
+}
 #helpdata {
    height: 100%;
    overflow: scroll;
-   conteneditable: true;
 }
 
 span.edit {
@@ -42,14 +78,16 @@ span.edit {
    font-size: 150%;
    border : 1px;
 }
-
+div.add {
+   display:table;
+   margin-top: 5px;  
+}
 div.intellisenseHelpData h1 {
    color: #1f79ba;
    font-weight: normal;
    font-size: 20px;
    margin-top: 5px;
 }
-
 h1 {
    display: block;
    -webkit-margin-before: 0.67em;
@@ -57,21 +95,18 @@ h1 {
    -webkit-margin-start: 0px;
    -webkit-margin-end: 0px;
 }
-
 div.intellisenseHelpData {
+   padding: 4px 15px;
    white-space: normal;
    font-family: "Trebuchet MS",Tahoma,Verdana,Arial,sans-serif;
    font-size: 12px;
-   margin: 5px;
    color: #333;
 }
-
 div.intellisenseHelpData h2 {
    color: #76b73d;
    font-size: 10pt;
    margin: 15px 0px 10px 0px;
 }
-
 h2 {
    display: block;
    -webkit-margin-before: 0.83em;
@@ -80,68 +115,38 @@ h2 {
    -webkit-margin-end: 0px;
    font-weight: bold;
 }
-
-p {
-   display: block;
-   -webkit-margin-before: 1em;
-   -webkit-margin-after: 1em;
-   -webkit-margin-start: 0px;
-   -webkit-margin-end: 0px;
-}
-
 div.intellisenseHelpData div.codeExample {
    border: solid #ccc 1px;
    border-radius: 5px;
-   background-color: #FCFCFC;
-   padding: 0px 10px;
+   background-color: #F2F2F2;
+   padding: 10px 10px;
    color: #666;
    display: table;
 }
-
-
 pre.prettyprint{
    border: none !important;
    padding: 2px;
    border: 1px solid #888;
 }
-
 pre {
    display: block;
    font-family: monospace;
    white-space: pre;
-   margin: 1em 0px;
+   margin: 0px 0px;
 }
-
-table.Basic {
+.table {
    border-collapse: collapse;
-   border-spacing: 0;
    font-size: 11px;
-   empty-cells: show;
-   border: solid #ccc 1px;
-   border-radius: 5px;
-}
-
-table {
    display: table;
-   border-spacing: 2px;
-   border-color: gray;
-}
-
-tbody {
-   display: table-row-group;
    vertical-align: middle;
-   border-color: inherit;
 }
-
 table.Basic th:first-child {
    border-radius: 5px 0 0 0;
 }
-
 table.Basic td:first-child, table.Basic th:first-child{
    border-left:none;
 }
-
-table.Basic th{
+.heading{
    background-color: #CFCFCF;
    background-image: -webkit-linear-gradient(top, #E5E5E5, #CFCFCF);
    box-shadow: 0 1px 0 rgbe(255,255,255,.8) inset;
@@ -153,37 +158,18 @@ table.Basic th{
    text-transform: uppercase;
    letter-spacing: 0.05em;
 }
-
-table.Basic td, table.Basic th {
+.cell {
    padding: 8px 12px;
-   text-align: left;
-   border-top: 1px solid #ccc;
-   border-left: 1px solid #ccc;
+   text-align: middle;
 }
-
-td, th{
-   display: table-cell;
-   vertical-align: inherit;
-}
-
-table.Basic tr {
+.row .cell {
    background:#F2F2F2;
 }
-
-tr {
+.row {
    display: table-row;
    vertical-align: inherit;
    border-color: inherit;
 }
-
-table.Basic tr:nth-child(2n) {
-   background: none repeat scroll 0 0 #FCFCFC;
-}
-
-b {
-   font-weight: bold;
-}
-
 ol {
    display: block;
    list-style-type: decimal;
@@ -193,12 +179,10 @@ ol {
    -webkit-margin-end: 0px;
    -webkit-padding-start: 40px;
 }
-
 li {
    display: list-item;
    text-align: -webkit-match-parent;
 }
-
 div.intellisenseHelpData a{
    color: #215FA3;
 }

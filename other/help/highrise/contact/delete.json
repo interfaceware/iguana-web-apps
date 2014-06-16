@@ -1,7 +1,4 @@
 {
-   "call": "contact.delete",
-   "Title": "contact.delete",
-   "SummaryLine": "Hello",
    "Parameters": [
       {
          "ID": {
@@ -10,11 +7,6 @@
       }
    ],
    "ParameterTable": true,
-   "SeeAlso": [
-      {
-         "Title": "Google",
-         "Link": "google.com"
-      }
-   ],
+   "Title": "contact/delete",
    "Desc": "Deletes a contact"
 }

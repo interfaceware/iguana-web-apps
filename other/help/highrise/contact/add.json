@@ -1,8 +1,6 @@
 {
-   "Desc": "Adds a new contact to Highrise",
-   "call": "contact/add",
-   "Title": "contact.add",
-   "Usage": "highrise.contact.add{firstname = \"John\", lastname = \"Doe\"}",
+   "ParameterTable": true,
+   "Title": "contact/add",
    "SummaryLine": "Adds a new contact to Highrise",
    "Parameters": [
       {
@@ -41,8 +39,9 @@
          }
       }
    ],
+   "Usage": "highrise.contact.add{firstname = \"John\", lastname = \"Doe\"}",
    "Examples": [
-      "This is an example"
+      "<pre>highrise.contact.add{firstname=\"John\", lastname=\"Doe\"}</pre>"
    ],
-   "ParameterTable": true
+   "Desc": "Adds a new contact to Highrise"
 }
