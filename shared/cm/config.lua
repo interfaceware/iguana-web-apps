@@ -15,14 +15,14 @@ end
 
 local function DefaultRepoLocation()
    if os.isWindows() then
-      return "C:/iguana-web-apps/"
+      return {Name="default", Dir="C:/iguana-web-apps/"}
    else
-      return "~/iguana-web-apps/"
+      return {Name="default", Dir="~/iguana-web-apps/"}
    end
 end
 
 local function ConfigDefault()
-   return {repo={DefaultRepoLocation()}}
+   return {locations={DefaultRepoLocation()}}
 end
 
 local method = {}
@@ -60,7 +60,7 @@ function method.load(S)
 end
 
 function method.addRepo(S, Name, Path)
-   S.config.repo[#S.config.locations+1] = {name=Name, path=Path}
+   S.config.locations[#S.config.locations+1] = {name=Name, path=Path}
 end
 
 function method.save(S)
