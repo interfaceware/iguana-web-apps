@@ -1,0 +1,10 @@
+create table Patient
+(
+   Id string,
+   FirstName string,
+   LastName string,
+   Gender string,
+   primary key (Id)
+);
+
+group ADT ( Patient );

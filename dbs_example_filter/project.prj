@@ -1,0 +1,9 @@
+{
+   "Name": "02-Socket to Database (Filter)",
+   "LuaDependencies": [
+      "node"
+   ],
+   "OtherDependencies": [
+      "example/demo.vmd"
+   ]
+}
