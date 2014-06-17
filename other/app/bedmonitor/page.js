@@ -19,13 +19,27 @@ PAGE.listBeds = function() {
    H += '<table id="channels_list_table" cellpadding="0" cellspacing="0" border="0"></table>'
    H +=  cm.help.footer();
    $('body').html(H);
-
-
    var Params = {
       url: "list-beds",
       success: function(Data) {
-        Results = Data;
-        $("#channels_list_table").dataTable($.extend(Results, {bPaginate: false, bInfo: false}));
+         console.log(Data);
+         var TD = {};
+         TD.bInfo = false;
+         TD.bPaginate = false;
+         TD.aoColumns = [{ 'sTitle' : 'Bed',       'sType' : 'string'},
+                         { 'sTitle' : 'Patient',   'sType' : 'string'},
+                         { 'sTitle' : 'Condition', 'sType' : 'string'}];
+         TD.aaData = [];
+         for (var i=0; i < Data.name.length; i++){
+            TD.aaData[i] = [];
+            var Row = TD.aaData[i];
+            Row[0] = Data.bed[i];
+            Row[1] = Data.name[i];
+            Row[2] = Data.condition[i];
+         }
+         console.log(TD);
+       
+         $("#channels_list_table").dataTable(TD);
       }
    };
 
@@ -33,18 +47,19 @@ PAGE.listBeds = function() {
 
    // After sending the initializing request, we reset the success callback to do updates
    // and then set a timeout to call it every few seconds.
-
    Params.success = function (Data) {
       var ChannelsTbl = $('#channels_list_table').dataTable();
-      var DataLength = Data.aaData.length;
+      var DataLength = Data.name.length;
       var TableLength = ChannelsTbl.fnGetData().length;
-      var Row = 0;
-      for ( ; Row < TableLength; Row++) {
-         ChannelsTbl.fnUpdate(Data.aaData[Row], Row);
+      var i = 0;
+      for ( ; i < TableLength; i++) {
+         var RowData = [Data.bed[i], Data.name[i], Data.condition[i]];
+         ChannelsTbl.fnUpdate(RowData, i);
       }
 
-      for ( ; Row < DataLength; Row++) {
-         ChannelsTbl.fnAddData(Data.aaData[Row]);
+      for ( ; i < DataLength; i++) {
+         var RowData = [Data.bed[i], Data.name[i], Data.condition[i]];
+         ChannelsTbl.fnAddData(RowData);
       };
    };
    
