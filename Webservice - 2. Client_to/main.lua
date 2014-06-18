@@ -12,5 +12,5 @@ function main(Data)
    -- We add in Jim Smith and remove him.
    local Id, ContactXml = 
       Highrise.contact.add{firstname="Jim", lastname="Smith", title="Mr"}
-   Highrise.company.delete{id=Id}
+   Highrise.contact.delete{id=Id}
 end

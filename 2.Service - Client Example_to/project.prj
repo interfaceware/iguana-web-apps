@@ -1,9 +1,0 @@
-{
-   "Name": "2. Webservice - Client (To Translator)",
-   "LuaDependencies": [
-      "webservice.client"
-   ],
-   "OtherDependencies": [
-      
-   ]
-}

@@ -29,6 +29,20 @@
       "lib/datatable.js",
       "lib/iecompatability.js",
       "lib/page.js",
+      "libe/jquery.dataTables/1.9.4/jquery.dataTables.css",
+      "libe/jquery.dataTables/1.9.4/jquery.dataTables.min.js",
+      "libe/jquery.dataTables/images/back_disabled.png",
+      "libe/jquery.dataTables/images/back_enabled.png",
+      "libe/jquery.dataTables/images/back_enabled_hover.png",
+      "libe/jquery.dataTables/images/forward_disabled.png",
+      "libe/jquery.dataTables/images/forward_enabled.png",
+      "libe/jquery.dataTables/images/forward_enabled_hover.png",
+      "libe/jquery.dataTables/images/sort_asc.png",
+      "libe/jquery.dataTables/images/sort_asc_disabled.png",
+      "libe/jquery.dataTables/images/sort_both.png",
+      "libe/jquery.dataTables/images/sort_desc.png",
+      "libe/jquery.dataTables/images/sort_desc_disabled.png",
+      "libe/jquery/2.1.0/jquery.min.js",
       "status.vmd"
    ]
 }

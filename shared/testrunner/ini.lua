@@ -14,5 +14,5 @@ ini['account'] = {
 -- expanded Web API (link to which is found on the Iguana
 -- dashboard)
 -- ##########
-ini.testSuiteName = '2.Unit Test - Suite'
+ini.testSuiteName = 'Unit Test - 2. Tests'
 return ini

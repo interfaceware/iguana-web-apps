@@ -23,8 +23,12 @@ local function ConvertXmlToLua(Xml)
          if (MT[i]:nodeName() == 'Channel') then   
             local C = MT[i]
             local Cvars = {}
+            
             for j = 1, #C do
-               Cvars[C[j]:nodeName()] = C[j]:nodeValue()     
+               trace(j)
+               if C[j]:nodeName() ~= "SocketStatus" then
+               Cvars[C[j]:nodeName()] = C[j]:nodeValue()         
+               end
             end  
             Ch[C.Guid:S()] = Cvars
          end
