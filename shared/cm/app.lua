@@ -13,6 +13,7 @@ cm.app = {}
 
 require 'cm.app.listChannels'
 require 'cm.config'
+require 'cm.githelper'
 
 function cm.app.importList(R)
    local Config = cm.config.open()
@@ -24,14 +25,27 @@ function cm.app.importList(R)
       RepoIndex = 1
    end  
    
-   local Repository = Config.config.locations[RepoIndex].Dir;
-  
-   if not os.fs.dirExists(Repository) then
-      return {dir=os.fs.name.toNative(Repository), 
-               err='Repository does not exist'}
+   local Repository = Config.config.locations[RepoIndex];
+
+   if not os.fs.dirExists(Repository.Src) then
+      return {dir=os.fs.name.toNative(Repository.Src), 
+               err='Local repository does not exist'}
+   end
+   if Repository.Type == 'github' then
+      local zipdata, statuscode = net.http.get{url=Repository.RemoteSrc, live=true}
+      if (statuscode >= 400) then
+         return {link=Repository.RemoteSrc,
+            err="Bad URL. Error "..statuscode}
+      end
+      local md5 = util.md5(zipdata)
+      local tree=filter.zip.inflate(zipdata)
+      for k,v in pairs(tree) do
+         tree = v
+      end
+      cm.githelper.verifychanges(tree, Repository.Src, md5)
    end
    local L = {name={}, description={}} 
-   for K, V in os.fs.glob(Repository..'/*.xml') do
+   for K, V in os.fs.glob(Repository.Src ..'/*.xml') do
       local CD = os.fs.readFile(K)
       local X = xml.parse{data=CD}
       L.name[#L.name+1] = X.channel.name
@@ -46,7 +60,7 @@ function cm.app.addChannel(R)
    local RepoIndex = R.params.repository
    
    local Config = cm.config.open()
-   local Dir = Config.config.locations[RepoIndex+1].Dir
+   local Dir = Config.config.locations[RepoIndex+1].Src
    
    local Credentials = basicauth.getCredentials(R)
    local Api = iguanaServer.connect(Credentials)
@@ -117,7 +131,7 @@ function cm.app.export(R)
    local D = iguana.channel.export{api=Api, name=ChannelName, sample_data=(R.params.sample_data == 'checked')}
    local Config = cm.config.open()
    
-   WriteFiles(Config.config.locations[RepoIndex+1].Dir, D)
+   WriteFiles(Config.config.locations[RepoIndex+1].Src, D)
    return D
 end
 
@@ -131,12 +145,14 @@ function cm.app.saveRepo(R,App)
    local Info = json.parse{data=R.body}
    local List = {}
    for i=1, #Info do
-      local Repo = os.fs.name.fromNative(Info[i].Dir)
+      local Repo = os.fs.name.fromNative(Info[i].Src)
       Repo = Repo:trimWS()
       local temp = {};
       if (#Repo > 0) then
          temp.Name = Info[i].Name
-         temp.Dir = Repo
+         temp.Src = Repo
+         temp.RemoteSrc = Info[i].RemoteSrc
+         temp.Type = Info[i].Type
          List[i] = temp
       end
    end

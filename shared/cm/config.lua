@@ -33,7 +33,9 @@ local function ConvertOldFormat(S)
       for i=1, #S.config.repo do
          local Temp = {}
          Temp.Name = "Repository "..i
-         Temp.Dir = os.fs.name.toNative(S.config.repo[i])
+         Temp.Src = os.fs.name.toNative(S.config.repo[i])
+         Temp.RemoteSrc = ""
+         Temp.Type = ""
          S.config.locations[#S.config.locations +1] = Temp
       end
       S.config.repo = nil

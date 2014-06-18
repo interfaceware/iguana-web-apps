@@ -5,7 +5,10 @@ body {
    padding: 0px;
    margin: 0px;
 }
-   
+.locationtype {
+   margin-left:10px;
+}
+
 h1 {
    font-size: 2.8em;
    font-weight: 700;
@@ -74,15 +77,19 @@ span.button-repositories{
    float : right;
 }
 
-input.repodir{
-   width : 90%;
-}
+/*input.repodir{
+   width : 80%;
+}*/
 
 span.warning{
    display: table;
    border: red;
    border-style: solid;
    padding: 10px;
+}
+
+span.delete{
+   margin-left: 10px;
 }
 
 span.button{

@@ -5,12 +5,14 @@
       "cm.app",
       "cm.app.listChannels",
       "cm.config",
+      "cm.githelper",
       "file",
       "iguana.channel",
       "iguanaServer",
       "json",
       "lib.webserver",
       "node",
+      "spin",
       "stringutil"
    ],
    "OtherDependencies": [
