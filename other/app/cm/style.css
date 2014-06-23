@@ -9,6 +9,25 @@ body {
    margin-left:10px;
 }
 
+div .importexport{
+   float: right;
+   margin-top: 20px;  
+}
+
+.spinner{
+   display: block;  
+   margin-left: auto;
+   margin-right: auto;
+}
+
+figcaption{
+   text-align: center;
+   margin-bottom: 10px;
+}
+div .treepane{
+   width:30%;
+}
+
 h1 {
    font-size: 2.8em;
    font-weight: 700;
@@ -50,10 +69,8 @@ h1 {
 
 span#add-channel{
    background-image:url('button-addchannel.gif');  
-   float: right;
    width : 194px;
    height : 26px;
-   margin : 10px;
 }
 
 /* This is the highlight color used for the search highlighting */
@@ -98,6 +115,7 @@ span.button{
    border-radius:4px;
    border: 2px solid lightblue;   
    box-shadow: 2px 2px 2px #888888;
+   cursor: pointer;
 }
 
 span.button-delete{
