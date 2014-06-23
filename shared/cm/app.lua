@@ -32,17 +32,13 @@ function cm.app.importList(R)
                err='Local repository does not exist'}
    end
    if Repository.Type == 'github' then
-      local zipdata, statuscode = net.http.get{url=Repository.RemoteSrc, live=true}
-      if (statuscode >= 400) then
-         return {link=Repository.RemoteSrc,
-            err="Bad URL. Error "..statuscode}
+      local commits, commitstatus = net.http.get{url='https://api.github.com/repos/kevincai3/iguana-web-apps/commits', headers={['Accept'] = 'application/vnd.github.v3+json', ['User-Agent'] = 'kevincai3'}, auth={username = '43506a1ef19c75250326594609dcecba3bf88f55', password=''}, live=true}
+      if (commitstatus >= 400) then 
+         return {link = 'Hi', err="Bad URL. Error"..commitstatus}
+      else
+         local rtn = cm.githelper.comparecommits(json.parse{data=commits}, Repository.Src, Repository.RemoteSrc)
+         if rtn then return rtn end
       end
-      local md5 = util.md5(zipdata)
-      local tree=filter.zip.inflate(zipdata)
-      for k,v in pairs(tree) do
-         tree = v
-      end
-      cm.githelper.verifychanges(tree, Repository.Src, md5)
    end
    local L = {name={}, description={}} 
    for K, V in os.fs.glob(Repository.Src ..'/*.xml') do
@@ -107,7 +103,7 @@ local function OnlyWriteChangedFile(FileName, Content)
    os.fs.writeFile(FileName, Content, 666)
 end
 
-local function WriteFiles(Root, Tree)
+function cm.app.WriteFiles(Root, Tree)
    for Name, Content in pairs(Tree) do
       if type(Content) == 'string' then
          local FileName = Root..'/'..Name
@@ -116,23 +112,50 @@ local function WriteFiles(Root, Tree)
          end
          OnlyWriteChangedFile(FileName, Content)
       elseif type(Content) == 'table' then
-          WriteFiles(Root..'/'..Name, Content)
+          cm.app.WriteFiles(Root..'/'..Name, Content)
       end
    end
 end
 
-function cm.app.export(R)
-   local ChannelName = R.params.name
-   local RepoIndex = R.params.repository
+local function comparedata(server, client)
+   local result = {}
+   for k, v in pairs(client) do
+      if type(v) == 'table' then
+         result[k] = comparedata(server[k], client[k])
+      else
+         if (v == "data") and server[k] then
+            result[k] = server[k]
+         else 
+            result[k] = v
+         end  
+      end       
+   end
+   return result
+end
 
+
+function cm.app.exportlist(R, Channel)
+   local ChannelName = Channel.name
+   
    local Credentials = basicauth.getCredentials(R)
    local Api = iguanaServer.connect(Credentials)
 
-   local D = iguana.channel.export{api=Api, name=ChannelName, sample_data=(R.params.sample_data == 'checked')}
-   local Config = cm.config.open()
-   
-   WriteFiles(Config.config.locations[RepoIndex+1].Src, D)
+   local D = iguana.channel.export{api=Api, name=ChannelName, sample_data=(Channel.sample_data)}
    return D
+end
+
+function cm.app.export(R)
+   local data = json.parse{data=R.body}
+   local ChannelName = data.data.name
+   
+   local Credentials = basicauth.getCredentials(R)
+   local Api = iguanaServer.connect(Credentials)
+
+   local D = iguana.channel.export{api=Api, name=ChannelName, sample_data=false}
+   local tree = comparedata(D, data.data.data)
+   trace(tree)
+   cm.app.WriteFiles(data.target, tree)
+   return {['status'] = 'ok'}
 end
 
 function cm.app.listRepo(R,App)
@@ -171,10 +194,11 @@ end
 
 cm.actions = {
    ['config_info'] = cm.app.configInfo,
-   ['list-channels'] = cm.app.listChannels,
-   ['export_channel'] = cm.app.export,
+   ['list-channels'] = cm.app.listChannels.list,
+   ['exportChannels'] = cm.app.export,
    ['importList'] = cm.app.importList,
    ['addChannel']= cm.app.addChannel,
    ['listRepo'] = cm.app.listRepo,
-   ['saveRepo'] = cm.app.saveRepo
+   ['saveRepo'] = cm.app.saveRepo,
+   ['exportDiff'] = cm.app.listChannels.exportDiff
 }

@@ -42,13 +42,21 @@ app.cm.repo.model = function(){
 
 app.cm.repo.fillSelect = function(RepoList){
    var H = '<select class="repolist">';
+   var D = RepoList;
    for (var i=0; i < RepoList.length; i++){
       if (i === cm.settings.repository ){
          H+= "<option selected>";
       } else {
          H+= "<option>";
       }
-      H+= RepoList[i].Name + '-' + RepoList[i].Src + "</option>"; 
+      D[i].Name = '<b>' + D[i].Name + '</b>' + " : ";
+      if (D[i].Type != ''){
+         D[i].Type += ' -- ';
+      }
+      if (D[i].RemoteSrc != ''){
+         D[i].Src += " <i>retrieved from:</i> ";
+      }
+      H+= D[i].Name + D[i].Type + D[i].Src + D[i].RemoteSrc + "</option>"; 
    }
    H+= '</select>';
    $('body').on("change",".repolist", function(E){
