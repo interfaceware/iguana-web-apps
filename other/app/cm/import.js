@@ -7,14 +7,14 @@ app.cm.addChannelListRender = function(Data){
    // We take plainly formatted JSON data from the server and reformat it into the form liked by the jQuery datatable.
    var TD= {}
    TD.aoColumns = [];
-   TD.aoColumns = [ {"sTitle" : "Channel Name", "sWidth" : "19em" }, 
-                    {"sTitle" : "Description"},
-                    {"sTitle" : "Import", "sWidth" : "5em"}]
+   TD.aoColumns = [{"sTitle" : "Import", "sWidth" : "5em"}, 
+                   {"sTitle" : "Channel Name", "sWidth" : "19em" }, 
+                   {"sTitle" : "Description"}]
    TD.aaData    = [];
    List = Data.list;
    TD.aaData = [];
    for (var i = 0; i < List.name.length; i++){
-      TD.aaData[i] = [ List.name[i], List.description[i],"<a href='#Page=confirmAddChannel&With=" + List.name[i] +"'>Import</a>" ];
+      TD.aaData[i] = ["<input type='checkbox'>", List.name[i], List.description[i]];
    }
    console.log(TD);
    lib.datatable.addSearchHighlight(TD);
@@ -39,13 +39,12 @@ PAGE.addChannel = function(Params) {
          $('.repolist').change(".repolist", function(E){
             // TODO we might want to use a 'proper' MVC framework later.
             cm.settings.repository = $(".repolist")[0].selectedIndex;
-            $('body').html(cm.help.header() + cm.help.breadCrumb('Add Channel') + "<p>Retrieving data...</p>" + cm.help.footer());
+            $('body').html(cm.help.header() + cm.help.breadCrumb('Add Channel') + cm.help.loadWheel('Fetching Data...') + cm.help.footer());
             PAGE.addChannel(Params);
          });      
       }
    );
 }
-
 
 PAGE.confirmAddChannel = function(Params) {
    $.post(
@@ -80,4 +79,3 @@ PAGE.executeAddChannel = function(Params) {
 PAGE.addChannelComplete = function(Params) {
    $('body').html(cm.help.header() + cm.help.breadCrumb('Added Channel') + "Added " + Params.Name + " successfully.<p><a href='#'>Return to dashboard</a>" + cm.help.footer())   
 }
-

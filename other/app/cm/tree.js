@@ -134,14 +134,14 @@ Tree22.prototype = {
             console.log(Self.reference);
             $('.diffpane').data(Self.reference);
             if (Self.reference.status == "diff") {
-               $('.leftpane > pre').text(Self.reference.newdata);
-               $('.rightpane > pre').text(Self.reference.olddata);
+               var difftext = diffString(Self.reference.newdata.replace(/</g, "&lt;"), Self.reference.olddata.replace(/</g, "&lt;"));
+               $('.leftpane > pre').html(difftext);
+               $('.rightpane > pre').html(difftext);
             }
             else {
-               $('.leftpane > pre').text(Self.reference.newdata);
+               $('.leftpane > pre').text(Self.reference.newdata.replace(/</g, "&lt;"));
                $('.rightpane > pre').text('');
-            }
-         }
+            }}
       });
       $(Node).children('.selectfile').click(function(){
          if ($(this).is(':checked')){

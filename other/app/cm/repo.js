@@ -3,7 +3,7 @@ app.cm.repo = {};
 app.cm.repo.render = function(RepoList){
    var H = ''; 
    for (var i=0; i< RepoList.length; i++){
-      H+=app.cm.repo.renderRow(RepoList[i].Name, RepoList[i].Src, RepoList[i].RemoteSrc, RepoList[i].Type);
+      H+=app.cm.repo.renderRow(RepoList[i].Name, RepoList[i].Source, RepoList[i].RemoteSource, RepoList[i].Type);
    }
    return H;
 };
@@ -15,7 +15,7 @@ app.cm.repo.renderRow = function(Name, Src, RSrc, Type){
       rtn += " hidden='true' ";
    }
    rtn += " value = '" + RSrc + "'><select class='locationtype' data-selected = '"+Type+
-      "'><option value='local'>Local</option><option value='github'>GitHub</option><option value='iguana'>Iguana</option>" + 
+      "'><option value='Local'>Local</option><option value='GitHub-ReadOnly'>GitHub (Readonly)</option><option value='IguanaServer'>Iguana</option>" + 
       "</select><span class='button delete'>Delete</span></div>";
    return rtn;
 };
@@ -25,13 +25,13 @@ app.cm.repo.model = function(){
    $('.repoEdit').each(function(i, Src){ 
       Data[i] = {
          'Name': $(this).find('.reponame').val(),
-         'Src':$(this).find('.reposrc').val(),
-         'RemoteSrc':$(this).find('.reporsrc').val(),
+         'Source':$(this).find('.reposrc').val(),
+         'RemoteSource':$(this).find('.reporsrc').val(),
          'Type':$(this).find('.locationtype').val()
       };
       console.log(Data[i]);
       //If either all the required fields are filled or empty, continue. Else return false.
-      if (!((Data[i].Name == "") == (Data[i].Src == ""))){
+      if (!((Data[i].Name == "") == (Data[i].Source == ""))){
          Data = false;
          return false;
       }
@@ -51,12 +51,15 @@ app.cm.repo.fillSelect = function(RepoList){
       }
       D[i].Name = '<b>' + D[i].Name + '</b>' + " : ";
       if (D[i].Type != ''){
+         if (D[i].Type == 'GitHub-ReadOnly'){
+            D[i].Type = 'GitHub (Readonly)';
+         }
          D[i].Type += ' -- ';
       }
-      if (D[i].RemoteSrc != ''){
-         D[i].Src += " <i>retrieved from:</i> ";
+      if (D[i].RemoteSource != ''){
+         D[i].Source += " <i>retrieved from:</i> ";
       }
-      H+= D[i].Name + D[i].Type + D[i].Src + D[i].RemoteSrc + "</option>"; 
+      H+= D[i].Name + D[i].Type + D[i].Source + D[i].RemoteSource + "</option>"; 
    }
    H+= '</select>';
    $('body').on("change",".repolist", function(E){
@@ -78,10 +81,10 @@ PAGE.viewRepo = function(Params){
          if (D[i].Type != ''){
             D[i].Type += ' -- ';
          }
-         if (D[i].RemoteSrc != ''){
-            D[i].Src += " <i>retrieved from:</i> ";
+         if (D[i].RemoteSource != ''){
+            D[i].Source += " <i>retrieved from:</i> ";
          }
-         H+="<div>" + D[i].Name + D[i].Type + D[i].Src + D[i].RemoteSrc + "</div>";
+         H+="<div>" + D[i].Name + D[i].Type + D[i].Source + D[i].RemoteSource + "</div>";
       }
       H += "</div>" + cm.help.footer();
       $('body').html(H);       
@@ -125,7 +128,7 @@ PAGE.editRepo = function(Params){
       });
       $('body').on('change', '.locationtype', function(E){
          var selected = $(this).find('option:selected').text();
-         if (selected == 'GitHub') {
+         if (selected == 'GitHub (Readonly)') {
             $(this).prev().show();
          }
          else if (selected == 'Local'){

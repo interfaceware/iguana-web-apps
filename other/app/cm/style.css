@@ -93,10 +93,10 @@ span.button-repositories{
 #edit {
    float : right;
 }
-
-/*input.repodir{
-   width : 80%;
-}*/
+/*Modify in future*/
+input.reposrc, input.reporsrc{
+   width : 30%;
+}
 
 span.warning{
    display: table;
