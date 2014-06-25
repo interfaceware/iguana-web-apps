@@ -9,33 +9,33 @@
 if not cm then cm = {} end
 if not cm.config then cm.config = {} end
 
-local function ConfigName()
-   return iguana.workingDir()..'/IguanaRepo.cfg'
+local function DefaultConfigName()
+   return os.fs.abspath(iguana.workingDir()..'/IguanaRepo.cfg')
 end
 
 local function DefaultRepoLocation()
    if os.isWindows() then
-      return {Name="default", Dir="C:/iguana-web-apps/"}
+      return {['Name']="default", ['Source']="C:/iguana-web-apps/", ['Type'] = 'Local', ['RemoteSource']=''}
    else
-      return {Name="default", Dir="~/iguana-web-apps/"}
+      return {['Name']="default", ['Source']="~/iguana-web-apps/", ['Type'] = 'Local', ['RemoteSource']=''}
    end
 end
 
 local function ConfigDefault()
    return {locations={DefaultRepoLocation()}}
 end
-
-local method = {}
-local meta={__index=method} 
+--Turn method, meta back to local
+method = {}
+meta={__index=method} 
 
 local function ConvertOldFormat(S)
    if(S.config.repo)then
       for i=1, #S.config.repo do
          local Temp = {}
          Temp.Name = "Repository "..i
-         Temp.Src = os.fs.name.toNative(S.config.repo[i])
-         Temp.RemoteSrc = ""
-         Temp.Type = ""
+         Temp.Source = os.fs.name.toNative(S.config.repo[i])
+         Temp.RemoteSource = ""
+         Temp.Type = 'Local'
          S.config.locations[#S.config.locations +1] = Temp
       end
       S.config.repo = nil
@@ -44,7 +44,7 @@ local function ConvertOldFormat(S)
 end
 
 function method.load(S)
-   local Name = ConfigName()
+   local Name = S.file
    if not os.fs.access(Name) then
       S.config = ConfigDefault()
       return
@@ -61,13 +61,13 @@ function method.load(S)
    ConvertOldFormat(S)
 end
 
-function method.addRepo(S, Name, Path)
-   S.config.locations[#S.config.locations+1] = {name=Name, path=Path}
+function method.addRepo(S, Name, Path, _Type, Remote)
+   S.config.locations[#S.config.locations+1] = {['Name']=Name, ['Source']=Path, ['Type']=_Type, ['RemoteSource'] = Remote}
 end
 
 function method.save(S)
    local Content = json.serialize{data=S.config}
-   os.fs.writeFile(ConfigName(), Content)
+   os.fs.writeFile(S.file, Content)
 end
 
 function method.clear(S)
@@ -78,8 +78,10 @@ function method.repoList(S)
    return S.config.locations 
 end
 
-function cm.config.open()
-   local T = {}
+function cm.config.open(T)
+   T = T or {}
+   T.file = T.file or DefaultConfigName()
+   trace(T)
    setmetatable(T, meta)
    T:load()
    return T  
