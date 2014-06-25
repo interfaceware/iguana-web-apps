@@ -2,14 +2,18 @@
 if not cm.app.listChannels then cm.app.listChannels = {} end
 
 local extentions = {
-   ['js'] = true,
-   ['html'] = true,
-   ['lua'] = true,
-   ['json'] = true,
-   ['css'] = true,
-   ['file'] = true,
-   ['prj'] = true,
-   ['xml'] = true
+   ['js'] = 'str',
+   ['img'] = 'pic',
+   ['html'] = 'str',
+   ['lua'] = 'str',
+   ['json'] = 'str',
+   ['css'] = 'str',
+   ['file'] = 'str',
+   ['prj'] = 'str',
+   ['xml'] = 'str',
+   ['vmd'] = 'str',
+   ['gif'] = 'pic',
+   ['png'] = 'pic'
 }
 
 function cm.app.listChannels.list(Request, App)
@@ -38,8 +42,7 @@ function cm.app.listChannels.list(Request, App)
       T.status[#T.status+1] = Ch.Status     
       T.source[#T.source+1] = Components[Ch.Source:nodeValue()];
       T.destination[#T.destination+1] = Components[Ch.Destination:nodeValue()];
-   end
-  
+   end  
    return T
 end
 
@@ -53,21 +56,23 @@ local function verifydifference(files, root)
    trace(files)
    for k, v in pairs(files) do
       if type(v) == 'table' then
-         local treenode = { ['type'] = 'folder', ['name'] = k, ['data'] = verifydifference(v, root..k..'/')}
-         filetree[#filetree + 1] = treenode
+         local treenode = {['type'] = 'folder', ['name'] = k, ['data'] = verifydifference(v, root..k..'/')}
+         if #treenode.data >= 1 then
+            filetree[#filetree + 1] = treenode
+         end
       else
          trace(k)
          local extention = string.split(k, '%.')
          if(#extention > 1) then
-            extention = extention[#extention]
+            extention = extentions[extention[#extention]]
          else
             extention = 'file'
          end
          local treenode = {['type'] = extention, ['name'] = k, ['newdata'] = v}
          if os.fs.access(root .. k) then
             local olddata = os.fs.readFile(root .. k)
-            if oldata == v then
-               treenode['status'] = 'same'
+            if olddata == v then
+               treenode = nil
             else
                treenode['status'] = 'diff'
                treenode['olddata'] = olddata
@@ -75,13 +80,18 @@ local function verifydifference(files, root)
          else 
             treenode['status'] = 'noold'
          end
-         if not extentions[treenode.type] then
-            treenode.newdata = nil
-            treenode.olddata = nil
+         if treenode then
+            if treenode.type == 'img' then
+               treenode.newdata = root .. k
+               treenode.olddata = root .. k
+            elseif treenode.type ~= 'str' then
+               treenode.newdata = nil
+               treenode.olddata = nil
+            end
          end
          filetree[#filetree + 1] = treenode
       end
-      trace(v)
+      trace(filetree)
    end
    table.sort(filetree, filetreecompare)
    trace(filetree)
@@ -91,13 +101,13 @@ end
 function cm.app.listChannels.exportDiff(Request)
    local Data = json.parse{data=Request.body}
    local root = cm.config.open()
-   root = os.fs.name.toNative(root.config.locations[Data.repo + 1].Src)
+   root = os.fs.name.toNative(root.config.locations[Data.repo + 1].Source)
    local Result = {}
    local R = {headers  = Request.headers}
    for k, v in pairs(Data.data) do      
       Result[#Result + 1] = {['name'] = v.name, ['data'] = verifydifference(cm.app.exportlist(R, v), root), ['type'] = 'channel'}
+      if #Result[#Result].data == 0 then Result[#Result] = nil end
    end
    table.sort(Result, filetreecompare)
    return {['target'] = root, ['data'] = Result}
 end
-

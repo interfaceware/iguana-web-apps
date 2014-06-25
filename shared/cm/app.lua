@@ -27,21 +27,24 @@ function cm.app.importList(R)
    
    local Repository = Config.config.locations[RepoIndex];
 
-   if not os.fs.dirExists(Repository.Src) then
-      return {dir=os.fs.name.toNative(Repository.Src), 
+   if not os.fs.dirExists(Repository.Source) then
+      return {dir=os.fs.name.toNative(Repository.Source), 
                err='Local repository does not exist'}
    end
-   if Repository.Type == 'github' then
-      local commits, commitstatus = net.http.get{url='https://api.github.com/repos/kevincai3/iguana-web-apps/commits', headers={['Accept'] = 'application/vnd.github.v3+json', ['User-Agent'] = 'kevincai3'}, auth={username = '43506a1ef19c75250326594609dcecba3bf88f55', password=''}, live=true}
+   if Repository.Type == 'GitHub-ReadOnly' then
+      local commits, commitstatus = net.http.get{url='https://api.github.com/repos/'.. Repository.RemoteSource ..'commits', 
+         headers={['Accept'] = 'application/vnd.github.v3+json', ['User-Agent'] = 'kevincai3'}, 
+         auth={username = '43506a1ef19c75250326594609dcecba3bf88f55', password=''}, live=true}
       if (commitstatus >= 400) then 
          return {link = 'Hi', err="Bad URL. Error"..commitstatus}
       else
-         local rtn = cm.githelper.comparecommits(json.parse{data=commits}, Repository.Src, Repository.RemoteSrc)
-         if rtn then return rtn end
+         local err = cm.githelper.comparecommits(json.parse{data=commits}, Repository.Source, 'https://github.com/'.. 
+            Repository.RemoteSource .. 'archive/master.zip')
+         if err then return err end
       end
    end
    local L = {name={}, description={}} 
-   for K, V in os.fs.glob(Repository.Src ..'/*.xml') do
+   for K, V in os.fs.glob(Repository.Source ..'/*.xml') do
       local CD = os.fs.readFile(K)
       local X = xml.parse{data=CD}
       L.name[#L.name+1] = X.channel.name
@@ -56,7 +59,7 @@ function cm.app.addChannel(R)
    local RepoIndex = R.params.repository
    
    local Config = cm.config.open()
-   local Dir = Config.config.locations[RepoIndex+1].Src
+   local Dir = Config.config.locations[RepoIndex+1].Source
    
    local Credentials = basicauth.getCredentials(R)
    local Api = iguanaServer.connect(Credentials)
@@ -168,13 +171,13 @@ function cm.app.saveRepo(R,App)
    local Info = json.parse{data=R.body}
    local List = {}
    for i=1, #Info do
-      local Repo = os.fs.name.fromNative(Info[i].Src)
+      local Repo = os.fs.name.fromNative(Info[i].Source)
       Repo = Repo:trimWS()
       local temp = {};
       if (#Repo > 0) then
          temp.Name = Info[i].Name
-         temp.Src = Repo
-         temp.RemoteSrc = Info[i].RemoteSrc
+         temp.Source = Repo
+         temp.RemoteSource = Info[i].RemoteSource
          temp.Type = Info[i].Type
          List[i] = temp
       end
