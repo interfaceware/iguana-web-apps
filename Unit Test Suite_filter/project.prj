@@ -1,0 +1,14 @@
+{
+   "Name": "File Unit Test (From HTTP)",
+   "LuaDependencies": [
+      "cm.config",
+      "file",
+      "stringutil",
+      "test.cm.config",
+      "test.file",
+      "unittest"
+   ],
+   "OtherDependencies": [
+      
+   ]
+}

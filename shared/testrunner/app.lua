@@ -5,21 +5,17 @@ require 'iguanaServer'
 
 testrunner = {}
 testrunner.app = {}
-testrunner.ini = require 'testrunner.ini'
 testrunner.db = require 'testrunner.db'
 testrunner.config = require 'testrunner.config'
-testrunner.iggy = iguanaServer.connect{
-   url = iguana.webInfo().ip .. ':' .. iguana.webInfo().web_config.port,
-   username = testrunner.ini.account.user,
-   password = testrunner.ini.account.pass
-}
+testrunner.git = require 'testrunner.git'
+
 local Spin = require 'spin'
 
-function testrunner.app.start()
+function testrunner.app.start(R)
    if not testrunner.app.checkSetup() then
-      return {IsSetup = false}
+      return {['err'] = false, ['setup'] = false}
    else
-      return testrunner.app.generateTable()
+      return {['err'] = false, ['setup'] = true, ['data'] = testrunner.app.generateTable()}
    end
 end
 
@@ -29,7 +25,7 @@ end
 -- are generated as the column headers and the test names as the
 -- row headers.
 -- ##########
-function testrunner.app.generateTable()
+function testrunner.app.generateTable(R)
    local Table = {aaData={}, aoColumns={{['sTitle'] = 'Test Name',   ['sType'] = 'string'}}}
    local Tests = {}
    local DB = testrunner.db.connect()
@@ -68,7 +64,7 @@ end
 -- ##########
 -- If there are no hosts in the database then Test Runner hasn't been setup
 -- ##########
-function testrunner.app.checkSetup()
+function testrunner.app.checkSetup(R)
    local count = 0
    for k,v in pairs(testrunner.config.getHosts()) do
       if(v.results ~= 'NULL' and v.results ~= nil and v.results ~= '') then
@@ -81,26 +77,52 @@ end
 -- ##########
 -- Run the tests and update the database
 -- ##########
-function testrunner.app.runTest()
-   local DB = testrunner.db.connect()
-   local Hosts = testrunner.config.getHosts()
-   local Spinner = spin.getSpinner(Hosts)
-   local Results = {aaData={}, aoColumns={{['sTitle'] = 'Test Name',   ['sType'] = 'string'}}}
-   local Tests = {}
-   local SpinnerNodes = Spinner:getNodes()
-   for NodeKey, Node in pairs(SpinnerNodes) do
+function testrunner.app.runTest(R)
+   local function doTests()
       local DB = testrunner.db.connect()
-      local Translator = Node:getTranslator()
-      local TGuid = xml.parse{data=iguana.channelConfig{name=testrunner.ini.testSuiteName}}.channel.message_filter.translator_guid:S()
-      local ZipTree, TestData = getTestSuite(TGuid)
-      Translator:overload(ZipTree)
-      local TestResultTable = Translator:run(TestData)
-      local SerializedResults = json.serialize{data=TestResultTable['tests']}
-      if TestResultTable['tests'] ~= nil and TestResultTable['tests'] ~= '' and next(TestResultTable['tests']) ~= nil then
-         DB:execute{sql="UPDATE hosts SET results = '" .. SerializedResults .. "' WHERE host_id = " .. DB:quote(Hosts[NodeKey].host_id), live=true}
+      local Config = testrunner.config.getConfig()
+      local Hosts = testrunner.config.getHosts()
+      local Spinner = spin.getSpinner(Hosts)
+      local Results = {aaData={}, aoColumns={{['sTitle'] = 'Test Name',   ['sType'] = 'string'}}}
+      local Tests = {}
+      local SpinnerNodes = Spinner:getNodes()
+      for NodeKey, Node in pairs(SpinnerNodes) do
+         local DB = testrunner.db.connect()
+         local Translator = Node:getTranslator()
+         local TGuid = xml.parse{data=iguana.channelConfig{name=Config.data.test_suite:nodeValue()}}.channel.message_filter.translator_guid:S()
+         local ZipTree, TestData = getTestSuite(TGuid)
+         Translator:overload(ZipTree)
+         local TestResultTable = Translator:run(TestData)
+         local SerializedResults = json.serialize{data=TestResultTable['tests']}
+         if TestResultTable['tests'] ~= nil and TestResultTable['tests'] ~= '' and next(TestResultTable['tests']) ~= nil then
+            DB:execute{sql="UPDATE hosts SET results = '" .. SerializedResults .. "' WHERE host_id = " .. DB:quote(Hosts[NodeKey].host_id), live=true}
+         end
       end
    end
-   return {true}
+   
+   if not pcall(doTests) then
+      return {['err'] = true, ['message'] = 'There was an error running the tests - some results may be incorrect and outdated.'}
+   else
+      return {['err'] = false, ['message'] = 'Tests ran successfully.'}
+   end
+end
+
+function testrunner.app.makeIggy(creds)
+   local serveradd = "http://"
+   if iguana.webInfo().https_channel_server.use_https then
+      serveradd = "https://"
+   end
+   success, testrunner.iggy = pcall(iguanaServer.connect, {
+      url = serveradd .. iguana.webInfo().ip .. ':' .. iguana.webInfo().web_config.port,
+      username = creds.user,
+      password = creds.pass
+   })
+   
+   if not success then
+      return false
+   else
+      return true
+   end
 end
 
 -- ##########
@@ -174,7 +196,10 @@ end
 testrunner.actions = {
    ["start"] = testrunner.app.start,
    ["run"] = testrunner.app.runTest,
-   ["list"] = testrunner.config.getHosts,
+   ["listHosts"] = testrunner.config.getHosts,
+   ["listConfig"] = testrunner.config.getConfig,
    ["delete"] = testrunner.config.deleteHost,
-   ["save"] = testrunner.config.saveHosts
+   ["saveHosts"] = testrunner.config.saveHosts,
+   ["saveConfig"] = testrunner.config.saveConfig,
+   ["sync"] = testrunner.git.run
 }
