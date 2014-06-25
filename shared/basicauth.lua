@@ -31,8 +31,12 @@ function basicauth.isAuthorized(Request)
    -- TODO - it would be really nice if we could have a Lua API
    -- to do this against the local Iguana instance - it would be
    -- a tinsy winsy bit faster.
+   local serveradd = "http://"
+   if WebInfo.https_channel_server.use_https then
+      serveradd = "https://"
+   end
    local Status, Code = net.http.post{
-      url=WebInfo.ip..":"..WebInfo.web_config.port.."/status",
+      url=serveradd .. WebInfo.ip..":"..WebInfo.web_config.port.."/status",
       auth=Credentials,
       live=true}
    return Code == 200
