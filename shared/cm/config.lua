@@ -15,9 +15,9 @@ end
 
 local function DefaultRepoLocation()
    if os.isWindows() then
-      return {['Name']="default", ['Source']="C:/iguana-web-apps/", ['Type'] = 'Local', ['RemoteSource']=''}
+      return {['Name']="Default", ['Source']="C:/iguana-web-apps/", ['Type'] = 'GitHub (ReadOnly)', ['RemoteSource']='/interfaceware/iguana-web-apps/'}
    else
-      return {['Name']="default", ['Source']="~/iguana-web-apps/", ['Type'] = 'Local', ['RemoteSource']=''}
+      return {['Name']="Default", ['Source']="~/iguana-web-apps/", ['Type'] = 'GitHub (ReadOnly)', ['RemoteSource']='/interfaceware/iguana-web-apps/'}
    end
 end
 

@@ -58,15 +58,34 @@ app.cm.export.generateTree = function (Data, Tree){
    for (var i = 0; i < Data.length; i ++) {
       if (Data[i].type == 'folder') {
          var branch = Tree.add(Data[i].name);
-         branch.reference = Data[i];
+         branch.ref = Data[i];
          app.cm.export.generateTree(Data[i].data,branch);
       }
       //if (Data[i].type == 'file')
       else {
-         Tree.add(Data[i].name).reference = Data[i];
+         Tree.add(Data[i].name).ref = Data[i];
       }
    }
 };
+
+app.cm.export.mostUpToDate = function (Node){
+   var Rtn = ""
+   if (Node.type == "str") {
+      if (Node.foss) {
+         Rtn = Node.foss;
+      }
+      else if (Node.trans){
+         Rtn = Node.trans;
+      }
+      else if (Node.old){
+         Rtn = Node.old;
+      }
+   }
+   else {
+      Rtn = "data";
+   }
+   return Rtn
+}
 
 app.cm.export.compressFileTree = function (Data){
    var rtn = {}
@@ -75,8 +94,10 @@ app.cm.export.compressFileTree = function (Data){
          if (Data[i].type == 'folder') {
             rtn[Data[i].name] = app.cm.export.compressFileTree(Data[i].data);
          } else {
-            rtn[Data[i].name] = (Data[i].hasOwnProperty('newdata')) ? Data[i].newdata : "data";
-   }}}
+            rtn[Data[i].name] = app.cm.export.mostUpToDate(Data[i]);
+         }
+      }
+   }
    return rtn;
 };
 
@@ -88,13 +109,18 @@ PAGE.exportSummary = function(Params){
    $.post("exportDiff", Params.Data, function (Data){
       console.log(Data);
       D = Data.data;
+      if (D.length == 0) {
+         $('#global').append('Already up-to-date! <p><a href="#">Return to dashboard</a></p>');
+         $('body').find('figure.loading').remove();
+         return;
+      }
       var H ="<span class='target'>Exporting to " + Data.target + "</span>"; 
-      H += "<div class='data'><div class='treepane'></div><div class='diffpane'><div class='leftpane'><pre></pre></div><div class='rightpane'><pre></pre></div></div></div>";
+      H += "<div class='data'><div class='treepane'></div><div class='diffpane'><div class='leftpane'></div><div class='middlepane'></div><div class='rightpane'></div></div></div>";
       $('#global').append(H);
       $('body').find('figure.loading').remove();
       for (var i = 0; i < D.length; i++){
          var tree = new Tree22(D[i].name);
-         tree.reference = D[i];
+         tree.ref= D[i];
          app.cm.export.generateTree(D[i].data, tree);
          $('.treepane').append($('<div/>', {class : 'Tree'}));
          tree.render($('.treepane').children('div:last'));
@@ -109,7 +135,7 @@ PAGE.exportSummary = function(Params){
             var tree  = {};
             tree.name = D[i].name;  
             tree.data = app.cm.export.compressFileTree(D[i].data);
-            filetree = $.extend(true, filetree, tree);
+            filetree = $.extend(filetree, tree);
          }
          console.log(filetree);
          var result =  JSON.stringify({target : Data.target, data : filetree});

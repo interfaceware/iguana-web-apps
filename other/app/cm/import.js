@@ -22,6 +22,7 @@ app.cm.addChannelListRender = function(Data){
 }   
    
 PAGE.addChannel = function(Params) {
+   $('body').html(cm.help.header() + cm.help.breadCrumb('Add Channel') + cm.help.loadWheel('Fetching Data...') + cm.help.footer());
    $.post("importList",
       {'repository': cm.settings.repository },
       function (Data) {
@@ -61,7 +62,6 @@ PAGE.confirmAddChannel = function(Params) {
          if (ChannelExists){
             H += "<span class='warning'>This will result in replacing the existing channel by the same name.</span>";  
          }
-         
          H += "<p><a href='#Page=executeAddChannel&Name=" + Params.With + "&With=" + Params.With + "'><span class='button'>Execute</span></a>"; 
          H += cm.help.footer();
          $('body').html(H);       

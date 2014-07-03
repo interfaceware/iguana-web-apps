@@ -7,13 +7,15 @@
       "cm.config",
       "cm.githelper",
       "file",
+      "fossil",
       "iguana.channel",
       "iguanaServer",
       "json",
       "lib.webserver",
       "node",
       "spin",
-      "stringutil"
+      "stringutil",
+      "xml"
    ],
    "OtherDependencies": [
       "app/cm/button-addchannel.gif",

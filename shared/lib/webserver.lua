@@ -162,15 +162,14 @@ local function ServeFile(Self, R)
    local FileName = R.location:sub(Self.baseUrlSize)
    if #FileName == 0 then 
       FileName = Self.default 
-   end
-   
-   local Content
+   end  
    if Self.test then 
       Content = LoadSandboxFile(FileName, Self.test)
    else
       Content = LoadMilestonedFile(FileName)
    end
    local Entity = FindEntity(FileName)
+   
    trace(Content)
    if (Content) then
       net.http.respond{body=Content, entity_type=Entity}

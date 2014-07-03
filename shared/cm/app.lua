@@ -3,7 +3,7 @@ require 'stringutil'
 require 'iguana.channel'
 require 'node'
 require 'iguanaServer'
-
+require 'fossil'
 -- Notice we carefully only do a local include of this module to avoid poluting the global namespace.
 local basicauth = require 'basicauth'
 
@@ -94,15 +94,15 @@ local function ConvertLF(Content)
    Content = Content:gsub('\r\n', '\n')
    return Content
 end
-
+--MADE FUNCTION ALWAYS WRITE
 local function OnlyWriteChangedFile(FileName, Content)
-   if os.fs.access(FileName) then
+   --[[if os.fs.access(FileName) then
       local CurrentContent = os.fs.readFile(FileName)
       if CurrentContent == Content then
          return
       end
    end
-   trace(FileName)
+   trace(FileName)]]
    os.fs.writeFile(FileName, Content, 666)
 end
 
@@ -128,8 +128,10 @@ local function comparedata(server, client)
       else
          if (v == "data") and server[k] then
             result[k] = server[k]
+            trace(result[k])
          else 
             result[k] = v
+            trace(result[k])
          end  
       end       
    end
@@ -139,7 +141,6 @@ end
 
 function cm.app.exportlist(R, Channel)
    local ChannelName = Channel.name
-   
    local Credentials = basicauth.getCredentials(R)
    local Api = iguanaServer.connect(Credentials)
 
@@ -203,5 +204,6 @@ cm.actions = {
    ['addChannel']= cm.app.addChannel,
    ['listRepo'] = cm.app.listRepo,
    ['saveRepo'] = cm.app.saveRepo,
-   ['exportDiff'] = cm.app.listChannels.exportDiff
+   ['exportDiff'] = cm.app.listChannels.exportDiff,
+   ['importDiff'] = cm.app.listChannels.importDiff
 }

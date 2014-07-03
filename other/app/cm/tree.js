@@ -1,10 +1,10 @@
 
 /** @license
- * Copyright (c) 2010-2014 iNTERFACEWARE Inc.  All rights reserved.
- */
+* Copyright (c) 2010-2014 iNTERFACEWARE Inc.  All rights reserved.
+*/
 
 
-function Tree22(Label, Class, Parent) {
+function Tree22(Label, Class, Parent){
    this.m_Label = Label;
    this.m_Class = Class;
    this.m_Parent = Parent || null; 
@@ -16,10 +16,10 @@ function Tree22(Label, Class, Parent) {
 };
 
 Tree22.prototype = {
-   projectTree : function() {
+   projectTree : function(){
       return $("#SCRcontents");
    },
-   label : function() {
+   label : function(){
       return this.m_Label;
    },
    add : function(Label, Class){
@@ -27,68 +27,68 @@ Tree22.prototype = {
       this.m_Children.push(C);
       return C;
    },
-   size : function() {
-      if (! this.isBranch()) {
+   size : function(){
+      if (! this.isBranch()){
          return 0;
       }
       return this.m_Children.length;
    },
-   child : function(i) {
+   child : function(i){
       return this.m_Children[i]; 
    },
-   parent : function() {
+   parent : function(){
       return this.m_Parent;
    },
-
-   parents : function() {
+   
+   parents : function(){
       var Prnts = [];
       var One = this.parent();
-      while (One.parent()) {
+      while (One.parent()){
          Prnts.push(One);
          One = One.parent();
       }
       return Prnts.reverse();
    },
-   toggle : function() {
+   toggle : function(){
       if (!this.isBranch()){ 
          return; 
-      }
+            }
       if (this.isOpen()){
          this.close();
       } else {
          this.open(); 
       }
    },
-   close : function() {
+   close : function(){
       this.m_IsOpen = false;
       $(this.m_DomNode).removeClass('open');
       return this;
    },
-   open : function() {
+   open : function(){
       this.m_IsOpen = true;
       $(this.m_DomNode).addClass('open');
       return this;
    },
-   wait : function() {
+   wait : function(){
       this.m_IsWaiting = true;
       $(this.m_DomNode).find("span.nodeText").addClass('waiting');
       return this;
    },
-   endWait : function() {
+   endWait : function(){
       this.m_IsWaiting = false;
       $(this.m_DomNode).find("span.nodeText").removeClass('waiting');
       return this;
    },
-   isOpen : function() {
+   isOpen : function(){
       return this.m_IsOpen;
    },
-   isWaiting : function() {
+   isWaiting : function(){
       return this.m_IsWaiting;
    },
-   isBranch : function() {
+   isBranch : function(){
       return this.m_Children.length > 0;
    },
-   render : function(Control) {
+   render : function(Control){
       var Node = this.makeNode();
       var List = document.createElement("ul");
       $(List).addClass('tree22').append(Node);
@@ -117,7 +117,8 @@ Tree22.prototype = {
          }
       }
       var Self = this;
-      Self.reference.node = $('<input/>', {type : 'checkbox', class : 'selectfile', checked : 'true'}).prependTo($(Node));
+      console.log(Self)
+      Self.ref.node = $('<input/>', {type : 'checkbox', class : 'selectfile', checked : 'true'}).prependTo($(Node));
       $(Node).children('div').click(function() {
          if (Self.isBranch()){
             Self.toggle();
@@ -131,18 +132,36 @@ Tree22.prototype = {
                path = Parent.label() + '/' + path;
             };
             console.log(path);
-            console.log(Self.reference);
-            $('.diffpane').data(Self.reference);
-            if (Self.reference.status == "diff") {
-               var difftext = diffString(Self.reference.newdata.replace(/</g, "&lt;"), Self.reference.olddata.replace(/</g, "&lt;"));
-               $('.leftpane > pre').html(difftext);
-               $('.rightpane > pre').html(difftext);
+            console.log(Self.ref);
+            $('.diffpane').data(Self.ref);
+            $('.leftpane').html('');
+            $('.rightpane').html('');
+            $('.middlepane').html('');
+            var IsImg = (Self.ref.type == "img")
+            function DisplayData(Pane, Data){
+               if (Self.ref.type=="img"){
+                  $('<img/>', {'src' : Data}).appendTo(Pane);
+               }
+               else if (Self.ref.type == "str"){
+                  $('<pre/>', { 'text' : Data}).appendTo(Pane);
+               }
             }
-            else {
-               $('.leftpane > pre').text(Self.reference.newdata.replace(/</g, "&lt;"));
-               $('.rightpane > pre').text('');
-            }}
-      });
+            DisplayData('.leftpane', Self.ref.foss);
+            if(Self.ref.hasOwnProperty('old')){
+               DisplayData('.rightpane', Self.ref.old);
+            }
+            if(Self.ref.hasOwnProperty('trans')){
+               if (Self.ref.hasOwnProperty('old')){
+                  DisplayData('.middlepane', Self.ref.trans);
+               }
+               else {
+                  DisplayData('.rightpane', Self.ref.trans);
+               }
+            }
+            /*var difftext = diffString(Self.ref.newdata.replace(/</g, "&lt;"), Self.ref.olddata.replace(/</g, "&lt;"));
+            $('<pre/>', { 'html' : difftext}).appendTo('.leftpane');
+            $('<pre/>', { 'html' : difftext}).appendTo('.rightpane');*/
+         }});
       $(Node).children('.selectfile').click(function(){
          if ($(this).is(':checked')){
             $(this).parent().find('.selectfile').prop('checked', true);

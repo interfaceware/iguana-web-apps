@@ -23,10 +23,14 @@ require 'file'
 --    * 'to'     - To translator
 -- This function really helps to make the rest of the code clean since one can write code which can iterate through
 -- each translator instance in a channel.
-function iguana.channel.getTranslators(ChannelConfig)
-   local Info = {}   
-   local C = ChannelConfig.channel;
-   if C.to_mapper then
+function iguana.channel.getTranslators(ChannelConfig)     
+   local C = ChannelConfig.channel
+   return iguana.channel.returnGUID(C)
+end
+
+function iguana.channel.returnGUID(C)
+   local Info = {} 
+      if C.to_mapper then
       Info.to = C.to_mapper.guid:nodeValue()
    end
    if C.from_mapper then
@@ -159,7 +163,7 @@ end
 -- GUIDs are noisy sources of spurious changes - we change them
 local ZeroGuid = '00000000000000000000000000000000'
 
-local function RemoveGuids(ChanConfig)
+function RemoveGuids(ChanConfig)
    local C = ChanConfig.channel;
    C.guid = ZeroGuid
    if C.to_mapper then

@@ -73,6 +73,12 @@ PAGE.viewRepo = function(Params){
    $.post("listRepo", function(D){
       console.log(D);
       var H = cm.help.header() + cm.help.breadCrumb('List of repositories');
+      /*if (!D) {
+         H+="<div>Your Config file is currently empty. Click <span class='button setdefault'>here</span> to setup a default repository</div>";
+         H+=cm.help.footer();
+         $('body').html
+         $('body').on('click', '.setdefault', function(){
+            $.post('saveRepo', JSON.stringify([{'Name' = 'Default', 'Source' =  */
       H+= "<div>"; 
       H+= "<a href='#Page=editRepo'><span class='button' id='edit'>Edit</span></a>";
       var RepoList = D;

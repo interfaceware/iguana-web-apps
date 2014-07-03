@@ -3,7 +3,7 @@ if not cm.app.listChannels then cm.app.listChannels = {} end
 
 local extentions = {
    ['js'] = 'str',
-   ['img'] = 'pic',
+   ['img'] = 'img',
    ['html'] = 'str',
    ['lua'] = 'str',
    ['json'] = 'str',
@@ -12,8 +12,8 @@ local extentions = {
    ['prj'] = 'str',
    ['xml'] = 'str',
    ['vmd'] = 'str',
-   ['gif'] = 'pic',
-   ['png'] = 'pic'
+   ['gif'] = 'img',
+   ['png'] = 'img'
 }
 
 function cm.app.listChannels.list(Request, App)
@@ -37,6 +37,7 @@ function cm.app.listChannels.list(Request, App)
    
    local T = {name={}, status={}, source={}, destination={}}
    for i=1, Conf:childCount('Channel') do
+     
       local Ch = Conf:child('Channel', i)
       T.name[#T.name+1] = Ch.Name
       T.status[#T.status+1] = Ch.Status     
@@ -46,68 +47,87 @@ function cm.app.listChannels.list(Request, App)
    return T
 end
 
-local function filetreecompare(t1, t2)
-   if t1.name < t2.name then return true 
+local function FileTreeCompare(T1, T2)
+   if T1.name < T2.name then return true 
    else return false end
 end
 
-local function verifydifference(files, root)
-   local filetree = {}
-   trace(files)
-   for k, v in pairs(files) do
-      if type(v) == 'table' then
-         local treenode = {['type'] = 'folder', ['name'] = k, ['data'] = verifydifference(v, root..k..'/')}
-         if #treenode.data >= 1 then
-            filetree[#filetree + 1] = treenode
-         end
-      else
-         trace(k)
-         local extention = string.split(k, '%.')
-         if(#extention > 1) then
-            extention = extentions[extention[#extention]]
-         else
-            extention = 'file'
-         end
-         local treenode = {['type'] = extention, ['name'] = k, ['newdata'] = v}
-         if os.fs.access(root .. k) then
-            local olddata = os.fs.readFile(root .. k)
-            if olddata == v then
-               treenode = nil
-            else
-               treenode['status'] = 'diff'
-               treenode['olddata'] = olddata
-            end
-         else 
-            treenode['status'] = 'noold'
-         end
-         if treenode then
-            if treenode.type == 'img' then
-               treenode.newdata = root .. k
-               treenode.olddata = root .. k
-            elseif treenode.type ~= 'str' then
-               treenode.newdata = nil
-               treenode.olddata = nil
-            end
-         end
-         filetree[#filetree + 1] = treenode
-      end
-      trace(filetree)
-   end
-   table.sort(filetree, filetreecompare)
-   trace(filetree)
-   return filetree
+local function EncodeData(Tnode)
+   if Tnode.foss then Tnode.foss = 'data:image/'..Tnode.extention ..';base64,'..filter.base64.enc(Tnode.foss) end
+   if Tnode.trans then Tnode.trans = 'data:image/'..Tnode.extention ..';base64,'..filter.base64.enc(Tnode.trans) end
+   if Tnode.old then Tnode.old = 'data:image/'..Tnode.extention ..';base64,'..filter.base64.enc(Tnode.old) end
 end
 
+local function ThreeWayComp(S1, S2, S3)
+   if (S1 == S2) and (S2 == S3) then
+      return 'delete'
+   elseif (S1 == S2) and (S2 ~= S3) then
+      return S1, nil, S3
+   elseif (S1 ~= S2) and (S2 == S3) then
+      return S1, S2, nil
+   elseif (S1 == S3) and (S1~= S2) then
+      return S1, S2, nil
+   elseif (S1 ~= S2) and (S2 ~= S3) and (S1 ~= S3) then
+      return S1, S2, S3
+   end
+end
+--Fossil > Trans > Folder
+local function VerifyDifference(Files, Root, Fosroot)
+   local Filetree = {}
+   trace(Filetree)
+   for k, v in pairs(Files) do
+      if type(v) == 'table' then
+         local Treenode = {['type'] = 'folder', ['name'] = k, ['data'] = VerifyDifference(v, Root..k..'/', Fosroot..k..'/')}
+         if #Treenode.data >= 1 then
+            Filetree[#Filetree + 1] = Treenode
+         end
+      else         
+         local extentiontype = string.split(k, '%.')
+         local extention = extentiontype[#extentiontype]
+         if(#extentiontype > 1) then
+            extentiontype = extentions[extention]
+         else
+            extentiontype = 'file'
+         end
+         local Tnode = {['type'] = extentiontype, ['name'] = k, ['trans'] = v, ['extention'] = extention}        
+         Tnode.foss = os.fs.readFile(Fosroot..k)
+         Tnode.old = os.fs.access(Root .. k) and os.fs.readFile(Root .. k)
+         Tnode.foss, Tnode.trans, Tnode.old = ThreeWayComp(Tnode.foss, Tnode.trans, Tnode.old)
+         trace(Tnode.foss)
+         if Tnode.foss ~= "delete" then
+            if extentiontype == "img" then
+               EncodeData(Tnode)
+            elseif extentiontype == "file" then
+               Tnode.foss, Tnode.old, Tnode.trans = nil, nil, nil   
+            end
+            trace(Tnode)
+            Filetree[#Filetree + 1] = Tnode
+         end
+      end
+      trace(Filetree)
+   end
+   table.sort(Filetree, FileTreeCompare)
+   trace(Filetree)
+   return Filetree
+end
+function cm.app.listChannels.importDiff(Request)
+   local Data = json.parase{data=Request.body}
+   local Root = cm.config.open()
+   Root = os.fs.name.toNative(Root.config.location[Data.repo + 1].Sourcce)
+   local Result = {}
+   local R = {headers = Request.headers}
+end
 function cm.app.listChannels.exportDiff(Request)
    local Data = json.parse{data=Request.body}
-   local root = cm.config.open()
-   root = os.fs.name.toNative(root.config.locations[Data.repo + 1].Source)
+   local Root = cm.config.open()
+   Root = os.fs.name.toNative(Root.config.locations[Data.repo + 1].Source)
    local Result = {}
    local R = {headers  = Request.headers}
+   local F = fossil.openNewInstance(Request)
    for k, v in pairs(Data.data) do      
-      Result[#Result + 1] = {['name'] = v.name, ['data'] = verifydifference(cm.app.exportlist(R, v), root), ['type'] = 'channel'}
+      Result[#Result + 1] = {['name'] = v.name, ['data'] = VerifyDifference(cm.app.exportlist(R, v), Root, F.path), ['type'] = 'channel'}
       if #Result[#Result].data == 0 then Result[#Result] = nil end
    end
-   table.sort(Result, filetreecompare)
-   return {['target'] = root, ['data'] = Result}
+   table.sort(Result, FileTreeCompare)
+   return {['target'] = Root, ['data'] = Result}
 end
