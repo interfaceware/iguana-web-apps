@@ -1,3 +1,7 @@
+del .new{
+   
+}
+
 body {
    background-color: #eff1e8;
    font-family: 'Open Sans',sans-serif;
@@ -24,8 +28,28 @@ figcaption{
    text-align: center;
    margin-bottom: 10px;
 }
+
+div .data{
+   overflow:hidden;
+}
 div .treepane{
-   width:30%;
+   width: 25%;
+   float: left
+}
+div .diffpane{
+   width:75%;
+   word-wrap: break-word;
+   float: right;
+}
+
+div .leftpane{
+   float: left;
+   width: 48%;
+}
+
+div .rightpane{
+   float: right;
+   width: 48%;
 }
 
 h1 {

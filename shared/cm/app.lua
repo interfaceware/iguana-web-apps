@@ -4,6 +4,7 @@ require 'iguana.channel'
 require 'node'
 require 'iguanaServer'
 require 'fossil'
+require 'spin'
 -- Notice we carefully only do a local include of this module to avoid poluting the global namespace.
 local basicauth = require 'basicauth'
 
@@ -196,6 +197,56 @@ function cm.app.create()
    return App
 end
 
+local function ConnectToServer(R)
+   local Webinfo = iguana.webInfo()
+   local Protocol = Webinfo.https_channel_server.use_https and 'https://' or 'http://'
+   local Serverurl = Protocol .. Webinfo.ip .. ":" .. Webinfo.web_config.port
+   local Username = basicauth.getCredentials(R).username
+   local Password = basicauth.getCredentials(R).password
+   local Server = iguanaServer.connect{url=Serverurl,
+      username=Username, password=Password}
+   return Server
+end
+
+--[[function cm.app.update(R)
+   local Server = ConnectToServer(R)
+   local Config = Server:getChannelConfig{guid=iguana.channelGuid()}
+   local Num = 0
+   for i = Num, 20 do
+      if not iguana.channel.exists(Config.channel.name .. i) then
+         Config.channel.name = Config.channel.name .. i
+         Num = i
+         break
+      end
+      if i == 20 then return {['error'] = 'Maximum channel managers reached, please remove one of your previous channels.'} end
+   end  
+   Server:updateChannel{config=Config, username=Username, password=Password}
+   --cm.app.addChannel(R)
+   local NewConfig = Server:getChannelConfig{name='Channel Manager'}
+   NewConfig.channel.from_http.mapper_url_path = NewConfig.channel.from_http.mapper_url_path:nodeValue():gsub('/', Num..'%1')
+   Server:updateChannel{config=NewConfig}
+   
+end
+
+function cm.app.cleanup(R)
+   local Server = ConnectToServer(R)
+   local Changes = {}
+   for i = 0, 20 do
+      local ChannelName = iguana.channelName() .. i      
+      if iguana.channel.exists(ChannelName) then
+         for j = i + 1, 20 do
+            local RemoveName = iguana.channelName() .. j
+            if iguana.channel.exists(RemoveName) then
+               Changes[#Changes] = RemoveName
+               Server:stopChannel{name=RemoveName}
+               Server:removeChannel{name=RemoveName}
+            end
+         end
+      end
+   end
+   return Changes
+end]]
+
 cm.actions = {
    ['config_info'] = cm.app.configInfo,
    ['list-channels'] = cm.app.listChannels.list,
@@ -205,5 +256,7 @@ cm.actions = {
    ['listRepo'] = cm.app.listRepo,
    ['saveRepo'] = cm.app.saveRepo,
    ['exportDiff'] = cm.app.listChannels.exportDiff,
-   ['importDiff'] = cm.app.listChannels.importDiff
+   ['importDiff'] = cm.app.listChannels.importDiff,
+   ['update'] = cm.app.update,
+   ['cleanup'] = cm.app.cleanup
 }

@@ -18,7 +18,7 @@ PAGE.listChannels = function() {
          
          var RawData = Data;
          var TD = {};
-         TD.aoColumns = [{'sTitle' : '<input type="checkbox" class="selectall>', "sWidth" : "1em"},
+         TD.aoColumns = [//{'sTitle' : '<input type="checkbox" class="selectall>', "sWidth" : "1em"},
                          {"sTitle" : "Channel Name", "sWidth" : "28em" },
                          {'sTitle' : 'Status', 'sType' : 'html', "sWidth" : "6em"},
                          {'sTitle' : 'Type',   'sType' : 'string', "sWidth" : "4em"}];
@@ -26,19 +26,21 @@ PAGE.listChannels = function() {
          TD.aaData = [];
          for (var i=0; i < RawData.name.length; i++){
             TD.aaData[i] = [];
-            TD.aaData[i][0] = '<input type="checkbox" class="selectone">';
-            TD.aaData[i][1] = RawData.name[i];
-            TD.aaData[i][2] = '<div class="chan-' + RawData.status[i] + '"/>';
-            TD.aaData[i][3] = '<div class="chan-type"><div class="' + RawData.source[i] + '"></div><div class="FILTER"></div><div class="' + RawData.destination[i] + '"></div></div>';
+            //TD.aaData[i][0] = '<input type="checkbox" class="selectone">';
+            TD.aaData[i][0] = RawData.name[i];
+            TD.aaData[i][1] = '<div class="chan-' + RawData.status[i] + '"/>';
+            TD.aaData[i][2] = '<div class="chan-type"><div class="' + RawData.source[i] + '"></div><div class="FILTER"></div><div class="' + RawData.destination[i] + '"></div></div>';
          };
+         TD.iDisplayLength = 20
+         TD.sDom = 'ftip'
          lib.datatable.addSearchHighlight(TD);  
          $("#channels_list_table").dataTable(TD);
-         $('#selected_channels').dataTable({
+         /*$('#selected_channels').dataTable({
             aoColumns : [{"sTitle" : "Channel Name", "sWidth" : "28em" },
                            {"sTitle" : 'Status', 'sType' : 'html', "sWidth" : "6em"},
                            {'sTitle' : 'Type',   'sType' : 'string', "sWidth" : "4em"}],            
-            'sDom': 't'
-         });
+            'sDom': 'fti'
+         });*/
          
       }
    );

@@ -20,6 +20,7 @@
    "OtherDependencies": [
       "app/cm/button-addchannel.gif",
       "app/cm/dashboard.js",
+      "app/cm/diffhelper.js",
       "app/cm/export.js",
       "app/cm/help.js",
       "app/cm/import.js",

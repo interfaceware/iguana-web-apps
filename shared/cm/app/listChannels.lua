@@ -62,16 +62,23 @@ local function ThreeWayComp(S1, S2, S3)
    if (S1 == S2) and (S2 == S3) then
       return 'delete'
    elseif (S1 == S2) and (S2 ~= S3) then
-      return S1, nil, S3
+      if (S3 == nil) then 
+         return S1, nil, nil, 100
+      end
+      return S1, nil, S3, 112
    elseif (S1 ~= S2) and (S2 == S3) then
-      return S1, S2, nil
+      return S1, S2, nil, 122
    elseif (S1 == S3) and (S1~= S2) then
-      return S1, S2, nil
+      return S1, S2, nil, 121
    elseif (S1 ~= S2) and (S2 ~= S3) and (S1 ~= S3) then
-      return S1, S2, S3
+      return S1, S2, S3, 123 
    end
 end
+
 --Fossil > Trans > Folder
+--[[The diff code coresponds to he uniquness of each file
+    if foss = trans != fold, then diff = 112
+    0 represents no data]]--
 local function VerifyDifference(Files, Root, Fosroot)
    local Filetree = {}
    trace(Filetree)
@@ -90,9 +97,9 @@ local function VerifyDifference(Files, Root, Fosroot)
             extentiontype = 'file'
          end
          local Tnode = {['type'] = extentiontype, ['name'] = k, ['trans'] = v, ['extention'] = extention}        
-         Tnode.foss = os.fs.readFile(Fosroot..k)
-         Tnode.old = os.fs.access(Root .. k) and os.fs.readFile(Root .. k)
-         Tnode.foss, Tnode.trans, Tnode.old = ThreeWayComp(Tnode.foss, Tnode.trans, Tnode.old)
+         Tnode.foss = os.fs.access(Fosroot .. k) and os.fs.readFile(Fosroot..k)
+         Tnode.old = os.fs.access(Root .. k) and os.fs.readFile(Root .. k) or nil
+         Tnode.foss, Tnode.trans, Tnode.old, Tnode.diff = ThreeWayComp(Tnode.foss, Tnode.trans, Tnode.old)
          trace(Tnode.foss)
          if Tnode.foss ~= "delete" then
             if extentiontype == "img" then
