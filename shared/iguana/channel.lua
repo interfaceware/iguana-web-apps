@@ -73,13 +73,17 @@ local function AddFile(Dir, File, Content)
    SubDir[Parts[#Parts]] = Content
 end
 
-local function BuildTransZip(RepoDir, ProjectDir, TargetGuid)
+function BuildTransZip(RepoDir, ProjectDir, TargetGuid, Name)
    local Dir = {}
    local MainDir = RepoDir..'/'..ProjectDir..'/'
    MainDir = os.fs.abspath(MainDir)
    for K,V in os.fs.glob(MainDir..'*') do
       local Content = os.fs.readFile(K)
-      AddFile(Dir,TargetGuid..'/'..K:sub(#MainDir), Content)
+      if TargetGuid then 
+         AddFile(Dir,TargetGuid..'/'..K:sub(#MainDir), Content)
+      else
+         AddFile(Dir,ProjectDir .. '/' .. K:sub(#MainDir), Content)
+      end
    end
    trace(Dir)
    local P = ProjectFile(MainDir)
@@ -95,7 +99,7 @@ local function BuildTransZip(RepoDir, ProjectDir, TargetGuid)
    os.ts.time()
    local ZipData2 = filter.zip.deflate(Dir)
    os.ts.time()
-   return filter.base64.enc(ZipData2)
+   return filter.base64.enc(ZipData2), Dir
 end
 
 -- iguana.channel.add{api=ChannelApiObject, dir='<repo directory>', definition='SomeChannelFile.xml', }

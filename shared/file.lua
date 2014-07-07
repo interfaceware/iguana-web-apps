@@ -14,7 +14,6 @@
 -- It greatly simplifies the code we have that deals with file paths.  Windows paths get expressed like this:
 -- 'D:/my repo/great stuff/here'
 
-
 local IsWindows = false
 
 os.fs.name = {}
@@ -130,7 +129,6 @@ function os.fs.cleanDir(Dir, List)
       end
    end   
 end
-
 
 local function ConvertProcessLine(T)
    local Dir = os.fs.name.toNative(T.dir)

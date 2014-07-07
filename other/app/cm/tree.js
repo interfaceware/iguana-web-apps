@@ -105,7 +105,6 @@ Tree22.prototype = {
       return this;
    },
    makeNode : function(Owner) {
-      console.log(this);
       var Class = 'nodeText';
       if (this.m_Class) {
          Class += ' ' + this.m_Class; 
@@ -118,14 +117,10 @@ Tree22.prototype = {
          if (this.isOpen()){
             $(Node).addClass("open");
          }
-         InnerSpan += ' <span class="context_click">[+]</span>';
       } else {
          $(Node).addClass('leaf');
-         InnerSpan += ' <span class="context"><img src="/js/treeview/images/arrow-contracted.gif" /></span>';
       }
       $(Node).html('<div><span class="treeIcon"></span>' + InnerSpan + '</div>');
-
-
       if (this.size() > 0){
          $(Node).append("<span class='content'><ul></ul></span>");
          var SubList = $(Node).contents("span.content").children("ul");
@@ -134,7 +129,7 @@ Tree22.prototype = {
          }
       }
       var Self = this;
-      Self.ref.node = $('<input/>', {type : 'checkbox', class : 'selectfile', checked : 'true'}).prependTo($(Node));
+      Self.ref.tag = $('<span/>', {'class' : 'repo tag', 'text' : 'Repo'}).data(Self).prependTo($(Node));
       if (Self.m_Callbacks.Click) {
          $(Node).children('div').click(function(Event) {
             Event.stopPropagation();

@@ -29,7 +29,8 @@ PAGE.exportChannel = function(Params) {
             TD.aaData[i] = [];
             TD.aaData[i][0] = '<input type="checkbox" class="channel">';
             TD.aaData[i][1] = '<div class="channelname">' + RawData.name[i] + '</div>';
-            TD.aaData[i][2] = '<div class="chan-type"><div class="' + RawData.source[i] + '"></div><div class="FILTER"></div><div class="' + RawData.destination[i] + '"></div></div>';
+            TD.aaData[i][2] = '<div class="chan-type"><div class="' + RawData.source[i] + 
+                              '"></div><div class="FILTER"></div><div class="' + RawData.destination[i] + '"></div></div>';
             TD.aaData[i][3] = '<input type="checkbox" class="sampledata">';
          };
          TD.iDisplayLength = 20
@@ -56,52 +57,6 @@ PAGE.exportChannel = function(Params) {
    });
 }; 
 
-app.cm.export.generateTree = function (Data, Tree){
-   for (var i = 0; i < Data.length; i ++) {
-      if (Data[i].type == 'folder') {
-         var branch = Tree.add(Data[i].name, null, Callback);
-         branch.ref = Data[i];
-         app.cm.export.generateTree(Data[i].data,branch);
-      }
-      //if (Data[i].type == 'file')
-      else {
-         Tree.add(Data[i].name, null, Callback).ref = Data[i];
-      }
-   }
-};
-
-app.cm.export.mostUpToDate = function (Node){
-   var Rtn = "";
-   if (Node.type == "str") {
-      if (Node.foss) {
-         Rtn = Node.foss;
-      }
-      else if (Node.trans){
-         Rtn = Node.trans;
-      }
-      else if (Node.old){
-         Rtn = Node.old;
-      }
-   }
-   else {
-      Rtn = "data";
-   }
-   return Rtn;
-};
-
-app.cm.export.compressFileTree = function (Data){
-   var rtn = {};
-   for (var i = 0; i < Data.length; i++){
-      if($(Data[i].node).is(':checked')){
-         if (Data[i].type == 'folder') {
-            rtn[Data[i].name] = app.cm.export.compressFileTree(Data[i].data);
-         } else {
-            rtn[Data[i].name] = app.cm.export.mostUpToDate(Data[i]);
-         }
-      }
-   }
-   return rtn;
-};
 
 PAGE.exportSummary = function(Params){
    var H = cm.help.header() + cm.help.breadCrumb("<a href='#Page=exportChannel'>Export Channel</a> &gt; Review Export");
@@ -115,29 +70,29 @@ PAGE.exportSummary = function(Params){
          $('#global').append('Already up-to-date! <p><a href="#">Return to dashboard</a></p>');
          $('body').find('figure.loading').remove();
          return;
-            }
+      }
       var H ="<span class='target'>Exporting to " + Data.target + "</span>"; 
-      H += "<div class='data'><div class='treepane'></div><div class='diffpane'><div class='leftpane'></div><div class='middlepane'></div><div class='rightpane'></div></div></div>";
+      H += "<div class='data'><div class='treepane'></div><div class='diffpane'><div class='leftpane'></div><div class='rightpane'></div></div></div>";
       $('#global').append(H);
       $('body').find('figure.loading').remove();
       for (var i = 0; i < D.length; i++){
          console.log(Callback);
          var tree = new Tree22(D[i].name, null, Callback);
          tree.ref= D[i];
-         app.cm.export.generateTree(D[i].data, tree);
+         app.cm.help.generateTree(D[i].data, tree);
          $('.treepane').append($('<div/>', {class : 'Tree'}));
          tree.render($('.treepane').children('div:last'));
          tree.open();
       }; 
-      $('.data').append("<span class='button confirmexport'>Confirm</span>");
+      $('.treepane').append("<span class='button confirmexport'>Confirm</span>");
+      cm.help.tagEvent();           
       $('#global').on('click', '.confirmexport', function(){
          $('.data').html(cm.help.loadWheel('Exporting...'));
          var filetree = {};
          for (var i = 0; i < D.length; i++){
             console.log(D[i]);
             var tree  = {};
-            tree.name = D[i].name;  
-            tree.data = app.cm.export.compressFileTree(D[i].data);
+            tree[D[i].name] = app.cm.help.compressFileTree(D[i].data, 'repo');
             filetree = $.extend(filetree, tree);
          }
          console.log(filetree);
@@ -145,17 +100,8 @@ PAGE.exportSummary = function(Params){
          console.log(result);
          $.post("exportChannels", result, function(D){
             console.log(D);
-            $('.data').html("Export " + D.status + "<p><a href='#'>Return to dashboard</a>");
-            
+            $('.data').html("Export " + D.status + "<p><a href='#'>Return to dashboard</a></p>");          
          });   
       });
    });
-};
-
-PAGE.exportResults = function(Params){
-   $('body').html(cm.help.header() + cm.help.breadCrumb("Export Results") + cm.help.loadWheel('Please Wait...') + cm.help.footer());   
-};
-
-PAGE.exportChannelComplete = function(Params){
-   $('body').html(cm.help.header() + cm.help.breadCrumb('Export Channel') + "Exported " + Params.Name + " successfully.<p><a href='#'>Return to dashboard</a>" + cm.help.footer());
 };

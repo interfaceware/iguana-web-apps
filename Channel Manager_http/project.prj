@@ -3,6 +3,7 @@
    "LuaDependencies": [
       "basicauth",
       "cm.app",
+      "cm.app.help",
       "cm.app.listChannels",
       "cm.config",
       "cm.githelper",

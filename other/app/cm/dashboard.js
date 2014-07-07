@@ -7,7 +7,8 @@ PAGE.listChannels = function() {
    H += '<div id="message"></div>';
    H += '<table id="channels_list_table" cellpadding="0" cellspacing="0" border="0"></table>';
    H += '<table id="selected_channels"></table>';
-   H += "<div class='importexport'><a href='#Page=exportChannel'><span class='button exportchannel'>Export Channel</span></a><a href='#Page=addChannel'><span id='add-channel'></span></a></div>";
+   H += "<div class='importexport'><a href='#Page=exportChannel'><span class='button exportchannel'>Export Channel</span></a><a href='#Page=importChannel'>";
+   H += "<span id='add-channel'></span></a></div>";
    H += "</div>" + cm.help.footer();
    $('body').html(H);
    
