@@ -7,7 +7,7 @@ $(document).ready(function($) {
       if (Info.responseJSON) {
          cm.help.showError("Error: " +  Info.responseJSON.error);
       } else {
-         cm.help.showError("Call " + Error.url + " failed: " + textStatus + " " + Error);
+         cm.help.showError("Call " + Error.url + " failed");
       }
    });
 });
@@ -18,4 +18,3 @@ cm = app.cm;
 app.cm.page = {};
 
 PAGE=app.cm.page;
-

@@ -15,7 +15,7 @@ cm.app = {}
 require 'cm.app.listChannels'
 require 'cm.config'
 require 'cm.githelper'
-
+require 'cm.app.help'
 function cm.app.importList(R)
    local Config = cm.config.open()
    if #Config.config.locations == 0 then
@@ -109,57 +109,34 @@ end
 
 function cm.app.WriteFiles(Root, Tree)
    for Name, Content in pairs(Tree) do
-      if type(Content) == 'string' then
-         local FileName = Root..'/'..Name
-         if IsText(FileName) then
-            Content = ConvertLF(Content)            
-         end
-         OnlyWriteChangedFile(FileName, Content)
-      elseif type(Content) == 'table' then
-          cm.app.WriteFiles(Root..'/'..Name, Content)
-      end
-   end
-end
-
-local function comparedata(server, client)
-   local result = {}
-   for k, v in pairs(client) do
-      if type(v) == 'table' then
-         result[k] = comparedata(server[k], client[k])
+      if Content.type == 'folder' then
+         cm.app.WriteFiles(Root..Name..'/', Content.data)
       else
-         if (v == "data") and server[k] then
-            result[k] = server[k]
-            trace(result[k])
-         else 
-            result[k] = v
-            trace(result[k])
-         end  
-      end       
-   end
-   return result
+         local FileName = Root..'/'..Name
+         if Content.type ~= "str" then
+            Content.data = filter.base64.dec(Content.data)
+         end
+         OnlyWriteChangedFile(FileName, Content.data)
+         end
+      end
 end
-
 
 function cm.app.exportlist(R, Channel)
    local ChannelName = Channel.name
    local Credentials = basicauth.getCredentials(R)
    local Api = iguanaServer.connect(Credentials)
-
    local D = iguana.channel.export{api=Api, name=ChannelName, sample_data=(Channel.sample_data)}
    return D
 end
 
 function cm.app.export(R)
    local data = json.parse{data=R.body}
-   local ChannelName = data.data.name
    
    local Credentials = basicauth.getCredentials(R)
    local Api = iguanaServer.connect(Credentials)
-
-   local D = iguana.channel.export{api=Api, name=ChannelName, sample_data=false}
-   local tree = comparedata(D, data.data.data)
-   trace(tree)
-   cm.app.WriteFiles(data.target, tree)
+   for K, V in pairs(data.data) do 
+      cm.app.WriteFiles(data.target, V)
+   end
    return {['status'] = 'ok'}
 end
 
@@ -255,8 +232,8 @@ cm.actions = {
    ['addChannel']= cm.app.addChannel,
    ['listRepo'] = cm.app.listRepo,
    ['saveRepo'] = cm.app.saveRepo,
-   ['exportDiff'] = cm.app.listChannels.exportDiff,
-   ['importDiff'] = cm.app.listChannels.importDiff,
+   ['exportDiff'] = cm.app.help.exportDiff,
+   ['importDiff'] = cm.app.help.importDiff,
    ['update'] = cm.app.update,
    ['cleanup'] = cm.app.cleanup
 }

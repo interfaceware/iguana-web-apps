@@ -1,5 +1,33 @@
-del .new{
-   
+div.DiffHeading{
+   text-align: center;
+   background-color: #D1D829;
+   padding: 10px;
+   font-size: 120%;
+}
+
+del.new{
+   opacity: 0;
+}
+
+ins.new{
+   text-decoration: none;
+   background-color: #FAFA8D;  
+   color: #000000;
+}
+
+del.old{
+   color: #ECEC64;
+}
+
+ins.old{
+   opacity: 0;  
+}
+
+pre.code{
+   background-color: #FFFFDA;
+   margin: 0px;
+   padding: 20px;
+   color: #7A7A7A;
 }
 
 body {
@@ -13,7 +41,7 @@ body {
    margin-left:10px;
 }
 
-div .importexport{
+div.importexport{
    float: right;
    margin-top: 20px;  
 }
@@ -29,25 +57,25 @@ figcaption{
    margin-bottom: 10px;
 }
 
-div .data{
+div.data{
    overflow:hidden;
 }
-div .treepane{
+div.treepane{
    width: 25%;
    float: left
 }
-div .diffpane{
+div.diffpane{
    width:75%;
    word-wrap: break-word;
    float: right;
 }
 
-div .leftpane{
+div.leftpane{
    float: left;
    width: 48%;
 }
 
-div .rightpane{
+div.rightpane{
    float: right;
    width: 48%;
 }

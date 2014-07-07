@@ -1,3 +1,40 @@
+div.confirmexport{
+  /* text-align: right;*/
+}
+
+span.confirmexport{
+   display:inline-block;
+   margin-top:30px;
+   margin-right: 20px;
+}
+
+
+span.foss.tag {
+   background-color: #FF7070;
+}
+
+span.trans.tag{
+   background-color: #70DB70;
+}
+
+span.repo.tag{
+   background-color: #8B8BE7;
+}
+
+span.tag{
+   cursor: pointer;
+   border-radius: 0.25em;
+   color: #fff;
+   display: inline;
+   font-size: 50%;
+   font-weight: 500;
+   line-height: 1;
+   padding: 0.2em 0.6em 0.2em;
+   text-align: center;
+   vertical-align: middle;
+   white-space: nowrap;
+   margin-left: 10px;
+}
 
 /* New */
 ul.tree22 li.leaf span.A {
@@ -17,9 +54,9 @@ ul.tree22 span.content { display : none; }
 ul.tree22 li.open > span.content { display : inline; }
 
 /**********************************************
- LEGACY STYLING. 
- 'tree22' is the new 'ifwareTreeview'.
- *********************************************/
+LEGACY STYLING. 
+'tree22' is the new 'ifwareTreeview'.
+*********************************************/
 
 ul.tree22
 {
@@ -95,12 +132,13 @@ ul.tree22 li.leaf span.waiting
 
 ul.tree22 span.nodeText
 {
-    height: 16px;
-    display: inline-block;
-    margin-left: -0.5em;
-    background-position: 5px 0px;
-    background-repeat: no-repeat;
-    white-space: pre;
+   height: 16px;
+   display: inline-block;
+   margin-left: -0.5em;
+   background-position: 5px 0px;
+   background-repeat: no-repeat;
+   white-space: pre;
+   cursor: pointer;
 }
 
 ul.tree22 span.hover,
