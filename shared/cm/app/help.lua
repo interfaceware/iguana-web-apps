@@ -142,7 +142,7 @@ function cm.app.help.importDiff(Request)
       end
       local LocalData = iguana.channel.exists(V.name) and cm.app.exportlist(R, V) or nil
       Result[#Result + 1] = {['name'] = V.name, 
-         ['data'] = VerifyDifference(ChannelData, LocalData, F) , ['type'] = 'channel'}
+         ['data'] = VerifyDifference(ChannelData, LocalData, F.path) , ['type'] = 'channel'}
    end
    table.sort(Result, FileTreeCompare)
    return {['target'] = Root, ['data'] = Result}

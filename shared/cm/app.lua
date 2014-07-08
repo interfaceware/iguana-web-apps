@@ -228,6 +228,7 @@ cm.actions = {
    ['config_info'] = cm.app.configInfo,
    ['list-channels'] = cm.app.listChannels.list,
    ['exportChannels'] = cm.app.export,
+   ['importChannels'] = cm.app.import,
    ['importList'] = cm.app.importList,
    ['addChannel']= cm.app.addChannel,
    ['listRepo'] = cm.app.listRepo,
