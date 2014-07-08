@@ -124,6 +124,12 @@ local function VerifyDifference(Files, Root, Fosroot, Control)
    return Filetree
 end
 
+local function ChannelDefinition(Dir, Name)
+   local FullFileName = Dir..'/'..Name..'.xml'
+   local Content = os.fs.readFile(FullFileName)
+   return {[Name..'.xml'] = Content}
+end
+
 function cm.app.help.importDiff(Request)
    local Data = json.parse{data=Request.body}
    local Root = cm.config.open()
@@ -138,11 +144,12 @@ function cm.app.help.importDiff(Request)
          local TransName = V.name ..'_'.. K2
          local TempData 
          _, TempData = BuildTransZip(Root, TransName, nil, V.name)
+         Merge(TempData, ChannelDefinition(Root, V.name))
          Merge(ChannelData, TempData)
       end
       local LocalData = iguana.channel.exists(V.name) and cm.app.exportlist(R, V) or nil
       Result[#Result + 1] = {['name'] = V.name, 
-         ['data'] = VerifyDifference(ChannelData, LocalData, F) , ['type'] = 'channel'}
+         ['data'] = VerifyDifference(ChannelData, LocalData, F.path) , ['type'] = 'channel'}
    end
    table.sort(Result, FileTreeCompare)
    return {['target'] = Root, ['data'] = Result}

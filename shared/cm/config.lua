@@ -40,6 +40,16 @@ local function ConvertOldFormat(S)
       end
       S.config.repo = nil
    end
+   for K, V in ipairs(S.config.locations) do
+      if not S.config.locations[K].Source then
+         local Temp = {}
+         Temp.Name = V.Name or ""
+         Temp.Source = os.fs.name.toNative(V.Dir) or ""
+         Temp.RemoteSource = ""
+         Temp.Type = 'Local'
+         S.config.locations[K] = Temp
+      end 
+   end
    return S
 end
 

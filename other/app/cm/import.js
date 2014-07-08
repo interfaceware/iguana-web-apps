@@ -98,12 +98,10 @@ PAGE.importSummary = function (Params){
             console.log(D[i]);
             var tree  = {};
             tree.name = D[i].name;  
-            tree.data = app.cm.help.compressFileTree(D[i].data, '');
+            tree.data = app.cm.help.compressFileTree(D[i].data, 'trans');
             filetree.push(tree);
          }
-         console.log(filetree);
          var result =  JSON.stringify({target : Data.target, data : filetree});
-         console.log(result);
          $.post("importChannels", result, function(D){
             console.log(D);
             $('.data').html("Import " + D.status + "<p><a href='#'>Return to dashboard</a></p>");          

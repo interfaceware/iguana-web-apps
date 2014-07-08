@@ -121,6 +121,27 @@ function cm.app.WriteFiles(Root, Tree)
       end
 end
 
+local function FlattenTree(Tree)
+   local Rtn = {}
+   for K, V in pairs(Tree) do
+      if V.type == 'folder' then
+         Rtn[V.name] = FlattenTree(V.data)
+      else
+         Rtn[V.name] = (V.type == 'str') and V.data or filter.base64.dec(V.data)
+      end
+   end
+   return Rtn
+end
+
+--[[local function MergeTree (T1, T2)
+   for K, V in pairs(T1) do
+      if type(V) == 'table' then
+         MergeTree (V, 
+      else
+         
+   end
+end]]--
+
 function cm.app.exportlist(R, Channel)
    local ChannelName = Channel.name
    local Credentials = basicauth.getCredentials(R)
@@ -129,11 +150,16 @@ function cm.app.exportlist(R, Channel)
    return D
 end
 
-function cm.app.export(R)
+function cm.app.import(R)
    local data = json.parse{data=R.body}
-   
    local Credentials = basicauth.getCredentials(R)
    local Api = iguanaServer.connect(Credentials)
+   
+   
+end
+
+function cm.app.export(R)
+   local data = json.parse{data=R.body}
    for K, V in pairs(data.data) do 
       cm.app.WriteFiles(data.target, V)
    end
@@ -228,6 +254,7 @@ cm.actions = {
    ['config_info'] = cm.app.configInfo,
    ['list-channels'] = cm.app.listChannels.list,
    ['exportChannels'] = cm.app.export,
+   ['importChannels'] = cm.app.import,
    ['importList'] = cm.app.importList,
    ['addChannel']= cm.app.addChannel,
    ['listRepo'] = cm.app.listRepo,
