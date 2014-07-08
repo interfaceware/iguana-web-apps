@@ -5,6 +5,10 @@ div.DiffHeading{
    font-size: 120%;
 }
 
+input.disabled{
+   background-color: #E7E7E7;
+}
+
 del.new{
    opacity: 0;
 }

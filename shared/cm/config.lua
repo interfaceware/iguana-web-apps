@@ -15,9 +15,9 @@ end
 
 local function DefaultRepoLocation()
    if os.isWindows() then
-      return {['Name']="Default", ['Source']="C:/iguana-web-apps/", ['Type'] = 'GitHub (ReadOnly)', ['RemoteSource']='/interfaceware/iguana-web-apps/'}
+      return {['Name']="Iguana Apps", ['Source']="C:/iguana-web-apps/", ['Type'] = 'Default', ['RemoteSource']='/interfaceware/iguana-web-apps/'}
    else
-      return {['Name']="Default", ['Source']="~/iguana-web-apps/", ['Type'] = 'GitHub (ReadOnly)', ['RemoteSource']='/interfaceware/iguana-web-apps/'}
+      return {['Name']="Iguana Apps", ['Source']="~/iguana-web-apps/", ['Type'] = 'Default', ['RemoteSource']='/interfaceware/iguana-web-apps/'}
    end
 end
 
@@ -33,7 +33,7 @@ local function ConvertOldFormat(S)
       for i=1, #S.config.repo do
          local Temp = {}
          Temp.Name = "Repository "..i
-         Temp.Source = os.fs.name.toNative(S.config.repo[i])
+         Temp.Source = S.config.repo[i]
          Temp.RemoteSource = ""
          Temp.Type = 'Local'
          S.config.locations[#S.config.locations +1] = Temp
@@ -44,7 +44,7 @@ local function ConvertOldFormat(S)
       if not S.config.locations[K].Source then
          local Temp = {}
          Temp.Name = V.Name or ""
-         Temp.Source = os.fs.name.toNative(V.Dir) or ""
+         Temp.Source = V.Dir or ""
          Temp.RemoteSource = ""
          Temp.Type = 'Local'
          S.config.locations[K] = Temp
