@@ -106,15 +106,14 @@ local function ConvertLF(Content)
    return Content
 end
 
---MADE FUNCTION ALWAYS WRITE
-local function OnlyWriteChangedFile(FileName, Content)
-   --[[if os.fs.access(FileName) then
+function OnlyWriteChangedFile(FileName, Content)
+   if os.fs.access(FileName) then
       local CurrentContent = os.fs.readFile(FileName)
       if CurrentContent == Content then
          return
       end
    end
-   trace(FileName)]]
+   trace(FileName)
    os.fs.writeFile(FileName, Content, 666)
 end
 
@@ -144,15 +143,6 @@ local function FlattenTree(Tree)
    return Rtn
 end
 
---[[local function MergeTree (T1, T2)
-   for K, V in pairs(T1) do
-      if type(V) == 'table' then
-         MergeTree (V, 
-      else
-         
-   end
-end]]--
-
 function cm.app.exportlist(R, Channel)
    local ChannelName = Channel.name
    local Credentials = basicauth.getCredentials(R)
@@ -161,12 +151,44 @@ function cm.app.exportlist(R, Channel)
    return D
 end
 
+local function Merge(t1, t2)
+   for k, v in pairs(t1) do
+      if (type(t2) == 'nil') or (type(t2[k]) == 'nil') then
+      elseif (type(v) == "table") and (type(t2[k]) == "table") then
+         Merge(t1[k], t2[k])
+      else 
+         t1[k] = t2[k]
+      end
+   end
+   return t1
+end
+
 function cm.app.import(R)
    local data = json.parse{data=R.body}
    local Credentials = basicauth.getCredentials(R)
    local Api = iguanaServer.connect(Credentials)
-   
-   
+
+   for k,v in ipairs(data.data) do 
+      local ChannelName = v.name
+      if (iguana.channel.exists(ChannelName)) then
+         Api:stopChannel{name=ChannelName, live=true}
+         Api:removeChannel{name=ChannelName, live = true}
+      end
+      local XmlConfig = xml.parse{data=v.data[ChannelName .. '.xml'].data}
+      v.data[ChannelName .. '.xml'] = nil
+      local NewChanDef = Api:addChannel{config=XmlConfig, live=true}
+      local TranList = iguana.channel.getTranslators(NewChanDef)
+      for TransType,Guid in pairs(TranList) do
+         local Start = os.ts.time()
+         local _, ZipData = BuildTransZip(data.target, ChannelName..'_'..TransType, Guid)
+         ZipData = Merge(ZipData, v.data)
+         ZipData = filter.base64.enc(filter.zip.deflate(ZipData))
+         local EndTime = os.ts.time()
+         trace(EndTime-Start)
+         --Api:importProject{project=ZipDataa, guid=Guid, sample_data='replace', live=true}
+         --Api:saveProjectMilestone{guid=Guid, milestone_name='Channel Manager '..os.date(), live=true}
+      end
+   end   
 end
 
 function cm.app.export(R)

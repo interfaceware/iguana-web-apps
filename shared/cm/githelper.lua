@@ -11,6 +11,17 @@ local function comparedates(base, new)
    end
 end
 
+local function WriteFiles (Root, Tree)
+   for Name, Content in pairs(Tree) do
+      if Content.type == 'folder' then
+         WriteFiles(Root..Name..'/', Content)
+      else
+         local FileName = Root..'/'..Name
+         OnlyWriteChangedFile(FileName, Content)
+      end
+   end
+end
+
 function cm.githelper.comparecommits(committree, root, remotesrc)
    local topcommit = {}
    for i, v in ipairs(committree) do
@@ -31,8 +42,8 @@ function cm.githelper.comparecommits(committree, root, remotesrc)
       tree = v
    end  
    os.fs.cleanDir(root)
+   WriteFiles(root, tree)
    os.fs.writeFile(root..'lastsha', topcommit.data.sha, 666)
-   cm.app.WriteFiles(root, tree)
    return 
 end  
 

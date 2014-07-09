@@ -39,30 +39,20 @@ local function Merge(t1, t2)
 end
 
 local function ThreeWayComp(S1, S2, S3)
-   if (S1 == nil) then
-      if (S2 == S3) then 
-         return 'delete'
-      else
-         return nil, S2, S3, 012
-      end
-   elseif (S1 == S2) and (S2 == S3) then
-      return 'delete'
-   elseif (S1 == S2) and (S2 ~= S3) then
-      if (S3 == nil) then 
-         return S1, nil, nil, 110
-      end
-      return S1, nil, S3, 112
-   elseif (S1 ~= S2) and (S2 == S3) then
-      return S1, S2, nil, 122
-   elseif (S1 == S3) and (S1~= S2) then
-      return S1, S2, nil, 121
-   elseif (S1 ~= S2) and (S2 ~= S3) and (S1 ~= S3) then
-      if (S3 == nil) then 
-         return S1, S2, nil, 120
-      end
-      return S1, S2, S3, 123 
+   if (S1 == nil) and (S2 == nil) and S3 then return nil, nil, S3, 001
+   elseif (S1 == S2) and (S2 == S3) then return 'delete'
+   elseif (S1 == S3) and (S2 == nil) then return S1, nil, nil, 101
+   elseif (S1 ~= S3) and (S2 == nil) then return S1, nil, S2, 102
+   elseif (S1 == S2) and (S3 == nil) then return S1, nil, nil, 110
+   elseif (S1 == S2) and (S1 ~= S3) then return S1, nil, S3, 112
+   elseif (S1 ~= S2) and (S3 == nil) then return S1, S2, nil, 120
+   elseif (S1 ~= S2) and (S1 == S3) then return S1, S2, nil, 121
+   elseif (S1 ~= S2) and (S2 == S3) then return S1, S2, nil, 122
+   elseif (S1 ~= S2) and (S2 ~= S3) and (S1 ~= S3) then return S1, S2, S3, 123
+   else error("I've unaccounted for a permutation!")
    end
 end
+
 local function Step(Data, Name)
    if type(Data) == 'table' then
       return Data[Name]

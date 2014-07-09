@@ -2,7 +2,8 @@
 
 PAGE.listChannels = function() {
    var H = cm.help.header();
-   H += "<hr>Dashboard</hr> <a href='#Page=viewRepo'><span class='button' id='repositories'>Repositories</span></a>";
+   H += "<hr>Dashboard</hr>";
+   H += "<div class='toprbuttons'> <span class='button updaterepo'>Update GitHub Repos</span><a href='#Page=viewRepo'><span class='button' id='repositories'>Repositories</span></a></div>";
    H += '<div id="channels_list">';
    H += '<div id="message"></div>';
    H += '<table id="channels_list_table" cellpadding="0" cellspacing="0" border="0"></table>';

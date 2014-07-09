@@ -98,7 +98,7 @@ PAGE.importSummary = function (Params){
             console.log(D[i]);
             var tree  = {};
             tree.name = D[i].name;  
-            tree.data = app.cm.help.compressFileTree(D[i].data, 'trans');
+            tree.data = app.cm.help.compressFileTree(D[i].data, 'repo');
             filetree.push(tree);
          }
          var result =  JSON.stringify({target : Data.target, data : filetree});
