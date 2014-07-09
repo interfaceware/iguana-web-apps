@@ -19,7 +19,7 @@ require 'cm.app.help'
 function cm.app.importList(R)
    local Config = cm.config.open()
    if #Config.config.locations == 0 then
-      return {dir="<none defined>", err='Repository does not exist'}
+      return {dir="accessing directory", err='Repository does not exist'}
    end
    local RepoIndex = R.params.repository +1
    if RepoIndex > #Config.config.locations then  
@@ -29,8 +29,16 @@ function cm.app.importList(R)
    local Repository = Config.config.locations[RepoIndex];
 
    if not os.fs.dirExists(Repository.Source) then
-      return {dir=os.fs.name.toNative(Repository.Source), 
-               err='Local repository does not exist'}
+      os.fs.mkdir(Repository.Source)
+      --[[Name = os.fs.abspath()
+      local Parts = Name:split('/')
+      local Dir = ''
+      for i = 1, #Parts-1 do
+         Dir = Dir..Parts[i]..'/'
+         if not os.fs.dirExists(Dir) then
+            os.fs.mkdir(Dir, 777)
+         end
+      end]]
    end
    if Repository.Type == 'GitHub-ReadOnly' or Repository.Type == 'Default' then
       local GitHubLink = Repository.RemoteSource:split('/')
@@ -39,7 +47,7 @@ function cm.app.importList(R)
          --auth={username = '43506a1ef19c75250326594609dcecba3bf88f55', password=''}, 
          live=true}
       if (commitstatus >= 400) then 
-         return {State = 'Accessing repository commit information', err="Bad URL. Error"..commitstatus}
+         return {state = 'accessing repository commit information', err= commits .. " Error "..commitstatus}
       else
          local err = cm.githelper.comparecommits(json.parse{data=commits}, Repository.Source, 'https://github.com'.. 
             Repository.RemoteSource .. 'archive/master.zip')

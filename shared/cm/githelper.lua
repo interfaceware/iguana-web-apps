@@ -24,7 +24,7 @@ function cm.githelper.comparecommits(committree, root, remotesrc)
    end
    local zipdata, statuscode = net.http.get{url=remotesrc, live=true}
    if statuscode >= 400 then
-        return {link=remotesrc, err="Bad URL. Error "..statuscode}
+        return {state='retrieving Zip File', err=remotesrc .. "Bad URL. Error "..statuscode}
    end
    local tree=filter.zip.inflate(zipdata)
    for k,v in pairs(tree) do

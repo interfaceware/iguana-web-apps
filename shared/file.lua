@@ -78,6 +78,21 @@ function os.fs.tempDir()
    return os.fs.name.fromNative(Name):addDir()
 end
 
+local mkdir = os.fs.mkdir
+
+function os.fs.mkdir(Path)
+   Path = os.fs.abspath(os.fs.addDir(Path))
+   local Parts = Path:split('/')
+   local Dir = ''
+   for i = 1, #Parts-1 do
+      Dir = Dir..Parts[i]..'/'
+      trace(Dir)
+      if not os.fs.dirExists(Dir) then
+         mkdir(Dir, 777)
+      end
+   end
+end
+
 function os.fs.writeFile(Name, Content, Permissions)
    Name = os.fs.abspath(Name)
    local Parts = Name:split('/')

@@ -30,8 +30,8 @@ PAGE.importChannel = function(Params) {
          console.log(Data);
          if (Data.err){
             var H =cm.help.header() + cm.help.breadCrumb('Add Channel');
-            H += 'The repository directory ' + Data.dir + ' does not exist.';
-            H += '<p>No problem - we just need to <a href="#Page=viewRepo">configure that</a>.</p>'
+            H += '<p>While ' + Data.state + ':</p>';
+            H += '<p>' + Data.err + '</p>';
             H += cm.help.footer();
             $('body').html(H);
             return;
