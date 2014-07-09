@@ -2,7 +2,7 @@ app.cm.repo = {};
 
 app.cm.repo.renderRow = function(Name, Src, RSrc, Type){
    var H = "<input placeholder = 'Name' class='reponame' value ='"+ Name + "'>" +
-      "<input placeholder = 'Source' class='reposrc' value='" + Src + "'>" +
+      "<input placeholder = 'Local Storage' class='reposrc' value='" + Src + "'>" +
       "<input placeholder = 'Remote Source' class='reporsrc' value = '" + RSrc + "'>" +
       "<select class='locationtype' data-selected = '"+ Type +"'>" +
          "<option value='Local'>Local</option>"+
@@ -15,9 +15,10 @@ app.cm.repo.renderRow = function(Name, Src, RSrc, Type){
    }
    else if (Type == "Local") {
       $(Rtn).find('.reporsrc').hide();
+      $(Rtn).find('.reposrc').attr('placeholder', 'Source');
    }
    else if (Type == "Default"){
-      $(Rtn).find('input:not(.reposrc)').addClass('disabled').prop('disabled' , true);
+      $(Rtn).find('.reporsrc').addClass('disabled').prop('disabled' , true);
    }
    $(Rtn).find('select').val($(Rtn).find('select').attr('data-selected'));
    return Rtn;

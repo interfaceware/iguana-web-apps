@@ -32,14 +32,16 @@ function cm.app.importList(R)
       return {dir=os.fs.name.toNative(Repository.Source), 
                err='Local repository does not exist'}
    end
-   if Repository.Type == 'GitHub-ReadOnly' then
-      local commits, commitstatus = net.http.get{url='https://api.github.com/repos/'.. Repository.RemoteSource ..'commits', 
-         headers={['Accept'] = 'application/vnd.github.v3+json', ['User-Agent'] = 'kevincai3'}, 
-         auth={username = '43506a1ef19c75250326594609dcecba3bf88f55', password=''}, live=true}
+   if Repository.Type == 'GitHub-ReadOnly' or Repository.Type == 'Default' then
+      local GitHubLink = Repository.RemoteSource:split('/')
+      local commits, commitstatus = net.http.get{url='https://api.github.com/repos'.. Repository.RemoteSource ..'commits', 
+         headers={['Accept'] = 'application/vnd.github.v3+json', ['User-Agent'] = GitHubLink[3]}, 
+         --auth={username = '43506a1ef19c75250326594609dcecba3bf88f55', password=''}, 
+         live=true}
       if (commitstatus >= 400) then 
-         return {link = 'Hi', err="Bad URL. Error"..commitstatus}
+         return {State = 'Accessing repository commit information', err="Bad URL. Error"..commitstatus}
       else
-         local err = cm.githelper.comparecommits(json.parse{data=commits}, Repository.Source, 'https://github.com/'.. 
+         local err = cm.githelper.comparecommits(json.parse{data=commits}, Repository.Source, 'https://github.com'.. 
             Repository.RemoteSource .. 'archive/master.zip')
          if err then return err end
       end
@@ -95,6 +97,7 @@ local function ConvertLF(Content)
    Content = Content:gsub('\r\n', '\n')
    return Content
 end
+
 --MADE FUNCTION ALWAYS WRITE
 local function OnlyWriteChangedFile(FileName, Content)
    --[[if os.fs.access(FileName) then
