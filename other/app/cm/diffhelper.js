@@ -81,18 +81,26 @@ function onClick(Owner, Self){
    var Left, Right;
    var Diff = Self.ref.diff;
    var LeftText, RightText;   
-   if (Diff == 100 || Diff == 110) {
-      var Data = Self.ref.foss;
-      if (Self.ref.type == "str") {Data = Self.ref.foss.replace(/</g, "&lt;");}
+   if (Diff == 001 || Diff == 101 || Diff == 110 ) {
+      var Data = Self.ref.foss ? Self.ref.foss : Self.ref.repo;
+      if (Self.ref.type == "str") {Data = Data.replace(/</g, "&lt;");}
       DisplayData('.leftpane', Data, Self.ref.type, Self.ref.extention);
-      LeftText = (Diff == 100) ? 'Fossil' : 'Fossil, Translator';
+      if (Diff == 001){ LeftText = 'Repo Data';}
+      else if (Diff == 101) { LeftText = 'Fossil, Repo Data';}
+      else { LeftText = 'Fossil, Translator';}
    }
    else if (Diff == 123){
       implement3Way(Self.ref);
    }
    else{
       var DiffText = "";
-      if (Diff == 112){
+      if (Diff == 102){
+         Left = Self.ref.foss;
+         Right = Self.ref.repo;
+         LeftText = 'Fossil';
+         RightText = 'Repo Data';
+      }
+      else if (Diff == 112){
          Left = Self.ref.foss;
          Right = Self.ref.repo;
          LeftText = 'Fossil, Translator';
@@ -116,13 +124,6 @@ function onClick(Owner, Self){
          LeftText = 'Fossil';
          RightText = 'Translator';
       }
-      else if (Diff == 12){
-         Left = Self.ref.trans;
-         Right = Self.ref.repo;
-         LeftText = "Translator";
-         RightText = "Repo";
-      }
-      console.log(Self.ref);
       Display2Data(Left, Right, Self.ref.type, Self.ref.extention);
       $('.leftpane').css({'width':'48%', 'float':'left'});
       $('.rightpane').css({'width':'48%', 'float':'right'});

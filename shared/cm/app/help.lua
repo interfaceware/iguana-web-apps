@@ -98,7 +98,7 @@ local function VerifyDifference(Files, Root, Fosroot, Control)
          else 
             Tnode.repo = v
             Tnode.trans = Retrieve(Root, k)
-            Tnode.foss = Retrieve (Fosroot, k) or trans
+            Tnode.foss = Retrieve (Fosroot, k) or Tnode.trans
          end
          trace(Tnode)
          Tnode.foss, Tnode.trans, Tnode.repo, Tnode.diff = ThreeWayComp(Tnode.foss, Tnode.trans, Tnode.repo)        

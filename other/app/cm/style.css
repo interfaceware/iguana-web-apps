@@ -13,6 +13,34 @@ del.new{
    opacity: 0;
 }
 
+div.overlaywidget{
+   background : #f5f3e5;
+   position: absolute;
+   margin: auto;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   width: 600px;
+   height: 200px;
+   z-index: 1002;
+   border-radius: 20px;
+   text-align: center;
+   padding: 20px;
+   word-wrap: break-word;
+}
+
+div.overlay{
+   position : fixed;
+   top : 0;
+   left: 0;
+   opacity : .50;
+   background : #666666;
+   width : 100%;
+   height : 100%;
+   z-index : 1001;
+}
+
 ins.new{
    text-decoration: none;
    background-color: #FAFA8D;  
@@ -103,6 +131,7 @@ h1 {
    background: none repeat scroll 0 0 #FCFCFC;
    border-radius: 5px;
    padding: 20px;
+   clear: both;
 }
 
 #global {
@@ -138,7 +167,11 @@ span.button-repositories{
    visibility : none;  
 } 
 
-#repositories{
+div.toplbuttons{
+   float : left;
+}
+
+div.toprbuttons{
    float : right;
 }
 

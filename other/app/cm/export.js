@@ -75,17 +75,18 @@ PAGE.exportSummary = function(Params){
       H += "<div class='data'><div class='treepane'></div><div class='diffpane'><div class='leftpane'></div><div class='rightpane'></div></div></div>";
       $('#global').append(H);
       $('body').find('figure.loading').remove();
+      cm.help.tagEvent();           
       for (var i = 0; i < D.length; i++){
          console.log(Callback);
          var tree = new Tree22(D[i].name, null, Callback);
          tree.ref= D[i];
          app.cm.help.generateTree(D[i].data, tree);
-         $('.treepane').append($('<div/>', {class : 'Tree'}));
+         var treediv = $('<div/>', {class : 'Tree'}).appendTo('.treepane');
          tree.render($('.treepane').children('div:last'));
          tree.open();
+         $(treediv).find('.tag:first()').trigger('click');
       }; 
       $('.treepane').append("<span class='button confirmexport'>Confirm</span>");
-      cm.help.tagEvent();           
       $('#global').on('click', '.confirmexport', function(){
          $('.data').html(cm.help.loadWheel('Exporting...'));
          var filetree = {};

@@ -2,7 +2,7 @@
 
 PAGE.listChannels = function() {
    var H = cm.help.header();
-   H += "<hr>Dashboard</hr>";
+   H += "<hr><div class = 'toplbuttons'>Dashboard</div>";
    H += "<div class='toprbuttons'> <span class='button updaterepo'>Update GitHub Repos</span><a href='#Page=viewRepo'><span class='button' id='repositories'>Repositories</span></a></div>";
    H += '<div id="channels_list">';
    H += '<div id="message"></div>';
@@ -46,6 +46,25 @@ PAGE.listChannels = function() {
          
       }
    );
+   $('.updaterepo').click(function(){
+      $('<div/>', {'class' : 'overlay'}).appendTo('body');
+      $('body').append('<div class = "overlaywidget">' + cm.help.loadWheel('Updating Repos...') + '</div>');
+      $.get("updateRepo", function (Data){
+         if (!(Data.err)){
+            $('.overlaywidget').html('Success! Click anywhere to continue!');
+            $('body').click(function (){
+               $('.overlaywidget, .overlay').remove();
+               $('body').unbind('click');
+            });
+         }
+         else {
+            $('.overlaywidget').html('While ' + Data.state + ' :<br>' + Data.err + '<br> Click anywhere outside this textbox to continue!');
+            $('.overlay').click(function(){
+               $('.overlaywidget, .overlay').remove();
+               $('.overlay').unbind('click');
+            });
+      }});
+   });
 };
 
 PAGE.default = PAGE.listChannels;

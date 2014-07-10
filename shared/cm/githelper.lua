@@ -13,7 +13,7 @@ end
 
 local function WriteFiles (Root, Tree)
    for Name, Content in pairs(Tree) do
-      if Content.type == 'folder' then
+      if type(Content) == 'table' then
          WriteFiles(Root..Name..'/', Content)
       else
          local FileName = Root..'/'..Name

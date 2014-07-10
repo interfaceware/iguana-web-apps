@@ -19,7 +19,7 @@ require 'cm.app.help'
 function cm.app.importList(R)
    local Config = cm.config.open()
    if #Config.config.locations == 0 then
-      return {dir="accessing directory", err='Repository does not exist'}
+      return {state="accessing directory", err='Repository does not exist'}
    end
    local RepoIndex = R.params.repository +1
    if RepoIndex > #Config.config.locations then  
@@ -27,32 +27,9 @@ function cm.app.importList(R)
    end  
    
    local Repository = Config.config.locations[RepoIndex];
-
+   
    if not os.fs.dirExists(Repository.Source) then
       os.fs.mkdir(Repository.Source)
-      --[[Name = os.fs.abspath()
-      local Parts = Name:split('/')
-      local Dir = ''
-      for i = 1, #Parts-1 do
-         Dir = Dir..Parts[i]..'/'
-         if not os.fs.dirExists(Dir) then
-            os.fs.mkdir(Dir, 777)
-         end
-      end]]
-   end
-   if Repository.Type == 'GitHub-ReadOnly' or Repository.Type == 'Default' then
-      local GitHubLink = Repository.RemoteSource:split('/')
-      local commits, commitstatus = net.http.get{url='https://api.github.com/repos'.. Repository.RemoteSource ..'commits', 
-         headers={['Accept'] = 'application/vnd.github.v3+json', ['User-Agent'] = GitHubLink[3]}, 
-         --auth={username = '43506a1ef19c75250326594609dcecba3bf88f55', password=''}, 
-         live=true}
-      if (commitstatus >= 400) then 
-         return {state = 'accessing repository commit information', err= commits .. " Error "..commitstatus}
-      else
-         local err = cm.githelper.comparecommits(json.parse{data=commits}, Repository.Source, 'https://github.com'.. 
-            Repository.RemoteSource .. 'archive/master.zip')
-         if err then return err end
-      end
    end
    local L = {name={}, description={}} 
    for K, V in os.fs.glob(Repository.Source ..'/*.xml') do
@@ -74,7 +51,7 @@ function cm.app.addChannel(R)
    
    local Credentials = basicauth.getCredentials(R)
    local Api = iguanaServer.connect(Credentials)
-
+   
    if (iguana.channel.exists(ChannelName)) then
       Api:stopChannel{name=ChannelName}
       Api:removeChannel{name=ChannelName}
@@ -127,8 +104,8 @@ function cm.app.WriteFiles(Root, Tree)
             Content.data = filter.base64.dec(Content.data)
          end
          OnlyWriteChangedFile(FileName, Content.data)
-         end
       end
+   end
 end
 
 local function FlattenTree(Tree)
@@ -167,14 +144,14 @@ function cm.app.import(R)
    local data = json.parse{data=R.body}
    local Credentials = basicauth.getCredentials(R)
    local Api = iguanaServer.connect(Credentials)
-
+   
    for k,v in ipairs(data.data) do 
       local ChannelName = v.name
       if (iguana.channel.exists(ChannelName)) then
          Api:stopChannel{name=ChannelName, live=true}
          Api:removeChannel{name=ChannelName, live = true}
       end
-      local XmlConfig = xml.parse{data=v.data[ChannelName .. '.xml'].data}
+      local XmlConfig = xml.parse{data= next(v.data) and v.data[ChannelName .. '.xml'].data or os.fs.readFile(data.target .. ChannelName .. '.xml')}
       v.data[ChannelName .. '.xml'] = nil
       local NewChanDef = Api:addChannel{config=XmlConfig, live=true}
       local TranList = iguana.channel.getTranslators(NewChanDef)
@@ -185,10 +162,11 @@ function cm.app.import(R)
          ZipData = filter.base64.enc(filter.zip.deflate(ZipData))
          local EndTime = os.ts.time()
          trace(EndTime-Start)
-         --Api:importProject{project=ZipDataa, guid=Guid, sample_data='replace', live=true}
-         --Api:saveProjectMilestone{guid=Guid, milestone_name='Channel Manager '..os.date(), live=true}
+         Api:importProject{project=ZipData, guid=Guid, sample_data='replace', live=true}
+         Api:saveProjectMilestone{guid=Guid, milestone_name='Channel Manager '..os.date(), live=true}
       end
    end   
+   return {status = 'success'}
 end
 
 function cm.app.export(R)
@@ -244,44 +222,33 @@ local function ConnectToServer(R)
    return Server
 end
 
---[[function cm.app.update(R)
-   local Server = ConnectToServer(R)
-   local Config = Server:getChannelConfig{guid=iguana.channelGuid()}
-   local Num = 0
-   for i = Num, 20 do
-      if not iguana.channel.exists(Config.channel.name .. i) then
-         Config.channel.name = Config.channel.name .. i
-         Num = i
-         break
+function cm.app.updateRepo(R)
+   local Config = cm.config.open()
+   if #Config.config.locations == 0 then
+      return {state="accessing directory", err='Repository does not exist'}
+   end
+   for Counter, Repository in ipairs(Config.config.locations) do
+      if not os.fs.dirExists(Repository.Source) then
+         os.fs.mkdir(Repository.Source)
       end
-      if i == 20 then return {['error'] = 'Maximum channel managers reached, please remove one of your previous channels.'} end
-   end  
-   Server:updateChannel{config=Config, username=Username, password=Password}
-   --cm.app.addChannel(R)
-   local NewConfig = Server:getChannelConfig{name='Channel Manager'}
-   NewConfig.channel.from_http.mapper_url_path = NewConfig.channel.from_http.mapper_url_path:nodeValue():gsub('/', Num..'%1')
-   Server:updateChannel{config=NewConfig}
-   
-end
-
-function cm.app.cleanup(R)
-   local Server = ConnectToServer(R)
-   local Changes = {}
-   for i = 0, 20 do
-      local ChannelName = iguana.channelName() .. i      
-      if iguana.channel.exists(ChannelName) then
-         for j = i + 1, 20 do
-            local RemoveName = iguana.channelName() .. j
-            if iguana.channel.exists(RemoveName) then
-               Changes[#Changes] = RemoveName
-               Server:stopChannel{name=RemoveName}
-               Server:removeChannel{name=RemoveName}
-            end
+      if Repository.Type == 'GitHub-ReadOnly' or Repository.Type == 'Default' then
+         local GitHubLink = Repository.RemoteSource:split('/')
+         local commits, commitstatus = net.http.get{url='https://api.github.com/repos'.. Repository.RemoteSource ..'commits',
+            --auth = {username = 'db6a50027c3000fcad2d0816e22423d31dd7bf54', password = ''},
+            headers={['Accept'] = 'application/vnd.github.v3+json', ['User-Agent'] = GitHubLink[3]},
+            live=true}
+         if (commitstatus >= 400) then 
+            return {state = 'accessing repository commit information', err= commits .. " Error "..commitstatus}
+         else
+            local err = cm.githelper.comparecommits(json.parse{data=commits}, Repository.Source, 'https://github.com'.. 
+               Repository.RemoteSource .. 'archive/master.zip')
+            if err then return err end
          end
       end
    end
-   return Changes
-end]]
+   return {status = "ok"}
+end
+
 
 cm.actions = {
    ['config_info'] = cm.app.configInfo,
@@ -294,6 +261,5 @@ cm.actions = {
    ['saveRepo'] = cm.app.saveRepo,
    ['exportDiff'] = cm.app.help.exportDiff,
    ['importDiff'] = cm.app.help.importDiff,
-   ['update'] = cm.app.update,
-   ['cleanup'] = cm.app.cleanup
+   ['updateRepo'] = cm.app.updateRepo
 }

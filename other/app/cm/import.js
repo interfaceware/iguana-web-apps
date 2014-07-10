@@ -64,7 +64,7 @@ PAGE.importChannel = function(Params) {
 }
 
 PAGE.importSummary = function (Params){
-   var H = cm.help.header() + cm.help.breadCrumb("<a href='#Page=addChannel'>Import Channel</a> &gt; Review Import");
+   var H = cm.help.header() + cm.help.breadCrumb("<a href='#Page=importChannel'>Import Channel</a> &gt; Review Import");
    H += cm.help.loadWheel('Fetching Data...');
    H += cm.help.footer();
    $('body').html(H);   
@@ -92,7 +92,7 @@ PAGE.importSummary = function (Params){
       $('.treepane').append("<span class='button confirmimport'>Confirm</span>");
       cm.help.tagEvent();           
       $('#global').on('click', '.confirmimport', function(){
-         $('.data').html(cm.help.loadWheel('Exporting...'));
+         $('.data').html(cm.help.loadWheel('Importing...'));
          var filetree = [];
          for (var i = 0; i < D.length; i++){
             console.log(D[i]);
