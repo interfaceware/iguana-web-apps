@@ -5,6 +5,7 @@ require 'node'
 require 'iguanaServer'
 require 'fossil'
 require 'spin'
+
 -- Notice we carefully only do a local include of this module to avoid poluting the global namespace.
 local basicauth = require 'basicauth'
 
@@ -16,6 +17,8 @@ require 'cm.app.listChannels'
 require 'cm.config'
 require 'cm.githelper'
 require 'cm.app.help'
+require 'cm.update'
+
 function cm.app.importList(R)
    local Config = cm.config.open()
    if #Config.config.locations == 0 then
@@ -261,5 +264,7 @@ cm.actions = {
    ['saveRepo'] = cm.app.saveRepo,
    ['exportDiff'] = cm.app.help.exportDiff,
    ['importDiff'] = cm.app.help.importDiff,
-   ['updateRepo'] = cm.app.updateRepo
+   ['updateRepo'] = cm.app.updateRepo,
+   ['updateList'] = cm.update.list,
+   ['update'] = cm.update.spin
 }

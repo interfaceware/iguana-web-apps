@@ -41,7 +41,6 @@ function cm.githelper.comparecommits(committree, root, remotesrc)
    for k,v in pairs(tree) do
       tree = v
    end  
-   os.fs.cleanDir(root)
    WriteFiles(root, tree)
    os.fs.writeFile(root..'lastsha', topcommit.data.sha, 666)
    return 
