@@ -60,6 +60,10 @@ PAGE.exportChannel = function(Params) {
 
 PAGE.exportSummary = function(Params){
    var H = cm.help.header() + cm.help.breadCrumb("<a href='#Page=exportChannel'>Export Channel</a> &gt; Review Export");
+   var Alias = {'Branch' : {'Text' : {'foss' : 'Export', 'repo' : 'No Export'},
+                            'Class' : {'foss' : 'yes', 'repo' : 'none'}},
+                'Node' : {'Text' : {'foss' : 'Fossil','trans' : 'Translator', 'repo' : 'No Export'},
+                         'Class' : {'foss' : '', 'trans' : '', 'repo' : 'none'}}};
    H += cm.help.loadWheel('Fetching Data...');
    H += cm.help.footer();
    $('body').html(H);
@@ -75,7 +79,7 @@ PAGE.exportSummary = function(Params){
       H += "<div class='data'><div class='treepane'></div><div class='diffpane'><div class='leftpane'></div><div class='rightpane'></div></div></div>";
       $('#global').append(H);
       $('body').find('figure.loading').remove();
-      cm.help.tagEvent();           
+      cm.help.tagEvent(Alias);           
       for (var i = 0; i < D.length; i++){
          console.log(Callback);
          var tree = new Tree22(D[i].name, null, Callback);

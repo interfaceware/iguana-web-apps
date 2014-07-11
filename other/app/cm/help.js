@@ -24,12 +24,15 @@ cm.help.loadWheel = function(Msg){
       '<img class="spinner" src="spinner_big_green.gif"> </figure>'
       };
 
-app.cm.help.tagEvent = function(){
+app.cm.help.tagEvent = function(Alias){
    $('.treepane').on('click', '.tag', function(){
       if ($(this).data().isBranch()){
          var Toggle = $(this).hasClass('foss') ? 'repo' : 'foss';
          $(this).parent().find('span.tag').each(function (key, val){
-            app.cm.help.toggleTag(val, Toggle);
+            if ($(val).parent().hasClass('branch')) {
+               app.cm.help.toggleTag(val, Toggle, Alias.Branch);}
+            else {
+               app.cm.help.toggleTag(val, Toggle, Alias.Node);}
          });
       }
       else {
@@ -43,25 +46,24 @@ app.cm.help.tagEvent = function(){
             Toggle = 'repo';
          }
          else {Toggle = 'foss'}
-         app.cm.help.toggleTag(this, Toggle);
+         app.cm.help.toggleTag(this, Toggle, Alias.Node);
          if ((Toggle == 'foss')||(Toggle == 'trans')){
             Toggle = 'foss';
             $(this).parents(':gt(0)').children('.tag').each(function(key, val){
-               app.cm.help.toggleTag(val, Toggle);
+               app.cm.help.toggleTag(val, Toggle, Alias.Branch);
             });
          }
       }
+      if ($(this).hasClass('none') && (!($(this).parent().find('span.tag').not('.none')))){
+         $(this).parent().children('span.tag').trigger('click');
+      };
    });
 };
 
-app.cm.help.toggleTag = function(TagObj, ToggleTo){
-   var RefData = $(TagObj).data();
+app.cm.help.toggleTag = function(TagObj, ToggleTo, Alias){
    TagObj = $(TagObj);
    TagObj.removeClass();
-   TagObj.addClass('tag');
-   if (ToggleTo == 'foss'){TagObj.addClass('foss'); TagObj.text('Fossil');}
-   else if (ToggleTo == 'repo'){TagObj.addClass('repo');TagObj.text('Repo');}
-   else {TagObj.addClass('trans');TagObj.text('Translator');};
+   TagObj.addClass('tag ' + ToggleTo + ' ' + Alias.Class[ToggleTo]).text(Alias.Text[ToggleTo]);
 };
    
 app.cm.help.generateTree = function (Data, Tree){

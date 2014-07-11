@@ -50,8 +50,8 @@ function implement3Way(Data){
 }
 
 function resetDivs(){
-   $('.leftpane').html('').css({'float' : '', 'width': ''});
-   $('.rightpane').html('').css({'float' : '', 'width': ''});
+   $('.leftpane').html('').css({'float' : 'none', 'width': 'auto'});
+   $('.rightpane').html('').css({'float' : 'none', 'width': 'auto'});
    $('select').remove();
 }
 

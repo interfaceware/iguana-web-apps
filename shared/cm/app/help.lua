@@ -91,7 +91,7 @@ local function VerifyDifference(Files, Root, Fosroot, Control)
          local extention = extentiontype[#extentiontype]
          extentiontype = #extentiontype > 1 and extentions[extention] or 'file' 
          local Tnode = {['type'] = extentiontype, ['name'] = k, ['extention'] = extention}  
-         if Control == 'Old' then
+         if Control == 'export' then
             Tnode.trans = v
             Tnode.foss = Retrieve(Fosroot, k) or v
             Tnode.repo = Retrieve(Root, k) 
@@ -99,6 +99,7 @@ local function VerifyDifference(Files, Root, Fosroot, Control)
             Tnode.repo = v
             Tnode.trans = Retrieve(Root, k)
             Tnode.foss = Retrieve (Fosroot, k) or Tnode.trans
+            Tnode.trans = nil
          end
          trace(Tnode)
          Tnode.foss, Tnode.trans, Tnode.repo, Tnode.diff = ThreeWayComp(Tnode.foss, Tnode.trans, Tnode.repo)        
@@ -154,7 +155,7 @@ function cm.app.help.exportDiff(Request)
    local F = fossil.openNewInstance(Request)
    for K, V in pairs(Data.data) do      
       Result[#Result + 1] = {['name'] = V.name, 
-         ['data'] = VerifyDifference(cm.app.exportlist(R, V), Root, F.path, 'Old'), ['type'] = 'channel'}
+         ['data'] = VerifyDifference(cm.app.exportlist(R, V), Root, F.path, 'export'), ['type'] = 'channel'}
       if #Result[#Result].data == 0 then Result[#Result] = nil end
    end
    table.sort(Result, FileTreeCompare)

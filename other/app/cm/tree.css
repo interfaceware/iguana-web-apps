@@ -8,13 +8,12 @@ span.confirmexport{
    margin-right: 20px;
 }
 
-
 span.foss.tag {
-   background-color: #FF7070;
+   background-color: #10884F;
 }
 
 span.trans.tag{
-   background-color: #70DB70;
+   background-color: #40EC30;
 }
 
 span.repo.tag{
@@ -26,7 +25,7 @@ span.tag{
    border-radius: 0.25em;
    color: #fff;
    display: inline;
-   font-size: 50%;
+   font-size: 65%;
    font-weight: 500;
    line-height: 1;
    padding: 0.2em 0.6em 0.2em;
@@ -34,6 +33,14 @@ span.tag{
    vertical-align: middle;
    white-space: nowrap;
    margin-left: 10px;
+}
+
+div.treepane span.none{
+   background-color: #B4B4B4;
+}
+
+div.treepane span.export{
+   background-color: #70DB70;      
 }
 
 /* New */

@@ -25,5 +25,4 @@ function cm.update.spin(Self, R)
    Host['local']['pass'] = Credentials.password
    local Spinner = spin.getSpinner(Host)
    local SpinnerNode = Spinner:getNodes()
-   
 end

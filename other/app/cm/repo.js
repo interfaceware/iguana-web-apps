@@ -25,10 +25,16 @@ app.cm.repo.renderRow = function(Name, Src, RSrc, Type){
 };
 
 app.cm.repo.model = function(){
-   function Pad (Str){
+   function EndPad (Str){
       Str = Str.trim();
       if ((Str.length > 0) && (Str.slice(-1) != '/')) {
-         Str = Str.concat('/');
+         Str = Str + '/';
+      }
+      return Str;
+   }
+   function BegPad (Str){
+      if ((Str.length > 0) && (Str.CharAt(0) != '/')){
+         Str = '/' + Str;
       }
       return Str;
    }
@@ -36,8 +42,8 @@ app.cm.repo.model = function(){
    $('.repoEdit').each(function(i, Src){ 
       Data[i] = {
          'Name': $(this).find('.reponame').val(),
-         'Source':Pad($(this).find('.reposrc').val()),
-         'RemoteSource':Pad($(this).find('.reporsrc').val()),
+         'Source':EndPad($(this).find('.reposrc').val()),
+         'RemoteSource':BegPad(EndPad($(this).find('.reporsrc').val())),
          'Type':$(this).find('.locationtype').val()
       };
       //If either all the required fields are filled or empty, continue. Else return false.
@@ -50,7 +56,7 @@ app.cm.repo.model = function(){
    return Data;
 };
 
-app.cm.repo.fillSelect = function(RepoList){
+app.cm.repo.fillSelect = function(RepoList, Filter){
    var H = '<select class="repolist">';
    var D = RepoList;
    for (var i=0; i < RepoList.length; i++){
@@ -133,7 +139,7 @@ PAGE.editRepo = function(Params){
          }
          $.post('saveRepo', JSON.stringify(Data), function(D){
             document.location.hash = '#Page=viewRepo';
-         });         
+         });
       });
       $('#add').click(function(Event){
           $('form').append(app.cm.repo.renderRow('','','','Local')).children("div:last").hide().slideToggle();
