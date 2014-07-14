@@ -26,8 +26,10 @@
       console.log(event);
    }
    window.addEventListener("message", receiveMessage, false);
-}*/
+}
 
 PAGE.update = function (Params){
-   $.get(
-}
+   $.get('update', function(Data){
+      console.log(Data);
+   }
+}*/

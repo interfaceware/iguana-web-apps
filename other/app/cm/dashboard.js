@@ -66,6 +66,11 @@ PAGE.listChannels = function() {
             });
       }});
    });
+   $('.updatecm').click(function(){
+      $.get("update", function(Data){
+         console.log(Data);
+      });
+   });
 };
 
 PAGE.default = PAGE.listChannels;

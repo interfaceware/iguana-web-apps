@@ -60,7 +60,7 @@ local function getTranslator(ChannelGuid, Iggy, Sandbox, Node)
       -- This line is waiting for web port to be available in channel API. 
       -- Fallbacks are (a) hard-coding in config, and (b) hoping remote port is the same as local one.
       local TargetPort = self:node():httpPort() or iguana.webInfo().https_channel_server.port
-      return self:node():protocol() .. self:node():host() .. ':' .. TargetPort .. '/' .. Sandbox.channel.from_http.mapper_url_path .. '/'
+      return self:node():protocol() .. self:node():host() .. ':' .. TargetPort .. '/' .. Sandbox.channel.from_http.mapper_url_path
    end  
 
    function Translator:cGuid() 
@@ -200,7 +200,7 @@ local function getNode(Config)
             local NewChannel = Iggy:addChannel{config = getParamsHttps(Num), live = true}
             trace(NewChannel)
             NewChannel.channel.name = NewChannel.channel.name:nodeValue():gsub(Num, NewChannel.channel.guid:nodeValue())
-            NewChannel.channel.from_http.mapper_url_path = NewChannel.channel.from_http.mapper_url_path:nodeValue():gsub(Num, NewChannel.channel.guid:nodeValue())
+            NewChannel.channel.from_http.mapper_url_path = NewChannel.channel.from_http.mapper_url_path:nodeValue():gsub(Num, NewChannel.channel.guid:nodeValue() .. '/')
             Iggy:updateChannel{config=NewChannel, live = true}
             setupTranslator(NewChannel)
             Iggy:saveProjectMilestone{guid = NewChannel.channel.from_http.guid:nodeValue(), milestone_name = "Remotely created by Spinner", live = true}

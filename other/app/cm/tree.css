@@ -96,7 +96,7 @@ ul.tree22 li.branch > div > span.treeIcon
    width: 16px;
    height: 15px;
    padding: 0px;
-   margin: 0px;
+   margin-left: 5px;
    background-image: url(images/folder-closed.gif);
    background-position: center center;
    background-repeat: no-repeat;
@@ -113,10 +113,10 @@ ul.tree22 li.branch.open > div > span.treeIcon
 ul.tree22 li.leaf span.treeIcon
 {
    width: 16px;
-   height: 15px;
+   height: 16px;
    padding: 0px;
-   margin: 0px;
-   background-image: url(images/arrow-contractable.gif);
+   margin-left: 5px;
+   background-image: url(images/file.png);
    background-position: center center;
    background-repeat: no-repeat;
    cursor: pointer;
@@ -141,7 +141,7 @@ ul.tree22 span.nodeText
 {
    height: 16px;
    display: inline-block;
-   margin-left: -0.5em;
+   margin-left: 0.5em;
    background-position: 5px 0px;
    background-repeat: no-repeat;
    white-space: pre;

@@ -61,7 +61,7 @@ PAGE.exportChannel = function(Params) {
 PAGE.exportSummary = function(Params){
    var H = cm.help.header() + cm.help.breadCrumb("<a href='#Page=exportChannel'>Export Channel</a> &gt; Review Export");
    var Alias = {'Branch' : {'Text' : {'foss' : 'Export', 'repo' : 'No Export'},
-                            'Class' : {'foss' : 'yes', 'repo' : 'none'}},
+                            'Class' : {'foss' : '', 'repo' : 'none'}},
                 'Node' : {'Text' : {'foss' : 'Fossil','trans' : 'Translator', 'repo' : 'No Export'},
                          'Class' : {'foss' : '', 'trans' : '', 'repo' : 'none'}}};
    H += cm.help.loadWheel('Fetching Data...');

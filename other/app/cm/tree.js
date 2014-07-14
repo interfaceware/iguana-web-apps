@@ -120,7 +120,7 @@ Tree22.prototype = {
       } else {
          $(Node).addClass('leaf');
       }
-      $(Node).html('<div><span class="treeIcon"></span>' + InnerSpan + '</div>');
+      $(Node).html('<div>' + InnerSpan + '<span class="treeIcon"></span></div>');
       if (this.size() > 0){
          $(Node).append("<span class='content'><ul></ul></span>");
          var SubList = $(Node).contents("span.content").children("ul");

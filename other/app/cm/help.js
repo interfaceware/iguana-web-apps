@@ -26,8 +26,9 @@ cm.help.loadWheel = function(Msg){
 
 app.cm.help.tagEvent = function(Alias){
    $('.treepane').on('click', '.tag', function(){
+      var Toggle = ''
       if ($(this).data().isBranch()){
-         var Toggle = $(this).hasClass('foss') ? 'repo' : 'foss';
+         Toggle = $(this).hasClass('foss') ? 'repo' : 'foss';
          $(this).parent().find('span.tag').each(function (key, val){
             if ($(val).parent().hasClass('branch')) {
                app.cm.help.toggleTag(val, Toggle, Alias.Branch);}
@@ -37,7 +38,7 @@ app.cm.help.tagEvent = function(Alias){
       }
       else {
          console.log($(this).data().ref);
-         var Toggle = "";
+         Toggle = "";
          if ($(this).hasClass('foss')) {
             if ($(this).data().ref.hasOwnProperty('trans')){Toggle = 'trans';}
             else {Toggle = 'repo'}
@@ -47,16 +48,18 @@ app.cm.help.tagEvent = function(Alias){
          }
          else {Toggle = 'foss'}
          app.cm.help.toggleTag(this, Toggle, Alias.Node);
-         if ((Toggle == 'foss')||(Toggle == 'trans')){
-            Toggle = 'foss';
-            $(this).parents(':gt(0)').children('.tag').each(function(key, val){
-               app.cm.help.toggleTag(val, Toggle, Alias.Branch);
-            });
+      }
+      if ($(this).hasClass('none')){
+         if (!($(this).parents(':eq(1)').find('span.tag').not('.none').length)){
+            $(this).parents(':eq(3)').children('span.tag').trigger('click');
          }
       }
-      if ($(this).hasClass('none') && (!($(this).parent().find('span.tag').not('.none')))){
-         $(this).parent().children('span.tag').trigger('click');
-      };
+      else {
+         $(this).parents(':gt(0)').children('.tag').each(function(key, val){
+            Toggle = (Toggle == 'trans') ? 'foss' : Toggle;
+            app.cm.help.toggleTag(val, Toggle, Alias.Branch);
+         });
+      }
    });
 };
 

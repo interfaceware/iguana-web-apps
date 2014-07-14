@@ -67,7 +67,7 @@ PAGE.importSummary = function (Params){
    var H = cm.help.header() + cm.help.breadCrumb("<a href='#Page=importChannel'>Import Channel</a> &gt; Review Import");
    var Alias = {'Branch' : {'Text' : {'foss' : 'No Import', 'repo' : 'Repo'},
                             'Class' : {'foss' : 'none', 'repo' : 'yes'}},
-                'Node' : {'Text' : {'foss' : 'No Import','trans' : 'Translator', 'repo' : 'Repository'},
+                'Node' : {'Text' : {'foss' : 'No Import','trans' : 'Translator', 'repo' : 'Repo'},
                          'Class' : {'foss' : 'none', 'trans' : '', 'repo' : ''}}};
    H += cm.help.loadWheel('Fetching Data...');
    H += cm.help.footer();
