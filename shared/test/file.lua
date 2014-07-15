@@ -2,6 +2,7 @@ if not test then test = {} end
 test.file = {}
 
 require 'stringutil'
+require 'cm.config'
 
 ut = test.file
 

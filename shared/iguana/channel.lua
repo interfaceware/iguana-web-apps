@@ -23,10 +23,14 @@ require 'file'
 --    * 'to'     - To translator
 -- This function really helps to make the rest of the code clean since one can write code which can iterate through
 -- each translator instance in a channel.
-function iguana.channel.getTranslators(ChannelConfig)
-   local Info = {}   
-   local C = ChannelConfig.channel;
-   if C.to_mapper then
+function iguana.channel.getTranslators(ChannelConfig)     
+   local C = ChannelConfig.channel
+   return iguana.channel.returnGUID(C)
+end
+
+function iguana.channel.returnGUID(C)
+   local Info = {} 
+      if C.to_mapper then
       Info.to = C.to_mapper.guid:nodeValue()
    end
    if C.from_mapper then
@@ -69,13 +73,17 @@ local function AddFile(Dir, File, Content)
    SubDir[Parts[#Parts]] = Content
 end
 
-local function BuildTransZip(RepoDir, ProjectDir, TargetGuid)
+function BuildTransZip(RepoDir, ProjectDir, TargetGuid, Name)
    local Dir = {}
    local MainDir = RepoDir..'/'..ProjectDir..'/'
    MainDir = os.fs.abspath(MainDir)
    for K,V in os.fs.glob(MainDir..'*') do
       local Content = os.fs.readFile(K)
-      AddFile(Dir,TargetGuid..'/'..K:sub(#MainDir), Content)
+      if TargetGuid then 
+         AddFile(Dir,TargetGuid..'/'..K:sub(#MainDir), Content)
+      else
+         AddFile(Dir,ProjectDir .. '/' .. K:sub(#MainDir), Content)
+      end
    end
    trace(Dir)
    local P = ProjectFile(MainDir)
@@ -91,7 +99,7 @@ local function BuildTransZip(RepoDir, ProjectDir, TargetGuid)
    os.ts.time()
    local ZipData2 = filter.zip.deflate(Dir)
    os.ts.time()
-   return filter.base64.enc(ZipData2)
+   return filter.base64.enc(ZipData2), Dir
 end
 
 -- iguana.channel.add{api=ChannelApiObject, dir='<repo directory>', definition='SomeChannelFile.xml', }
@@ -159,7 +167,7 @@ end
 -- GUIDs are noisy sources of spurious changes - we change them
 local ZeroGuid = '00000000000000000000000000000000'
 
-local function RemoveGuids(ChanConfig)
+function RemoveGuids(ChanConfig)
    local C = ChanConfig.channel;
    C.guid = ZeroGuid
    if C.to_mapper then

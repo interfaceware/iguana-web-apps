@@ -1,0 +1,162 @@
+div.confirmexport{
+  /* text-align: right;*/
+}
+
+span.confirmexport{
+   display:inline-block;
+   margin-top:30px;
+   margin-right: 20px;
+}
+
+span.foss.tag {
+   background-color: #10884F;
+}
+
+span.trans.tag{
+   background-color: #40EC30;
+}
+
+span.repo.tag{
+   background-color: #8B8BE7;
+}
+
+span.tag{
+   cursor: pointer;
+   border-radius: 0.25em;
+   color: #fff;
+   display: inline;
+   font-size: 65%;
+   font-weight: 500;
+   line-height: 1;
+   padding: 0.2em 0.6em 0.2em;
+   text-align: center;
+   vertical-align: middle;
+   white-space: nowrap;
+   margin-left: 10px;
+}
+
+div.treepane span.none{
+   background-color: #B4B4B4;
+}
+
+div.treepane span.export{
+   background-color: #70DB70;      
+}
+
+/* New */
+ul.tree22 li.leaf span.A {
+   background-position: 5px -32px;
+}
+/* Changed */
+ul.tree22 li.leaf span.M {
+   background-position: 5px -64px !important;
+}
+/* Missing */
+ul.tree22 li.leaf span.D {
+   background-position: 5px -96px !important;
+}
+
+
+ul.tree22 span.content { display : none; }
+ul.tree22 li.open > span.content { display : inline; }
+
+/**********************************************
+LEGACY STYLING. 
+'tree22' is the new 'ifwareTreeview'.
+*********************************************/
+
+ul.tree22
+{
+   position: relative; 
+   padding-left: 0;
+   margin: 0;
+}
+
+ul.tree22 ul
+{
+   padding: 0px;
+   margin: 3px 0 0 18px;
+}
+
+ul.tree22 li
+{
+   padding: 2px 0 1px 0px;
+   list-style-type: none;
+   white-space: nowrap;
+}
+
+ul.tree22 li div
+{
+   white-space: nowrap;
+   display: inline-block;
+}
+
+ul.tree22 li.branch > div > span.treeIcon
+{
+   width: 16px;
+   height: 15px;
+   padding: 0px;
+   margin-left: 5px;
+   background-image: url(images/folder-closed.gif);
+   background-position: center center;
+   background-repeat: no-repeat;
+   cursor: pointer;
+   display: inline-block;
+   vertical-align: top;
+}
+
+ul.tree22 li.branch.open > div > span.treeIcon
+{
+   background-image: url(images/folder-open.gif);
+}
+
+ul.tree22 li.leaf span.treeIcon
+{
+   width: 16px;
+   height: 16px;
+   padding: 0px;
+   margin-left: 5px;
+   background-image: url(images/file.png);
+   background-position: center center;
+   background-repeat: no-repeat;
+   cursor: pointer;
+   display: inline-block;
+   vertical-align: top;
+}
+
+/* if the root of the tree is empty, it must be shown. */
+ul.tree22 > li.e 
+{ 
+   display: block;
+} 
+
+ul.tree22 li.leaf span.waiting 
+{
+   background-image: url(mapper/images/spinner.gif);
+   background-position: 5px 0;
+}
+
+
+ul.tree22 span.nodeText
+{
+   height: 16px;
+   display: inline-block;
+   margin-left: 0.5em;
+   background-position: 5px 0px;
+   background-repeat: no-repeat;
+   white-space: pre;
+   cursor: pointer;
+}
+
+ul.tree22 span.hover,
+ul.tree22 span.hover *
+{
+   color: #215FA3;
+   cursor: pointer;
+}
+
+ul.tree22 ul.error{
+   background-color: #FADCDC;
+   color: #8E2525;
+   white-space: pre;
+}

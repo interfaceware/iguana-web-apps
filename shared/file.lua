@@ -14,7 +14,6 @@
 -- It greatly simplifies the code we have that deals with file paths.  Windows paths get expressed like this:
 -- 'D:/my repo/great stuff/here'
 
-
 local IsWindows = false
 
 os.fs.name = {}
@@ -79,6 +78,21 @@ function os.fs.tempDir()
    return os.fs.name.fromNative(Name):addDir()
 end
 
+local mkdir = os.fs.mkdir
+
+function os.fs.mkdir(Path)
+   Path = os.fs.abspath(os.fs.addDir(Path))
+   local Parts = Path:split('/')
+   local Dir = ''
+   for i = 1, #Parts-1 do
+      Dir = Dir..Parts[i]..'/'
+      trace(Dir)
+      if not os.fs.dirExists(Dir) then
+         mkdir(Dir, 777)
+      end
+   end
+end
+
 function os.fs.writeFile(Name, Content, Permissions)
    Name = os.fs.abspath(Name)
    local Parts = Name:split('/')
@@ -130,7 +144,6 @@ function os.fs.cleanDir(Dir, List)
       end
    end   
 end
-
 
 local function ConvertProcessLine(T)
    local Dir = os.fs.name.toNative(T.dir)

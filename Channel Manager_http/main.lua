@@ -1,5 +1,6 @@
 require 'cm.app'
 require 'lib.webserver'
+require 'fossil'
 
 function main(Data)   
    local Server = lib.webserver.create{
@@ -11,7 +12,8 @@ function main(Data)
       -- the test property should be commented out.
       test='admin'
    }
-   Server:serveRequest{data=Data}
+   
+   Server:serveRequest{data=Data} 
 end
 
 

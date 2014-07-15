@@ -1,3 +1,67 @@
+div.DiffHeading{
+   text-align: center;
+   background-color: #D1D829;
+   padding: 10px;
+   font-size: 120%;
+}
+
+input.disabled{
+   background-color: #E7E7E7;
+}
+
+del.new{
+   opacity: 0;
+}
+
+div.overlaywidget{
+   background : #f5f3e5;
+   position: absolute;
+   margin: auto;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   width: 600px;
+   height: 200px;
+   z-index: 1002;
+   border-radius: 20px;
+   text-align: center;
+   padding: 20px;
+   word-wrap: break-word;
+}
+
+div.overlay{
+   position : fixed;
+   top : 0;
+   left: 0;
+   opacity : .50;
+   background : #666666;
+   width : 100%;
+   height : 100%;
+   z-index : 1001;
+}
+
+ins.new{
+   text-decoration: none;
+   background-color: #FAFA8D;  
+   color: #000000;
+}
+
+del.old{
+   color: #ECEC64;
+}
+
+ins.old{
+   opacity: 0;  
+}
+
+pre.code{
+   background-color: #FFFFDA;
+   margin: 0px;
+   padding: 20px;
+   color: #7A7A7A;
+}
+
 body {
    background-color: #eff1e8;
    font-family: 'Open Sans',sans-serif;
@@ -5,7 +69,53 @@ body {
    padding: 0px;
    margin: 0px;
 }
-   
+.locationtype {
+   margin-left:10px;
+}
+
+div.importexport{
+   float: right;
+   margin-top: 20px;  
+}
+
+.spinner{
+   display: block;  
+   margin-left: auto;
+   margin-right: auto;
+}
+
+figcaption{
+   text-align: center;
+   margin-bottom: 10px;
+}
+
+div.data{
+   overflow:hidden;
+}
+div.treepane{
+   width: 25%;
+   float: left
+}
+div.diffpane{
+   width:75%;
+   white-space: pre-wrap;       /* css-3 */
+   white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+   white-space: -pre-wrap;      /* Opera 4-6 */
+   white-space: -o-pre-wrap;    /* Opera 7 */
+   word-wrap: break-word;       /* Internet Explorer 5.5+ */
+   float: right;
+}
+
+div.leftpane{
+   float: left;
+   width: 48%;
+}
+
+div.rightpane{
+   float: right;
+   width: 48%;
+}
+
 h1 {
    font-size: 2.8em;
    font-weight: 700;
@@ -25,6 +135,7 @@ h1 {
    background: none repeat scroll 0 0 #FCFCFC;
    border-radius: 5px;
    padding: 20px;
+   clear: both;
 }
 
 #global {
@@ -47,10 +158,8 @@ h1 {
 
 span#add-channel{
    background-image:url('button-addchannel.gif');  
-   float: right;
    width : 194px;
    height : 26px;
-   margin : 10px;
 }
 
 /* This is the highlight color used for the search highlighting */
@@ -62,7 +171,11 @@ span.button-repositories{
    visibility : none;  
 } 
 
-#repositories{
+div.toplbuttons{
+   float : left;
+}
+
+div.toprbuttons{
    float : right;
 }
 
@@ -73,13 +186,9 @@ span.button-repositories{
 #edit {
    float : right;
 }
-
-span.reponame{
-   font-weight : bold;
-}
-
-input.repodir{
-   width : 70%;
+/*Modify in future*/
+input.reposrc, input.reporsrc{
+   width : 30%;
 }
 
 span.warning{
@@ -89,12 +198,17 @@ span.warning{
    padding: 10px;
 }
 
+span.delete{
+   margin-left: 10px;
+}
+
 span.button{
    background : #e7f4f9;
    padding : 2px;
    border-radius:4px;
    border: 2px solid lightblue;   
    box-shadow: 2px 2px 2px #888888;
+   cursor: pointer;
 }
 
 span.button-delete{

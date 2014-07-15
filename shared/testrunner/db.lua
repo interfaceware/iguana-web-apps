@@ -23,8 +23,14 @@ function testrunner.db.init()
       Conn:execute{sql=[[CREATE UNIQUE INDEX host_idx ON hosts (host_id, name);]], live=true}
       
       Conn:execute{sql=[[CREATE TABLE config (
-         test_suite TEXT(255) NULL
+         test_suite TEXT(255) NULL,
+         github_commit_hash TEXT NULL,
+         github_oauth_token TEXT NULL,
+         github_repo TEXT NULL,
+         local_git_repo TEXT NULL
       );]], live=true}
+      
+      Conn:execute{sql=[[INSERT INTO config (github_commit_hash) VALUES ('first run')]], live=true}
       
       local name = Conn:quote('local')
       local host = Conn:quote('localhost')

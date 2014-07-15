@@ -24,7 +24,61 @@ h1 {
 #wrapper {
    padding: 0px 15px 0px 15px;
 }
-   
+
+.err {
+   border: 1px solid #DE7373;
+   background-color: #FCF2F2;
+}
+
+.button {
+   line-height: 40px;
+}
+
+a.button {
+   border-radius: 5px;
+   border: 1px solid #696969;
+   background-color: #A3A3A3;
+   color: white;
+   padding: 5px;
+   margin-right: 3px;
+   cursor: pointer;
+   text-decoration: none;
+}
+
+a.button:hover {
+   background-color: #BFBFBF;
+}
+
+span.button {
+   border-radius: 5px;
+   border: 1px solid #696969;
+   background-color: #A3A3A3;
+   color: white;
+   padding: 5px;
+   margin-right: 3px;
+   cursor: pointer;
+}
+
+span.button.delete {
+   border: 1px solid #DE7373;
+   background-color: #FCF2F2;
+   color: #000;
+}
+
+span.button.delete:hover {
+   background-color: #F7E6E6;
+}
+span.button:hover {
+   background-color: #BFBFBF;
+}
+
+div.err {
+   margin-top: 20px;
+   margin-bottom: 20px;
+   padding-left: 20px;
+   padding-right: 20px;
+}
+
 .status-green {
    width:10px;
    height:10px;
@@ -159,5 +213,3 @@ input {
    border: 1px solid #DDDDDD;
    height: 20px;
 }
-
-

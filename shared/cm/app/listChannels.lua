@@ -1,8 +1,9 @@
 -- This web service generates the JSON required to populate the dashboard.
-function cm.app.listChannels(Request, App)
+if not cm.app.listChannels then cm.app.listChannels = {} end
+
+function cm.app.listChannels.list(Request, App)
    local StatusXml = iguana.status()   
-   local Conf = xml.parse{data=StatusXml}.IguanaStatus
-   
+   local Conf = xml.parse{data=StatusXml}.IguanaStatus   
    local Components = {
       ['From Translator'] = 'TRANS',
       ['To Translator']   = 'TRANS',
@@ -21,12 +22,13 @@ function cm.app.listChannels(Request, App)
    
    local T = {name={}, status={}, source={}, destination={}}
    for i=1, Conf:childCount('Channel') do
+     
       local Ch = Conf:child('Channel', i)
       T.name[#T.name+1] = Ch.Name
       T.status[#T.status+1] = Ch.Status     
       T.source[#T.source+1] = Components[Ch.Source:nodeValue()];
       T.destination[#T.destination+1] = Components[Ch.Destination:nodeValue()];
-   end
-   
+   end  
    return T
 end
+

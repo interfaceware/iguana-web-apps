@@ -162,15 +162,14 @@ local function ServeFile(Self, R)
    local FileName = R.location:sub(Self.baseUrlSize)
    if #FileName == 0 then 
       FileName = Self.default 
-   end
-   
-   local Content
+   end  
    if Self.test then 
       Content = LoadSandboxFile(FileName, Self.test)
    else
       Content = LoadMilestonedFile(FileName)
    end
    local Entity = FindEntity(FileName)
+   
    trace(Content)
    if (Content) then
       net.http.respond{body=Content, entity_type=Entity}
@@ -209,7 +208,6 @@ end
 local function HelpAction(Self, R)
    local Action = R.location:sub(Self.baseUrlSize)
    if (Action == 'helpsummary') then
-
       local Body = Self.methodSummary
       net.http.respond{body=Body, entity_type='text/json'} 
       return true
@@ -226,6 +224,7 @@ end
 local function FindApi(Self, Call)
    local Address = Call:split('/')  
    local Func = Self.methods
+   if not Func then return nil end
    for i =1, #Address do
       Func = Func[Address[i]]
    end

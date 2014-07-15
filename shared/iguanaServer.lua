@@ -106,6 +106,7 @@ local function getCurrentVersion(Host)
    -- No authentication is needed to access this page.
    local Success, Result = pcall(net.http.get,
       {url=Host .. "/current_version", live=true})
+   
    if not Success then
       error(Result, 3)
    end

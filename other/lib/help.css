@@ -1,6 +1,16 @@
 body, html{
    height: 100%;
 }
+.input{
+   padding: 6px 4px;
+   background-color: #FFFFFF;
+   display: inline-block;
+   min-width: 96%;
+}
+input[type="checkbox"] {
+   margin: auto auto;
+   display: block;
+}
 .heading{
    display: table-row;
    background-color: #BAE8FF;
@@ -12,14 +22,18 @@ body, html{
    display: table-cell;
    border: 1px solid #ccc;
 }
+.nodeText{
+   cursor: pointer;
+}
 p.editable{
    display: inline-block;
    padding: 5px;  
    min-width: 200px;
    margin: 0px 0px;
+   background-color: #FFFFFF;
 }
 .editable{
-   border: dashed 1px;
+   border: 1px inset #A3C8FF;
 }
 .hidden{
    display: none;
@@ -29,24 +43,25 @@ img.cross {
     margin-right: -2.5em;
 }
 div.codeExample {
- 
    overflow: wrap;
 }
 div.codeExample p{
    min-height: 25px;  
 }
 .deletebtn {
-   margin-left: 10px;  
+   padding: 12px;
+   display: table-cell;
+   vertical-align: middle;
 }
 #browser {
-   width: auto;
-   max-width: 20%;
+   width: 20%;
+   min-width: 100px;
    float: left;
    height: 100%;
    overflow: scroll;
    padding: 10px 10px 0px 10px;
 }
-.deletebtn, .add{
+.deletebtn, .add, .edit{
    text-decoration: underline;
    color: #0000FF;
    cursor: pointer;
@@ -54,8 +69,8 @@ div.codeExample p{
 #helpdata {
    height: 100%;
    overflow: scroll;
-   conteneditable: true;
 }
+
 span.edit {
    position: fixed;
    top: 1%;
@@ -103,7 +118,7 @@ h2 {
 div.intellisenseHelpData div.codeExample {
    border: solid #ccc 1px;
    border-radius: 5px;
-   background-color: #FCFCFC;
+   background-color: #F2F2F2;
    padding: 10px 10px;
    color: #666;
    display: table;
