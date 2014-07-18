@@ -24,7 +24,48 @@ h1 {
 #wrapper {
    padding: 0px 15px 0px 15px;
 }
-   
+
+.err {
+   border: 1px solid #DE7373;
+   background-color: #FCF2F2;
+}
+
+.button {
+   border-radius: 5px;
+   border: 1px solid #696969;
+   background-color: #D7F2FA;
+   color: #000;
+   padding: 5px;
+   margin-right: 3px;
+   cursor: pointer;
+   line-height: 40px;
+}
+
+.button:hover{
+   background-color: #BBE5F2;
+}
+
+a.button {
+   text-decoration: none;
+}
+
+span.button.delete {
+   border: 1px solid #DE7373;
+   background-color: #FCF2F2;
+   color: #000;
+}
+
+span.button.delete:hover {
+   background-color: #F7E6E6;
+}
+
+div.err {
+   margin-top: 20px;
+   margin-bottom: 20px;
+   padding-left: 20px;
+   padding-right: 20px;
+}
+
 .status-green {
    width:10px;
    height:10px;
@@ -159,5 +200,3 @@ input {
    border: 1px solid #DDDDDD;
    height: 20px;
 }
-
-

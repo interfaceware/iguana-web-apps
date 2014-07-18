@@ -12,14 +12,13 @@
       "testrunner.app",
       "testrunner.config",
       "testrunner.db",
-      "testrunner.ini"
+      "testrunner.git"
    ],
    "OtherDependencies": [
       "app/testrunner/help.js",
       "app/testrunner/index.html",
       "app/testrunner/page.js",
       "app/testrunner/style.css",
-      "lib/ajax.js",
       "lib/page.js",
       "libe/jquery.dataTables/1.9.4/jquery.dataTables.css",
       "libe/jquery.dataTables/1.9.4/jquery.dataTables.min.js",

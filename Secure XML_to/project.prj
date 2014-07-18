@@ -1,0 +1,12 @@
+{
+   "Name": "Test (From Translator)",
+   "LuaDependencies": [
+      "CryptoUtil",
+      "XMLUtil",
+      "_node",
+      "_stringutil"
+   ],
+   "OtherDependencies": [
+      
+   ]
+}
