@@ -509,8 +509,6 @@ function go_PLACEHOLDER(Params)
    net.http.respond = doThisInstead
    queue.push = doThisInstead
    
-   Results['tests'] = simulatedMain_PLACEHOLDER(DataSet[i])
-   
    for i = 1, #DataSet do
       simulatedMain_PLACEHOLDER(DataSet[i])
       if Options.OneForOne then 

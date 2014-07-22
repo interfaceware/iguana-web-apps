@@ -206,7 +206,6 @@ end
 -- Runs the current dataset through the overloaded translator.
 function regressions.app.getActuals()
    local Results = regressions.Trans:run(trimSamples(regressions.DataSet), {OneForOne = true})['messages']
-   table.remove(Results, 1)
    return Results
 end
 
@@ -277,6 +276,7 @@ function regressions.app.buildExpected(TGuid)
    local Expected = {}
    local Input = regressions.DataSet
    local Actuals = regressions.Actuals
+   trace(Actuals)
    for i=1, #Input do
       Expected[Input[i].Message] = {
          i = i,
@@ -329,7 +329,9 @@ end
 -- Iterate through the results and evaulate each test
 function regressions.app.compare()
    local Data = regressions.DataSet
+   trace(Data)
    local Actuals = regressions.Actuals
+   trace(Actuals)
    local Expected = regressions.Expected
    trace(Expected)
    local Result = {}
@@ -338,7 +340,11 @@ function regressions.app.compare()
    end
    for i = 1, #Data do
       local Input = Data[i].Message
-      Result[i] = {r = 'Y', name = Data[i].name and Data[i].name or '', Act = regressions.app.hideLineEnds(Actuals[i].data)}
+      --trace (Actuals[i].data)
+      if not Actuals[i] then 
+         error(i)
+      end
+      Result[i] = {r = 'Y', name = Data[i].Name or '', Act = regressions.app.hideLineEnds(Actuals[i].data)}
       trace(Result)
       local EOut = Expected[Input]
       trace(EOut.output.data)
