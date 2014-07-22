@@ -74,8 +74,12 @@ span.button-repositories{
    float : right;
 }
 
+span.reponame{
+   font-weight : bold;
+}
+
 input.repodir{
-   width : 90%;
+   width : 70%;
 }
 
 span.warning{

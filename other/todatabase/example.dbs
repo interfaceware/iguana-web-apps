@@ -1,0 +1,40 @@
+create table [Bill] --Billing Information
+(
+   [When_To_Charge] datetime,
+   [Charge_Type] string 
+   [AccountID] string
+);
+
+create table [Header] --Commonly used fields from the MSH segment
+(
+   [TimeStamp] datetime,
+   [From] string,
+   [FromSystem] string,
+   [FromFacility] string
+);
+
+create table [Incident] --Reason For Admission
+(
+   [IncidentType] string,
+   [Location] string,
+   [DateTime] datetime
+);
+
+group [ADTA03] ( [Bill], [Incident] ) ;
+
+create table [Patient] --Commonly used fields from the PID segment
+(
+   [Id] string,
+   [Title] string,
+   [FirstName] string,
+   [LastName] string,
+   [DOB] datetime,
+   [Gender] string,
+   [Race] string,
+   [Address1] string,
+   [Address2] string,
+   [City] string,
+   [BusinessPhone] string
+);
+
+group [ADTA04] ( [Bill] , [Incident], [Patient]) ;
