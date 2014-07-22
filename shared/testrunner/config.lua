@@ -9,38 +9,98 @@ if not testrunner.db then testrunner.db = require 'testrunner.db' end
 -- clicked). All other hosts are inserted or updated
 -- ##########
 function config.saveHosts(Hosts)
+   local function isValid(Host)
+      local IsValid = true
+      local ErrorTable = {
+         ['name'] = true,
+         ['host'] = true,
+         ['https'] = true,
+         ['port'] = true,
+         ['http_port'] = true,
+         ['user'] = true,
+         ['pass'] = true
+      }
+
+      if not type(Host.name) == 'string' or Host.name == '' then
+         ErrorTable.name = false
+      end
+      
+      if Host.host == '' then
+         ErrorTable.host = false
+      end
+      
+      if not (string.lower(Host.https) == 'false' or string.lower(Host.https) == 'true') and not (Host.https == '1' or Host.https == '2') then
+         ErrorTable.https = false
+      end
+      
+      if not tonumber(Host.port) then
+         ErrorTable.port = false
+      end
+      
+      if not tonumber(Host.http_port) then
+         ErrorTable.http_port = false
+      end
+      
+      if not type(Host.user) == 'string' or Host.user == '' then
+         ErrorTable.user = false
+      end
+      
+      if not type(Host.pass) == 'string' or Host.pass == '' then
+         ErrorTable.pass = false
+      end
+      
+      local Connected, Message = pcall(iguanaServer.connect, {url=Host.host .. ':' .. Host.port,username=Host.user,password=Host.pass})
+      if not Connected then
+         if string.lower(Message):find([[couldn't resolve host]]) then
+            ErrorTable.host = false
+            ErrorTable.port = false
+         elseif string.lower(Message):find([[invalid username or password]]) then
+            ErrorTable.user = false
+            ErrorTable.pass = false
+         elseif string.lower(Message):find([[couldn't connect to host]]) then
+            ErrorTable.host = false
+            ErrorTable.pass = false
+         end
+      end
+      
+      for k,v in pairs(ErrorTable) do
+         if not ErrorTable[k] then
+            IsValid = false
+         end
+      end
+      
+      return IsValid, ErrorTable
+   end
+   
    local DB = testrunner.db.connect()
    local RSet = DB:execute{sql="SELECT * FROM hosts", live=true}
    local CurrentHosts = {}
    local ErrorList = {}
    for x=1,#RSet do
-      table.insert(CurrentHosts, RSet[x].host_id)
+      CurrentHosts[tostring(RSet[x].host_id)] = false
    end
    local Incoming = json.parse{data=Hosts.body}
    for i=1,#Incoming do
-      if #CurrentHosts > 0 then
-         for x=1,#CurrentHosts do
-            if tostring(CurrentHosts[x]) == Incoming[i].host_id then
-               Incoming[i]['results'] = RSet[i].results:nodeValue()
-               config.saveHost(Incoming[i])
-               CurrentHosts[x] = nil
-            else
-               config.saveHost(Incoming[i])
-            end
-         end
-      else
+      if CurrentHosts[Incoming[i].host_id] ~= nil then
+         Incoming[i]['results'] = RSet[i].results:nodeValue()
+         CurrentHosts[Incoming[i].host_id] = true
+      end
+      Valid, Errors = isValid(Incoming[i])
+      if Valid then
          config.saveHost(Incoming[i])
+      else
+         table.insert(ErrorList, {['index'] = i, ['errors'] = Errors})
       end
    end
-   for i=1,#CurrentHosts do
-      if keyExists(CurrentHosts, i) then
-         config.deleteHost(CurrentHosts[i])
+   for k,v in pairs(CurrentHosts) do
+      if not v then
+         config.deleteHost(k)
       end
    end
    if #ErrorList > 0 then
-      return ErrorList
+      return {['err'] = true, ['message'] = 'There were some problems with the highlighted fields below.', ['data'] = ErrorList}
    else
-      return {true}
+      return {['err'] = false, ['message'] = 'Hosts saved successfully.'}
    end
 end
 
@@ -90,7 +150,7 @@ end
 -- ##########
 -- Retrieve a list of test hosts and return them
 -- ##########
-function config.getHosts()
+function config.getHosts(R)
    local Hosts = {}
    local DB = testrunner.db.connect()
    local RSet = DB:execute{sql="SELECT * FROM hosts", live=true}
@@ -116,6 +176,86 @@ function config.getHosts()
    end
    
    return Hosts
+end
+
+function config.getConfig(R)
+   local DB = testrunner.db.connect()
+   local RSET = DB:execute{sql="SELECT test_suite, github_oauth_token, github_repo, local_git_repo FROM config", live=true}[1]
+   local Settings = {
+      test_suite = RSET.test_suite,
+      github_oauth_token = RSET.github_oauth_token,
+      github_repo = RSET.github_repo,
+      local_git_repo = RSET.local_git_repo
+   }
+   
+   return {['err'] = false, ['message'] = 'Settings retrieved successfully.', ['data'] = Settings}
+end
+
+function config.saveConfig(R)
+   local function isValid(Config)
+      local ErrorTable = {
+            ['github_repo'] = true,
+            ['github_oauth_token'] = true,
+            ['test_suite'] = true,
+            ['local_git_repo'] = true
+      }
+      GitJson = net.http.get{
+         url='https://' .. Config.github_oauth_token .. ':x-oauth-basic@api.github.com/repos/' .. Config.github_repo .. '/commits',
+         live=true,headers={['User-Agent']='iNTERFACEWARE Iguana'}
+      }
+      GitTable = json.parse{data=GitJson}
+      if string.lower(GitJson):find([[api rate limit exceeded]]) then
+         error([[GitHub API rate limit exceeded - this is probably due to too many failed authentication attempts. The unit testing app can't save your settings at this time.]])
+         return
+      end
+      if GitTable.message ~= nil and string.lower(GitTable.message) == 'bad credentials' then
+         ErrorTable.github_oauth_token = false
+         GitJson2 = net.http.get{
+            url='https://api.github.com/repos/' .. Config.github_repo .. '/commits',
+            live=true,headers={['User-Agent']='iNTERFACEWARE Iguana'}
+         }
+         GitTable2 = json.parse{data=GitJson2}
+         if string.lower(GitJson2):find([[api rate limit exceeded]]) then
+            error([[GitHub API rate limit exceeded - this is probably due to too many failed authentication attempts. The unit testing app can't save your settings at this time.]])
+            return
+         end
+         if GitTable2.message ~= nil and string.lower(GitTable2.message) == 'not found' then
+            ErrorTable.github_repo = false
+         end
+      end
+      if GitTable.message ~= nil and string.lower(GitTable.message) == 'not found' then
+         ErrorTable.github_repo = false
+      end
+      if string.lower(iguana.channelConfig{name=Config.test_suite}) == 'no channel by that name!' then
+         ErrorTable.test_suite = false
+      end
+      if not os.fs.access(Config.local_git_repo .. '/.git', 'rw') then
+         ErrorTable.local_git_repo = false
+      end
+      
+      for k,v in pairs(ErrorTable) do
+         if v == false then
+            return false, ErrorTable
+         end
+      end
+      return true, ErrorTable
+   end
+   local Submitted = json.parse{data=R.body}
+   local Valid, Results = isValid(Submitted)
+   if Valid then
+      local DB = testrunner.db.connect();
+      local SQL = 'UPDATE config SET test_suite = ' .. DB:quote(Submitted.test_suite) .. 
+      ', github_oauth_token = ' .. DB:quote(Submitted.github_oauth_token) .. 
+      ', github_repo = ' .. DB:quote(Submitted.github_repo) .. 
+      ', local_git_repo = ' .. DB:quote(Submitted.local_git_repo) .. 
+      ';'
+      trace(SQL)
+      DB:execute{sql=SQL, live=true}
+      return {['err'] = false, ['message'] = 'Config saved successfully.'}
+   else
+      return {['err'] = true, ['message'] = 'There were problems with the highlighted properties.', ['data'] = Results}
+   end
+   
 end
 
 -- ##########

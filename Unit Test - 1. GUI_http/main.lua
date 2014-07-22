@@ -1,16 +1,30 @@
 require 'testrunner.app'
 require 'lib.webserver'
+local basicauth = require 'basicauth'
 
 function main(Data)
    local Server = lib.webserver.create{
+      auth=true,
       actions = testrunner.actions,
       default = 'app/testrunner/index.html',
       -- If the test property is defined then static files are pulled from the sandbox 
       -- rather than from the mile-stoned versioned copies of the files.  In production
       -- the test propery should be commmented out.
-      test = 'admin'    
+      test = 'admin'
    }
-   iguana.stopOnError(false) 
+   iguana.stopOnError(false)
+   
+   local R = net.http.parseRequest{data=Data}
+   
+   if not basicauth.isAuthorized(R) then
+      basicauth.requireAuthorization()
+      return
+   else
+      local Auth64Str = R.headers.Authorization:sub(#"Basic " + 1)
+      local Creds = filter.base64.dec(Auth64Str):split(":")
+      local Connected = testrunner.app.makeIggy({user = Creds[1], pass = Creds[2]})
+   end
+
    if iguana.isTest() then
       Server:serveRequest{data=Data}
    else
