@@ -3,8 +3,8 @@
    "LuaDependencies": [
       "CryptoUtil",
       "XMLUtil",
-      "_node",
-      "_stringutil"
+      "node",
+      "stringutil"
    ],
    "OtherDependencies": [
       

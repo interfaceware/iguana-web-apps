@@ -1,4 +1,4 @@
-require '_stringutil'
+require 'stringutil'
 
 -- set path for OpenSSL executable (include trailing separator)
 local _sOpenSSL_Path = ''

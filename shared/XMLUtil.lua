@@ -1,4 +1,4 @@
-require '_node'
+require 'node'
 
 -- create xml.secure object as container
 xml.secure = {}
