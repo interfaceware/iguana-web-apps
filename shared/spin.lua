@@ -300,7 +300,8 @@ local function getNode(Config)
    function Node:getTranslator(ChannelGuid)
       checkSelfParam(self)
       local Sandbox = findOrMakeSandbox(ChannelGuid)
-      return getTranslator(ChannelGuid, Iggy, Sandbox, self)   
+      local Trans = getTranslator(ChannelGuid, Iggy, Sandbox, self)
+      return Trans:reset()
    end
    
    function Node:getTranslators() 
