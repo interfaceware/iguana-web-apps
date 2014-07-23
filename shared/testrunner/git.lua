@@ -1,4 +1,4 @@
-local isWindows = iguana.workingDir():find('\\') or false
+local isWindows = package.config:sub(1,1):find('\\') or false
 local gitCheckInterval = 10
 testrunner = testrunner or {}
 testrunner.git = {}
@@ -23,7 +23,8 @@ function testrunner.git.run(R)
    
    local GitTable = json.parse{data=GitJson}
    local LatestCommit = GitTable[1].sha
-   
+   trace(iguana.workingDir())
+   trace(package.config:sub(1,1))
    trace(LastPull, LatestCommit)
    if LastPull ~= LatestCommit then
       if isWindows then

@@ -1,4 +1,4 @@
-<channel name="Secure XML" guid="00000000000000000000000000000000" description="" start_automatically="false" logging_level="1" use_message_filter="false">
+<channel name="Secure XML" guid="00000000000000000000000000000000" description="This community-made channel provides a method for sending encrypted and normalized XML messages.&#xD;&#xA;&#xD;&#xA;For full project details see:&#xD;&#xA;http://help.interfaceware.com/forums/topic/calling-openssl-with-popen-for-secure-xml" start_automatically="false" logging_level="1" use_message_filter="false">
    <to_mapper guid="00000000000000000000000000000000" use_most_recent_milestone="true" milestone="">
       <dequeue_list>
          <dequeue source_name="self" dequeue_guid="6991945CE948B538AAF8F05545266C77"></dequeue>

@@ -274,7 +274,7 @@ PAGE.run = function(){
       success: function(R){
          if(R.err) {
             var H = testrunner.help.header();
-            H += '<p>' + data.message + '</p>';
+            H += '<p>' + R.message + '</p>';
             H += '<p><a href=\"#Page=main\">< Go Back</a></p>';
             H +=  testrunner.help.footer(); 
             $('body').html(H);
