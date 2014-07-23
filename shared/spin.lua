@@ -501,12 +501,17 @@ function go_PLACEHOLDER(Params)
    local DataSet = Payload.DataSet
    local Options = Payload.Options
    
+   -- This table will return messages for regressions and tests for unit testing
    local Results = {['tests'] = {}, ['messages'] = {}}
+
+   -- Return nil on queue.push for the first time simulatedMain is run (i.e.
+   -- without data for unit testing)
+   queue.push = function() return nil end
+   Results['tests'] = simulatedMain_PLACEHOLDER()
 
    local doThisInstead = function(Args)
       table.insert(Results['messages'], catch_PLACEHOLDER(Args))
    end
-   
    net.http.respond = doThisInstead
    queue.push = doThisInstead
    
