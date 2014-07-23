@@ -81,6 +81,12 @@ function testrunner.app.runTest(R)
    local function doTests()
       local DB = testrunner.db.connect()
       local Config = testrunner.config.getConfig()
+      if Config.data.test_suite:S() == '' or Config.data.test_suite:S() == 'NULL' then
+         error('Please specify the test suite channel in your configuration before running tests.')
+      end
+      if string.lower(iguana.channelConfig{name=Config.data.test_suite:S()}) == 'no channel by that name!' then
+         error('The specified test suite appears to no longer exist.')
+      end
       local Hosts = testrunner.config.getHosts()
       local Spinner = spin.getSpinner(Hosts)
       local Results = {aaData={}, aoColumns={{['sTitle'] = 'Test Name',   ['sType'] = 'string'}}}
@@ -100,9 +106,10 @@ function testrunner.app.runTest(R)
          end
       end
    end
+   local Success, Message = pcall(doTests)
    
-   if not pcall(doTests) then
-      return {['err'] = true, ['message'] = 'There was an error running the tests - some results may be incorrect and outdated.'}
+   if not Success then
+      return {['err'] = true, ['message'] = Message}
    else
       return {['err'] = false, ['message'] = 'Tests ran successfully.'}
    end

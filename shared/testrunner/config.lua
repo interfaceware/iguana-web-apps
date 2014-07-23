@@ -199,40 +199,58 @@ function config.saveConfig(R)
             ['test_suite'] = true,
             ['local_git_repo'] = true
       }
-      GitJson = net.http.get{
-         url='https://' .. Config.github_oauth_token .. ':x-oauth-basic@api.github.com/repos/' .. Config.github_repo .. '/commits',
-         live=true,headers={['User-Agent']='iNTERFACEWARE Iguana'}
-      }
-      GitTable = json.parse{data=GitJson}
-      if string.lower(GitJson):find([[api rate limit exceeded]]) then
-         error([[GitHub API rate limit exceeded - this is probably due to too many failed authentication attempts. The unit testing app can't save your settings at this time.]])
-         return
-      end
-      if GitTable.message ~= nil and string.lower(GitTable.message) == 'bad credentials' then
-         ErrorTable.github_oauth_token = false
-         GitJson2 = net.http.get{
-            url='https://api.github.com/repos/' .. Config.github_repo .. '/commits',
-            live=true,headers={['User-Agent']='iNTERFACEWARE Iguana'}
-         }
-         GitTable2 = json.parse{data=GitJson2}
-         if string.lower(GitJson2):find([[api rate limit exceeded]]) then
-            error([[GitHub API rate limit exceeded - this is probably due to too many failed authentication attempts. The unit testing app can't save your settings at this time.]])
-            return
-         end
-         if GitTable2.message ~= nil and string.lower(GitTable2.message) == 'not found' then
+      
+      if Config.github_oauth_token ~= '' or Config.github_repo ~= '' then
+         if Config.github_oauth_token ~= '' and Config.github_repo == '' then
+            ErrorTable.github_oauth_token = false
+         elseif Config.github_oauth_token == '' and Config.github_repo ~= '' then
             ErrorTable.github_repo = false
+         elseif Config.github_oauth_token ~= '' and Config.github_repo ~= '' then
+            GitJson = net.http.get{
+               url='https://' .. Config.github_oauth_token .. ':x-oauth-basic@api.github.com/repos/' .. Config.github_repo .. '/commits',
+               live=true,headers={['User-Agent']='iNTERFACEWARE Iguana'}
+            }
+            GitTable = json.parse{data=GitJson}
+            
+            if string.lower(GitJson):find([[api rate limit exceeded]]) then
+               error([[GitHub API rate limit exceeded - this is probably due to too many failed authentication attempts. The unit testing app can't save your settings at this time.]])
+               return
+            end
+            
+            if GitTable.message ~= nil and string.lower(GitTable.message) == 'bad credentials' then
+               ErrorTable.github_oauth_token = false
+               GitJson2 = net.http.get{
+                  url='https://api.github.com/repos/' .. Config.github_repo .. '/commits',
+                  live=true,headers={['User-Agent']='iNTERFACEWARE Iguana'}
+               }
+               GitTable2 = json.parse{data=GitJson2}
+               if string.lower(GitJson2):find([[api rate limit exceeded]]) then
+                  error([[GitHub API rate limit exceeded - this is probably due to too many failed authentication attempts. The unit testing app can't save your settings at this time.]])
+                  return
+               end
+               if GitTable2.message ~= nil and string.lower(GitTable2.message) == 'not found' then
+                  ErrorTable.github_repo = false
+               end
+            end
+            
+            if GitTable.message ~= nil and string.lower(GitTable.message) == 'not found' then
+               ErrorTable.github_repo = false
+            end
          end
       end
-      if GitTable.message ~= nil and string.lower(GitTable.message) == 'not found' then
-         ErrorTable.github_repo = false
-      end
+      
       if string.lower(iguana.channelConfig{name=Config.test_suite}) == 'no channel by that name!' then
          ErrorTable.test_suite = false
       end
-      if not os.fs.access(Config.local_git_repo .. '/.git', 'rw') then
-         ErrorTable.local_git_repo = false
-      end
       
+      if Config.local_git_repo == '' then
+         ErrorTable.local_git_repo = true
+      else
+         if not os.fs.access(Config.local_git_repo .. '/.git', 'rw') then
+            ErrorTable.local_git_repo = false
+         end
+      end
+
       for k,v in pairs(ErrorTable) do
          if v == false then
             return false, ErrorTable

@@ -19,7 +19,7 @@ local IsWindows = false
 
 os.fs.name = {}
 
-if iguana.workingDir():find('\\') then
+if package.config:sub(1,1):find('\\') then
    IsWindows = true  
 end
    
