@@ -204,7 +204,11 @@ local function getNode(Config)
             Iggy:updateChannel{config=NewChannel, live = true}
             setupTranslator(NewChannel)
             Iggy:saveProjectMilestone{guid = NewChannel.channel.from_http.guid:nodeValue(), milestone_name = "Remotely created by Spinner", live = true}
-            return NewChannel
+            Iggy:startChannel{guid = NewChannel.channel.from_http.guid:nodeValue(), live=true}
+            if (Iggy:pollChannelStatus{guid = self:cGuid(), channel_status='on'}) then 
+               return NewChannnel 
+            end
+            error("Could not start sandbox channel '" .. Sandbox.channel.name:nodeValue())
          end)
       if Success then 
          return Result
@@ -506,8 +510,8 @@ function go_PLACEHOLDER(Params)
 
    -- Return nil on queue.push for the first time simulatedMain is run (i.e.
    -- without data for unit testing)
-   queue.push = function() return nil end
-   Results['tests'] = simulatedMain_PLACEHOLDER()
+   --queue.push = function() return nil end
+   --Results['tests'] = simulatedMain_PLACEHOLDER()
 
    local doThisInstead = function(Args)
       table.insert(Results['messages'], catch_PLACEHOLDER(Args))
