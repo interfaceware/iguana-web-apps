@@ -199,14 +199,15 @@ local function getNode(Config)
             local Num = math.random(9999999)
             local NewChannel = Iggy:addChannel{config = getParamsHttps(Num), live = true}
             trace(NewChannel)
-            NewChannel.channel.name = NewChannel.channel.name:nodeValue():gsub(Num, NewChannel.channel.guid:nodeValue())
+            NewChannel.channel.name = NewChannel.channel.name:nodeValue():gsub(Num, 
+               NewChannel.channel.guid:nodeValue())
             NewChannel.channel.from_http.mapper_url_path = NewChannel.channel.from_http.mapper_url_path:nodeValue():gsub(Num, NewChannel.channel.guid:nodeValue())
             Iggy:updateChannel{config=NewChannel, live = true}
             setupTranslator(NewChannel)
             Iggy:saveProjectMilestone{guid = NewChannel.channel.from_http.guid:nodeValue(), milestone_name = "Remotely created by Spinner", live = true}
-            Iggy:startChannel{guid = NewChannel.channel.from_http.guid:nodeValue(), live=true}
-            if (Iggy:pollChannelStatus{guid = self:cGuid(), channel_status='on'}) then 
-               return NewChannnel 
+            Iggy:startChannel{guid = NewChannel.channel.guid:nodeValue(), live=true}
+            if (Iggy:pollChannelStatus{guid = NewChannel.channel.guid:nodeValue(), channel_status='on', num_retries=20}) then 
+               return NewChannel 
             end
             error("Could not start sandbox channel '" .. Sandbox.channel.name:nodeValue())
          end)
