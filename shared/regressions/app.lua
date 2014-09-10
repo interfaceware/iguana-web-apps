@@ -29,10 +29,17 @@ end
 -- Given a channel Guid, looks up the guid for that channel's filter translator
 local function getTranslatorGuid(ChannelGuid) 
    C = regressions.app.loadChannel(ChannelGuid)
+   trace (C.channel)
    if C.channel.use_message_filter:nodeValue() ~= 'false' then
+
+      -- Catch Python scripts
+      if C.channel.message_filter.use_translator_filter:nodeValue() == 'false' then 
+         return 'ChameleonTransformation'
+      end
+      
       if tostring(C.channel.message_filter.translator_guid) == '00000000000000000000000000000000' then
          error{error = 'Channel ' .. tostring(C.channel.name) ..' does not have a filter with a saved milestone.', code = 400}
-        return  
+ 
       end
       return C.channel.message_filter.translator_guid
    end
@@ -205,8 +212,7 @@ end
 
 -- Runs the current dataset through the overloaded translator.
 function regressions.app.getActuals()
-   local Results = regressions.Trans:run(trimSamples(regressions.DataSet), {OneForOne = true})['messages']
-   return Results
+   return regressions.Trans:run(trimSamples(regressions.DataSet), {OneForOne = true})
 end
 
 -- Pulls expected results from disk
@@ -236,9 +242,7 @@ end
 function regressions.app.changeExpected(TGuid, SDidx, NewText)
    local SDidx = SDidx + 1
    local NewText = filter.uri.dec(NewText)
-   --trace(NewText)
    local ExpectedFile = regressions.config.WorkTank .. TGuid .. '.json'
-   --trace(ExpectedFile)
    local Ex = io.open(ExpectedFile, 'r')
    if not Ex then 
       error{error = "Could not open " .. ExpectedFile 
@@ -276,7 +280,6 @@ function regressions.app.buildExpected(TGuid)
    local Expected = {}
    local Input = regressions.DataSet
    local Actuals = regressions.Actuals
-   trace(Actuals)
    for i=1, #Input do
       Expected[Input[i].Message] = {
          i = i,
@@ -287,7 +290,6 @@ function regressions.app.buildExpected(TGuid)
    regressions.app.saveExpected(TGuid, Expected)
    return Expected
 end
-
 
 
 ------------
@@ -305,6 +307,7 @@ function regressions.app.load(ChannelGuid)
    
    local TGuid = getTranslatorGuid(ChannelGuid)
    if TGuid then
+
       regressions.TestingTGuid = TGuid:nodeValue()
       local Success, Result = pcall(function()
             regressions.app.overloadTranslator(TGuid) 
@@ -329,7 +332,6 @@ end
 -- Iterate through the results and evaulate each test
 function regressions.app.compare()
    local Data = regressions.DataSet
-   trace(Data)
    local Actuals = regressions.Actuals
    trace(Actuals)
    local Expected = regressions.Expected
@@ -340,14 +342,11 @@ function regressions.app.compare()
    end
    for i = 1, #Data do
       local Input = Data[i].Message
-      --trace (Actuals[i].data)
-      if not Actuals[i] then 
-         error(i)
-      end
-      Result[i] = {r = 'Y', name = Data[i].Name or '', Act = regressions.app.hideLineEnds(Actuals[i].data)}
+      trace(Actuals)
+      Result[i] = {r = 'Y', name = Data[i].name or '', Act = regressions.app.hideLineEnds(Actuals[i]['data'])}
       trace(Result)
       local EOut = Expected[Input]
-      trace(EOut.output.data)
+      trace(EOut.output)
       if EOut then 
          Result[i]['Exp'] = regressions.app.hideLineEnds(EOut.output.data)
       else 

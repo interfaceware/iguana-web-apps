@@ -199,17 +199,12 @@ local function getNode(Config)
             local Num = math.random(9999999)
             local NewChannel = Iggy:addChannel{config = getParamsHttps(Num), live = true}
             trace(NewChannel)
-            NewChannel.channel.name = NewChannel.channel.name:nodeValue():gsub(Num, 
-               NewChannel.channel.guid:nodeValue())
+            NewChannel.channel.name = NewChannel.channel.name:nodeValue():gsub(Num, NewChannel.channel.guid:nodeValue())
             NewChannel.channel.from_http.mapper_url_path = NewChannel.channel.from_http.mapper_url_path:nodeValue():gsub(Num, NewChannel.channel.guid:nodeValue())
             Iggy:updateChannel{config=NewChannel, live = true}
             setupTranslator(NewChannel)
             Iggy:saveProjectMilestone{guid = NewChannel.channel.from_http.guid:nodeValue(), milestone_name = "Remotely created by Spinner", live = true}
-            Iggy:startChannel{guid = NewChannel.channel.guid:nodeValue(), live=true}
-            if (Iggy:pollChannelStatus{guid = NewChannel.channel.guid:nodeValue(), channel_status='on', num_retries=20}) then 
-               return NewChannel 
-            end
-            error("Could not start sandbox channel '" .. Sandbox.channel.name:nodeValue())
+            return NewChannel
          end)
       if Success then 
          return Result
@@ -305,8 +300,7 @@ local function getNode(Config)
    function Node:getTranslator(ChannelGuid)
       checkSelfParam(self)
       local Sandbox = findOrMakeSandbox(ChannelGuid)
-      local Trans = getTranslator(ChannelGuid, Iggy, Sandbox, self)
-      return Trans:reset()
+      return getTranslator(ChannelGuid, Iggy, Sandbox, self)   
    end
    
    function Node:getTranslators() 
@@ -506,24 +500,19 @@ function go_PLACEHOLDER(Params)
    local DataSet = Payload.DataSet
    local Options = Payload.Options
    
-   -- This table will return messages for regressions and tests for unit testing
-   local Results = {['tests'] = {}, ['messages'] = {}}
-
-   -- Return nil on queue.push for the first time simulatedMain is run (i.e.
-   -- without data for unit testing)
-   --queue.push = function() return nil end
-   --Results['tests'] = simulatedMain_PLACEHOLDER()
+   local Results = {}
 
    local doThisInstead = function(Args)
-      table.insert(Results['messages'], catch_PLACEHOLDER(Args))
+      table.insert(Results, catch_PLACEHOLDER(Args))
    end
+   
    net.http.respond = doThisInstead
    queue.push = doThisInstead
    
    for i = 1, #DataSet do
       simulatedMain_PLACEHOLDER(DataSet[i])
       if Options.OneForOne then 
-         if #Results['messages'] < i then 
+         if #Results < i then 
             doThisInstead({})
          end
       end
@@ -599,6 +588,13 @@ end
    
    ]==]
 }
+
+spin.conf.filterwrap = [[ 
+function main(Data)
+   local Revised = chm.transform{vmd = 'EDreports_PeerNET_Test.vmd', data = Data}
+   queue.push(Revised)
+end
+]]
 
 spin.conf.scratch = os.fs.abspath("~") .. '/sandbox_tmp'
 

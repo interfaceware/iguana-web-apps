@@ -1078,7 +1078,7 @@ function iguanaServer.connect(Args)
             if Status and #Status > 0 then
                local Channel = ChannelFinder(Status)
                if Channel and Channel.Status:nodeValue() == ChannelStatus then
-                  return true, ChannelStatus
+                  return true
                end
             end
             
@@ -1089,7 +1089,7 @@ function iguanaServer.connect(Args)
                if Channel then
                   LastChannelStatus = Channel.Status:nodeValue()
                   if LastChannelStatus == ChannelStatus then
-                     return true, LastChannelStatus
+                     return true
                   end
                end
                
