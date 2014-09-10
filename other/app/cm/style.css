@@ -15,6 +15,7 @@ h1 {
    background: -o-linear-gradient(#a5db58, #7bc144) #a5db58;
    background: -moz-linear-gradient(#a5db58, #7bc144) #a5db58;
    background: linear-gradient(#a5db58, #7bc144) #a5db58;
+   background-color: #a5db58;
    color: #FFFFFF;
    text-shadow: #264504 0px 1px 2px;
    box-shadow: #888888 0px 1px 1px;

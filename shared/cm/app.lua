@@ -114,11 +114,15 @@ function cm.app.export(R)
    local Credentials = basicauth.getCredentials(R)
    local Api = iguanaServer.connect(Credentials)
 
-   local D = iguana.channel.export{api=Api, name=ChannelName, sample_data=(R.params.sample_data == 'checked')}
+   local D = iguana.channel.export{api=Api, name=ChannelName, sample_data=(R.params.sample_data == "true")}
    local Config = cm.config.open()
    
-   WriteFiles(Config.config.locations[RepoIndex+1].Dir, D)
-   return D
+   local R = pcall(WriteFiles, Config.config.locations[RepoIndex+1].Dir, D)
+   if R then
+      return {['success'] = true}
+   else
+      error('There was a problem exporting the selected channel.')
+   end
 end
 
 function cm.app.listRepo(R,App)
