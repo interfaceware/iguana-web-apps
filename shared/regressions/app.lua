@@ -212,7 +212,7 @@ end
 
 -- Runs the current dataset through the overloaded translator.
 function regressions.app.getActuals()
-   return regressions.Trans:run(trimSamples(regressions.DataSet), {OneForOne = true})
+   return regressions.Trans:run(trimSamples(regressions.DataSet), {OneForOne = true}).messages
 end
 
 -- Pulls expected results from disk
