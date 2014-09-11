@@ -523,7 +523,7 @@ function go_PLACEHOLDER(Params)
       simulatedMain_PLACEHOLDER(DataSet[i])
       if Options.OneForOne then 
          if #Results.messages < i then 
-            doThisInstead({})
+            doThisInstead({data=''})
          end
       end
    end
