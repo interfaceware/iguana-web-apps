@@ -500,10 +500,20 @@ function go_PLACEHOLDER(Params)
    local DataSet = Payload.DataSet
    local Options = Payload.Options
    
-   local Results = {}
+   -- This table will return messages for regressions and tests for unit testing
+   local Results = {['tests'] = {}, ['messages'] = {}}
+
+   -- Return nil on queue.push for the first time simulatedMain is run (i.e.
+   -- without data for unit testing)
+   queue.push = function() return nil end
+   if #DataSet > 0 then
+      Results.tests = simulatedMain_PLACEHOLDER(DataSet[1])
+   else
+      Results.tests = simulatedMain_PLACEHOLDER()
+   end
 
    local doThisInstead = function(Args)
-      table.insert(Results, catch_PLACEHOLDER(Args))
+      table.insert(Results.messages, catch_PLACEHOLDER(Args))
    end
    
    net.http.respond = doThisInstead
@@ -512,7 +522,7 @@ function go_PLACEHOLDER(Params)
    for i = 1, #DataSet do
       simulatedMain_PLACEHOLDER(DataSet[i])
       if Options.OneForOne then 
-         if #Results < i then 
+         if #Results.messages < i then 
             doThisInstead({})
          end
       end
