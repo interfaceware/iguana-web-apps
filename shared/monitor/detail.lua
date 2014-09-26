@@ -135,11 +135,14 @@ function monitor.detail(Data)
       ['LLP Client']   = 'LLP',
       ['From Channel'] = 'QUE',
       ['To Channel']   = 'QUE',
+      ['To Database']  = 'DB',
+      ['From Database'] = 'DB',
       ['To Plugin']    = 'PLG-N',
       ['From Plugin']  = 'PLG-N'}
 
    local Row = 1
    for _, Ch in pairs(Details.channels) do
+   
       Summary.ChannelsInfo.aaData[Row] = {
          Ch.Name,
          string.format(StatusHtml, Statuses[Ch.Status]),
