@@ -1,5 +1,5 @@
-<channel name="New DBS File Format Example" guid="00000000000000000000000000000000" description="This is an experimental substitute for replacing the use of vmd files for database schema usage.&#xD;&#xA;&#xD;&#xA;Interfaces may CHANGE.  Please do not use in production yet." start_automatically="false" logging_level="1" use_message_filter="false">
-   <to_mapper guid="00000000000000000000000000000000" use_most_recent_milestone="true" milestone="">
+<channel name="New DBS File Format Example" guid="00000000000000000000000000000000" description="The DBS format provides an alternative to using vmds for table schema. &#xD;&#xA;&#xD;&#xA;It&apos;s a text based schema format which you can edit right inside the translator." start_automatically="false" logging_level="1" use_message_filter="false">
+   <to_mapper guid="00000000000000000000000000000000" use_most_recent_milestone="true" milestone="Channel Manager Tue Nov  4 10:49:19 2014">
       <dequeue_list>
          <dequeue source_name="self" dequeue_guid="E7B26C297004603AD35C4985FEA6B516"></dequeue>
       </dequeue_list>
