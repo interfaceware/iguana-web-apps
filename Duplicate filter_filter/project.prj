@@ -1,0 +1,9 @@
+{
+   "Name": "Duplicate Message Filter (Filter)",
+   "LuaDependencies": [
+      "dup"
+   ],
+   "OtherDependencies": [
+      "demo.vmd"
+   ]
+}
