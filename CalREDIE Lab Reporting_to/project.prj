@@ -1,0 +1,9 @@
+{
+   "Name": "California Immunization Reg (To Translator)",
+   "LuaDependencies": [
+      "node"
+   ],
+   "OtherDependencies": [
+      "HL7_2.5.1.vmd"
+   ]
+}

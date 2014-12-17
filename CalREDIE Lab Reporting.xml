@@ -1,0 +1,11 @@
+<channel name="CalREDIE Lab Reporting" guid="00000000000000000000000000000000" description="This example channel shows how you can do the SOAP call required for the CalREDIE - Californian Lab Reporting Interface.&#xD;&#xA;&#xD;&#xA;For more information see:&#xD;&#xA;&#xD;&#xA;http://help.interfaceware.com/kb/connecting-with-cair" start_automatically="true" logging_level="1" use_message_filter="false">
+   <to_mapper guid="00000000000000000000000000000000" use_most_recent_milestone="true" milestone="">
+      <dequeue_list>
+         <dequeue source_name="self" dequeue_guid="B26728CDF61B109D747950EF17B7C619"></dequeue>
+      </dequeue_list>
+   </to_mapper>
+   <from_mapper guid="00000000000000000000000000000000" use_most_recent_milestone="true" milestone="" poll_time="10000"></from_mapper>
+   <message_filter filter_after_logging="true" log_pre_post_filter_message="true" filter_vmd_path="" transformation_mode="0" scripted_transformation_configuration_name="default" incoming_configuration_name="" outgoing_configuration_name="" error_handling="0" use_translator_filter="true" translator_guid="00000000000000000000000000000000" translator_milestone="No milestone defined." translator_use_most_recent_milestone="true">
+      <ignored_message message_name=""></ignored_message>
+   </message_filter>
+</channel>
