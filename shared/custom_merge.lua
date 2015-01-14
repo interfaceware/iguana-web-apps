@@ -61,7 +61,7 @@ local function addSQLValue(Node, Buffer)
    if SQLmethods[Params.api].AddValue and SQLmethods[Params.api].AddValue[curType] then
       SQLmethods[Params.api].AddValue[curType](Node, Buffer)
    elseif curType == 'string' then
-      if tostring(Node):match('0x') then
+      if tostring(Node):match('^0x%x+$') then
          Buffer:write(Node)
       else
          Buffer:write(Conn:quote(tostring(Node)))
