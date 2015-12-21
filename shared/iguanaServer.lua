@@ -1310,20 +1310,41 @@ function iguanaServer.connect(Args)
       return Args.guid
    end
    
+   function Obj:bumpProject(Args)
+      local Live = checkLiveParam(Args, false)
+      local Result = nil
+      
+      if Data.Live and Live then
+         Result = makeApiRequest("/sc/bump",
+            {
+             translator_guid=Args.guid, 
+             commit_id=Args.commit_id,
+             translators_to_bump= json.serialize{data= {Args.guid} }
+            },
+            Live)
+      end
+      trace(Result)
+      return json.parse(Result)
+   end
+   
+   
    function Obj:saveProjectMilestone(Args)
       checkSelfParam(self)
       checkParamTable(Args)
       checkNonEmptyParam(Args, "guid", "string")
-      checkNonEmptyParam(Args, "milestone_name", "string")
+      if( Args["comment"] == nil and Args["milestone_name"] == nil ) then
+         error("You need to specify a comment or milestone_name")
+      end
       local Live = checkLiveParam(Args, false)
-      
+      local Result = nil
       if Data.Live and Live then
-         makeApiRequest("/save_project_milestone",
-            {guid=Args.guid, milestone_name=Args.milestone_name},
+         Result = makeApiRequest("/save_project_milestone",
+            {guid=Args.guid, comment=Args.comment},
             Live)
       end
-      
-      return Args.milestone_name
+      trace(Result)
+      local ResultJson = json.parse(Result) 
+      return ResultJson.new_commit
    end
    
    function Obj:updateProject(Args)

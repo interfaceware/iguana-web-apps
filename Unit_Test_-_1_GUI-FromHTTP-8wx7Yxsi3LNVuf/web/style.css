@@ -1,0 +1,202 @@
+body {
+   background-color: #eff1e8;
+   font-family: 'Open Sans',sans-serif;
+   font-size: 12pt;
+   padding: 0px;
+   margin: 0px;
+}
+   
+h1 {
+   margin: 0px;
+   font-size: 2.8em;
+   font-weight: 700;
+   text-align: center;
+   padding: 25px 0px 20px 0px;
+   background: -webkit-linear-gradient(#a5db58, #7bc144) #a5db58;
+   background: -o-linear-gradient(#a5db58, #7bc144) #a5db58;
+   background: -moz-linear-gradient(#a5db58, #7bc144) #a5db58;
+   background: linear-gradient(#a5db58, #7bc144) #a5db58;
+   color: #FFFFFF;
+   text-shadow: #264504 0px 1px 2px;
+   box-shadow: #888888 0px 1px 1px;
+}
+
+#wrapper {
+   padding: 0px 15px 0px 15px;
+}
+
+.err {
+   border: 1px solid #DE7373;
+   background-color: #FCF2F2;
+}
+
+.button {
+   border-radius: 5px;
+   border: 1px solid #696969;
+   background-color: #D7F2FA;
+   color: #000;
+   padding: 5px;
+   margin-right: 3px;
+   cursor: pointer;
+   line-height: 40px;
+}
+
+.button:hover{
+   background-color: #BBE5F2;
+}
+
+a.button {
+   text-decoration: none;
+}
+
+span.button.delete {
+   border: 1px solid #DE7373;
+   background-color: #FCF2F2;
+   color: #000;
+}
+
+span.button.delete:hover {
+   background-color: #F7E6E6;
+}
+
+div.err {
+   margin-top: 20px;
+   margin-bottom: 20px;
+   padding-left: 20px;
+   padding-right: 20px;
+}
+
+.status-green {
+   width:10px;
+   height:10px;
+   border-radius:50px;
+   background:linear-gradient(to bottom, #a6e182, #54c600);
+   border: 2px solid #FFFFFF;
+   margin: 0px auto;
+}
+   
+.status-red {
+   width:10px;
+   height:10px;
+   border-radius:50px;
+   background:linear-gradient(to bottom, #f5896e, #da2300);
+   border: 2px solid #FFFFFF;
+   margin: 0px auto;
+}
+   
+.status-grey {
+   width:10px;
+   height:10px;
+   border-radius:50px;
+   background:linear-gradient(to bottom, #C1C1C1, #B2B2B2);
+   border: 2px solid #FFFFFF;
+   margin: 0px auto;
+}
+   
+.status-yellow {
+   width: 10px;
+   height: 10px;
+   border-radius: 50px;
+   background: linear-gradient(to bottom, #FFF159, #E9DC51);
+   border: 2px solid #FFFFFF;
+   margin: 0px auto;
+}
+
+table#hosts {
+   border-collapse: collapse;
+}
+
+table#hosts td {
+   padding: 10px;
+   text-align: center;
+   border-top: 1px solid black;
+}
+
+table#hosts th {
+   padding: 10px;
+   text-align: center;
+}
+
+table.dataTable {
+    border-color: #DDDDDD;
+    border-image: none;
+    border-style: solid solid solid none;
+    border-width: 1px 1px 1px 0px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+table.dataTable thead {
+    background-color: #FAFAFA !important;
+    background-image: linear-gradient(to bottom, #FAFAFA, #EFEFEF) !important;
+    box-shadow: none;
+    height: 46px;
+    overflow: hidden;
+    color: #444444;
+}
+
+table.dataTable th {
+    font-size: 0.75em;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    border-left: 1px solid #DDDDDD;
+    border-bottom: 1px solid #CCCCCC !important;
+}
+
+table.dataTable td {
+    font-size: 0.9em;
+    font-weight: 300;
+    border-top: 1px solid #DDDDDD;
+    border-left: 1px solid #DDDDDD;
+}
+
+table.dataTable td {
+    padding: 5px 10px;
+}
+
+table.dataTable tr.odd {
+    background-color: #FFFFFF;
+}
+
+table.dataTable tr.even {
+    background-color: #F9F9F9;
+}
+
+table.dataTable tr.odd td.sorting_1 {
+    background-color: #f3fafc;
+}
+
+table.dataTable tr.even td.sorting_1 {
+    background-color: #e7f4f9;
+}
+
+/* Some of this CSS might need to factored out into library CSS for datatables */
+   
+table.dataTable td {
+   padding: 5px 10px;
+}
+   
+   
+div.dataTables_wrapper {
+   background-color: #FFFFFF;
+   border: 1px solid #DDDDDD;
+   border-radius: 5px;
+   box-shadow: none;
+   padding: 15px 15px 35px 15px;
+   margin: 30px;
+}
+   
+.dataTables_length label,
+.dataTables_filter label {
+   color: #777777;
+   letter-spacing: 0.05em;
+   font-size: 0.85em;
+   text-transform: uppercase;
+   font-weight: 600;
+}
+   
+input {
+   border: 1px solid #DDDDDD;
+   height: 20px;
+}

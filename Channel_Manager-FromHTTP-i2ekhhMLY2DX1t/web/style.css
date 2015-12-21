@@ -1,0 +1,282 @@
+body {
+   background-color: #eff1e8;
+   font-family: 'Open Sans',sans-serif;
+   font-size: 12pt;
+   padding: 0px;
+   margin: 0px;
+}
+   
+h1 {
+   font-size: 2.8em;
+   font-weight: 700;
+   text-align: center;
+   padding: 35px 0px 25px 0px;
+   background: -webkit-linear-gradient(#a5db58, #7bc144) #a5db58;
+   background: -o-linear-gradient(#a5db58, #7bc144) #a5db58;
+   background: -moz-linear-gradient(#a5db58, #7bc144) #a5db58;
+   background: linear-gradient(#a5db58, #7bc144) #a5db58;
+   background-color: #a5db58;
+   color: #FFFFFF;
+   text-shadow: #264504 0px 1px 2px;
+   box-shadow: #888888 0px 1px 1px;
+   margin: 0px;
+}
+   
+#global, #channels_list {
+   background: none repeat scroll 0 0 #FCFCFC;
+   border-radius: 5px;
+   padding: 20px;
+}
+
+#global {
+   border-radius: 0;  
+}
+
+.label{
+  font-weight : bold;  
+}
+
+/* Padding for edit repo boxes */
+.repoEdit{
+   padding : 4px;     
+}
+
+/* Float the repositories link over the right */
+.settings{
+   float : right;
+}
+
+span#add-channel{
+   background-image:url('button-addchannel.gif');  
+   float: right;
+   width : 194px;
+   height : 26px;
+   margin : 10px;
+}
+
+/* This is the highlight color used for the search highlighting */
+span.filterMatches{
+   background-color : yellow;  
+}
+
+span.button-repositories{
+   visibility : none;  
+} 
+
+#repositories{
+   float : right;
+}
+
+#add-channel{
+   float : right;  
+}
+
+#edit {
+   float : right;
+}
+
+span.reponame{
+   font-weight : bold;
+}
+
+input.repodir{
+   width : 70%;
+}
+
+span.warning{
+   display: table;
+   border: red;
+   border-style: solid;
+   padding: 10px;
+}
+
+span.button{
+   background : #e7f4f9;
+   padding : 2px;
+   border-radius:4px;
+   border: 2px solid lightblue;   
+   box-shadow: 2px 2px 2px #888888;
+}
+
+span.button-delete{
+   visibility : none;     
+}
+
+span.button-delete:after{
+   content : "Delete";
+   width : 69px;
+   height : 20px;
+   text-align : center;
+   background : #e7f4f9;
+   border: 2px solid lightblue;
+   visibility: visible;
+   float : right;
+   border-radius:4px;
+}
+
+div.chan-on {
+   width:10px;
+   height:10px;
+   border-radius:50px;
+   background:linear-gradient(to bottom, #a6e182, #54c600);
+   border: 2px solid #FFFFFF;
+   margin: 0px auto;
+}
+   
+div.chan-error {
+   width:10px;
+   height:10px;
+   border-radius:50px;
+   background:linear-gradient(to bottom, #f5896e, #da2300);
+   border: 2px solid #FFFFFF;
+   margin: 0px auto;
+}
+   
+div.chan-off {
+   width:10px;
+   height:10px;
+   border-radius:50px;
+   background:linear-gradient(to bottom, #C1C1C1, #B2B2B2);
+   border: 2px solid #FFFFFF;
+   margin: 0px auto;
+}
+   
+div.chan-transition {
+   width: 10px;
+   height: 10px;
+   border-radius: 50px;
+   background: linear-gradient(to bottom, #FFF159, #E9DC51);
+   border: 2px solid #FFFFFF;
+   margin: 0px auto;
+}
+
+div.TRANS {
+   width: 38px;
+   height: 16px;
+   background-image:url('icon_TRANS.gif');
+}
+
+div.HTTPS {
+   width: 38px;
+   height: 16px;
+   background-image:url('icon_HTTPS.gif');
+}
+
+div.QUE {
+   width: 38px;
+   height: 16px;
+   background-image:url('icon_QUE.gif');
+}
+
+div.FILE {
+   width: 38px;
+   height: 16px;
+   background-image:url('icon_FILE.gif');
+}
+
+div.LLP {
+   width: 38px;
+   height: 16px;
+   background-image:url('icon_LLP.gif');
+}
+
+div.PLG_N {
+   width: 38px;
+   height: 16px;
+   background-image:url('icon_PLG-N.gif');
+}
+
+div.FILTER {
+   width: 11px;
+   height: 16px;
+   background-image:url('arrow.gif');
+}
+
+div.chan-type{
+   display: inline-flex;  
+}
+
+table.dataTable {
+    border-color: #DDDDDD;
+    border-image: none;
+    border-style: solid solid solid none;
+   border-width: 1px 1px 1px 0px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+thead {
+    background-color: #FAFAFA !important;
+    background-image: linear-gradient(to bottom, #FAFAFA, #EFEFEF) !important;
+    box-shadow: none;
+    height: 46px;
+    overflow: hidden;
+    color: #444444;
+}
+
+th {
+    font-size: 0.75em;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    border-left: 1px solid #DDDDDD;
+    border-bottom: 1px solid #CCCCCC !important;
+}
+
+td {
+    font-size: 0.9em;
+    font-weight: 300;
+    border-top: 1px solid #DDDDDD;
+    border-left: 1px solid #DDDDDD;
+}
+
+table.dataTable td {
+    padding: 5px 10px;
+}
+
+table.dataTable tr.odd {
+    background-color: #FFFFFF;
+}
+
+table.dataTable tr.even {
+    background-color: #F9F9F9;
+}
+
+table.dataTable tr.odd td.sorting_1 {
+    background-color: #f3fafc;
+}
+
+table.dataTable tr.even td.sorting_1 {
+    background-color: #e7f4f9;
+}
+
+/* Some of this CSS might need to factored out into library CSS for datatables */
+   
+table.dataTable td {
+   padding: 5px 10px;
+}
+   
+   
+div.dataTables_wrapper {
+   background-color: #FFFFFF;
+   border: 1px solid #DDDDDD;
+   border-radius: 5px;
+   box-shadow: none;
+   overflow: hidden;
+   padding: 15px 15px 10px 15px;
+}
+   
+.dataTables_length label,
+.dataTables_filter label {
+   color: #777777;
+   letter-spacing: 0.05em;
+   font-size: 0.85em;
+   text-transform: uppercase;
+   font-weight: 600;
+}
+   
+input {
+   border: 1px solid #DDDDDD;
+   height: 20px;
+}
+

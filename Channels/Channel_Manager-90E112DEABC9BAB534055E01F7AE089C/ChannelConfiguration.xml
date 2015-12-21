@@ -1,0 +1,25 @@
+<channel
+   name="Channel Manager"
+   guid="90E112DEABC9BAB534055E01F7AE089C"
+   description="The channel manager application really has been superseded by Iguana 6&apos;s built in ability to import and export channels.&#xD;&#xA;&#xD;&#xA;But if you used Iguana 5 and the channel manager to save channels then you need something to load that format back into Iguana.  So that is the reason for having this.&#xD;&#xA;&#xD;&#xA;This is really just intended to allow you to migrate existing channels, so I think it works."
+   start_automatically="true"
+   logging_level="1"
+   use_message_filter="false">
+   <to_channel>
+   </to_channel>
+   <from_http
+      type="mapper"
+      guid="Channel_Manager-FromHTTP-i2ekhhMLY2DX1t"
+      commit_id="edb3b694da8c0c7dd1db35df15fda36f1dc8bf08"
+      commit_comment="Import Translators: Imported John Scalise&apos;s channels."
+      mapper_url_path="cm/"/>
+   <message_filter
+      filter_after_logging="false"
+      log_pre_post_filter_message="true"
+      filter_vmd_path=""
+      transformation_mode="0"
+      scripted_transformation_configuration_name="default"
+      error_handling="0"
+      use_translator_filter="true">
+   </message_filter>
+</channel>

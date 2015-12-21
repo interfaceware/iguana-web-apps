@@ -124,6 +124,7 @@ local function getTranslator(ChannelGuid, Iggy, Sandbox, Node)
       if Code ~= 200 then 
          error{error = Result, code = Code}
       end
+      --Echoes back the request by default (if no action specified in request url)
       return json.parse{data=Result}
    end
    
@@ -164,7 +165,10 @@ local function getNode(Config)
          }
       }
       local Samples = json.serialize{data={}}
-      local MyMain = spin.conf.defaults.main:gsub('PLACEHOLDER', Sandbox.channel.from_http.guid:nodeValue())
+      
+      local TranslatorName = Sandbox.channel.from_http.guid:nodeValue()
+      local CleanedTranslatorName = TranslatorName:gsub('-', "_")
+      local MyMain = spin.conf.defaults.main:gsub('PLACEHOLDER', CleanedTranslatorName )
       
       -- Note: Project and Samples below are not currently used, but can be, if we should ever
       -- want to launch a sandbox translator preloaded with dependencies or sample data.
@@ -203,7 +207,9 @@ local function getNode(Config)
             NewChannel.channel.from_http.mapper_url_path = NewChannel.channel.from_http.mapper_url_path:nodeValue():gsub(Num, NewChannel.channel.guid:nodeValue())
             Iggy:updateChannel{config=NewChannel, live = true}
             setupTranslator(NewChannel)
-            Iggy:saveProjectMilestone{guid = NewChannel.channel.from_http.guid:nodeValue(), milestone_name = "Remotely created by Spinner", live = true}
+            local Guid = NewChannel.channel.from_http.guid:nodeValue()
+            local CommitResult = Iggy:saveProjectMilestone{guid = Guid, comment = "Remotely created by Spinner", live = true}
+            Iggy:bumpProject{guid = Guid, commit_id = CommitResult.commit_id, live = true}
             return NewChannel
          end)
       if Success then 
@@ -224,7 +230,7 @@ local function getNode(Config)
       end
       if Existing then 
          return Existing
-      end
+      end 
       return makeSandbox()
    end 
    
@@ -443,7 +449,8 @@ end
 
 function serveRequest_PLACEHOLDER(Data)
    local Params = net.http.parseRequest{data = Data}
-   local Command = Params.location:sub(#Root + 2)
+   local LastSlash = string.find(Params.location, "/[^/]*$")
+   local Command = Params.location:sub(LastSlash + 1)
    if Actions[Command] then
       local Result = Actions[Command](Params)
       if Result.error and Result.code then 
@@ -487,7 +494,10 @@ function overload_PLACEHOLDER(Params)
    local LuaText = ZipTree['main.lua']
    LuaText = LuaText:gsub('function main', 'function simulatedMain_PLACEHOLDER')
    local ReadyToRun = loadstring(LuaText)
-   ReadyToRun()
+   local Success, Result = pcall(ReadyToRun)
+   if not Success then
+      error("Error in code to be overloaded: " .. Result)
+   end
    return {status = 'THAT TOTALLY WORKED'}
 end
 
@@ -533,17 +543,31 @@ function go_PLACEHOLDER(Params)
    
    return Results
 end
+   
+function getNode_PLACEHOLDER(ProjectTree, Pieces)
+   local Node = ProjectTree
+   for i = 1, #Pieces do
+      trace(Pieces[i]) 
+      Node = Node[Pieces[i]]
+	   if Node == nil then
+         -- Required file is a shard file, not local
+         Node = getNode_PLACEHOLDER(ProjectTree.shared, Pieces)
+         break
+      end
+   end
+   return Node
+end
 
 function newRequire_PLACEHOLDER(ModName, ZipTree)
    local Pieces = ModName:split_PLACEHOLDER('%.')
    Pieces[#Pieces] = Pieces[#Pieces] .. '.lua'
-   local Node = ZipTree.shared
-   for i = 1, #Pieces do 
-      trace(Pieces[i])
-      Node = Node[Pieces[i]]
-   end
+   local Node = getNode_PLACEHOLDER(ZipTree, Pieces)
    local LuaText = loadstring(Node)
-   return LuaText()
+   local Success, Result = pcall(LuaText)
+   if not Success then
+      error("Error in code to be overloaded: " .. Result)
+   end
+   return Result
 end
 
 function findVmd_PLACEHOLDER(Node, Path) 

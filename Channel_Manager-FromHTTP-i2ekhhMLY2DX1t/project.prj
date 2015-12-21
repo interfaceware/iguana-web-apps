@@ -1,0 +1,56 @@
+{
+    "LocalDependencies": [
+        "app.lua",
+        "config.lua",
+        "listChannels.lua",
+        "web/arrow.gif",
+        "web/button-addchannel.gif",
+        "web/dashboard.js",
+        "web/export.js",
+        "web/help.js",
+        "web/icon_DB.gif",
+        "web/icon_FILE.gif",
+        "web/icon_HTTPS.gif",
+        "web/icon_LLP.gif",
+        "web/icon_PLG-N.gif",
+        "web/icon_QUE.gif",
+        "web/icon_TRANS.gif",
+        "web/import.js",
+        "web/index.html",
+        "web/page.js",
+        "web/repo.js",
+        "web/settings.js",
+        "web/style.css"
+    ],
+    "LuaDependencies": [
+        "iguana.channel",
+        "iguanaServer",
+        "web.basicauth",
+        "web.file",
+        "web.server"
+    ],
+    "OtherDependencies": [
+        "lib/datatable.js",
+        "lib/page.js",
+        "libe/jquery.dataTables/1.9.4/jquery.dataTables.css",
+        "libe/jquery.dataTables/1.9.4/jquery.dataTables.min.js",
+        "libe/jquery.dataTables/images/back_disabled.png",
+        "libe/jquery.dataTables/images/back_enabled.png",
+        "libe/jquery.dataTables/images/back_enabled_hover.png",
+        "libe/jquery.dataTables/images/forward_disabled.png",
+        "libe/jquery.dataTables/images/forward_enabled.png",
+        "libe/jquery.dataTables/images/forward_enabled_hover.png",
+        "libe/jquery.dataTables/images/sort_asc.png",
+        "libe/jquery.dataTables/images/sort_asc_disabled.png",
+        "libe/jquery.dataTables/images/sort_both.png",
+        "libe/jquery.dataTables/images/sort_desc.png",
+        "libe/jquery.dataTables/images/sort_desc_disabled.png",
+        "libe/jquery/2.1.0/jquery.min.js"
+    ],
+    "timestamp": "1450380837",
+    "version_info": {
+        "build": 0,
+        "major": 6,
+        "minor": 0
+    }
+}

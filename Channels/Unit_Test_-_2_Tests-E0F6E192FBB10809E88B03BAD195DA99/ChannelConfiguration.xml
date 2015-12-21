@@ -1,0 +1,23 @@
+<channel
+   name="Unit Test - 2. Tests"
+   guid="E0F6E192FBB10809E88B03BAD195DA99"
+   description="This channel has some unit tests run by the unit test GUI.&#xD;&#xA;&#xD;&#xA;See:&#xD;&#xA;&#xD;&#xA;http://help.interfaceware.com/kb/regression-testing-round-ii-ding-ding"
+   start_automatically="false"
+   logging_level="1"
+   use_message_filter="true">
+   <to_channel>
+   </to_channel>
+   <from_channel/>
+   <message_filter
+      filter_after_logging="false"
+      log_pre_post_filter_message="true"
+      filter_vmd_path=""
+      transformation_mode="0"
+      scripted_transformation_configuration_name="default"
+      error_handling="0"
+      use_translator_filter="true"
+      translator_guid="Unit_Test_-_2_Tests-Filter-xmD3fjhYY0DuV3"
+      translator_commit_id="edb3b694da8c0c7dd1db35df15fda36f1dc8bf08"
+      translator_commit_comment="Import Translators: Imported John Scalise&apos;s channels.">
+   </message_filter>
+</channel>

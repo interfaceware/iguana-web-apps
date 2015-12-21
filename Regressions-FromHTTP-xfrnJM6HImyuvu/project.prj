@@ -1,0 +1,26 @@
+{
+    "LocalDependencies": [
+        "app.lua",
+        "config.lua",
+        "web/index.html",
+        "web/scripts.js",
+        "web/style.css"
+    ],
+    "LuaDependencies": [
+        "iguanaServer",
+        "spin",
+        "web.basicauth",
+        "web.file",
+        "web.server",
+        "zip"
+    ],
+    "OtherDependencies": [
+        "libe/diff.js"
+    ],
+    "timestamp": "1450380837",
+    "version_info": {
+        "build": 0,
+        "major": 6,
+        "minor": 0
+    }
+}
