@@ -1,0 +1,24 @@
+<channel
+   name="Athena ADT Watcher"
+   guid="3EAC073F29FD2E7BFFC5887E1AD71951"
+   description="Watches Athena instance for new/updated patient records. &#xD;&#xA;&#xD;&#xA;http://help.interfaceware.com/forums/topic/athena-health-web-adapter&#xD;&#xA;&#xD;&#xA;When it sees one it pushes the patient ID into the queue&#xD;&#xA;for the channel which then triggers an event in the destination.&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;"
+   start_automatically="false"
+   logging_level="1"
+   use_message_filter="false">
+   <to_mapper
+      guid="Athena_ADT_Watcher-To-Yl6jRFnukaaBv0"
+      commit_id="8802b87450f99c9635a788de22a65854ed5b5f7a"
+      commit_comment="Used structured table schema to hold the data and generate the CSV output.">
+      <dequeue_list>
+         <dequeue
+            source_guid="00000000000000000000000000000000"
+            dequeue_guid="71FA6DB27140E1D49D350F134519B62F"/>
+      </dequeue_list>
+   </to_mapper>
+   <from_mapper
+      guid="Athena_ADT_Watcher-From-sdumDmnDjZOMXz"
+      commit_id="828145129073197fa4188a1796820afbf5d9befb"
+      commit_comment="Extra blank line."
+      poll_time="100000">
+   </from_mapper>
+</channel>

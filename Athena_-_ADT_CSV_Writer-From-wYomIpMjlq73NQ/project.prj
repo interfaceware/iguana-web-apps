@@ -1,0 +1,21 @@
+{
+    "LocalDependencies": [],
+    "LuaDependencies": [
+        "athena.api",
+        "athena.athena_source",
+        "athena.config",
+        "athena.mapPatient",
+        "athena.store",
+        "csv.writer",
+        "jsonhelp"
+    ],
+    "OtherDependencies": [
+        "athena.vmd"
+    ],
+    "timestamp": "1450908123",
+    "version_info": {
+        "build": 0,
+        "major": 6,
+        "minor": 0
+    }
+}

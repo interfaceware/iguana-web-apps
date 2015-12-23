@@ -1,0 +1,16 @@
+<channel
+   name="Athena - ADT CSV Writer"
+   guid="39FA8FF161BB64D4C0D27DBD5451B702"
+   description="This channel just talks to Athena and then writes out a CSV file.&#xD;&#xA;&#xD;&#xA;It uses a temporary file extension and renames the file when it&apos;s complete."
+   start_automatically="false"
+   logging_level="1"
+   use_message_filter="false">
+   <to_channel>
+   </to_channel>
+   <from_mapper
+      guid="Athena_-_ADT_CSV_Writer-From-wYomIpMjlq73NQ"
+      commit_id="8802b87450f99c9635a788de22a65854ed5b5f7a"
+      commit_comment="Used structured table schema to hold the data and generate the CSV output."
+      poll_time="10000">
+   </from_mapper>
+</channel>
