@@ -1,0 +1,10 @@
+{
+   "Name": "02-Socket to Database (To Translator)",
+   "LuaDependencies": [
+      "dbs_meta"
+   ],
+   "OtherDependencies": [
+      "example/demo.vmd",
+      "tables.dbs"
+   ]
+}
